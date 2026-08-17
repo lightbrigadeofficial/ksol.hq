@@ -1,0 +1,1 @@
+Files are separated into index.html, styles.css, and script.js. Place all three files in the same folder before opening/deploying index.html.
