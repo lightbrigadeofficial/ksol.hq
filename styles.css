@@ -1,0 +1,1696 @@
+/* =========================================================
+   GLOBAL VARIABLES
+========================================================= */
+
+:root {
+      /* Main colors */
+      --bg: #070707;
+      --p: #0d0d0d;
+      --p2: #151515;
+
+      /* Borders / separators */
+      --line: #292929;
+      --line-light: #3b3b3b;
+
+      /* Text */
+      --text: #eeeeee;
+      --muted: #8d8d8d;
+      --silver: #b8b8b8;
+      --white: #f5f5f5;
+
+      /* Accent shades */
+      --graphite: #1b1b1b;
+      --charcoal: #111111;
+      --black: #000000;
+}
+
+
+/* =========================================================
+   GLOBAL RESET
+========================================================= */
+
+* {
+      box-sizing: border-box;
+}
+
+
+html {
+      scroll-behavior: smooth;
+}
+
+
+body {
+      margin: 0;
+
+      background:
+            radial-gradient(circle at 75% 0,
+                  rgba(120, 120, 120, 0.08),
+                  transparent 35rem),
+            var(--bg);
+
+      color: var(--text);
+
+      font:
+            14px system-ui,
+            -apple-system,
+            BlinkMacSystemFont,
+            "Segoe UI",
+            sans-serif;
+}
+
+
+a {
+      color: inherit;
+
+      text-decoration: none;
+}
+
+
+/* =========================================================
+   MAIN CONTAINER
+========================================================= */
+
+.wrap {
+      width: min(1160px, calc(100% - 36px));
+
+      margin: auto;
+}
+
+
+/* =========================================================
+   TOP ACCENT LINE
+========================================================= */
+
+.top {
+      height: 3px;
+
+      background:
+            linear-gradient(90deg,
+                  #000000,
+                  #555555,
+                  #000000);
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+      position: sticky;
+
+      top: 0;
+
+      z-index: 5;
+
+      background: rgba(7, 7, 7, 0.94);
+
+      backdrop-filter: blur(10px);
+
+      border-bottom: 1px solid var(--line);
+}
+
+
+.nav {
+      height: 70px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+}
+
+
+/* =========================================================
+   NAV ACTIONS
+========================================================= */
+
+.nav-actions {
+      display: flex;
+
+      align-items: center;
+
+      gap: 10px;
+}
+
+
+/* =========================================================
+   JOIN DISCORD BUTTON
+========================================================= */
+
+.discord-btn {
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      height: 40px;
+
+      padding: 0 15px;
+
+      border: 1px solid #3a3a3a;
+
+      background: #111111;
+
+      color: #d8d8d8;
+
+      font-size: 11px;
+
+      font-weight: 800;
+
+      letter-spacing: 0.08em;
+
+      transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            color 0.2s ease;
+}
+
+
+.discord-btn:hover {
+      background: #1b1b1b;
+
+      border-color: #666666;
+
+      color: #ffffff;
+}
+
+
+/* =========================================================
+   ENLIST BUTTON
+========================================================= */
+
+.enlist-btn {
+      position: relative;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      height: 40px;
+
+      min-width: 125px;
+
+      padding: 0 15px;
+
+      overflow: hidden;
+
+      border: 1px solid #ffffff;
+
+      background: #ffffff;
+
+      color: #050505;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 0.12em;
+
+      text-decoration: none;
+
+      isolation: isolate;
+
+      transition:
+            color 0.25s ease,
+            background 0.25s ease;
+}
+
+
+/* Moving scan line */
+
+.enlist-btn::before {
+      content: "";
+
+      position: absolute;
+
+      top: 0;
+      left: -120%;
+
+      width: 80%;
+      height: 100%;
+
+      background:
+            linear-gradient(90deg,
+                  transparent,
+                  rgba(0, 0, 0, 0.18),
+                  transparent);
+
+      transform: skewX(-20deg);
+
+      animation:
+            enlistScan 2.8s linear infinite;
+
+      z-index: -1;
+}
+
+
+/* Nanotech grid */
+
+.enlist-btn::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 3px;
+
+      background:
+            linear-gradient(90deg,
+                  transparent 48%,
+                  rgba(0, 0, 0, 0.10) 49%,
+                  transparent 50%),
+            linear-gradient(0deg,
+                  transparent 48%,
+                  rgba(0, 0, 0, 0.10) 49%,
+                  transparent 50%);
+
+      background-size: 8px 8px;
+
+      opacity: 0;
+
+      transition: opacity 0.25s ease;
+
+      pointer-events: none;
+}
+
+
+.enlist-btn:hover {
+      background: #050505;
+
+      color: #ffffff;
+}
+
+
+.enlist-btn:hover::after {
+      opacity: 1;
+}
+
+
+.enlist-btn:hover .enlist-arrow {
+      transform: translateX(4px);
+}
+
+
+.enlist-text,
+.enlist-arrow {
+      position: relative;
+
+      z-index: 2;
+}
+
+
+.enlist-arrow {
+      transition:
+            transform 0.2s ease;
+}
+
+
+/* =========================================================
+   ENLIST ANIMATION
+========================================================= */
+
+@keyframes enlistScan {
+
+      0% {
+            left: -120%;
+      }
+
+      100% {
+            left: 150%;
+      }
+
+}
+
+
+/* =========================================================
+   LIVE TIME STRIP
+========================================================= */
+
+.time-strip {
+      width: 100%;
+
+      background: #0b0b0b;
+
+      border-bottom: 1px solid var(--line);
+
+      border-top: 1px solid #151515;
+}
+
+
+.time-strip-inner {
+      min-height: 34px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      gap: 22px;
+}
+
+
+.time-block {
+      display: flex;
+
+      align-items: center;
+
+      gap: 9px;
+}
+
+
+.time-label {
+      color: #6f6f6f;
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: 0.14em;
+}
+
+
+.time-value {
+      color: #e8e8e8;
+
+      font-family:
+            "Courier New",
+            monospace;
+
+      font-size: 12px;
+
+      font-weight: 700;
+}
+
+
+.time-zone {
+      color: #888888;
+
+      font-size: 9px;
+
+      letter-spacing: 0.08em;
+}
+
+
+.time-divider {
+      width: 1px;
+
+      height: 14px;
+
+      background: #333333;
+}
+
+
+/* =========================================================
+   BRAND
+========================================================= */
+
+.brand {
+      font-weight: 800;
+
+      letter-spacing: 0.12em;
+
+      display: flex;
+
+      gap: 12px;
+
+      align-items: center;
+}
+
+
+/* =========================================================
+   NAVBAR LOGO
+========================================================= */
+
+.nav-logo {
+      width: 60px;
+      height: 60px;
+
+      object-fit: contain;
+
+      display: block;
+}
+
+
+/* =========================================================
+   NAVIGATION LINKS
+========================================================= */
+
+.links {
+      display: flex;
+
+      gap: 24px;
+
+      color: #bababa;
+
+      font-size: 12px;
+}
+
+
+.links a {
+      transition: color 0.2s ease;
+}
+
+
+.links a:hover {
+      color: #ffffff;
+}
+
+
+/* =========================================================
+   HERO SECTION
+========================================================= */
+
+.hero {
+      min-height: 680px;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      background:
+            linear-gradient(rgba(0, 0, 0, 0.62),
+                  rgba(0, 0, 0, 0.78)),
+            url("2.jpeg");
+
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      border-bottom: 1px solid var(--line);
+}
+
+.hero-logo {
+      width: 220px;
+      height: 220px;
+
+      object-fit: contain;
+
+      display: block;
+
+      margin: 0;
+
+      filter:
+            drop-shadow(0 10px 25px rgba(0, 0, 0, 0.65));
+}
+
+.hero .wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+}
+
+
+/* =========================================================
+   HERO SMALL HEADER
+========================================================= */
+
+.ey {
+      font-size: 11px;
+
+      letter-spacing: 0.22em;
+
+      color: var(--silver);
+
+      font-weight: 800;
+}
+
+
+/* =========================================================
+   HERO MAIN TITLE
+========================================================= */
+
+.hero h1 {
+      font-size: clamp(50px, 8vw, 90px);
+
+      line-height: 0.9;
+
+      letter-spacing: -0.055em;
+
+      margin: 18px 0 20px;
+
+      color: var(--white);
+}
+
+
+/* =========================================================
+   HERO DESCRIPTION
+========================================================= */
+
+.hero p {
+      max-width: 700px;
+
+      margin-left: auto;
+
+      margin-right: auto;
+
+      color: #b0b0b0;
+
+      line-height: 1.7;
+
+      font-size: 17px;
+}
+
+
+/* =========================================================
+   BUTTONS
+========================================================= */
+
+.btn {
+      display: inline-block;
+
+      margin: 26px 10px 0 0;
+
+      padding: 12px 18px;
+
+      border: 1px solid #444444;
+
+      border-radius: 0;
+
+      background: #151515;
+
+      color: #eeeeee;
+
+      font-weight: 700;
+
+      font-size: 12px;
+
+      transition:
+            background 0.2s ease,
+            border-color 0.2s ease,
+            transform 0.2s ease;
+}
+
+
+.btn:hover {
+      background: #222222;
+
+      border-color: #666666;
+
+      transform: translateY(-1px);
+}
+
+
+.btn.alt {
+      background: transparent;
+
+      border-color: var(--line);
+
+      color: #bdbdbd;
+}
+
+
+.btn.alt:hover {
+      background: #111111;
+
+      color: #ffffff;
+
+      border-color: #444444;
+}
+
+
+/* =========================================================
+   GENERAL SECTIONS
+========================================================= */
+
+section {
+      padding: 78px 0;
+
+      border-bottom: 1px solid var(--line);
+}
+
+/* =========================================================
+   CURRENT SITREP
+========================================================= */
+
+.sitrep-title {
+      display: inline-block;
+
+      font-size: 15px;
+
+      font-weight: 900;
+
+      letter-spacing: 0.12em;
+
+      color: var(--text);
+
+      margin-bottom: 4px;
+}
+
+
+.sitrep-label {
+      font-weight: 700;
+
+      color: var(--silver);
+
+      letter-spacing: 0.04em;
+}
+
+/* =========================================================
+   ACTIVE STATUS INDICATOR
+========================================================= */
+
+.status-active {
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 7px;
+
+      color: #3f8f4f;
+
+      font-weight: 800;
+}
+
+
+.status-dot {
+      width: 8px;
+      height: 8px;
+
+      background: #3f8f4f;
+
+      border-radius: 50%;
+
+      display: inline-block;
+
+      box-shadow:
+            0 0 0 0 rgba(63, 143, 79, 0.7);
+
+      animation:
+            statusPulse 1.6s infinite;
+}
+
+
+@keyframes statusPulse {
+
+      0% {
+            box-shadow:
+                  0 0 0 0 rgba(63, 143, 79, 0.7);
+
+            opacity: 1;
+      }
+
+      70% {
+            box-shadow:
+                  0 0 0 7px rgba(63, 143, 79, 0);
+
+            opacity: 0.8;
+      }
+
+      100% {
+            box-shadow:
+                  0 0 0 0 rgba(63, 143, 79, 0);
+
+            opacity: 1;
+      }
+}
+
+
+/* =========================================================
+   SECTION KICKER
+========================================================= */
+
+.k {
+      font-size: 11px;
+
+      letter-spacing: 0.22em;
+
+      color: var(--silver);
+
+      font-weight: 800;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+h2 {
+      font-size: 40px;
+
+      line-height: 1;
+
+      margin: 12px 0;
+
+      color: var(--white);
+
+      letter-spacing: -0.03em;
+}
+
+
+/* =========================================================
+   SECTION DESCRIPTION
+========================================================= */
+
+.lead {
+      max-width: 760px;
+
+      color: #9d9d9d;
+
+      line-height: 1.7;
+}
+
+
+/* =========================================================
+   COMMAND BRIEFING
+========================================================= */
+
+.briefgrid {
+      display: grid;
+
+      grid-template-columns: 1.2fr 0.8fr;
+
+      gap: 20px;
+
+      margin-top: 30px;
+}
+
+
+/* =========================================================
+   BRIEFING BOX
+========================================================= */
+
+.brief {
+      padding: 24px;
+
+      background:
+            linear-gradient(180deg,
+                  #151515,
+                  #0b0b0b);
+
+      border: 1px solid #292929;
+
+      border-left: 3px solid #555555;
+
+      border-radius: 4px;
+
+      font:
+            13px / 2 "Courier New",
+            monospace;
+
+      color: #c8c8c8;
+}
+
+
+/* =========================================================
+   STATISTICS
+========================================================= */
+
+.stats {
+      display: grid;
+
+      grid-template-columns: 1fr 1fr;
+
+      gap: 12px;
+}
+
+
+.stat {
+      padding: 22px;
+
+      border: 1px solid var(--line);
+
+      border-radius: 4px;
+
+      background: #0d0d0d;
+}
+
+
+.stat b {
+      display: block;
+
+      font-size: 30px;
+
+      color: var(--white);
+}
+
+
+.stat span {
+      color: #7f7f7f;
+
+      font-size: 10px;
+
+      letter-spacing: 0.1em;
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards {
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      gap: 14px;
+
+      margin-top: 30px;
+}
+
+
+.card {
+      padding: 21px;
+
+      background:
+            linear-gradient(180deg,
+                  #171717,
+                  #0d0d0d);
+
+      border: 1px solid #282828;
+
+      border-radius: 4px;
+}
+
+
+/* =========================================================
+   OPERATIONAL STATISTICS STRIP
+========================================================= */
+
+.stats-strip {
+      margin-top: 32px;
+
+      display: grid;
+
+      grid-template-columns: repeat(4, 1fr);
+
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
+}
+
+
+.stat-item {
+      min-height: 95px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      padding: 18px 12px;
+
+      text-align: center;
+
+      border-right: 1px solid var(--line);
+}
+
+
+.stat-item:last-child {
+      border-right: none;
+}
+
+
+.stat-item strong {
+      font-size: 30px;
+
+      line-height: 1;
+
+      font-weight: 700;
+
+      color: var(--text);
+}
+
+
+.stat-item span {
+      margin-top: 8px;
+
+      font-size: 9px;
+
+      letter-spacing: 0.16em;
+
+      color: var(--muted);
+
+      font-weight: 700;
+}
+
+
+/* =========================================================
+   SMALL CARD LABEL
+========================================================= */
+
+.tag {
+      display: inline-block;
+
+      padding: 5px 8px;
+
+      border: 1px solid #444444;
+
+      border-radius: 999px;
+
+      color: #c8c8c8;
+
+      font:
+            10px "Courier New";
+
+      letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   CARD HEADING
+========================================================= */
+
+.card h3 {
+      margin: 14px 0 9px;
+
+      font-size: 16px;
+
+      color: #eeeeee;
+}
+
+
+/* =========================================================
+   CARD DESCRIPTION
+========================================================= */
+
+.card p {
+      margin: 0;
+
+      color: #929292;
+
+      line-height: 1.65;
+
+      font-size: 12px;
+}
+
+
+/* =========================================================
+   OPERATIONS / AAR
+========================================================= */
+
+.ops {
+      display: grid;
+
+      gap: 10px;
+
+      margin-top: 30px;
+}
+
+
+/* =========================================================
+   INDIVIDUAL OPERATION ROW
+========================================================= */
+
+.op {
+      display: grid;
+
+      grid-template-columns: 120px 1fr 100px;
+
+      gap: 16px;
+
+      align-items: center;
+
+      padding: 17px;
+
+      border: 1px solid var(--line);
+
+      background: #0d0d0d;
+
+      border-radius: 4px;
+}
+
+
+/* =========================================================
+   OPERATION NUMBER
+========================================================= */
+
+.num {
+      font-family: monospace;
+
+      color: #b8b8b8;
+}
+
+
+/* =========================================================
+   OPERATION DETAILS
+========================================================= */
+
+.op small {
+      color: #858585;
+}
+
+
+/* =========================================================
+   OPERATION STATUS
+========================================================= */
+
+.status {
+      justify-self: end;
+
+      font-size: 9px;
+
+      color: #cccccc;
+
+      border: 1px solid #444444;
+
+      padding: 6px 8px;
+
+      border-radius: 999px;
+
+      letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   RECRUITMENT
+========================================================= */
+
+.recruit {
+      display: grid;
+
+      grid-template-columns: 1fr 0.85fr;
+
+      gap: 24px;
+}
+
+
+/* =========================================================
+   RECRUITMENT STEPS
+========================================================= */
+
+.steps {
+      display: grid;
+
+      gap: 9px;
+
+      margin-top: 24px;
+}
+
+
+.step {
+      display: grid;
+
+      grid-template-columns: 36px 1fr;
+
+      gap: 12px;
+
+      padding: 12px 0;
+
+      border-bottom: 1px solid var(--line);
+}
+
+
+/* =========================================================
+   STEP NUMBER
+========================================================= */
+
+.n {
+      width: 30px;
+      height: 30px;
+
+      border: 1px solid #444444;
+
+      border-radius: 4px;
+
+      display: grid;
+
+      place-items: center;
+
+      color: #bdbdbd;
+
+      font-family: monospace;
+}
+
+
+/* =========================================================
+   STEP HEADING
+========================================================= */
+
+.step h4 {
+      margin: 0 0 4px;
+
+      color: #eeeeee;
+}
+
+
+/* =========================================================
+   STEP DESCRIPTION
+========================================================= */
+
+.step p {
+      margin: 0;
+
+      color: #878787;
+
+      font-size: 12px;
+
+      line-height: 1.5;
+}
+
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+/* =========================================================
+   SITE FOOTER
+========================================================= */
+
+.site-footer {
+      background: #070707;
+
+      color: #888888;
+
+      border-top: 1px solid #1d1d1d;
+}
+
+
+/* =========================================================
+   TOP COPYRIGHT BAR
+========================================================= */
+
+.footer-top {
+      padding: 20px 0;
+
+      border-bottom: 1px solid #202020;
+}
+
+
+.footer-top-inner {
+      font-family: "Courier New", monospace;
+
+      font-size: 9px;
+
+      letter-spacing: 0.14em;
+
+      color: #5f5f5f;
+
+      text-align: center;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+      padding: 42px 0 38px;
+}
+
+
+.footer-grid {
+      display: grid;
+
+      grid-template-columns:
+            1.55fr 0.75fr 0.9fr;
+
+      gap: 80px;
+}
+
+
+/* =========================================================
+   ORGANIZATION INFORMATION
+========================================================= */
+
+.footer-brand-title {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 16px;
+}
+
+
+.footer-logo {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+
+      place-items: center;
+
+      border: 1px solid #414141;
+
+      color: #d0d0d0;
+
+      font:
+            10px "Courier New";
+
+      font-weight: 800;
+}
+
+
+.footer-brand-title strong {
+      display: block;
+
+      font-size: 13px;
+
+      letter-spacing: 0.08em;
+
+      color: #dddddd;
+}
+
+
+.footer-brand-title small {
+      display: block;
+
+      margin-top: 4px;
+
+      color: #666666;
+
+      font-size: 9px;
+
+      letter-spacing: 0.1em;
+}
+
+
+.footer-brand p {
+      max-width: 390px;
+
+      margin: 0 0 13px;
+
+      color: #707070;
+
+      line-height: 1.7;
+
+      font-size: 11px;
+}
+
+
+.footer-brand em {
+      color: #979797;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+}
+
+
+.footer-column h4 {
+      margin: 0 0 18px;
+
+      color: #bdbdbd;
+
+      font-size: 9px;
+
+      letter-spacing: 0.18em;
+
+      font-weight: 800;
+}
+
+
+.footer-column a,
+.footer-column span {
+      margin-bottom: 11px;
+
+      color: #676767;
+
+      font-size: 11px;
+
+      line-height: 1.4;
+
+      transition: color 0.2s ease;
+}
+
+
+.footer-column a:hover {
+      color: #d0d0d0;
+}
+
+
+/* =========================================================
+   BOTTOM LEGAL BAR
+========================================================= */
+
+/* =========================================================
+   SITE FOOTER
+========================================================= */
+
+.site-footer {
+      background: #070707;
+
+      color: #888888;
+
+      border-top: 1px solid #1d1d1d;
+}
+
+
+/* =========================================================
+   TOP COPYRIGHT BAR
+========================================================= */
+
+.footer-top {
+      padding: 20px 0;
+
+      border-bottom: 1px solid #202020;
+}
+
+
+.footer-top-inner {
+      font-family: "Courier New", monospace;
+
+      font-size: 9px;
+
+      letter-spacing: 0.14em;
+
+      color: #5f5f5f;
+
+      text-align: center;
+}
+
+
+/* =========================================================
+   MAIN FOOTER
+========================================================= */
+
+.footer-main {
+      padding: 42px 0 38px;
+}
+
+
+.footer-grid {
+      display: grid;
+
+      grid-template-columns:
+            1.55fr 0.75fr 0.9fr;
+
+      gap: 80px;
+}
+
+
+/* =========================================================
+   ORGANIZATION INFORMATION
+========================================================= */
+
+.footer-brand-title {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      margin-bottom: 16px;
+}
+
+
+.footer-logo {
+      width: 34px;
+      height: 34px;
+
+      display: grid;
+
+      place-items: center;
+
+      border: 1px solid #414141;
+
+      color: #d0d0d0;
+
+      font:
+            10px "Courier New";
+
+      font-weight: 800;
+}
+
+
+.footer-brand-title strong {
+      display: block;
+
+      font-size: 13px;
+
+      letter-spacing: 0.08em;
+
+      color: #dddddd;
+}
+
+
+.footer-brand-title small {
+      display: block;
+
+      margin-top: 4px;
+
+      color: #666666;
+
+      font-size: 9px;
+
+      letter-spacing: 0.1em;
+}
+
+
+.footer-brand p {
+      max-width: 390px;
+
+      margin: 0 0 13px;
+
+      color: #707070;
+
+      line-height: 1.7;
+
+      font-size: 11px;
+}
+
+
+.footer-brand em {
+      color: #979797;
+
+      font-size: 11px;
+
+      font-weight: 700;
+
+      letter-spacing: 0.04em;
+}
+
+
+/* =========================================================
+   FOOTER COLUMNS
+========================================================= */
+
+.footer-column {
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: flex-start;
+}
+
+
+.footer-column h4 {
+      margin: 0 0 18px;
+
+      color: #bdbdbd;
+
+      font-size: 9px;
+
+      letter-spacing: 0.18em;
+
+      font-weight: 800;
+}
+
+
+.footer-column a,
+.footer-column span {
+      margin-bottom: 11px;
+
+      color: #676767;
+
+      font-size: 11px;
+
+      line-height: 1.4;
+
+      transition: color 0.2s ease;
+}
+
+
+.footer-column a:hover {
+      color: #d0d0d0;
+}
+
+
+/* =========================================================
+   BOTTOM LEGAL BAR
+========================================================= */
+
+.footer-bottom {
+      border-top: 1px solid #202020;
+
+      padding: 20px 0 36px;
+}
+
+
+.footer-bottom-inner {
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 30px;
+
+      color: #555555;
+
+      font-size: 10px;
+
+      line-height: 1.6;
+}
+
+/* =========================================================
+   FOOTER LOGO
+========================================================= */
+
+.footer-logo {
+      width: 190px;
+      height: 190px;
+
+      object-fit: contain;
+
+      display: block;
+}
+
+/* =========================================================
+   TABLET / MEDIUM SCREEN
+========================================================= */
+
+@media (max-width: 900px) {
+
+      .cards {
+            grid-template-columns: 1fr 1fr;
+      }
+
+
+      .briefgrid {
+            grid-template-columns: 1fr;
+      }
+
+
+      .recruit {
+            grid-template-columns: 1fr;
+      }
+
+
+      .links {
+            display: none;
+      }
+
+      .stats-strip {
+            grid-template-columns: 1fr 1fr;
+      }
+
+      .stat-item:nth-child(2) {
+            border-right: none;
+      }
+
+      .stat-item:nth-child(-n + 2) {
+            border-bottom: 1px solid var(--line);
+      }
+
+      .nav-actions {
+            gap: 6px;
+      }
+
+      .discord-btn {
+            display: none;
+      }
+
+      .enlist-btn {
+            min-width: 105px;
+      }
+
+      .footer-grid {
+            grid-template-columns: 1fr 1fr;
+
+            gap: 40px;
+      }
+
+      .footer-brand {
+            grid-column: 1 / -1;
+      }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 560px) {
+
+      .cards {
+            grid-template-columns: 1fr;
+      }
+
+
+      .op {
+            grid-template-columns: 1fr;
+      }
+
+
+      .status {
+            justify-self: start;
+      }
+
+
+      .hero h1 {
+            font-size: 54px;
+      }
+
+      .stats-strip {
+            grid-template-columns: 1fr;
+      }
+
+      .stat-item {
+            border-right: none;
+            border-bottom: 1px solid var(--line);
+      }
+
+      .stat-item:last-child {
+            border-bottom: none;
+      }
+
+      .time-strip-inner {
+            min-height: 30px;
+
+            gap: 10px;
+      }
+
+      .time-label {
+            display: none;
+      }
+
+      .time-divider {
+            height: 11px;
+      }
+
+      .footer-grid {
+            grid-template-columns: 1fr;
+
+            gap: 32px;
+      }
+
+      .footer-brand {
+            grid-column: auto;
+      }
+
+
+      .footer-bottom-inner {
+            flex-direction: column;
+
+            align-items: flex-start;
+
+            gap: 8px;
+      }
+
+}
