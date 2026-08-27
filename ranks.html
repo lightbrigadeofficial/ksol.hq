@@ -1,0 +1,1438 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KSOL - Rank Structure</title>
+
+      <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top"></div>
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="KSOL_Emblem_Transparent.png" alt="KSOL Logo" class="nav-logo">
+      <span>KSOL HQ</span>
+    </a>
+
+    <div class="links">
+                
+        <a href="index.html">
+          Home
+        </a>
+      <a href="index.html#about">FACTION STATS</a>
+
+      <div class="nav-dropdown open">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="true">
+          HEADQUARTERS <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="ranks.html" class="nav-dropdown-item">
+            <span class="dropdown-index">01</span>
+            <span>
+              <strong>RANKS</strong>
+              <small>Rank structure &amp; requirements</small>
+            </span>
+          </a>
+        </div>
+      </div>
+
+      <a href="index.html#cap">CAPABILITIES</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://discord.gg/cXGjn9CgYN" class="discord-btn" target="_blank" rel="noopener">JOIN DISCORD</a>
+      <a href="index.html#join" class="enlist-btn">
+        <span class="enlist-text">ENLIST</span>
+        <span class="enlist-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="time-strip">
+  <div class="wrap time-strip-inner">
+    <div class="time-block">
+      <span class="time-label">KSOL HQ</span>
+      <span id="hq-time" class="time-value">--:--:--</span>
+      <span class="time-zone">IST</span>
+    </div>
+    <div class="time-divider"></div>
+    <div class="time-block">
+      <span class="time-label">YOUR LOCAL TIME</span>
+      <span id="local-time" class="time-value">--:--:--</span>
+      <span id="local-zone" class="time-zone">LOCAL</span>
+    </div>
+  </div>
+</div>
+
+<main class="rank-page">
+  <section class="rank-hero">
+    <div class="wrap rank-hero-grid">
+      <div>
+        <div class="k">HEADQUARTERS // PERSONNEL</div>
+        <h1>Rank Structure</h1>
+        <p>
+          Explore the current KSOL rank ladder by career group, Requirements,
+          and command context. Search, filter, and expand any rank card.
+        </p>
+      </div>
+
+      <div class="rank-note">
+        <strong>HOW TO USE THIS PAGE</strong>
+        <p>
+          Search by rank name or abbreviation, filter by career group,
+          then click a rank to open its requirements and role context.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rank-controls">
+    <div class="wrap rank-controls-inner">
+      <input
+        id="rankSearch"
+        class="rank-search"
+        type="search"
+        placeholder="Search rank, abbreviation, or career group..."
+        autocomplete="off"
+        aria-label="Search ranks"
+      >
+      <div class="rank-filters">
+        <button class="rank-filter active" type="button" data-filter="all">ALL</button>
+        <button class="rank-filter" type="button" data-filter="enlisted">ENLISTED</button>
+        <button class="rank-filter" type="button" data-filter="nco">NCO</button>
+        <button class="rank-filter" type="button" data-filter="warrant">WARRANT</button>
+        <button class="rank-filter" type="button" data-filter="officer">OFFICERS</button>
+      </div>
+    </div>
+  </div>
+
+<div class="wrap rank-main">
+
+    <!-- =========================
+         ENLISTED
+    ========================== -->
+
+    <section class="rank-section" data-section="enlisted">
+        <div class="rank-section-header">
+            <div>
+                <div class="k">ENLISTED</div>
+                <h2>The foundation of the force and junior leadership track.</h2>
+            </div>
+            <div class="rank-count">06 RANKS</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- LEGIONNAIRE -->
+            <article class="rank-card" data-category="enlisted">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="#" alt="N/A">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">ENLISTED</div>
+                            <div class="rank-name">Legionnaire (LGN)</div>
+                        </div>
+
+                        <div class="rank-level">N/A</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand rank requirements and role context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Complete Enlistment Application.<br>
+                            - Pass initial screening.<br>
+                            - Begin with Basic Training pipeline.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Newly inducted personnel developing basic military skills and adapting to KSOL standards.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- PRIVATE -->
+            <article class="rank-card" data-category="enlisted">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ranks/PVT-removebg-preview.png" alt="Private rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">ENLISTED</div>
+                            <div class="rank-name">Private (PVT)</div>
+                        </div>
+
+                        <div class="rank-level">E-1</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand rank requirements and role context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Complete Basic Training. <br>
+                            - Minimum 15 days time in service. <br>
+                            - Squad Leader / Instructor's recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Developing soldiers focused on individual proficiency, discipline, and effective participation within their unit.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- PRIVATE FIRST CLASS -->
+            <article class="rank-card" data-category="enlisted">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ranks/PFC-removebg-preview.png" alt="Private First Class rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">ENLISTED</div>
+                            <div class="rank-name">Private First Class (PFC)</div>
+                        </div>
+
+                        <div class="rank-level">E-2</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand rank requirements and role context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 20 days as PVT. <br>
+                            - Passed MOS (Military Occupational Speciality) proficiency. <br>
+                            - At least 1 FTX (Field Training Excercise) attended.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Experienced junior soldiers demonstrating growing competence, reliability, and operational awareness.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SPECIALIST -->
+            <article class="rank-card" data-category="enlisted">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ranks/SPC-removebg-preview.png" alt="Specialist rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">ENLISTED</div>
+                            <div class="rank-name">Specialist (SPC)</div>
+                        </div>
+
+                        <div class="rank-level">E-3</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand rank requirements and role context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 25 days as PFC. <br>
+                            - Demonstrated MOS proficiency. <br>
+                            - At least 2 FTX attended. <br>
+                            - Commandant recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Proficient personnel trusted to perform assigned duties independently and contribute specialist knowledge.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- LANCE CORPORAL -->
+            <article class="rank-card" data-category="enlisted">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ranks/LCPL-removebg-preview.png" alt="Lance Corporal rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">ENLISTED</div>
+                            <div class="rank-name">Lance Corporal (LCPL)</div>
+                        </div>
+
+                        <div class="rank-level">E-4</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand rank requirements and role context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Must be an SPC. <br>
+                            - Demonstrate good discipline & leadership qualities in fire team. <br>
+                            - Squad leader recommendation. <br>
+                            - Completed leadership course.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Senior junior personnel beginning to demonstrate initiative and assist in guiding less-experienced soldiers.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CORPORAL -->
+            <article class="rank-card" data-category="enlisted">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ranks/CPL-removebg-preview.png" alt="Corporal rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">ENLISTED</div>
+                            <div class="rank-name">Corporal (CPL)</div>
+                        </div>
+
+                        <div class="rank-level">E-5</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand rank requirements and role context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 20 days as LCPL. <br>
+                            - Squad leader recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Proficient personnel trusted to perform assigned duties independently and contribute specialist knowledge.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         NCO
+    ========================== -->
+
+    <section class="rank-section" data-section="nco">
+
+        <div class="rank-section-header">
+            <div>
+                <div class="k">NON-COMMISSIONED OFFICERS</div>
+                <h2>Command-supporting NCO leadership ranks.</h2>
+            </div>
+            <div class="rank-count">07 RANKS</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- SGT -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/SGT-removebg-preview.png" alt="Sergeant rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Sergeant (SGT)</div>
+                        </div>
+
+                        <div class="rank-level">E-5</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 20 days as CPL. <br>
+                            - At least 3 FTX attended. <br>
+                            - Passed NCO Evaluation Board.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            First level of NCO leadership. Leads and supervises a small team or section and is responsible for
+                            discipline, basic training, and execution of orders.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SSG -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/SSG-removebg-preview.png" alt="Staff Sergeant rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Staff Sergeant (SSG)</div>
+                        </div>
+
+                        <div class="rank-level">E-6</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 30 days as SGT. <br>
+                            - Leadership tab earned. <br>
+                            - Demonstrated squad infantry. <br>
+                            - Minimum 8 operations attended. <br>
+                            - Platoon Commander equivalent recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Junior-to-mid NCO leadership.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SFC -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/SFC-removebg-preview.png" alt="Sergeant First Class rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Sergeant First Class (SFC)</div>
+                        </div>
+
+                        <div class="rank-level">E-7</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 50 days as SSG. <br>
+                            - Successful squad leader records. <br>
+                            - Leadership tab and Parachute Wings earned. <br>
+                            - Platoon Commander recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Senior NCO with significant leadership experience.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- MSG -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/MSG-removebg-preview.png" alt="Master Sergeant rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Master Sergeant (MSG)</div>
+                        </div>
+
+                        <div class="rank-level">E-8</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 65 days as SFC. <br>
+                            - Platoon Commander recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Senior NCO primarily focused on unit management, operations, training, 
+                            or specialist responsibilities.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SGM -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/SGM-removebg-preview.png" alt="Sergeant Major rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Sergeant Major (SGM)</div>
+                        </div>
+
+                        <div class="rank-level">E-8</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 70 days as an SFC. <br>
+                            - Commander, KSOL approval.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Senior NCO responsible for supervising NCO standards, discipline, training, and personnel 
+                        within a major unit or headquarters.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CSM -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/CSM-removebg-preview.png" alt="Command Sergeant Major rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Command Sergeant Major (CSM)</div>
+                        </div>
+
+                        <div class="rank-level">E-9</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Must be an SGM. <br>
+                            - Exemplary leadership record. <br>
+                            - Selected by HQ. <br>
+                            - Minimum 100 days in service.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Represents enlisted personnel and advises the commander on discipline, morale, training, 
+                            readiness, and NCO affairs.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- SML -->
+            <article class="rank-card" data-category="nco">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/SML-removebg-preview.png" alt="Sergeant Major of the Legion rank insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">NCO</div>
+                            <div class="rank-name">Sergeant Major of the Legion (SML)</div>
+                        </div>
+
+                        <div class="rank-level">E-9</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 20 days as CSM. <br>
+                            - Extraordinary service & leadership. <br>
+                            - Selected by HQ. <br>
+                            - Commander, KSOL approval.
+
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Highest NCO appointment in the Legion. Principal senior enlisted 
+                            advisor to the Commander of KSOL and responsible for Legion-wide NCO standards, discipline, 
+                            traditions, and enlisted development.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         WARRANT OFFICERS
+    ========================== -->
+
+    <section class="rank-section" data-section="warrant">
+
+        <div class="rank-section-header">
+            <div>
+                <div class="k">WARRANT OFFICERS</div>
+                <h2>Technical and specialist leadership appointments.</h2>
+            </div>
+            <div class="rank-count">05 RANKS</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- WO1 -->
+            <article class="rank-card" data-category="warrant">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/WO1.png" alt="Warrant Officer 1 insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">WARRANT</div>
+                            <div class="rank-name">Warrant Officer 1 (WO1)</div>
+                        </div>
+
+                        <div class="rank-level">W-1</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 120 days service. <br>
+                            - At least 25 operations. <br>
+                            - Company Commander equivalent recommendation. <br>
+                            - MOS tab.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Junior warrant officer. A highly experienced technical or tactical specialist who may serve as a senior advisor, 
+                            instructor, or specialist leader within a company or battalion.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CW2 -->
+            <article class="rank-card" data-category="warrant">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/WO2.png" alt="Chief Warrant Officer 2 insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">WARRANT</div>
+                            <div class="rank-name">Chief Warrant Officer 2 (CWO2)</div>
+                        </div>
+
+                        <div class="rank-level">W-2</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 10 days as WO1. <br>
+                            - Company Commander equivalent recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Senior specialist with greater responsibility. 
+                            May supervise specialist personnel, training programs, or technical functions and advise unit leadership.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CW3 -->
+            <article class="rank-card" data-category="warrant">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/WO3.png" alt="Chief Warrant Officer 3 insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">WARRANT</div>
+                            <div class="rank-name">Chief Warrant Officer 3 (CWO3)</div>
+                        </div>
+
+                        <div class="rank-level">W-3</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 15 Days as CWO2. <br>
+                            - Company Commander equivalent recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Experienced senior warrant officer. 
+                            Can serve at battalion level as a subject-matter expert, operations specialist, or senior technical advisor.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CW4 -->
+            <article class="rank-card" data-category="warrant">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/WO4.png" alt="Chief Warrant Officer 4 insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">WARRANT</div>
+                            <div class="rank-name">Chief Warrant Officer 4 (CWO4)</div>
+                        </div>
+
+                        <div class="rank-level">W-4</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 15 days as CWO3. <br>
+                            - Company Commander equivalent recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Senior-level warrant officer responsible for major specialist areas across a battalion or regiment. 
+                            Advises commanders and mentors junior warrant officers.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CW5 -->
+            <article class="rank-card" data-category="warrant">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/WO5.png" alt="Chief Warrant Officer 5 insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">WARRANT</div>
+                            <div class="rank-name">Chief Warrant Officer 5 (CWO5)</div>
+                        </div>
+
+                        <div class="rank-level">W-5</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 20 days as CWO4. <br>
+                            - HQ Approval.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Senior technical/warrant appointment.</div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+    <!-- =========================
+         COMMISSIONED OFFICERS
+    ========================== -->
+
+    <section class="rank-section" data-section="officer">
+
+        <div class="rank-section-header">
+            <div>
+                <div class="k">COMMISSIONED OFFICERS</div>
+                <h2>Commissioned leadership and command ranks.</h2>
+            </div>
+            <div class="rank-count">10 RANKS</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- 2LT -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/2LT.png" alt="Second Lieutenant insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Second Lieutenant (2LT)</div>
+                        </div>
+
+                        <div class="rank-level">O-1</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Passed Officers Training from OTA (Officers Training Academy). <br>
+                            - Passed leadership course. <br>
+                            - Battalion Commanding Officer or 2i/c recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Entry commissioned-officer level.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- 1LT -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/1LT.png" alt="First Lieutenant insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">First Lieutenant (1LT)</div>
+                        </div>
+
+                        <div class="rank-level">O-2</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 50 days a 2LT. <br>
+                            - Leadership tab.
+                            - Passed Officer Evaluation Board. <br>
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Platoon-level and junior officer appointments.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- CPT -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/CPT-removebg-preview.png" alt="Captain insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Captain (CPT)</div>
+                        </div>
+
+                        <div class="rank-level">O-3</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 80 days as 1LT. <br>
+                            - Leadership tab and parachute wings.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Junior company command and officer appointments.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- MAJ -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/MAJ-removebg-preview.png" alt="Major insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Major (MAJ)</div>
+                        </div>
+
+                        <div class="rank-level">O-4</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 50 days as CPT. <br>
+                            - Passed Officer Evaluation Board. <br>
+                            - Battalion Commanding Officer or 2i/c recommendation.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Company-level and staff leadership.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- LTC -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/LTC-removebg-preview.png" alt="Lieutenant Colonel insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Lieutenant Colonel (LTC)</div>
+                        </div>
+
+                        <div class="rank-level">O-5</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 100 days as MAJ. <br>
+                            - Regiment Commanding Officer recommendation. <br>
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">Battalion-level and senior staff command.</div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- COL -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/COL-removebg-preview.png" alt="Colonel insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Colonel (COL)</div>
+                        </div>
+
+                        <div class="rank-level">O-6</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - Minimum 60 days as LTC. <br>
+                            - Good Command experience. <br>
+                            - Passed Officer Evaluation Board.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Regimental, headquarters, and senior staff command.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- BG -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/BG-removebg-preview.png" alt="Brigadier General insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Brigadier General (BG)</div>
+                        </div>
+
+                        <div class="rank-level">O-7</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - HQ appointed.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Senior formation command and high-level appointments.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- MG -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/MG-removebg-preview.png" alt="Major General insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Major General (MG)</div>
+                        </div>
+
+                        <div class="rank-level">O-8</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - HQ appointed.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Senior formation and headquarters appointments.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- LTG -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/LTG-removebg-preview.png" alt="Lieutenant General insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">Lieutenant General (LTG)</div>
+                        </div>
+
+                        <div class="rank-level">O-9</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - HQ appointed.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Senior command and headquarters appointments.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+
+            <!-- GEN -->
+            <article class="rank-card" data-category="officer">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Ranks/GEN-removebg-preview.png" alt="General insignia">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">OFFICER</div>
+                            <div class="rank-name">General (GEN)</div>
+                        </div>
+
+                        <div class="rank-level">O-10</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Requirements</div>
+                        <div class="rank-detail-value">
+                            - HQ appointed.
+                        </div>
+                    </div>
+
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">Role</div>
+                        <div class="rank-detail-value">
+                            Highest commissioned rank; normally reserved for the senior-most command appointments.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+
+
+</div>
+
+</main>
+
+<footer class="site-footer">
+
+    <!-- TOP COPYRIGHT LINE -->
+    <div class="footer-top">
+
+        <div class="wrap footer-top-inner">© 2026 KALI SPECIAL OPERATIONS LEGION HEADQUARTERS — ALL RIGHTS RESERVED. DEVELOPED BY <a href="https://www.instagram.com/obi_onenairobi/"><b><u>VANDAM</u></b></a></div>
+
+    </div>
+
+
+    <!-- MAIN FOOTER -->
+    <div class="footer-main">
+
+        <div class="wrap footer-grid">
+
+
+            <!-- =================================================
+                 ORGANIZATION INFO
+            ================================================== -->
+
+            <div class="footer-brand">
+
+                <div class="footer-brand-title">
+
+                    <img src="Untitled201_20260806131243.jpg" alt="KSOL Logo" class="footer-logo">
+
+                    <div>
+
+                        <strong>
+                            KALI SPECIAL OPERATIONS LEGION
+                        </strong>
+
+                        <small>
+                            KSOL // HEADQUARTERS
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    An international Roblox military realism
+                    organization focused on structured infantry
+                    operations, special operations, training,
+                    aviation and joint exercises.
+                </p>
+
+
+                <em>
+                    "MEN APART, EVERY MAN AN EMPEROR"
+                </em>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <div class="footer-column">
+
+                <h4>
+                    NAVIGATION
+                </h4>
+
+                <a href="#home">
+                    Home
+                </a>
+
+                <a href="#about">
+                    Stats
+                </a>
+
+                <a href="#cap">
+                    Capabilities
+                </a>
+
+                <a href="ranks.html">
+                    Ranks
+                </a>
+
+                <a href="#join">
+                    Enlist
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 UNIT INFORMATION
+            ================================================== -->
+
+            <div class="footer-column">
+
+                <h4>
+                    UNIT INFO
+                </h4>
+
+                <span>
+                    Game: BRM5
+                </span>
+
+                <span>
+                    Type: Military Realism (Milsim)
+                </span>
+
+                <span>
+                    Formation: Legion [Army]
+                </span>
+
+                <span>
+                    Special Operations: 2 SIS
+                </span>
+
+                <span>
+                    Region: International
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         BOTTOM LEGAL LINE
+    ========================================================== -->
+
+    <div class="footer-bottom">
+
+        <div class="wrap footer-bottom-inner">
+
+            <span>
+                © 2026 Kali Special Operations Legion —
+                Fictional gaming organization.
+            </span>
+
+            <span>
+                Not affiliated with any government or military organization.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
