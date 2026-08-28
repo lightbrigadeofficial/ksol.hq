@@ -1,0 +1,1634 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>KSOL Administration</title>
+
+    <link
+        rel="stylesheet"
+        href="admin.css"
+    >
+</head>
+
+<body>
+
+    <!-- =========================================================
+         APPLICATION
+    ========================================================== -->
+
+    <div class="admin-app">
+
+        <!-- =====================================================
+             SIDEBAR
+        ====================================================== -->
+
+        <aside class="admin-sidebar">
+
+            <div class="sidebar-brand">
+
+                <div class="brand-mark">
+                    KS
+                </div>
+
+                <div class="brand-text">
+
+                    <strong>
+                        KSOL
+                    </strong>
+
+                    <span>
+                        ADMINISTRATION
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="sidebar-divider"></div>
+
+
+            <nav class="admin-navigation">
+
+                <button
+                    class="nav-item active"
+                    data-section="personnel"
+                    type="button"
+                >
+                    <span class="nav-icon">♙</span>
+                    <span>Personnel</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="awards"
+                    type="button"
+                >
+                    <span class="nav-icon">✦</span>
+                    <span>Awards</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="qualifications"
+                    type="button"
+                >
+                    <span class="nav-icon">✓</span>
+                    <span>Qualifications</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="rank-history"
+                    type="button"
+                >
+                    <span class="nav-icon">◆</span>
+                    <span>Rank History</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="unit-history"
+                    type="button"
+                >
+                    <span class="nav-icon">▣</span>
+                    <span>Unit History</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="service-logs"
+                    type="button"
+                >
+                    <span class="nav-icon">≡</span>
+                    <span>Service Logs</span>
+                </button>
+
+
+                <div class="navigation-label">
+                    CATALOGS
+                </div>
+
+
+                <button
+                    class="nav-item"
+                    data-section="units"
+                    type="button"
+                >
+                    <span class="nav-icon">▦</span>
+                    <span>Unit Catalog</span>
+                </button>
+
+
+                <button
+                    class="nav-item"
+                    data-section="award-catalog"
+                    type="button"
+                >
+                    <span class="nav-icon">▤</span>
+                    <span>Award Catalog</span>
+                </button>
+
+            </nav>
+
+
+            <div class="sidebar-bottom">
+
+                <div class="admin-security-status">
+
+                    <span class="status-dot"></span>
+
+                    <div>
+                        <strong>
+                            ADMIN SESSION
+                        </strong>
+
+                        <small>
+                            SECURE
+                        </small>
+                    </div>
+
+                </div>
+
+
+                <button
+                    id="adminLogout"
+                    class="logout-button"
+                    type="button"
+                >
+                    <span>↪</span>
+                    Logout
+                </button>
+
+            </div>
+
+        </aside>
+
+
+        <!-- =====================================================
+             MAIN AREA
+        ====================================================== -->
+
+        <main class="admin-main">
+
+            <!-- =================================================
+                 TOP BAR
+            ================================================== -->
+
+            <header class="admin-topbar">
+
+                <div class="topbar-left">
+
+                    <button
+                        id="sidebarToggle"
+                        class="mobile-menu"
+                        type="button"
+                    >
+                        ☰
+                    </button>
+
+
+                    <div>
+
+                        <div class="breadcrumb">
+                            KSOL / ADMINISTRATION
+                        </div>
+
+                        <h1 id="pageTitle">
+                            Personnel
+                        </h1>
+
+                    </div>
+
+                </div>
+
+
+                <div class="topbar-right">
+
+                    <div class="admin-identity">
+
+                        <div class="admin-avatar">
+                            AD
+                        </div>
+
+                        <div>
+
+                            <strong id="adminName">
+                                Administrator
+                            </strong>
+
+                            <span>
+                                ADMINISTRATOR
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+
+            <!-- =================================================
+                 CONTENT
+            ================================================== -->
+
+            <div class="admin-content">
+
+
+                <!-- =================================================
+                     PERSONNEL SECTION
+                ================================================== -->
+
+                <section
+                    id="section-personnel"
+                    class="admin-section active"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                PERSONNEL MANAGEMENT
+                            </span>
+
+                            <h2>
+                                Personnel
+                            </h2>
+
+                            <p>
+                                Manage KSOL personnel records and assignments.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addPersonnelButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Personnel
+                        </button>
+
+                    </div>
+
+
+                    <div class="dashboard-grid">
+
+                        <div class="stat-card">
+
+                            <span class="stat-icon">
+                                ♙
+                            </span>
+
+                            <div>
+
+                                <span class="stat-label">
+                                    TOTAL PERSONNEL
+                                </span>
+
+                                <strong id="totalPersonnel">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span class="stat-icon">
+                                ●
+                            </span>
+
+                            <div>
+
+                                <span class="stat-label">
+                                    ACTIVE
+                                </span>
+
+                                <strong id="activePersonnel">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span class="stat-icon">
+                                ◐
+                            </span>
+
+                            <div>
+
+                                <span class="stat-label">
+                                    INACTIVE
+                                </span>
+
+                                <strong id="inactivePersonnel">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stat-card">
+
+                            <span class="stat-icon">
+                                ◆
+                            </span>
+
+                            <div>
+
+                                <span class="stat-label">
+                                    APPOINTMENTS
+                                </span>
+
+                                <strong id="appointmentTotal">
+                                    —
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div class="card-toolbar">
+
+                            <div>
+
+                                <h3>
+                                    Personnel Records
+                                </h3>
+
+                                <span>
+                                    Select a record to manage it.
+                                </span>
+
+                            </div>
+
+
+                            <div class="toolbar-actions">
+
+                                <div class="search-box">
+
+                                    <span>
+                                        ⌕
+                                    </span>
+
+                                    <input
+                                        id="personnelSearch"
+                                        type="search"
+                                        placeholder="Search personnel..."
+                                    >
+
+                                </div>
+
+
+                                <select
+                                    id="personnelStatusFilter"
+                                    class="select-control"
+                                >
+
+                                    <option value="">
+                                        All Status
+                                    </option>
+
+                                    <option value="active">
+                                        Active
+                                    </option>
+
+                                    <option value="inactive">
+                                        Inactive
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            SERVICE NUMBER
+                                        </th>
+
+                                        <th>
+                                            PERSONNEL
+                                        </th>
+
+                                        <th>
+                                            RANK
+                                        </th>
+
+                                        <th>
+                                            UNIT
+                                        </th>
+
+                                        <th>
+                                            APPOINTMENT
+                                        </th>
+
+                                        <th>
+                                            STATUS
+                                        </th>
+
+                                        <th>
+                                            ACTIONS
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="personnelTable">
+
+                                    <tr>
+
+                                        <td colspan="7">
+
+                                            <div class="empty-state">
+
+                                                <span>
+                                                    ♙
+                                                </span>
+
+                                                <strong>
+                                                    No personnel loaded
+                                                </strong>
+
+                                                <small>
+                                                    Personnel records will appear here.
+                                                </small>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     AWARDS
+                ================================================== -->
+
+                <section
+                    id="section-awards"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                PERSONNEL DECORATIONS
+                            </span>
+
+                            <h2>
+                                Awards
+                            </h2>
+
+                            <p>
+                                Assign, edit, and remove awards from personnel.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addAwardButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Award Personnel
+                        </button>
+
+                    </div>
+
+
+                    <div class="split-layout">
+
+                        <div class="content-card">
+
+                            <div class="card-toolbar">
+
+                                <div>
+
+                                    <h3>
+                                        Awarded Decorations
+                                    </h3>
+
+                                    <span>
+                                        Individual award records.
+                                    </span>
+
+                                </div>
+
+
+                                <select
+                                    id="awardPersonnelFilter"
+                                    class="select-control"
+                                >
+
+                                    <option>
+                                        Select Personnel
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+
+                            <div class="table-wrapper">
+
+                                <table class="admin-table">
+
+                                    <thead>
+
+                                        <tr>
+
+                                            <th>
+                                                AWARD
+                                            </th>
+
+                                            <th>
+                                                CATEGORY
+                                            </th>
+
+                                            <th>
+                                                DATE
+                                            </th>
+
+                                            <th>
+                                                AWARDED BY
+                                            </th>
+
+                                            <th>
+                                                ACTIONS
+                                            </th>
+
+                                        </tr>
+
+                                    </thead>
+
+
+                                    <tbody id="awardsTable">
+
+                                        <tr>
+
+                                            <td colspan="5">
+
+                                                <div class="empty-state">
+
+                                                    <span>
+                                                        ✦
+                                                    </span>
+
+                                                    <strong>
+                                                        No awards selected
+                                                    </strong>
+
+                                                    <small>
+                                                        Select personnel to view their awards.
+                                                    </small>
+
+                                                </div>
+
+                                            </td>
+
+                                        </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     QUALIFICATIONS
+                ================================================== -->
+
+                <section
+                    id="section-qualifications"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                TRAINING & CERTIFICATION
+                            </span>
+
+                            <h2>
+                                Qualifications
+                            </h2>
+
+                            <p>
+                                Manage training qualifications and certifications.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addQualificationButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Qualification
+                        </button>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div class="card-toolbar">
+
+                            <div>
+
+                                <h3>
+                                    Qualification Records
+                                </h3>
+
+                            </div>
+
+
+                            <select
+                                id="qualificationPersonnelFilter"
+                                class="select-control"
+                            >
+
+                                <option>
+                                    Select Personnel
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            QUALIFICATION
+                                        </th>
+
+                                        <th>
+                                            AWARDED
+                                        </th>
+
+                                        <th>
+                                            AWARDED BY
+                                        </th>
+
+                                        <th>
+                                            NOTES
+                                        </th>
+
+                                        <th>
+                                            ACTIONS
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="qualificationsTable">
+
+                                    <tr>
+
+                                        <td colspan="5">
+
+                                            <div class="empty-state">
+
+                                                <span>
+                                                    ✓
+                                                </span>
+
+                                                <strong>
+                                                    No qualifications selected
+                                                </strong>
+
+                                                <small>
+                                                    Select personnel to view qualifications.
+                                                </small>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     RANK HISTORY
+                ================================================== -->
+
+                <section
+                    id="section-rank-history"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                CAREER RECORD
+                            </span>
+
+                            <h2>
+                                Rank History
+                            </h2>
+
+                            <p>
+                                Maintain historical and current rank assignments.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addRankHistoryButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Rank Record
+                        </button>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div class="card-toolbar">
+
+                            <div>
+
+                                <h3>
+                                    Rank History
+                                </h3>
+
+                            </div>
+
+
+                            <select
+                                id="rankPersonnelFilter"
+                                class="select-control"
+                            >
+
+                                <option>
+                                    Select Personnel
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            RANK
+                                        </th>
+
+                                        <th>
+                                            EFFECTIVE FROM
+                                        </th>
+
+                                        <th>
+                                            EFFECTIVE UNTIL
+                                        </th>
+
+                                        <th>
+                                            CHANGED BY
+                                        </th>
+
+                                        <th>
+                                            NOTES
+                                        </th>
+
+                                        <th>
+                                            ACTIONS
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="rankHistoryTable">
+
+                                    <tr>
+
+                                        <td colspan="6">
+
+                                            <div class="empty-state">
+
+                                                <span>
+                                                    ◆
+                                                </span>
+
+                                                <strong>
+                                                    No rank history selected
+                                                </strong>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     UNIT HISTORY
+                ================================================== -->
+
+                <section
+                    id="section-unit-history"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                ASSIGNMENT RECORD
+                            </span>
+
+                            <h2>
+                                Unit History
+                            </h2>
+
+                            <p>
+                                Track historical and current unit assignments.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addUnitHistoryButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Unit Record
+                        </button>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div class="card-toolbar">
+
+                            <div>
+
+                                <h3>
+                                    Unit History
+                                </h3>
+
+                            </div>
+
+
+                            <select
+                                id="unitHistoryPersonnelFilter"
+                                class="select-control"
+                            >
+
+                                <option>
+                                    Select Personnel
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div class="table-wrapper">
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            UNIT
+                                        </th>
+
+                                        <th>
+                                            EFFECTIVE FROM
+                                        </th>
+
+                                        <th>
+                                            EFFECTIVE UNTIL
+                                        </th>
+
+                                        <th>
+                                            NOTES
+                                        </th>
+
+                                        <th>
+                                            ACTIONS
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="unitHistoryTable">
+
+                                    <tr>
+
+                                        <td colspan="5">
+
+                                            <div class="empty-state">
+
+                                                <span>
+                                                    ▣
+                                                </span>
+
+                                                <strong>
+                                                    No unit history selected
+                                                </strong>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     SERVICE LOGS
+                ================================================== -->
+
+                <section
+                    id="section-service-logs"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                SERVICE RECORD
+                            </span>
+
+                            <h2>
+                                Service Logs
+                            </h2>
+
+                            <p>
+                                Record training, boards, remarks, disciplinary actions, and other service events.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addServiceLogButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Service Log
+                        </button>
+
+                    </div>
+
+
+                    <div class="content-card">
+
+                        <div class="card-toolbar">
+
+                            <div>
+
+                                <h3>
+                                    Service Logs
+                                </h3>
+
+                                <span>
+                                    Custom personnel service entries.
+                                </span>
+
+                            </div>
+
+
+                            <div class="toolbar-actions">
+
+                                <select
+                                    id="serviceLogPersonnelFilter"
+                                    class="select-control"
+                                >
+
+                                    <option>
+                                        Select Personnel
+                                    </option>
+
+                                </select>
+
+
+                                <select
+                                    id="serviceLogCategoryFilter"
+                                    class="select-control"
+                                >
+
+                                    <option value="">
+                                        All Categories
+                                    </option>
+
+                                    <option value="TRAINING">
+                                        Training
+                                    </option>
+
+                                    <option value="BOARD">
+                                        Board
+                                    </option>
+
+                                    <option value="REMARK">
+                                        Remark
+                                    </option>
+
+                                    <option value="DISCIPLINARY">
+                                        Disciplinary
+                                    </option>
+
+                                    <option value="OTHER">
+                                        Other
+                                    </option>
+
+                                </select>
+
+                            </div>
+
+                        </div>
+
+
+                        <div
+                            id="serviceLogsContainer"
+                            class="service-log-list"
+                        >
+
+                            <div class="empty-state">
+
+                                <span>
+                                    ≡
+                                </span>
+
+                                <strong>
+                                    No service logs selected
+                                </strong>
+
+                                <small>
+                                    Select personnel to view their service record.
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     UNIT CATALOG
+                ================================================== -->
+
+                <section
+                    id="section-units"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                ORGANIZATION
+                            </span>
+
+                            <h2>
+                                Unit Catalog
+                            </h2>
+
+                            <p>
+                                Manage KSOL units and their insignia.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addUnitButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Unit
+                        </button>
+
+                    </div>
+
+
+                    <div class="catalog-grid" id="unitCatalog">
+
+                        <div class="catalog-empty">
+
+                            <span>
+                                ▦
+                            </span>
+
+                            <strong>
+                                No units loaded
+                            </strong>
+
+                            <small>
+                                Unit catalog records will appear here.
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =================================================
+                     AWARD CATALOG
+                ================================================== -->
+
+                <section
+                    id="section-award-catalog"
+                    class="admin-section"
+                >
+
+                    <div class="section-header">
+
+                        <div>
+
+                            <span class="section-kicker">
+                                DECORATION CATALOG
+                            </span>
+
+                            <h2>
+                                Award Catalog
+                            </h2>
+
+                            <p>
+                                Manage ribbons, badges, tabs, descriptions, images, and precedence.
+                            </p>
+
+                        </div>
+
+
+                        <button
+                            class="primary-button"
+                            id="addCatalogAwardButton"
+                            type="button"
+                        >
+                            <span>＋</span>
+                            Add Award
+                        </button>
+
+                    </div>
+
+
+                    <div class="award-catalog-grid">
+
+                        <div class="catalog-filter-bar">
+
+                            <div class="search-box">
+
+                                <span>
+                                    ⌕
+                                </span>
+
+                                <input
+                                    id="awardCatalogSearch"
+                                    type="search"
+                                    placeholder="Search awards..."
+                                >
+
+                            </div>
+
+
+                            <select
+                                id="awardCatalogCategory"
+                                class="select-control"
+                            >
+
+                                <option value="">
+                                    All Categories
+                                </option>
+
+                                <option value="ribbon">
+                                    Ribbons
+                                </option>
+
+                                <option value="badge">
+                                    Badges
+                                </option>
+
+                                <option value="tab">
+                                    Tabs
+                                </option>
+
+                            </select>
+
+                        </div>
+
+
+                        <div
+                            class="award-catalog-table-wrapper"
+                        >
+
+                            <table class="admin-table">
+
+                                <thead>
+
+                                    <tr>
+
+                                        <th>
+                                            INSIGNIA
+                                        </th>
+
+                                        <th>
+                                            CODE
+                                        </th>
+
+                                        <th>
+                                            NAME
+                                        </th>
+
+                                        <th>
+                                            CATEGORY
+                                        </th>
+
+                                        <th>
+                                            PRECEDENCE
+                                        </th>
+
+                                        <th>
+                                            ACTIONS
+                                        </th>
+
+                                    </tr>
+
+                                </thead>
+
+
+                                <tbody id="awardCatalogTable">
+
+                                    <tr>
+
+                                        <td colspan="6">
+
+                                            <div class="empty-state">
+
+                                                <span>
+                                                    ✦
+                                                </span>
+
+                                                <strong>
+                                                    No awards loaded
+                                                </strong>
+
+                                                <small>
+                                                    Award catalog records will appear here.
+                                                </small>
+
+                                            </div>
+
+                                        </td>
+
+                                    </tr>
+
+                                </tbody>
+
+                            </table>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+            </div>
+
+        </main>
+
+    </div>
+
+
+    <!-- =========================================================
+         RECORD EDITOR MODAL
+    ========================================================== -->
+
+    <div
+        id="recordModal"
+        class="modal-overlay"
+        aria-hidden="true"
+    >
+
+        <div class="modal">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span
+                        id="modalKicker"
+                        class="section-kicker"
+                    >
+                        RECORD
+                    </span>
+
+                    <h2 id="modalTitle">
+                        Edit Record
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="closeModal"
+                    class="modal-close"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div
+                id="modalBody"
+                class="modal-body"
+            >
+
+                <!-- JS will populate this later -->
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    id="cancelModal"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    id="saveRecord"
+                    class="primary-button"
+                    type="button"
+                >
+                    Save Changes
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DELETE CONFIRMATION
+    ========================================================== -->
+
+    <div
+        id="deleteModal"
+        class="modal-overlay"
+        aria-hidden="true"
+    >
+
+        <div class="modal modal-small">
+
+            <div class="modal-header">
+
+                <div>
+
+                    <span class="section-kicker">
+                        CONFIRMATION
+                    </span>
+
+                    <h2>
+                        Delete Record
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="closeDeleteModal"
+                    class="modal-close"
+                    type="button"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div class="modal-body">
+
+                <div class="warning-box">
+
+                    <span class="warning-icon">
+                        !
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            This action cannot be undone.
+                        </strong>
+
+                        <p id="deleteMessage">
+                            Are you sure you want to delete this record?
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer">
+
+                <button
+                    id="cancelDelete"
+                    class="secondary-button"
+                    type="button"
+                >
+                    Cancel
+                </button>
+
+
+                <button
+                    id="confirmDelete"
+                    class="danger-button"
+                    type="button"
+                >
+                    Delete
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         TOAST
+    ========================================================== -->
+
+    <div
+        id="adminToast"
+        class="admin-toast"
+        aria-live="polite"
+    >
+
+        <span
+            id="toastIcon"
+            class="toast-icon"
+        >
+            ✓
+        </span>
+
+        <div>
+
+            <strong id="toastTitle">
+                Success
+            </strong>
+
+            <span id="toastMessage">
+                Operation completed.
+            </span>
+
+        </div>
+
+    </div>
+
+
+    <script src="admin.js"></script>
+
+</body>
+</html>
