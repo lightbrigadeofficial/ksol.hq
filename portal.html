@@ -1,0 +1,911 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+  <meta charset="utf-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1"
+  >
+
+  <title>
+    KSOL - Personnel Portal
+  </title>
+
+  <link
+    rel="icon"
+    type="image/png"
+    href="KSOL_Emblem_Transparent.png"
+  >
+
+  <link
+    rel="stylesheet"
+    href="styles.css"
+  >
+
+  <link
+    rel="stylesheet"
+    href="portal.css"
+  >
+
+</head>
+
+
+<body class="portal-body">
+
+
+  <!-- =========================================================
+       TOP ACCENT
+  ========================================================== -->
+
+  <div class="top"></div>
+
+
+
+  <!-- =========================================================
+       NAVIGATION
+  ========================================================== -->
+
+  <nav>
+
+    <div class="wrap nav">
+
+
+      <!-- BRAND -->
+
+      <a
+        class="brand"
+        href="index.html"
+      >
+
+        <img
+          src="KSOL_Emblem_Transparent.png"
+          alt="KSOL Logo"
+          class="nav-logo"
+        >
+
+        <span>
+          KSOL HQ
+        </span>
+
+      </a>
+
+
+
+      <!-- LINKS -->
+
+      <div class="links">
+
+
+        <a href="index.html">
+          Home
+        </a>
+
+
+        <a href="index.html#about">
+          FACTION STATS
+        </a>
+
+
+
+        <!-- HQ DROPDOWN -->
+
+        <div class="nav-dropdown">
+
+          <button
+            class="nav-dropdown-toggle"
+            type="button"
+            aria-expanded="false"
+          >
+
+            HEADQUARTERS
+
+            <span class="nav-chevron">
+              ▾
+            </span>
+
+          </button>
+
+
+          <div class="nav-dropdown-menu">
+
+
+            <a
+              href="ranks.html"
+              class="nav-dropdown-item"
+            >
+
+              <span class="dropdown-index">
+                01
+              </span>
+
+              <span>
+
+                <strong>
+                  RANKS
+                </strong>
+
+                <small>
+                  Rank structure &amp; requirements
+                </small>
+
+              </span>
+
+            </a>
+
+
+
+            <a
+              href="roster.html"
+              class="nav-dropdown-item"
+            >
+
+              <span class="dropdown-index">
+                02
+              </span>
+
+              <span>
+
+                <strong>
+                  ROSTER
+                </strong>
+
+                <small>
+                  Faction personnel directory
+                </small>
+
+              </span>
+
+            </a>
+
+
+          </div>
+
+        </div>
+
+
+
+        <a href="index.html#cap">
+          CAPABILITIES
+        </a>
+
+
+      </div>
+
+
+
+      <!-- NAV ACTION -->
+
+      <div class="nav-actions">
+
+        <button
+          id="portalLogout"
+          class="portal-btn"
+          type="button"
+        >
+          SIGN OUT
+        </button>
+
+      </div>
+
+
+    </div>
+
+  </nav>
+
+
+
+  <!-- =========================================================
+       TIME STRIP
+  ========================================================== -->
+
+  <div class="time-strip">
+
+    <div class="wrap time-strip-inner">
+
+
+      <div class="time-block">
+
+        <span class="time-label">
+          KSOL HQ
+        </span>
+
+        <span
+          id="hq-time"
+          class="time-value"
+        >
+          --:--:--
+        </span>
+
+        <span class="time-zone">
+          IST
+        </span>
+
+      </div>
+
+
+      <div class="time-divider"></div>
+
+
+      <div class="time-block">
+
+        <span class="time-label">
+          YOUR LOCAL TIME
+        </span>
+
+        <span
+          id="local-time"
+          class="time-value"
+        >
+          --:--:--
+        </span>
+
+        <span
+          id="local-zone"
+          class="time-zone"
+        >
+          LOCAL
+        </span>
+
+      </div>
+
+
+    </div>
+
+  </div>
+
+
+
+  <!-- =========================================================
+       MAIN PORTAL
+  ========================================================== -->
+
+  <main class="portal-dashboard">
+
+
+    <!-- =======================================================
+         PERSONNEL HEADER
+    ======================================================== -->
+
+    <section class="portal-dashboard-head">
+
+
+      <div>
+
+        <div class="portal-kicker">
+          KSOL PERSONNEL MANAGEMENT SYSTEM // MEMBER VIEW
+        </div>
+
+
+        <h1 id="memberName">
+          Personnel Record
+        </h1>
+
+
+        <p id="memberSubtitle">
+          Loading authenticated personnel record...
+        </p>
+
+      </div>
+
+
+      <div
+        id="memberStatus"
+        class="member-status"
+      >
+        CHECKING
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         CURRENT RECORD + SUMMARY
+    ======================================================== -->
+
+    <section class="portal-grid">
+
+
+      <!-- CURRENT RECORD -->
+
+      <article class="portal-profile-card">
+
+
+        <div class="portal-card-kicker">
+          CURRENT RECORD
+        </div>
+
+
+        <div class="profile-main">
+
+
+          <div
+            id="profileInitials"
+            class="profile-initials"
+          >
+            --
+          </div>
+
+
+          <div>
+
+            <h2 id="profileDisplayName">
+              —
+            </h2>
+
+
+            <div
+              id="profileCallsign"
+              class="profile-callsign"
+            >
+              CALLSIGN // —
+            </div>
+
+          </div>
+
+
+        </div>
+
+
+
+        <div class="profile-facts">
+
+
+          <div>
+
+            <span>
+              SERVICE NUMBER
+            </span>
+
+            <strong id="profileServiceNumber">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              RANK
+            </span>
+
+            <strong id="profileRank">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              UNIT
+            </span>
+
+            <strong id="profileUnit">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              APPOINTMENT
+            </span>
+
+            <strong id="profileAppointment">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              STATUS
+            </span>
+
+            <strong id="profileStatus">
+              —
+            </strong>
+
+          </div>
+
+
+          <div>
+
+            <span>
+              JOINED
+            </span>
+
+            <strong id="profileJoinDate">
+              —
+            </strong>
+
+          </div>
+
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- SERVICE SUMMARY -->
+
+      <article class="portal-summary-card">
+
+
+        <div class="portal-card-kicker">
+          SERVICE SUMMARY
+        </div>
+
+
+        <div class="summary-stat">
+
+          <strong id="serviceDays">
+            —
+          </strong>
+
+          <span>
+            DAYS IN SERVICE
+          </span>
+
+        </div>
+
+
+        <div class="summary-stat">
+
+          <strong id="rankDays">
+            —
+          </strong>
+
+          <span>
+            DAYS IN CURRENT RANK
+          </span>
+
+        </div>
+
+
+        <div class="summary-stat">
+
+          <strong id="qualificationCount">
+            —
+          </strong>
+
+          <span>
+            QUALIFICATIONS
+          </span>
+
+        </div>
+
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         QUALIFICATIONS + APPOINTMENT
+    ======================================================== -->
+
+    <section class="portal-content-grid">
+
+
+      <!-- QUALIFICATIONS -->
+
+      <article class="portal-section-card">
+
+        <div class="portal-card-kicker">
+          QUALIFICATIONS
+        </div>
+
+
+        <h2>
+          Qualification Record
+        </h2>
+
+
+        <div
+          id="qualificationList"
+          class="qualification-list"
+        >
+
+          <div class="portal-muted">
+            Loading...
+          </div>
+
+        </div>
+
+
+      </article>
+
+
+
+      <!-- APPOINTMENT -->
+
+      <article class="portal-section-card">
+
+        <div class="portal-card-kicker">
+          CURRENT APPOINTMENT
+        </div>
+
+
+        <h2 id="appointmentTitle">
+          —
+        </h2>
+
+
+        <div
+          class="appointment-rank-band"
+          id="appointmentRankBand"
+        >
+          —
+        </div>
+
+
+        <p
+          id="appointmentDescription"
+          class="portal-muted"
+        >
+          Your current appointment will appear here.
+        </p>
+
+
+      </article>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         AWARDS & INSIGNIA
+    ======================================================== -->
+
+    <section class="portal-section-card awards-card">
+
+
+      <!-- HEADER -->
+
+      <div class="awards-header">
+
+        <div>
+
+          <div class="portal-card-kicker">
+            AWARDS &amp; INSIGNIA
+          </div>
+
+
+          <h2>
+            Decorations &amp; Qualification Insignia
+          </h2>
+
+
+          <p class="awards-intro">
+            A visual record of authorized KSOL service ribbons,
+            qualification badges, tabs and unit insignia.
+          </p>
+
+        </div>
+
+
+        <div class="awards-count">
+
+          <strong id="awardCount">
+            0
+          </strong>
+
+          <span>
+            RIBBONS / BADGES
+          </span>
+
+        </div>
+
+      </div>
+
+
+
+      <!-- =====================================================
+           RIBBON RACK
+      ====================================================== -->
+
+      <div class="insignia-category">
+
+
+        <div class="insignia-category-head">
+
+          <span>
+            01
+          </span>
+
+          <div>
+
+            <strong>
+              RIBBON RACK
+            </strong>
+
+            <small>
+              Service / campaign / decoration ribbons
+            </small>
+
+          </div>
+
+        </div>
+
+
+
+        <div
+          id="ribbonRack"
+          class="ribbon-rack"
+          aria-live="polite"
+        >
+          <div class="insignia-empty" id="emptyRibbonRack">
+            <span>LOADING RIBBONS...</span>
+            <small>Loading authorized ribbons...</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================
+           BADGES / TABS
+      ====================================================== -->
+
+      <div class="insignia-category">
+
+
+        <div class="insignia-category-head">
+
+          <span>
+            02
+          </span>
+
+          <div>
+
+            <strong>
+              BADGES &amp; TABS
+            </strong>
+
+            <small>
+              Qualification and specialist insignia
+            </small>
+
+          </div>
+
+        </div>
+
+
+
+        <div
+          id="badgeRack"
+          class="badge-rack"
+          aria-live="polite"
+        >
+          <div class="insignia-empty" id="emptyBadgeRack">
+            <span>LOADING BADGES / TABS...</span>
+            <small>Loading authorized qualification insignia...</small>
+          </div>
+        </div>
+      </div>
+
+      <!-- =====================================================
+           UNIT INSIGNIA
+      ====================================================== -->
+
+      <div class="insignia-category">
+
+
+        <div class="insignia-category-head">
+
+          <span>
+            04
+          </span>
+
+          <div>
+
+            <strong>
+              UNIT INSIGNIA
+            </strong>
+
+            <small>
+              Current assignment and organizational insignia
+            </small>
+
+          </div>
+
+        </div>
+
+
+
+        <div class="unit-insignia-panel">
+
+
+          <div class="unit-insignia-image">
+
+            <img
+              id="currentUnitInsignia"
+              src="Awards/Units/default.png"
+              alt="Current unit insignia"
+              onerror="this.style.display='none';"
+            >
+
+            <span>
+              UNIT
+            </span>
+
+          </div>
+
+
+          <div class="unit-insignia-info">
+
+            <span>
+              CURRENT ASSIGNMENT
+            </span>
+
+            <strong id="insigniaUnitName">
+              —
+            </strong>
+
+            <p>
+              Current unit insignia associated with the member's
+              active assignment.
+            </p>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         INSIGNIA DETAIL POPUP
+    ======================================================== -->
+
+    <div
+      id="insigniaModal"
+      class="insignia-modal"
+      aria-hidden="true"
+    >
+
+      <div class="insignia-modal-backdrop"></div>
+
+
+      <div
+        class="insignia-modal-card"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="insigniaModalTitle"
+      >
+
+
+        <button
+          id="closeInsigniaModal"
+          class="insignia-modal-close"
+          type="button"
+          aria-label="Close"
+        >
+          ×
+        </button>
+
+
+        <div
+          id="modalInsigniaImage"
+          class="modal-insignia-image"
+        >
+
+          <span>
+            INSIGNIA
+          </span>
+
+        </div>
+
+
+        <div class="portal-card-kicker">
+          INSIGNIA RECORD
+        </div>
+
+
+        <h3 id="insigniaModalTitle">
+          —
+        </h3>
+
+
+        <p id="insigniaModalDescription">
+          —
+        </p>
+
+
+      </div>
+
+    </div>
+
+
+
+    <!-- =======================================================
+         SERVICE HISTORY
+    ======================================================== -->
+
+    <section class="portal-section-card service-history-card">
+
+
+      <div class="portal-card-kicker">
+        SERVICE HISTORY
+      </div>
+
+
+      <h2>
+        Record History
+      </h2>
+
+
+      <div
+        id="serviceHistory"
+        class="history-list"
+      >
+
+        <div class="portal-muted">
+          Loading history...
+        </div>
+
+      </div>
+
+
+    </section>
+
+
+
+    <!-- =======================================================
+         MEMBER NOTICE
+    ======================================================== -->
+
+    <section class="portal-bottom-notice">
+
+      <span>
+        MEMBER ACCESS
+      </span>
+
+
+      <p>
+        This portal displays your own personnel record.
+        Changes to rank, unit, appointment, qualifications,
+        awards and status are made by authorized KSOL personnel.
+      </p>
+
+    </section>
+
+
+  </main>
+
+
+
+  <!-- =========================================================
+       JAVASCRIPT
+  ========================================================== -->
+
+  <script src="script.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+  <script src="portal.js"></script>
+
+
+</body>
+
+</html>

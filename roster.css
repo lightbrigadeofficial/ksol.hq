@@ -1,0 +1,543 @@
+
+/* =========================================================
+   KSOL ROSTER PAGE
+   Uses the existing KSOL global variables and base styling.
+========================================================= */
+
+.roster-page {
+    min-height: 100vh;
+}
+
+.roster-hero {
+    padding: 76px 0 54px;
+    border-bottom: 1px solid var(--line);
+}
+
+.roster-hero-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    gap: 28px;
+    align-items: end;
+}
+
+.roster-hero h1 {
+    margin: 13px 0 14px;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    color: var(--white);
+}
+
+.roster-hero p {
+    margin: 0;
+    max-width: 720px;
+    color: #9d9d9d;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.roster-hero-status {
+    padding: 20px;
+    border: 1px solid #2a2a2a;
+    background: #0d0d0d;
+}
+
+.roster-status-label {
+    display: block;
+    margin-bottom: 7px;
+    color: #666;
+    font: 9px "Courier New", monospace;
+    letter-spacing: 0.14em;
+}
+
+.roster-hero-status strong {
+    display: block;
+    color: #e2e2e2;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+}
+
+.roster-hero-status p {
+    margin-top: 9px;
+    color: #787878;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.roster-controls-section {
+    padding: 26px 0 16px;
+    border-bottom: 1px solid var(--line);
+    background: #090909;
+}
+
+.roster-controls {
+    display: grid;
+    grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr;
+    gap: 10px;
+}
+
+.roster-search,
+.roster-select,
+.roster-sort {
+    width: 100%;
+    height: 42px;
+    border: 1px solid #303030;
+    border-radius: 0;
+    outline: none;
+    background: #0d0d0d;
+    color: #dcdcdc;
+    font: 11px "Courier New", monospace;
+    letter-spacing: 0.03em;
+    padding: 0 12px;
+}
+
+.roster-search::placeholder {
+    color: #5f5f5f;
+}
+
+.roster-search:focus,
+.roster-select:focus,
+.roster-sort:focus {
+    border-color: #666;
+}
+
+.roster-toolbar {
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px solid #1f1f1f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    color: #6e6e6e;
+    font: 9px "Courier New", monospace;
+    letter-spacing: 0.12em;
+}
+
+.roster-sort-wrap {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.roster-sort {
+    width: auto;
+    min-width: 130px;
+    height: 32px;
+}
+
+
+/* =========================================================
+   DIRECTORY
+========================================================= */
+
+.roster-directory-section {
+    padding: 34px 0 62px;
+}
+
+.roster-empty {
+    min-height: 310px;
+    padding: 60px 25px;
+    border: 1px dashed #353535;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(255,255,255,0.025),
+            rgba(255,255,255,0.005)
+        );
+    text-align: center;
+    display: grid;
+    place-items: center;
+}
+
+.roster-empty-icon {
+    width: 72px;
+    height: 72px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #454545;
+    color: #777;
+    font: 9px "Courier New", monospace;
+    letter-spacing: 0.08em;
+}
+
+.roster-empty h2 {
+    margin: 18px 0 7px;
+    font-size: 26px;
+}
+
+.roster-empty p {
+    margin: 0;
+    max-width: 540px;
+    color: #757575;
+    line-height: 1.7;
+    font-size: 11px;
+}
+
+.roster-empty code {
+    color: #aaa;
+}
+
+.roster-table-wrap {
+    border-top: 1px solid #2d2d2d;
+    border-bottom: 1px solid #2d2d2d;
+}
+
+.roster-table-head,
+.roster-row {
+    display: grid;
+    grid-template-columns: 1.4fr 0.75fr 1fr 1fr 0.6fr;
+    gap: 15px;
+    align-items: center;
+}
+
+.roster-table-head {
+    min-height: 42px;
+    padding: 0 15px;
+    color: #666;
+    font: 9px "Courier New", monospace;
+    letter-spacing: 0.11em;
+    border-bottom: 1px solid #292929;
+    background: #0b0b0b;
+}
+
+.roster-row {
+    width: 100%;
+    padding: 16px 15px;
+    border: 0;
+    border-bottom: 1px solid #1e1e1e;
+    background: #0d0d0d;
+    color: #ddd;
+    text-align: left;
+    cursor: pointer;
+    transition:
+        background 0.16s ease,
+        padding 0.16s ease,
+        border-color 0.16s ease;
+}
+
+.roster-row:last-child {
+    border-bottom: 0;
+}
+
+.roster-row:hover,
+.roster-row.active {
+    padding-left: 20px;
+    background: #131313;
+    border-color: #3b3b3b;
+}
+
+.roster-person {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    min-width: 0;
+}
+
+.roster-avatar {
+    width: 38px;
+    height: 38px;
+    display: grid;
+    place-items: center;
+    flex: 0 0 38px;
+    border: 1px solid #333;
+    background: #090909;
+    color: #777;
+    font: 10px "Courier New", monospace;
+}
+
+.roster-person-info {
+    min-width: 0;
+}
+
+.roster-person-name {
+    display: block;
+    color: #e5e5e5;
+    font-size: 12px;
+    font-weight: 800;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.roster-person-meta {
+    margin-top: 3px;
+    color: #666;
+    font: 9px "Courier New", monospace;
+}
+
+.roster-rank,
+.roster-unit,
+.roster-appointment {
+    color: #b9b9b9;
+    font-size: 10px;
+    line-height: 1.45;
+}
+
+.roster-status {
+    display: inline-flex;
+    justify-content: center;
+    width: fit-content;
+    padding: 5px 7px;
+    border: 1px solid #333;
+    color: #999;
+    font: 8px "Courier New", monospace;
+    letter-spacing: 0.1em;
+}
+
+.roster-status.status-active {
+    border-color: rgba(63,143,79,0.45);
+    color: #8abd94;
+}
+
+.roster-status.status-loa {
+    color: #b7a26e;
+    border-color: rgba(183,162,110,0.35);
+}
+
+.roster-status.status-reserve {
+    color: #8ea0b3;
+    border-color: rgba(142,160,179,0.35);
+}
+
+.roster-no-results {
+    padding: 48px 20px;
+    border: 1px solid #262626;
+    background: #0c0c0c;
+    text-align: center;
+}
+
+.roster-no-results strong,
+.roster-no-results span {
+    display: block;
+}
+
+.roster-no-results strong {
+    color: #cfcfcf;
+    font: 10px "Courier New", monospace;
+    letter-spacing: 0.12em;
+}
+
+.roster-no-results span {
+    margin-top: 8px;
+    color: #656565;
+    font-size: 11px;
+}
+
+
+/* =========================================================
+   PERSONNEL DETAILS
+========================================================= */
+
+.roster-info-section {
+    padding: 72px 0 92px;
+    border-top: 1px solid var(--line);
+}
+
+.roster-section-lead {
+    max-width: 740px;
+    color: #8d8d8d;
+    line-height: 1.7;
+    font-size: 12px;
+}
+
+.personnel-details {
+    margin-top: 25px;
+    min-height: 190px;
+}
+
+.personnel-placeholder {
+    padding: 45px 20px;
+    border: 1px dashed #313131;
+    text-align: center;
+}
+
+.personnel-placeholder span {
+    color: #666;
+    font: 9px "Courier New", monospace;
+    letter-spacing: 0.12em;
+}
+
+.personnel-placeholder p {
+    margin: 8px 0 0;
+    color: #777;
+    font-size: 11px;
+}
+
+.personnel-profile {
+    padding: 25px;
+    border: 1px solid #2d2d2d;
+    background:
+        linear-gradient(
+            180deg,
+            #151515,
+            #0c0c0c
+        );
+}
+
+.personnel-profile-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.personnel-profile-name {
+    margin: 0;
+    color: #efefef;
+    font-size: 25px;
+}
+
+.personnel-profile-callsign {
+    margin-top: 4px;
+    color: #777;
+    font: 10px "Courier New", monospace;
+}
+
+.personnel-facts {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.personnel-fact {
+    padding: 13px;
+    border: 1px solid #262626;
+    background: #0b0b0b;
+}
+
+.personnel-fact span {
+    display: block;
+    margin-bottom: 6px;
+    color: #626262;
+    font: 8px "Courier New", monospace;
+    letter-spacing: 0.1em;
+}
+
+.personnel-fact strong {
+    color: #c8c8c8;
+    font-size: 11px;
+}
+
+.personnel-profile-note {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #242424;
+    color: #777;
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .roster-hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .roster-controls {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .roster-search-wrap {
+        grid-column: 1 / -1;
+    }
+
+    .personnel-facts {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .roster-table-head,
+    .roster-row {
+        grid-template-columns: 1.5fr 0.8fr 1fr 0.8fr;
+    }
+
+    .roster-table-head > :last-child,
+    .roster-row > :last-child {
+        display: none;
+    }
+}
+
+
+@media (max-width: 650px) {
+
+    .roster-hero {
+        padding: 58px 0 45px;
+    }
+
+    .roster-controls {
+        grid-template-columns: 1fr;
+    }
+
+    .roster-search-wrap {
+        grid-column: auto;
+    }
+
+    .roster-toolbar {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .roster-table-wrap {
+        border: 0;
+    }
+
+    .roster-table-head {
+        display: none;
+    }
+
+    .roster-row {
+        grid-template-columns: 1fr;
+        gap: 9px;
+        padding: 17px;
+        border: 1px solid #262626;
+        margin-bottom: 8px;
+    }
+
+    .roster-row:hover,
+    .roster-row.active {
+        padding-left: 17px;
+    }
+
+    .roster-row > :last-child {
+        display: block;
+    }
+
+    .roster-rank::before,
+    .roster-unit::before,
+    .roster-appointment::before {
+        content: attr(data-label) "  ";
+        color: #575757;
+        font: 8px "Courier New", monospace;
+        letter-spacing: 0.08em;
+    }
+
+    .personnel-profile-head {
+        flex-direction: column;
+    }
+
+    .personnel-facts {
+        grid-template-columns: 1fr;
+    }
+}

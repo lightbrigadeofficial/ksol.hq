@@ -1,0 +1,1064 @@
+/* =========================================================
+   KSOL MEMBER PORTAL
+========================================================= */
+
+.portal-body {
+    min-height: 100vh;
+}
+
+.portal-btn {
+    height: 40px;
+    padding: 0 13px;
+    border: 1px solid #3a3a3a;
+    background: #111;
+    color: #d8d8d8;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s ease;
+}
+
+.portal-btn:hover,
+.portal-btn-active {
+    border-color: #777;
+    background: #1a1a1a;
+    color: #fff;
+}
+
+.nav-actions {
+    flex-wrap: wrap;
+}
+
+
+/* =========================================================
+   LOGIN
+========================================================= */
+
+.portal-shell {
+    min-height: calc(100vh - 107px);
+    display: flex;
+    align-items: center;
+}
+
+.portal-login {
+    width: min(1040px, calc(100% - 36px));
+    margin: auto;
+    padding: 78px 0;
+    display: grid;
+    grid-template-columns: 1fr 410px;
+    gap: 70px;
+    align-items: center;
+}
+
+.portal-kicker {
+    color: #777;
+    font: 9px "Courier New", monospace;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+}
+
+.portal-login h1 {
+    margin: 12px 0 18px;
+    color: var(--white);
+    font-size: clamp(48px, 7vw, 76px);
+    line-height: .91;
+    letter-spacing: -.055em;
+}
+
+.portal-login-copy > p {
+    max-width: 620px;
+    color: #8f8f8f;
+    line-height: 1.8;
+    font-size: 14px;
+}
+
+.portal-trust {
+    margin-top: 30px;
+    display: flex;
+    gap: 9px;
+    flex-wrap: wrap;
+}
+
+.portal-trust span {
+    padding: 7px 9px;
+    border: 1px solid #2b2b2b;
+    color: #696969;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .1em;
+}
+
+.login-card {
+    border: 1px solid #2b2b2b;
+    background: linear-gradient(180deg, #151515, #0b0b0b);
+    padding: 25px;
+    box-shadow: 0 25px 70px rgba(0, 0, 0, .22);
+}
+
+.login-card-head {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 28px;
+}
+
+.login-eyebrow {
+    display: block;
+    color: #696969;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .14em;
+}
+
+.login-card h2 {
+    margin: 8px 0 0;
+    font-size: 27px;
+}
+
+.login-code {
+    color: #666;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .1em;
+}
+
+.login-card label {
+    display: block;
+    margin: 18px 0 7px;
+    color: #6c6c6c;
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: .11em;
+}
+
+.login-card input {
+    width: 100%;
+    height: 44px;
+    border: 1px solid #303030;
+    outline: 0;
+    background: #0a0a0a;
+    color: #e7e7e7;
+    padding: 0 13px;
+    font: 11px "Courier New", monospace;
+}
+
+.login-card input:focus {
+    border-color: #666;
+}
+
+.password-wrap {
+    position: relative;
+}
+
+.password-wrap input {
+    padding-right: 68px;
+}
+
+#togglePassword {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 44px;
+    padding: 0 11px;
+    border: 0;
+    background: transparent;
+    color: #676767;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .08em;
+    cursor: pointer;
+}
+
+#togglePassword:hover {
+    color: #bdbdbd;
+}
+
+.login-message {
+    min-height: 18px;
+    margin: 13px 0 0;
+    color: #777;
+    font-size: 10px;
+    line-height: 1.4;
+}
+
+.login-message.error {
+    color: #c47c7c;
+}
+
+.login-message.success {
+    color: #8fbd98;
+}
+
+.login-submit {
+    width: 100%;
+    height: 45px;
+    margin-top: 5px;
+    padding: 0 13px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid #d7d7d7;
+    background: #e9e9e9;
+    color: #080808;
+    font-size: 10px;
+    font-weight: 900;
+    letter-spacing: .12em;
+    cursor: pointer;
+    transition: .2s ease;
+}
+
+.login-submit:hover {
+    background: #fff;
+}
+
+.login-submit:disabled {
+    opacity: .55;
+    cursor: wait;
+}
+
+.login-help {
+    margin-top: 18px;
+    padding-top: 17px;
+    border-top: 1px solid #222;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.login-help span {
+    color: #5e5e5e;
+    font-size: 8px;
+    letter-spacing: .08em;
+}
+
+.login-help button {
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: #a8a8a8;
+    font: 9px "Courier New", monospace;
+    cursor: pointer;
+}
+
+.login-help button:hover {
+    color: #fff;
+}
+
+.login-notice {
+    margin-top: 18px;
+    color: #555;
+    font-size: 9px;
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   DASHBOARD
+========================================================= */
+
+.portal-dashboard {
+    width: min(1160px, calc(100% - 36px));
+    margin: auto;
+    padding: 62px 0 90px;
+}
+
+.portal-dashboard-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 30px;
+    margin-bottom: 26px;
+}
+
+.portal-dashboard-head h1 {
+    margin: 10px 0 8px;
+    color: var(--white);
+    font-size: clamp(38px, 6vw, 62px);
+    line-height: .95;
+    letter-spacing: -.045em;
+}
+
+.portal-dashboard-head p {
+    margin: 0;
+    color: #7d7d7d;
+    font-size: 11px;
+}
+
+.member-status {
+    padding: 7px 9px;
+    border: 1px solid #3b3b3b;
+    color: #8eb698;
+    font: 8px "Courier New", monospace;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+.portal-grid {
+    display: grid;
+    grid-template-columns: 1.45fr .55fr;
+    gap: 12px;
+}
+
+.portal-profile-card,
+.portal-summary-card,
+.portal-section-card {
+    border: 1px solid #292929;
+    background: linear-gradient(180deg, #151515, #0c0c0c);
+}
+
+.portal-profile-card,
+.portal-summary-card {
+    padding: 23px;
+}
+
+.portal-card-kicker {
+    color: #646464;
+    font: 8px "Courier New", monospace;
+    font-weight: 800;
+    letter-spacing: .13em;
+}
+
+.profile-main {
+    margin-top: 22px;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.profile-initials {
+    width: 55px;
+    height: 55px;
+    flex: 0 0 55px;
+    display: grid;
+    place-items: center;
+    border: 1px solid #3a3a3a;
+    background: #090909;
+    color: #bcbcbc;
+    font: 11px "Courier New", monospace;
+}
+
+.profile-main h2 {
+    margin: 0;
+    font-size: 22px;
+}
+
+.profile-callsign {
+    margin-top: 5px;
+    color: #646464;
+    font: 9px "Courier New", monospace;
+}
+
+.profile-facts {
+    margin-top: 24px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.profile-facts > div,
+.summary-stat {
+    padding: 13px;
+    border: 1px solid #242424;
+    background: #0a0a0a;
+}
+
+.profile-facts span,
+.summary-stat span {
+    display: block;
+    margin-bottom: 7px;
+    color: #5e5e5e;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .09em;
+}
+
+.profile-facts strong {
+    color: #cfcfcf;
+    font-size: 10px;
+}
+
+.summary-stat {
+    margin-top: 8px;
+}
+
+.summary-stat:first-of-type {
+    margin-top: 21px;
+}
+
+.summary-stat strong {
+    display: block;
+    margin-bottom: 3px;
+    color: #e8e8e8;
+    font-size: 25px;
+    letter-spacing: -.03em;
+}
+
+.portal-content-grid {
+    margin-top: 12px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.portal-section-card {
+    padding: 23px;
+}
+
+.portal-section-card h2 {
+    margin: 8px 0 18px;
+    font-size: 23px;
+}
+
+.qualification-list {
+    display: grid;
+    gap: 8px;
+}
+
+.qualification-item {
+    padding: 12px;
+    border: 1px solid #252525;
+    background: #0a0a0a;
+}
+
+.qualification-item strong {
+    display: block;
+    color: #d1d1d1;
+    font-size: 11px;
+}
+
+.qualification-item span {
+    display: block;
+    margin-top: 4px;
+    color: #686868;
+    font: 8px "Courier New", monospace;
+}
+
+.appointment-rank-band {
+    display: inline-block;
+    padding: 6px 9px;
+    border: 1px solid #3a3a3a;
+    color: #bdbdbd;
+    font: 9px "Courier New", monospace;
+}
+
+.portal-muted {
+    color: #727272;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.service-history-card {
+    margin-top: 12px;
+}
+
+.history-list {
+    border-top: 1px solid #242424;
+}
+
+.history-item {
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    gap: 14px;
+    padding: 13px 0;
+    border-bottom: 1px solid #1f1f1f;
+}
+
+.history-date {
+    color: #666;
+    font: 8px "Courier New", monospace;
+}
+
+.history-body strong {
+    color: #cfcfcf;
+    font-size: 10px;
+}
+
+.history-body span {
+    display: block;
+    margin-top: 4px;
+    color: #6c6c6c;
+    font-size: 9px;
+    line-height: 1.5;
+}
+
+.portal-bottom-notice {
+    margin-top: 12px;
+    padding: 17px;
+    border: 1px solid #262626;
+    background: #0c0c0c;
+}
+
+.portal-bottom-notice > span {
+    color: #6d6d6d;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .1em;
+}
+
+.portal-bottom-notice p {
+    margin: 7px 0 0;
+    color: #696969;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   AWARDS & INSIGNIA
+========================================================= */
+
+.awards-card {
+    margin-top: 12px;
+    padding: 25px;
+}
+
+.awards-header {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 25px;
+    padding-bottom: 22px;
+    border-bottom: 1px solid #242424;
+}
+
+.awards-intro {
+    max-width: 680px;
+    margin: 8px 0 0;
+    color: #777;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+.awards-count {
+    min-width: 120px;
+    padding: 12px;
+    border: 1px solid #292929;
+    background: #0a0a0a;
+    text-align: center;
+}
+
+.awards-count strong,
+.awards-count span {
+    display: block;
+}
+
+.awards-count strong {
+    color: #e4e4e4;
+    font-size: 24px;
+}
+
+.awards-count span {
+    margin-top: 5px;
+    color: #5f5f5f;
+    font: 7px "Courier New", monospace;
+    letter-spacing: .09em;
+}
+
+
+/* =========================================================
+   AWARD CATEGORIES
+========================================================= */
+
+.insignia-category {
+    margin-top: 28px;
+}
+
+.insignia-category + .insignia-category {
+    padding-top: 28px;
+    border-top: 1px solid #202020;
+}
+
+.insignia-category-head {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 17px;
+}
+
+.insignia-category-head > span {
+    color: #4e4e4e;
+    font: 10px "Courier New", monospace;
+}
+
+.insignia-category-head strong,
+.insignia-category-head small {
+    display: block;
+}
+
+.insignia-category-head strong {
+    color: #c9c9c9;
+    font-size: 9px;
+    letter-spacing: .1em;
+}
+
+.insignia-category-head small {
+    margin-top: 4px;
+    color: #5e5e5e;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   RIBBON RACK
+========================================================= */
+
+.ribbon-rack {
+    min-height: 88px;
+    padding: 18px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid #242424;
+
+    background:
+        repeating-linear-gradient(
+            135deg,
+            #0b0b0b,
+            #0b0b0b 8px,
+            #0e0e0e 8px,
+            #0e0e0e 16px
+        );
+}
+
+.ribbon-item {
+    width: 54px;
+    height: 18px;
+    padding: 0;
+    border: 1px solid #333;
+    background: #111;
+    cursor: pointer;
+    transition:
+        transform .16s ease,
+        border-color .16s ease;
+}
+
+.ribbon-item:hover {
+    transform: translateY(-2px);
+    border-color: #777;
+}
+
+.ribbon-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.insignia-empty {
+    width: 100%;
+    min-height: 52px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #555;
+}
+
+.insignia-empty span {
+    font: 8px "Courier New", monospace;
+    font-weight: 800;
+    letter-spacing: .11em;
+}
+
+.insignia-empty small {
+    margin-top: 6px;
+    color: #444;
+    font-size: 8px;
+}
+
+
+/* =========================================================
+   BADGES
+========================================================= */
+
+.badge-rack {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 9px;
+}
+
+.insignia-item {
+    min-height: 100px;
+    padding: 13px;
+
+    display: flex;
+    align-items: center;
+    gap: 13px;
+
+    border: 1px solid #282828;
+    background: #0b0b0b;
+    color: #ddd;
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        transform .18s ease;
+}
+
+.insignia-item:hover {
+    transform: translateY(-2px);
+    border-color: #4c4c4c;
+    background: #111;
+}
+
+.insignia-image {
+    width: 56px;
+    height: 56px;
+    flex: 0 0 56px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+
+    border: 1px solid #303030;
+    background: #080808;
+    overflow: hidden;
+}
+
+.insignia-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.insignia-image > span {
+    position: absolute;
+    color: #555;
+    font: 8px "Courier New", monospace;
+    pointer-events: none;
+}
+
+.insignia-item-info {
+    min-width: 0;
+}
+
+.insignia-item-info strong {
+    display: block;
+    color: #d3d3d3;
+    font-size: 10px;
+}
+
+.insignia-item-info small {
+    display: block;
+    margin-top: 4px;
+    color: #666;
+    font-size: 8px;
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   UNIT INSIGNIA
+========================================================= */
+
+.unit-insignia-panel {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+
+    padding: 17px;
+
+    border: 1px solid #282828;
+    background: #0b0b0b;
+}
+
+.unit-insignia-image {
+    width: 82px;
+    height: 82px;
+    flex: 0 0 82px;
+
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #303030;
+    background: #080808;
+    overflow: hidden;
+}
+
+.unit-insignia-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 6px;
+}
+
+.unit-insignia-image > span {
+    position: absolute;
+    color: #505050;
+    font: 8px "Courier New", monospace;
+}
+
+.unit-insignia-info > span,
+.unit-insignia-info strong {
+    display: block;
+}
+
+.unit-insignia-info > span {
+    color: #5f5f5f;
+    font: 8px "Courier New", monospace;
+    letter-spacing: .1em;
+}
+
+.unit-insignia-info strong {
+    margin-top: 6px;
+    color: #d0d0d0;
+    font-size: 15px;
+}
+
+.unit-insignia-info p {
+    margin: 6px 0 0;
+    max-width: 500px;
+    color: #666;
+    font-size: 9px;
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   INSIGNIA MODAL
+========================================================= */
+
+.insignia-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease;
+}
+
+.insignia-modal.open {
+    opacity: 1;
+    visibility: visible;
+}
+
+.insignia-modal-backdrop {
+    position: absolute;
+    inset: 0;
+
+    background: rgba(0, 0, 0, .78);
+
+    backdrop-filter: blur(5px);
+}
+
+.insignia-modal-card {
+    position: relative;
+    z-index: 2;
+
+    width: min(430px, 100%);
+
+    padding: 28px;
+
+    border: 1px solid #363636;
+
+    background:
+        linear-gradient(
+            180deg,
+            #171717,
+            #0a0a0a
+        );
+
+    box-shadow:
+        0 30px 90px rgba(0, 0, 0, .55);
+}
+
+.insignia-modal-close {
+    position: absolute;
+
+    top: 10px;
+    right: 12px;
+
+    width: 30px;
+    height: 30px;
+
+    border: 0;
+
+    background: transparent;
+
+    color: #777;
+
+    font-size: 23px;
+
+    cursor: pointer;
+}
+
+.insignia-modal-close:hover {
+    color: #fff;
+}
+
+.modal-insignia-image {
+    width: 130px;
+    height: 100px;
+
+    margin-bottom: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 1px solid #303030;
+
+    background: #080808;
+}
+
+.modal-insignia-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    padding: 10px;
+}
+
+.modal-insignia-image span {
+    color: #505050;
+    font: 8px "Courier New", monospace;
+}
+
+.insignia-modal-card h3 {
+    margin: 8px 0;
+    color: #ededed;
+    font-size: 22px;
+}
+
+.insignia-modal-card p {
+    margin: 0;
+    color: #777;
+    font-size: 10px;
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 950px) {
+
+    .portal-login {
+        grid-template-columns: 1fr;
+        gap: 35px;
+        max-width: 680px;
+    }
+
+    .portal-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .profile-facts {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portal-content-grid {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 850px) {
+
+    .awards-header {
+        flex-direction: column;
+    }
+
+    .awards-count {
+        min-width: 100%;
+    }
+
+    .badge-rack {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 620px) {
+
+    .portal-login {
+        width: min(100% - 26px, 680px);
+        padding: 50px 0;
+    }
+
+    .portal-dashboard {
+        width: min(100% - 26px, 1160px);
+        padding-top: 44px;
+    }
+
+    .portal-dashboard-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .profile-facts {
+        grid-template-columns: 1fr;
+    }
+
+    .login-card {
+        padding: 20px;
+    }
+
+    .awards-card {
+        padding: 18px;
+    }
+
+    .ribbon-rack {
+        padding: 13px;
+    }
+
+    .insignia-item {
+        min-height: 82px;
+    }
+
+    .insignia-image {
+        width: 48px;
+        height: 48px;
+        flex-basis: 48px;
+    }
+
+    .unit-insignia-panel {
+        align-items: flex-start;
+    }
+
+}
+
+/* =========================================================
+   DATABASE-DRIVEN INSIGNIA FALLBACKS
+========================================================= */
+
+.dynamic-ribbon-fallback {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 3px 4px;
+    box-sizing: border-box;
+    color: #bdbdbd;
+    font: 7px "Courier New", monospace;
+    line-height: 12px;
+    text-align: center;
+    letter-spacing: .06em;
+}
+
+.award-meta-line {
+    margin-top: 5px;
+    color: #666;
+    font: 7px "Courier New", monospace;
+}
