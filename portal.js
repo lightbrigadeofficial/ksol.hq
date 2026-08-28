@@ -3,29 +3,20 @@
  * KSOL PORTAL FRONTEND
  * ==========================================================
  *
- * Database-driven KSOL member portal.
+ * DATABASE TABLES USED:
  *
- * Systems:
- * - Service Number / Username login
- * - Personnel record
- * - Days in service
- * - Qualifications
- * - Rank history
- * - Unit history
- * - Appointment catalog
- * - Awards / ribbons / badges / tabs
- * - Unit insignia
- * - Insignia popup
+ * personnel
+ * qualifications
+ * rank_history
+ * unit_history
+ * unit_catalog
+ * appointments
+ * personnel_awards
+ * award_catalog
  *
- * IMPORTANT:
- * - Publishable key is intended for browser-side use with RLS.
- * - NEVER put a Supabase service_role / secret key here.
+ * ==========================================================
  */
 
-
-/* ==========================================================
-   SUPABASE CONFIGURATION
-========================================================== */
 
 const KSOL_SUPABASE_URL =
     "https://erhupqckxnfoqhgnksrl.supabase.co";
@@ -33,9 +24,12 @@ const KSOL_SUPABASE_URL =
 const KSOL_SUPABASE_PUBLISHABLE_KEY =
     "sb_publishable_AsGoP8NNzT_kgR40sz9lXw_GcLdGkbg";
 
-
 let supabaseClient = null;
 
+
+/* ==========================================================
+   SUPABASE INITIALIZATION
+========================================================== */
 
 if (
     typeof window.supabase !== "undefined" &&
@@ -52,7 +46,6 @@ if (
 }
 
 
-
 /* ==========================================================
    UTILITIES
 ========================================================== */
@@ -62,19 +55,19 @@ function showLoginMessage(
     type = ""
 ) {
 
-    const el =
+    const element =
         document.getElementById(
             "loginMessage"
         );
 
-    if (!el) return;
+    if (!element) {
+        return;
+    }
 
-
-    el.textContent =
+    element.textContent =
         text;
 
-
-    el.className =
+    element.className =
         "login-message" +
         (
             type
@@ -85,13 +78,11 @@ function showLoginMessage(
 }
 
 
-
 function initials(name) {
 
     if (!name) {
         return "--";
     }
-
 
     return name
         .trim()
@@ -108,7 +99,6 @@ function initials(name) {
 }
 
 
-
 function calculateDays(
     dateString
 ) {
@@ -117,38 +107,31 @@ function calculateDays(
         return null;
     }
 
-
     const start =
         new Date(
             `${dateString}T00:00:00`
         );
 
-
     const now =
         new Date();
-
 
     if (
         Number.isNaN(
             start.getTime()
         )
     ) {
-
         return null;
-
     }
 
-
-    const diff =
+    const difference =
         Math.max(
             0,
             now.getTime() -
             start.getTime()
         );
 
-
     return Math.floor(
-        diff /
+        difference /
         (
             1000 *
             60 *
@@ -158,39 +141,6 @@ function calculateDays(
     );
 
 }
-
-
-
-function escapeHTML(
-    value
-) {
-
-    return String(
-        value ?? ""
-    )
-        .replace(
-            /&/g,
-            "&amp;"
-        )
-        .replace(
-            /</g,
-            "&lt;"
-        )
-        .replace(
-            />/g,
-            "&gt;"
-        )
-        .replace(
-            /"/g,
-            "&quot;"
-        )
-        .replace(
-            /'/g,
-            "&#039;"
-        );
-
-}
-
 
 
 /* ==========================================================
@@ -209,7 +159,6 @@ async function resolveIdentifier(
 
     }
 
-
     const {
         data,
         error
@@ -224,7 +173,6 @@ async function resolveIdentifier(
             }
         );
 
-
     if (error) {
 
         console.error(
@@ -232,13 +180,11 @@ async function resolveIdentifier(
             error
         );
 
-
         throw new Error(
             "Unable to contact KSOL authentication service."
         );
 
     }
-
 
     if (
         !data ||
@@ -251,11 +197,9 @@ async function resolveIdentifier(
 
     }
 
-
     return data.login_identifier;
 
 }
-
 
 
 async function handleLogin(
@@ -264,42 +208,33 @@ async function handleLogin(
 
     event.preventDefault();
 
-
     const identifierInput =
         document.getElementById(
             "identifier"
         );
-
 
     const passwordInput =
         document.getElementById(
             "password"
         );
 
-
     const submit =
         document.querySelector(
             ".login-submit"
         );
 
-
     if (
         !identifierInput ||
         !passwordInput
     ) {
-
         return;
-
     }
-
 
     const identifier =
         identifierInput.value.trim();
 
-
     const password =
         passwordInput.value;
-
 
     if (
         !identifier ||
@@ -315,47 +250,37 @@ async function handleLogin(
 
     }
 
-
     try {
 
         if (submit) {
             submit.disabled = true;
         }
 
-
         showLoginMessage(
             "AUTHENTICATING..."
         );
-
 
         const internalEmail =
             await resolveIdentifier(
                 identifier
             );
 
-
         const {
             error
         } =
             await supabaseClient.auth.signInWithPassword({
-                email:
-                    internalEmail,
-
-                password:
-                    password
+                email: internalEmail,
+                password: password
             });
-
 
         if (error) {
             throw error;
         }
 
-
         showLoginMessage(
             "AUTHENTICATION SUCCESSFUL.",
             "success"
         );
-
 
         window.setTimeout(
             () => {
@@ -367,20 +292,17 @@ async function handleLogin(
             450
         );
 
-
-    } catch (error) {
+    }
+    catch (error) {
 
         console.error(
-            "LOGIN ERROR:",
             error
         );
-
 
         showLoginMessage(
             "Authentication failed. Check your credentials.",
             "error"
         );
-
 
         if (submit) {
             submit.disabled = false;
@@ -391,7 +313,6 @@ async function handleLogin(
 }
 
 
-
 function setupLoginPage() {
 
     const form =
@@ -399,16 +320,14 @@ function setupLoginPage() {
             "loginForm"
         );
 
+    if (form) {
 
-    if (!form) {
-        return;
+        form.addEventListener(
+            "submit",
+            handleLogin
+        );
+
     }
-
-
-    form.addEventListener(
-        "submit",
-        handleLogin
-    );
 
 
     const toggle =
@@ -416,12 +335,10 @@ function setupLoginPage() {
             "togglePassword"
         );
 
-
     const password =
         document.getElementById(
             "password"
         );
-
 
     if (
         toggle &&
@@ -436,12 +353,10 @@ function setupLoginPage() {
                     password.type ===
                     "text";
 
-
                 password.type =
                     visible
                         ? "password"
                         : "text";
-
 
                 toggle.textContent =
                     visible
@@ -458,7 +373,6 @@ function setupLoginPage() {
         document.getElementById(
             "resetPassword"
         );
-
 
     if (reset) {
 
@@ -478,7 +392,6 @@ function setupLoginPage() {
 }
 
 
-
 /* ==========================================================
    LOAD MEMBER PORTAL
 ========================================================== */
@@ -492,6 +405,7 @@ async function loadMemberPortal() {
         );
 
         return;
+
     }
 
 
@@ -513,6 +427,7 @@ async function loadMemberPortal() {
             "login.html";
 
         return;
+
     }
 
 
@@ -550,13 +465,12 @@ async function loadMemberPortal() {
             personnelError
         );
 
-
         renderPortalError(
             "Could not load your KSOL personnel record."
         );
 
-
         return;
+
     }
 
 
@@ -566,13 +480,9 @@ async function loadMemberPortal() {
             "Your account is not linked to a KSOL personnel record."
         );
 
-
         return;
+
     }
-
-
-    window.KSOL_PERSONNEL_ID =
-        personnel.id;
 
 
     populateMemberRecord(
@@ -590,13 +500,13 @@ async function loadMemberPortal() {
     );
 
 
-    await loadCurrentAppointment(
-        personnel
+    await loadAppointment(
+        personnel.appointment
     );
 
 
-    await loadCurrentUnit(
-        personnel.id
+    await loadUnitInsignia(
+        personnel.unit
     );
 
 
@@ -607,9 +517,536 @@ async function loadMemberPortal() {
 }
 
 
+/* ==========================================================
+   AWARDS
+   RIBBONS
+   BADGES
+   TABS
+========================================================== */
+
+async function loadAwards(
+    personnelId
+) {
+
+    if (!personnelId) {
+        return;
+    }
+
+    try {
+
+        const {
+            data,
+            error
+        } =
+            await supabaseClient
+                .from("personnel_awards")
+                .select(`
+                    id,
+                    personnel_id,
+                    award_id,
+                    awarded_date,
+                    awarded_by,
+                    notes,
+                    award_catalog (
+                        id,
+                        code,
+                        name,
+                        description,
+                        category,
+                        image_path,
+                        precedence
+                    )
+                `)
+                .eq(
+                    "personnel_id",
+                    personnelId
+                );
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        const awards =
+            (data || [])
+                .map(
+                    record => ({
+                        ...record,
+                        award:
+                            record.award_catalog
+                    })
+                )
+                .filter(
+                    record =>
+                        record.award
+                );
+
+
+        awards.sort(
+            (a, b) =>
+                Number(
+                    a.award.precedence ??
+                    999999
+                ) -
+                Number(
+                    b.award.precedence ??
+                    999999
+                )
+        );
+
+
+        /*
+         * RIBBONS
+         */
+
+        renderAwardCategory(
+            awards.filter(
+                record =>
+                    record.award.category ===
+                    "ribbon"
+            ),
+            [
+                "#ribbonRack",
+                ".ribbon-rack"
+            ],
+            "ribbon-item"
+        );
+
+
+        /*
+         * BADGES + TABS
+         *
+         * Both use the existing badgeRack.
+         */
+
+        renderAwardCategory(
+            awards.filter(
+                record =>
+                    record.award.category ===
+                    "badge" ||
+                    record.award.category ===
+                    "tab"
+            ),
+            [
+                "#badgeRack",
+                ".badge-rack"
+            ],
+            "insignia-item"
+        );
+
+
+        updatePortalAwardCount();
+
+    }
+    catch (error) {
+
+        console.error(
+            "Awards error:",
+            error
+        );
+
+        updatePortalAwardCount();
+
+    }
+
+}
+
 
 /* ==========================================================
-   PERSONNEL DISPLAY
+   FIND AWARD CONTAINER
+========================================================== */
+
+function findAwardContainer(
+    selectors,
+    itemClass
+) {
+
+    for (
+        const selector of selectors
+    ) {
+
+        const container =
+            document.querySelector(
+                selector
+            );
+
+        if (container) {
+            return container;
+        }
+
+    }
+
+
+    const existingItem =
+        document.querySelector(
+            `.${itemClass}`
+        );
+
+
+    if (
+        existingItem &&
+        existingItem.parentElement
+    ) {
+
+        return existingItem.parentElement;
+
+    }
+
+
+    return null;
+
+}
+
+
+/* ==========================================================
+   RENDER AWARD CATEGORY
+========================================================== */
+
+function renderAwardCategory(
+    awards,
+    selectors,
+    itemClass
+) {
+
+    const container =
+        findAwardContainer(
+            selectors,
+            itemClass
+        );
+
+
+    if (!container) {
+
+        console.warn(
+            "Award container not found:",
+            selectors
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * REMOVE HARD-CODED LOADING TEXT
+     */
+
+    container
+        .querySelectorAll(
+            ".insignia-empty"
+        )
+        .forEach(
+            element =>
+                element.remove()
+        );
+
+
+    /*
+     * REMOVE ANY PREVIOUSLY GENERATED ITEMS
+     */
+
+    container
+        .querySelectorAll(
+            `.${itemClass}`
+        )
+        .forEach(
+            element =>
+                element.remove()
+        );
+
+
+    /*
+     * NOTHING AWARDED
+     */
+
+    if (!awards.length) {
+
+        const empty =
+            document.createElement(
+                "div"
+            );
+
+        empty.className =
+            "insignia-empty";
+
+
+        const title =
+            document.createElement(
+                "span"
+            );
+
+        title.textContent =
+            itemClass ===
+            "ribbon-item"
+                ? "NO RIBBONS AWARDED"
+                : "NO BADGES OR TABS AWARDED";
+
+
+        const subtitle =
+            document.createElement(
+                "small"
+            );
+
+        subtitle.textContent =
+            "No authorized insignia is currently recorded.";
+
+
+        empty.appendChild(
+            title
+        );
+
+        empty.appendChild(
+            subtitle
+        );
+
+        container.appendChild(
+            empty
+        );
+
+        return;
+
+    }
+
+
+    /*
+     * CREATE EACH AWARD
+     */
+
+    awards.forEach(
+        record => {
+
+            const award =
+                record.award;
+
+
+            const item =
+                document.createElement(
+                    "div"
+                );
+
+
+            item.className =
+                itemClass;
+
+
+            item.dataset.insigniaName =
+                award.name ||
+                "Insignia";
+
+
+            item.dataset.insigniaDescription =
+                award.description ||
+                "No description available.";
+
+
+            /*
+             * ==============================================
+             * RIBBON
+             * ==============================================
+             */
+
+            if (
+                award.category ===
+                "ribbon"
+            ) {
+
+                const image =
+                    document.createElement(
+                        "img"
+                    );
+
+
+                image.src =
+                    award.image_path ||
+                    "";
+
+
+                image.alt =
+                    award.name ||
+                    "Ribbon";
+
+
+                image.loading =
+                    "lazy";
+
+
+                item.appendChild(
+                    image
+                );
+
+
+                container.appendChild(
+                    item
+                );
+
+
+                return;
+
+            }
+
+
+            /*
+             * ==============================================
+             * BADGE / TAB
+             *
+             * IMPORTANT:
+             * This structure matches the existing CSS.
+             * ==============================================
+             */
+
+            const imageBox =
+                document.createElement(
+                    "div"
+                );
+
+
+            imageBox.className =
+                "insignia-image";
+
+
+            const image =
+                document.createElement(
+                    "img"
+                );
+
+
+            image.src =
+                award.image_path ||
+                "";
+
+
+            image.alt =
+                award.name ||
+                "";
+
+
+            image.loading =
+                "lazy";
+
+
+            const imageFallback =
+                document.createElement(
+                    "span"
+                );
+
+
+            imageFallback.textContent =
+                "";
+
+
+            imageBox.appendChild(
+                image
+            );
+
+
+            imageBox.appendChild(
+                imageFallback
+            );
+
+
+            const info =
+                document.createElement(
+                    "div"
+                );
+
+
+            info.className =
+                "insignia-item-info";
+
+
+            const name =
+                document.createElement(
+                    "strong"
+                );
+
+
+            name.textContent =
+                award.name ||
+                "Insignia";
+
+
+            const category =
+                document.createElement(
+                    "small"
+                );
+
+
+            category.textContent =
+                (
+                    award.category ||
+                    "insignia"
+                ).toUpperCase();
+
+
+            info.appendChild(
+                name
+            );
+
+
+            info.appendChild(
+                category
+            );
+
+
+            item.appendChild(
+                imageBox
+            );
+
+
+            item.appendChild(
+                info
+            );
+
+
+            container.appendChild(
+                item
+            );
+
+        }
+    );
+
+}
+
+
+/* ==========================================================
+   AWARD COUNT
+========================================================== */
+
+function updatePortalAwardCount() {
+
+    const awardCount =
+        document.getElementById(
+            "awardCount"
+        );
+
+
+    if (!awardCount) {
+        return;
+    }
+
+
+    const ribbons =
+        document.querySelectorAll(
+            ".ribbon-item"
+        ).length;
+
+
+    const insignia =
+        document.querySelectorAll(
+            ".insignia-item"
+        ).length;
+
+
+    awardCount.textContent =
+        ribbons +
+        insignia;
+
+}
+
+
+/* ==========================================================
+   PERSONNEL RECORD
 ========================================================== */
 
 function populateMemberRecord(
@@ -814,13 +1251,13 @@ function populateMemberRecord(
         );
 
 
+    const days =
+        calculateDays(
+            person.join_date
+        );
+
+
     if (serviceDays) {
-
-        const days =
-            calculateDays(
-                person.join_date
-            );
-
 
         serviceDays.textContent =
             days === null
@@ -829,16 +1266,218 @@ function populateMemberRecord(
 
     }
 
+
+    /*
+     * APPOINTMENT PANEL
+     */
+
+    const appointmentTitle =
+        document.getElementById(
+            "appointmentTitle"
+        );
+
+
+    const appointmentDescription =
+        document.getElementById(
+            "appointmentDescription"
+        );
+
+
+    if (appointmentTitle) {
+
+        appointmentTitle.textContent =
+            person.appointment ||
+            "No Appointment";
+
+    }
+
+
+    if (appointmentDescription) {
+
+        appointmentDescription.textContent =
+            "Loading appointment information...";
+
+    }
+
 }
 
+
+/* ==========================================================
+   UNIT CATALOG / UNIT INSIGNIA
+========================================================== */
+
+async function loadUnitInsignia(
+    unitName
+) {
+
+    const image =
+        document.getElementById(
+            "currentUnitInsignia"
+        );
+
+
+    const unitNameElement =
+        document.getElementById(
+            "insigniaUnitName"
+        );
+
+
+    if (!unitName) {
+
+        if (unitNameElement) {
+
+            unitNameElement.textContent =
+                "NO UNIT ASSIGNED";
+
+        }
+
+
+        if (image) {
+
+            image.removeAttribute(
+                "src"
+            );
+
+            image.style.display =
+                "none";
+
+        }
+
+        return;
+
+    }
+
+
+    try {
+
+        const {
+            data: unit,
+            error
+        } =
+            await supabaseClient
+                .from("unit_catalog")
+                .select(`
+                    name,
+                    insignia_path,
+                    description
+                `)
+                .eq(
+                    "name",
+                    unitName
+                )
+                .maybeSingle();
+
+
+        if (error) {
+            throw error;
+        }
+
+
+        if (!unit) {
+
+            console.warn(
+                "No unit_catalog entry found for:",
+                unitName
+            );
+
+
+            if (unitNameElement) {
+
+                unitNameElement.textContent =
+                    unitName;
+
+            }
+
+
+            if (image) {
+
+                image.removeAttribute(
+                    "src"
+                );
+
+                image.style.display =
+                    "none";
+
+            }
+
+            return;
+
+        }
+
+
+        if (unitNameElement) {
+
+            unitNameElement.textContent =
+                unit.name;
+
+        }
+
+
+        if (
+            image &&
+            unit.insignia_path
+        ) {
+
+            image.src =
+                unit.insignia_path;
+
+            image.alt =
+                `${unit.name} insignia`;
+
+            image.style.display =
+                "";
+
+        }
+        else if (image) {
+
+            image.removeAttribute(
+                "src"
+            );
+
+            image.style.display =
+                "none";
+
+        }
+
+    }
+    catch (error) {
+
+        console.error(
+            "Unit catalog lookup error:",
+            error
+        );
+
+
+        if (unitNameElement) {
+
+            unitNameElement.textContent =
+                unitName;
+
+        }
+
+
+        if (image) {
+
+            image.removeAttribute(
+                "src"
+            );
+
+            image.style.display =
+                "none";
+
+        }
+
+    }
+
+}
 
 
 /* ==========================================================
    APPOINTMENT
 ========================================================== */
 
-async function loadCurrentAppointment(
-    person
+async function loadAppointment(
+    appointmentName
 ) {
 
     const title =
@@ -859,132 +1498,33 @@ async function loadCurrentAppointment(
         );
 
 
-    if (
-        !title ||
-        !rankBand ||
-        !description
-    ) {
+    if (!appointmentName) {
+
+        if (title) {
+
+            title.textContent =
+                "No Appointment";
+
+        }
+
+
+        if (rankBand) {
+
+            rankBand.textContent =
+                "—";
+
+        }
+
+
+        if (description) {
+
+            description.textContent =
+                "No current appointment assigned.";
+
+        }
 
         return;
 
-    }
-
-
-    if (!person.appointment) {
-
-        title.textContent =
-            "No Appointment";
-
-
-        rankBand.textContent =
-            "—";
-
-
-        description.textContent =
-            "No current appointment assigned.";
-
-
-        return;
-
-    }
-
-
-    const {
-        data,
-        error
-    } =
-        await supabaseClient
-            .from("appointments")
-            .select(`
-                name,
-                rank_band,
-                description
-            `)
-            .eq(
-                "name",
-                person.appointment
-            )
-            .maybeSingle();
-
-
-    if (error) {
-
-        console.error(
-            "Appointment lookup:",
-            error
-        );
-
-
-        title.textContent =
-            person.appointment;
-
-
-        rankBand.textContent =
-            "—";
-
-
-        description.textContent =
-            "Appointment information unavailable.";
-
-
-        return;
-
-    }
-
-
-    if (!data) {
-
-        title.textContent =
-            person.appointment;
-
-
-        rankBand.textContent =
-            "—";
-
-
-        description.textContent =
-            "Appointment information unavailable.";
-
-
-        return;
-
-    }
-
-
-    title.textContent =
-        data.name ||
-        person.appointment;
-
-
-    rankBand.textContent =
-        data.rank_band ||
-        "—";
-
-
-    description.textContent =
-        data.description ||
-        "No appointment description available.";
-
-}
-
-
-
-/* ==========================================================
-   QUALIFICATIONS
-========================================================== */
-
-async function loadQualifications(
-    personnelId
-) {
-
-    const list =
-        document.getElementById(
-            "qualificationList"
-        );
-
-
-    if (!list) {
-        return;
     }
 
 
@@ -995,25 +1535,17 @@ async function loadQualifications(
             error
         } =
             await supabaseClient
-                .from("qualifications")
+                .from("appointments")
                 .select(`
-                    id,
-                    qualification,
-                    awarded_date,
-                    awarded_by,
-                    notes
+                    name,
+                    rank_band,
+                    description
                 `)
                 .eq(
-                    "personnel_id",
-                    personnelId
+                    "name",
+                    appointmentName
                 )
-                .order(
-                    "awarded_date",
-                    {
-                        ascending:
-                            false
-                    }
-                );
+                .maybeSingle();
 
 
         if (error) {
@@ -1021,102 +1553,288 @@ async function loadQualifications(
         }
 
 
-        const records =
-            data || [];
+        if (!data) {
+
+            if (title) {
+
+                title.textContent =
+                    appointmentName;
+
+            }
 
 
-        const qualificationCount =
-            document.getElementById(
-                "qualificationCount"
-            );
+            if (rankBand) {
+
+                rankBand.textContent =
+                    "—";
+
+            }
 
 
-        if (qualificationCount) {
+            if (description) {
 
-            qualificationCount.textContent =
-                records.length;
+                description.textContent =
+                    "Appointment information unavailable.";
 
-        }
-
-
-        if (!records.length) {
-
-            list.innerHTML =
-                `
-                <div class="portal-muted">
-                    No qualifications recorded.
-                </div>
-                `;
-
+            }
 
             return;
 
         }
 
 
-        list.innerHTML =
-            records
-                .map(
-                    item => `
-                        <div class="qualification-item">
+        if (title) {
 
-                            <strong>
-                                ${escapeHTML(
-                                    item.qualification
-                                )}
-                            </strong>
+            title.textContent =
+                data.name;
 
-                            <span>
-                                AWARDED //
-                                ${escapeHTML(
-                                    item.awarded_date ||
-                                    "—"
-                                )}
-                            </span>
-
-                        </div>
-                    `
-                )
-                .join("");
+        }
 
 
-    } catch (error) {
+        if (rankBand) {
 
-        console.error(
-            "Qualification error:",
-            error
-        );
-
-
-        const qualificationCount =
-            document.getElementById(
-                "qualificationCount"
-            );
-
-
-        if (qualificationCount) {
-
-            qualificationCount.textContent =
+            rankBand.textContent =
+                data.rank_band ||
                 "—";
 
         }
 
 
-        list.innerHTML =
-            `
-            <div class="portal-muted">
-                Qualification records unavailable.
-            </div>
-            `;
+        if (description) {
+
+            description.textContent =
+                data.description ||
+                "No description available.";
+
+        }
+
+    }
+    catch (error) {
+
+        console.error(
+            "Appointment lookup:",
+            error
+        );
+
+
+        if (title) {
+
+            title.textContent =
+                appointmentName;
+
+        }
+
+
+        if (rankBand) {
+
+            rankBand.textContent =
+                "—";
+
+        }
+
+
+        if (description) {
+
+            description.textContent =
+                "Appointment information unavailable.";
+
+        }
 
     }
 
 }
 
 
+/* ==========================================================
+   QUALIFICATIONS
+========================================================== */
+
+async function loadQualifications(personnelId) {
+
+    const container =
+        document.getElementById("qualificationList");
+
+    const countElement =
+        document.getElementById("qualificationCount");
+
+    if (!container) {
+        console.error("Qualifications container not found.");
+        return;
+    }
+
+    if (!personnelId) {
+        console.error("No personnel ID supplied for qualifications.");
+
+        container.innerHTML = `
+            <div class="portal-muted">
+                Qualifications unavailable.
+            </div>
+        `;
+
+        if (countElement) {
+            countElement.textContent = "0";
+        }
+
+        return;
+    }
+
+
+    try {
+
+        console.log(
+            "Loading qualifications for:",
+            personnelId
+        );
+
+
+        const {
+            data,
+            error
+        } = await supabaseClient
+            .from("qualifications")
+            .select(`
+                id,
+                personnel_id,
+                qualification,
+                awarded_date,
+                awarded_by,
+                notes
+            `)
+            .eq(
+                "personnel_id",
+                personnelId
+            )
+            .order(
+                "awarded_date",
+                {
+                    ascending: false
+                }
+            );
+
+
+        if (error) {
+
+            console.error(
+                "Qualification query error:",
+                error
+            );
+
+            throw error;
+        }
+
+
+        console.log(
+            "Qualifications loaded:",
+            data
+        );
+
+
+        const qualifications =
+            data || [];
+
+
+        /*
+         * QUALIFICATION COUNT
+         */
+
+        if (countElement) {
+
+            countElement.textContent =
+                qualifications.length;
+
+        }
+
+
+        /*
+         * NO QUALIFICATIONS
+         */
+
+        if (!qualifications.length) {
+
+            container.innerHTML = `
+                <div class="portal-muted">
+                    No qualifications recorded.
+                </div>
+            `;
+
+            return;
+        }
+
+
+        /*
+         * QUALIFICATION LIST
+         */
+
+        container.innerHTML =
+            qualifications
+                .map(
+                    qualification => {
+
+                        const date =
+                            qualification.awarded_date
+                                ? qualification.awarded_date
+                                : "—";
+
+
+                        const notes =
+                            qualification.notes ||
+                            "No additional remarks recorded.";
+
+
+                        return `
+                            <div class="history-item">
+
+                                <div class="history-date">
+                                    ${date}
+                                </div>
+
+                                <div class="history-body">
+
+                                    <strong>
+                                        ${qualification.qualification}
+                                    </strong>
+
+                                    <span>
+                                        ${notes}
+                                    </span>
+
+                                </div>
+
+                            </div>
+                        `;
+
+                    }
+                )
+                .join("");
+
+
+    }
+    catch (error) {
+
+        console.error(
+            "Qualification loading failed:",
+            error
+        );
+
+
+        if (countElement) {
+            countElement.textContent = "—";
+        }
+
+
+        container.innerHTML = `
+            <div class="portal-muted">
+                Qualifications unavailable.
+            </div>
+        `;
+
+    }
+
+}
+
 
 /* ==========================================================
-   RANK + UNIT HISTORY
+   RANK / UNIT HISTORY
 ========================================================== */
 
 async function loadHistory(
@@ -1129,117 +1847,146 @@ async function loadHistory(
         );
 
 
+    const rankDays =
+        document.getElementById(
+            "rankDays"
+        );
+
+
     try {
 
-        const [
-            rankResult,
-            unitResult
-        ] =
-            await Promise.all([
+        /*
+         * RANK HISTORY
+         */
 
-                supabaseClient
-                    .from("rank_history")
-                    .select(`
-                        rank,
-                        effective_from,
-                        effective_until,
-                        notes
-                    `)
-                    .eq(
-                        "personnel_id",
-                        personnelId
-                    )
-                    .order(
-                        "effective_from",
-                        {
-                            ascending:
-                                false
-                        }
-                    ),
-
-                supabaseClient
-                    .from("unit_history")
-                    .select(`
-                        unit,
-                        effective_from,
-                        effective_until,
-                        notes
-                    `)
-                    .eq(
-                        "personnel_id",
-                        personnelId
-                    )
-                    .order(
-                        "effective_from",
-                        {
-                            ascending:
-                                false
-                        }
-                    )
-
-            ]);
+        const {
+            data: rankHistory,
+            error: rankError
+        } =
+            await supabaseClient
+                .from("rank_history")
+                .select(
+                    "rank, effective_from, effective_until, notes"
+                )
+                .eq(
+                    "personnel_id",
+                    personnelId
+                )
+                .order(
+                    "effective_from",
+                    {
+                        ascending: false
+                    }
+                );
 
 
-        if (
-            rankResult.error ||
-            unitResult.error
-        ) {
-
-            throw (
-                rankResult.error ||
-                unitResult.error
-            );
-
+        if (rankError) {
+            throw rankError;
         }
-
-
-        const rankHistory =
-            rankResult.data || [];
-
-
-        const unitHistory =
-            unitResult.data || [];
 
 
         /*
-         * Days in current rank
+         * FIND CURRENT RANK
          */
 
         const currentRank =
-            rankHistory.find(
+            (rankHistory || []).find(
                 item =>
-                    !item.effective_until
+                    item.effective_until ===
+                    null
             );
 
 
-        const rankDaysElement =
-            document.getElementById(
-                "rankDays"
-            );
+        /*
+         * DAYS IN CURRENT RANK
+         */
+
+        if (
+            rankDays &&
+            currentRank &&
+            currentRank.effective_from
+        ) {
+
+            const rankStart =
+                new Date(
+                    `${currentRank.effective_from}T00:00:00`
+                );
 
 
-        if (rankDaysElement) {
+            const today =
+                new Date();
+
+
+            const difference =
+                Math.max(
+                    0,
+                    today.getTime() -
+                    rankStart.getTime()
+                );
+
 
             const days =
-                currentRank
-                    ? calculateDays(
-                        currentRank.effective_from
+                Math.floor(
+                    difference /
+                    (
+                        1000 *
+                        60 *
+                        60 *
+                        24
                     )
-                    : null;
+                );
 
 
-            rankDaysElement.textContent =
-                days === null
-                    ? "—"
-                    : days;
+            rankDays.textContent =
+                days;
+
+        }
+        else if (rankDays) {
+
+            rankDays.textContent =
+                "—";
 
         }
 
+
+        /*
+         * UNIT HISTORY
+         */
+
+        const {
+            data: unitHistory,
+            error: unitError
+        } =
+            await supabaseClient
+                .from("unit_history")
+                .select(
+                    "unit, effective_from, effective_until, notes"
+                )
+                .eq(
+                    "personnel_id",
+                    personnelId
+                )
+                .order(
+                    "effective_from",
+                    {
+                        ascending: false
+                    }
+                );
+
+
+        if (unitError) {
+            throw unitError;
+        }
+
+
+        /*
+         * BUILD HISTORY
+         */
 
         const entries = [];
 
 
-        rankHistory.forEach(
+        (rankHistory || []).forEach(
             item => {
 
                 entries.push({
@@ -1264,7 +2011,7 @@ async function loadHistory(
         );
 
 
-        unitHistory.forEach(
+        (unitHistory || []).forEach(
             item => {
 
                 entries.push({
@@ -1289,6 +2036,10 @@ async function loadHistory(
         );
 
 
+        /*
+         * SORT NEWEST FIRST
+         */
+
         entries.sort(
             (a, b) =>
                 new Date(b.date) -
@@ -1301,6 +2052,10 @@ async function loadHistory(
         }
 
 
+        /*
+         * NO HISTORY
+         */
+
         if (!entries.length) {
 
             container.innerHTML =
@@ -1310,11 +2065,14 @@ async function loadHistory(
                 </div>
                 `;
 
-
             return;
 
         }
 
+
+        /*
+         * DISPLAY HISTORY
+         */
 
         container.innerHTML =
             entries
@@ -1323,23 +2081,17 @@ async function loadHistory(
                         <div class="history-item">
 
                             <div class="history-date">
-                                ${escapeHTML(
-                                    entry.date
-                                )}
+                                ${entry.date}
                             </div>
 
                             <div class="history-body">
 
                                 <strong>
-                                    ${escapeHTML(
-                                        entry.title
-                                    )}
+                                    ${entry.title}
                                 </strong>
 
                                 <span>
-                                    ${escapeHTML(
-                                        entry.detail
-                                    )}
+                                    ${entry.detail}
                                 </span>
 
                             </div>
@@ -1349,13 +2101,21 @@ async function loadHistory(
                 )
                 .join("");
 
-
-    } catch (error) {
+    }
+    catch (error) {
 
         console.error(
-            "History error:",
+            "LOAD HISTORY ERROR:",
             error
         );
+
+
+        if (rankDays) {
+
+            rankDays.textContent =
+                "—";
+
+        }
 
 
         if (container) {
@@ -1372,925 +2132,6 @@ async function loadHistory(
     }
 
 }
-
-
-
-/* ==========================================================
-   CURRENT UNIT + UNIT INSIGNIA
-========================================================== */
-
-async function loadCurrentUnit(
-    personnelId
-) {
-
-    const image =
-        document.getElementById(
-            "currentUnitInsignia"
-        );
-
-
-    const unitName =
-        document.getElementById(
-            "insigniaUnitName"
-        );
-
-
-    if (
-        !image &&
-        !unitName
-    ) {
-
-        return;
-
-    }
-
-
-    try {
-
-        /*
-         * Find current unit from unit_history.
-         */
-
-        const {
-            data: currentUnit,
-            error: unitHistoryError
-        } =
-            await supabaseClient
-                .from("unit_history")
-                .select(`
-                    unit,
-                    effective_from,
-                    effective_until
-                `)
-                .eq(
-                    "personnel_id",
-                    personnelId
-                )
-                .is(
-                    "effective_until",
-                    null
-                )
-                .order(
-                    "effective_from",
-                    {
-                        ascending:
-                            false
-                    }
-                )
-                .limit(1)
-                .maybeSingle();
-
-
-        if (unitHistoryError) {
-            throw unitHistoryError;
-        }
-
-
-        if (
-            !currentUnit ||
-            !currentUnit.unit
-        ) {
-
-            if (unitName) {
-                unitName.textContent =
-                    "NO UNIT ASSIGNED";
-            }
-
-
-            if (image) {
-                image.src =
-                    "Awards/Units/default.png";
-            }
-
-
-            return;
-
-        }
-
-
-        if (unitName) {
-
-            unitName.textContent =
-                currentUnit.unit;
-
-        }
-
-
-        /*
-         * Find the corresponding unit icon.
-         *
-         * This requires:
-         * unit_catalog.name
-         * unit_catalog.insignia_path
-         */
-
-        const {
-            data: unitRecord,
-            error: unitCatalogError
-        } =
-            await supabaseClient
-                .from("unit_catalog")
-                .select(`
-                    name,
-                    insignia_path
-                `)
-                .eq(
-                    "name",
-                    currentUnit.unit
-                )
-                .maybeSingle();
-
-
-        if (unitCatalogError) {
-            throw unitCatalogError;
-        }
-
-
-        if (
-            image &&
-            unitRecord &&
-            unitRecord.insignia_path
-        ) {
-
-            image.src =
-                unitRecord.insignia_path;
-
-
-            image.alt =
-                `${currentUnit.unit} insignia`;
-
-
-            image.style.display =
-                "block";
-
-
-            image.onerror =
-                () => {
-
-                    image.onerror =
-                        null;
-
-                    image.src =
-                        "Awards/Units/default.png";
-
-                };
-
-        } else if (image) {
-
-            image.src =
-                "Awards/Units/default.png";
-
-        }
-
-
-    } catch (error) {
-
-        console.error(
-            "Unit insignia error:",
-            error
-        );
-
-
-        if (unitName) {
-
-            unitName.textContent =
-                "UNIT INSIGNIA UNAVAILABLE";
-
-        }
-
-
-        if (image) {
-
-            image.src =
-                "Awards/Units/default.png";
-
-        }
-
-    }
-
-}
-
-
-
-/* ==========================================================
-   AWARDS / RIBBONS / BADGES / TABS
-========================================================== */
-
-async function loadAwards(
-    personnelId
-) {
-
-    const ribbonRack =
-        document.getElementById(
-            "ribbonRack"
-        );
-
-
-    const badgeRack =
-        document.getElementById(
-            "badgeRack"
-        );
-
-
-    const awardCount =
-        document.getElementById(
-            "awardCount"
-        );
-
-
-    if (
-        !ribbonRack ||
-        !badgeRack
-    ) {
-
-        return;
-
-    }
-
-
-    try {
-
-        /*
-         * personnel_awards
-         *       ↓
-         * award_catalog
-         *
-         * Supabase resolves this relationship
-         * through the foreign key.
-         */
-
-        const {
-            data,
-            error
-        } =
-            await supabaseClient
-                .from("personnel_awards")
-                .select(`
-                    id,
-                    awarded_date,
-                    notes,
-                    award_catalog (
-                        id,
-                        code,
-                        name,
-                        description,
-                        category,
-                        image_path,
-                        precedence
-                    )
-                `)
-                .eq(
-                    "personnel_id",
-                    personnelId
-                );
-
-
-        if (error) {
-            throw error;
-        }
-
-
-        const awards =
-            (data || [])
-                .map(
-                    row => {
-
-                        const catalog =
-                            Array.isArray(
-                                row.award_catalog
-                            )
-                                ? row.award_catalog[0]
-                                : row.award_catalog;
-
-
-                        if (!catalog) {
-                            return null;
-                        }
-
-
-                        return {
-
-                            id:
-                                row.id,
-
-                            code:
-                                catalog.code,
-
-                            name:
-                                catalog.name,
-
-                            description:
-                                catalog.description,
-
-                            category:
-                                String(
-                                    catalog.category ||
-                                    "badge"
-                                ).toLowerCase(),
-
-                            image_path:
-                                catalog.image_path,
-
-                            precedence:
-                                Number(
-                                    catalog.precedence ??
-                                    999
-                                ),
-
-                            awarded_date:
-                                row.awarded_date,
-
-                            notes:
-                                row.notes
-                        };
-
-                    }
-                )
-                .filter(Boolean);
-
-
-        /*
-         * Ribbons
-         */
-
-        const ribbons =
-            awards
-                .filter(
-                    award =>
-                        award.category ===
-                        "ribbon"
-                )
-                .sort(
-                    (a, b) =>
-                        a.precedence -
-                        b.precedence
-                );
-
-
-        /*
-         * Badges and tabs
-         */
-
-        const badges =
-            awards
-                .filter(
-                    award =>
-                        award.category ===
-                            "badge" ||
-                        award.category ===
-                            "tab"
-                )
-                .sort(
-                    (a, b) =>
-                        a.precedence -
-                        b.precedence
-                );
-
-
-        /*
-         * Count only ribbons, badges and tabs.
-         */
-
-        if (awardCount) {
-
-            awardCount.textContent =
-                ribbons.length +
-                badges.length;
-
-        }
-
-
-        /* --------------------------------------------------
-           RIBBON RACK
-        -------------------------------------------------- */
-
-        if (!ribbons.length) {
-
-            ribbonRack.innerHTML =
-                `
-                <div class="insignia-empty">
-
-                    <span>
-                        NO RIBBONS AWARDED
-                    </span>
-
-                    <small>
-                        Awarded ribbons will appear here
-                        in order of precedence.
-                    </small>
-
-                </div>
-                `;
-
-        } else {
-
-            ribbonRack.innerHTML =
-                ribbons
-                    .map(
-                        award => {
-
-                            const image =
-                                award.image_path
-                                    ? `
-                                        <img
-                                            src="${escapeHTML(
-                                                award.image_path
-                                            )}"
-                                            alt="${escapeHTML(
-                                                award.name
-                                            )}"
-                                        >
-                                      `
-                                    : `
-                                        <span
-                                            class="dynamic-ribbon-fallback"
-                                        >
-                                            ${escapeHTML(
-                                                award.code ||
-                                                "RIBBON"
-                                            )}
-                                        </span>
-                                      `;
-
-
-                            return `
-                                <button
-                                    class="ribbon-item"
-                                    type="button"
-
-                                    data-insignia-name="${escapeHTML(
-                                        award.name
-                                    )}"
-
-                                    data-insignia-description="${escapeHTML(
-                                        award.description ||
-                                        ""
-                                    )}"
-
-                                    data-awarded-date="${escapeHTML(
-                                        award.awarded_date ||
-                                        "—"
-                                    )}"
-
-                                    data-award-notes="${escapeHTML(
-                                        award.notes ||
-                                        ""
-                                    )}"
-                                >
-
-                                    ${image}
-
-                                </button>
-                            `;
-                        }
-                    )
-                    .join("");
-
-        }
-
-
-        /* --------------------------------------------------
-           BADGES / TABS
-        -------------------------------------------------- */
-
-        if (!badges.length) {
-
-            badgeRack.innerHTML =
-                `
-                <div class="insignia-empty">
-
-                    <span>
-                        NO BADGES / TABS AWARDED
-                    </span>
-
-                    <small>
-                        Qualification and specialist
-                        insignia will appear here.
-                    </small>
-
-                </div>
-                `;
-
-        } else {
-
-            badgeRack.innerHTML =
-                badges
-                    .map(
-                        award => {
-
-                            const image =
-                                award.image_path
-                                    ? `
-                                        <img
-                                            src="${escapeHTML(
-                                                award.image_path
-                                            )}"
-                                            alt="${escapeHTML(
-                                                award.name
-                                            )}"
-                                        >
-                                      `
-                                    : "";
-
-
-                            const fallback =
-                                !award.image_path
-                                    ? `
-                                        <span>
-                                            ${escapeHTML(
-                                                award.code ||
-                                                "BADGE"
-                                            )}
-                                        </span>
-                                      `
-                                    : "";
-
-
-                            return `
-                                <button
-                                    class="insignia-item"
-                                    type="button"
-
-                                    data-insignia-name="${escapeHTML(
-                                        award.name
-                                    )}"
-
-                                    data-insignia-description="${escapeHTML(
-                                        award.description ||
-                                        ""
-                                    )}"
-
-                                    data-awarded-date="${escapeHTML(
-                                        award.awarded_date ||
-                                        "—"
-                                    )}"
-
-                                    data-award-notes="${escapeHTML(
-                                        award.notes ||
-                                        ""
-                                    )}"
-                                >
-
-                                    <div
-                                        class="insignia-image"
-                                    >
-
-                                        ${image}
-
-                                        ${fallback}
-
-                                    </div>
-
-
-                                    <div
-                                        class="insignia-item-info"
-                                    >
-
-                                        <strong>
-                                            ${escapeHTML(
-                                                award.code ||
-                                                award.name
-                                            )}
-                                        </strong>
-
-                                        <small>
-                                            ${escapeHTML(
-                                                award.name
-                                            )}
-                                        </small>
-
-                                    </div>
-
-                                </button>
-                            `;
-                        }
-                    )
-                    .join("");
-
-        }
-
-
-        /*
-         * Attach popup events after dynamic elements
-         * have been inserted.
-         */
-
-        attachInsigniaHandlers();
-
-
-    } catch (error) {
-
-        console.error(
-            "Awards error:",
-            error
-        );
-
-
-        if (awardCount) {
-            awardCount.textContent =
-                "—";
-        }
-
-
-        ribbonRack.innerHTML =
-            `
-            <div class="insignia-empty">
-
-                <span>
-                    AWARDS UNAVAILABLE
-                </span>
-
-                <small>
-                    Unable to load award records.
-                </small>
-
-            </div>
-            `;
-
-
-        badgeRack.innerHTML =
-            `
-            <div class="insignia-empty">
-
-                <span>
-                    AWARDS UNAVAILABLE
-                </span>
-
-                <small>
-                    Unable to load award records.
-                </small>
-
-            </div>
-            `;
-
-    }
-
-}
-
-
-
-/* ==========================================================
-   INSIGNIA POPUP
-========================================================== */
-
-function attachInsigniaHandlers() {
-
-    document
-        .querySelectorAll(
-            ".ribbon-item, .insignia-item"
-        )
-        .forEach(
-            item => {
-
-                item.addEventListener(
-                    "click",
-                    () => {
-
-                        openInsigniaModal(
-                            item
-                        );
-
-                    }
-                );
-
-            }
-        );
-
-}
-
-
-
-function openInsigniaModal(
-    item
-) {
-
-    const modal =
-        document.getElementById(
-            "insigniaModal"
-        );
-
-
-    const modalTitle =
-        document.getElementById(
-            "insigniaModalTitle"
-        );
-
-
-    const modalDescription =
-        document.getElementById(
-            "insigniaModalDescription"
-        );
-
-
-    const modalImage =
-        document.getElementById(
-            "modalInsigniaImage"
-        );
-
-
-    if (
-        !modal ||
-        !modalTitle ||
-        !modalDescription ||
-        !modalImage
-    ) {
-
-        return;
-
-    }
-
-
-    const name =
-        item.dataset.insigniaName ||
-        "Insignia";
-
-
-    const description =
-        item.dataset.insigniaDescription ||
-        "No description available.";
-
-
-    const awardedDate =
-        item.dataset.awardedDate ||
-        "—";
-
-
-    const notes =
-        item.dataset.awardNotes ||
-        "";
-
-
-    modalTitle.textContent =
-        name;
-
-
-    let descriptionHTML =
-        escapeHTML(
-            description
-        );
-
-
-    descriptionHTML +=
-        `<br><br>
-         <strong>
-            AWARDED:
-         </strong>
-         ${escapeHTML(
-            awardedDate
-         )}`;
-
-
-    if (notes) {
-
-        descriptionHTML +=
-            `<br>
-             <strong>
-                NOTES:
-             </strong>
-             ${escapeHTML(
-                notes
-             )}`;
-
-    }
-
-
-    modalDescription.innerHTML =
-        descriptionHTML;
-
-
-    const image =
-        item.querySelector(
-            "img"
-        );
-
-
-    if (
-        image &&
-        image.getAttribute("src") &&
-        image.style.display !== "none"
-    ) {
-
-        modalImage.innerHTML =
-            `
-            <img
-                src="${escapeHTML(
-                    image.getAttribute("src")
-                )}"
-                alt="${escapeHTML(
-                    name
-                )}"
-            >
-            `;
-
-    } else {
-
-        modalImage.innerHTML =
-            `
-            <span>
-                INSIGNIA
-            </span>
-            `;
-
-    }
-
-
-    modal.classList.add(
-        "open"
-    );
-
-
-    modal.setAttribute(
-        "aria-hidden",
-        "false"
-    );
-
-}
-
-
-
-function closeInsigniaModal() {
-
-    const modal =
-        document.getElementById(
-            "insigniaModal"
-        );
-
-
-    if (!modal) {
-        return;
-    }
-
-
-    modal.classList.remove(
-        "open"
-    );
-
-
-    modal.setAttribute(
-        "aria-hidden",
-        "true"
-    );
-
-}
-
-
-
-/* ==========================================================
-   MODAL EVENT SETUP
-========================================================== */
-
-function setupInsigniaModal() {
-
-    const closeButton =
-        document.getElementById(
-            "closeInsigniaModal"
-        );
-
-
-    const backdrop =
-        document.querySelector(
-            ".insignia-modal-backdrop"
-        );
-
-
-    if (closeButton) {
-
-        closeButton.addEventListener(
-            "click",
-            closeInsigniaModal
-        );
-
-    }
-
-
-    if (backdrop) {
-
-        backdrop.addEventListener(
-            "click",
-            closeInsigniaModal
-        );
-
-    }
-
-
-    document.addEventListener(
-        "keydown",
-        event => {
-
-            if (
-                event.key ===
-                "Escape"
-            ) {
-
-                closeInsigniaModal();
-
-            }
-
-        }
-    );
-
-}
-
 
 
 /* ==========================================================
@@ -2331,7 +2172,6 @@ function renderPortalError(
 }
 
 
-
 /* ==========================================================
    LOGOUT
 ========================================================== */
@@ -2361,7 +2201,8 @@ function setupLogout() {
 
                 }
 
-            } catch (error) {
+            }
+            catch (error) {
 
                 console.error(
                     "Logout error:",
@@ -2380,6 +2221,216 @@ function setupLogout() {
 }
 
 
+/* ==========================================================
+   INSIGNIA MODAL
+========================================================== */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        const modal =
+            document.getElementById(
+                "insigniaModal"
+            );
+
+
+        const modalTitle =
+            document.getElementById(
+                "insigniaModalTitle"
+            );
+
+
+        const modalDescription =
+            document.getElementById(
+                "insigniaModalDescription"
+            );
+
+
+        const modalImage =
+            document.getElementById(
+                "modalInsigniaImage"
+            );
+
+
+        const closeButton =
+            document.getElementById(
+                "closeInsigniaModal"
+            );
+
+
+        function openInsigniaModal(
+            item
+        ) {
+
+            if (!modal) {
+                return;
+            }
+
+
+            const name =
+                item.dataset.insigniaName ||
+                "Insignia";
+
+
+            const description =
+                item.dataset.insigniaDescription ||
+                "No description available.";
+
+
+            if (modalTitle) {
+
+                modalTitle.textContent =
+                    name;
+
+            }
+
+
+            if (modalDescription) {
+
+                modalDescription.textContent =
+                    description;
+
+            }
+
+
+            const image =
+                item.querySelector(
+                    "img"
+                );
+
+
+            if (
+                modalImage &&
+                image &&
+                image.getAttribute(
+                    "src"
+                )
+            ) {
+
+                modalImage.innerHTML =
+                    `
+                    <img
+                        src="${image.getAttribute("src")}"
+                        alt="${name}"
+                    >
+                    `;
+
+            }
+            else if (modalImage) {
+
+                modalImage.innerHTML =
+                    "<span>INSIGNIA</span>";
+
+            }
+
+
+            modal.classList.add(
+                "open"
+            );
+
+
+            modal.setAttribute(
+                "aria-hidden",
+                "false"
+            );
+
+        }
+
+
+        function closeInsigniaModal() {
+
+            if (!modal) {
+                return;
+            }
+
+
+            modal.classList.remove(
+                "open"
+            );
+
+
+            modal.setAttribute(
+                "aria-hidden",
+                "true"
+            );
+
+        }
+
+
+        /*
+         * Dynamic ribbons / badges / tabs
+         * are handled through event delegation.
+         */
+
+        document.addEventListener(
+            "click",
+            event => {
+
+                const item =
+                    event.target.closest(
+                        ".ribbon-item, .insignia-item"
+                    );
+
+
+                if (!item) {
+                    return;
+                }
+
+
+                openInsigniaModal(
+                    item
+                );
+
+            }
+        );
+
+
+        if (closeButton) {
+
+            closeButton.addEventListener(
+                "click",
+                closeInsigniaModal
+            );
+
+        }
+
+
+        const backdrop =
+            document.querySelector(
+                ".insignia-modal-backdrop"
+            );
+
+
+        if (backdrop) {
+
+            backdrop.addEventListener(
+                "click",
+                closeInsigniaModal
+            );
+
+        }
+
+
+        document.addEventListener(
+            "keydown",
+            event => {
+
+                if (
+                    event.key ===
+                    "Escape"
+                ) {
+
+                    closeInsigniaModal();
+
+                }
+
+            }
+        );
+
+    }
+);
+
 
 /* ==========================================================
    INITIALIZATION
@@ -2393,13 +2444,6 @@ document.addEventListener(
 
         setupLogout();
 
-        setupInsigniaModal();
-
-
-        /*
-         * portal.html contains #memberName.
-         * login.html does not.
-         */
 
         if (
             document.body.classList.contains(
