@@ -1,0 +1,1037 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1"
+    >
+
+    <title>KSOL - Job Centre</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="KSOL_Emblem_Transparent.png"
+    >
+
+    <link
+        rel="stylesheet"
+        href="styles.css"
+    >
+
+    <link
+        rel="stylesheet"
+        href="jobs.css"
+    >
+
+</head>
+
+
+<body>
+
+<div class="top"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="KSOL_Emblem_Transparent.png" alt="KSOL Logo" class="nav-logo">
+      <span>KSOL HQ</span>
+    </a>
+
+    <div class="links">
+                
+        <a href="index.html">
+          Home
+        </a>
+      <!-- <a href="index.html#about">FACTION STATS</a> -->
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+          HEADQUARTERS <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="ranks.html" class="nav-dropdown-item">
+            <span class="dropdown-index">01</span>
+            <span>
+              <strong>RANKS</strong>
+              <small>Rank structure &amp; requirements</small>
+            </span>
+          </a>
+          <a href="roster.html" class="nav-dropdown-item">
+            <span class="dropdown-index">02</span>
+            <span>
+              <strong>ROSTER</strong>
+              <small>Faction personnel directory</small>
+            </span>
+          </a>
+          <a href="appointments.html" class="nav-dropdown-item">
+            <span class="dropdown-index">03</span>
+            <span>
+              <strong>ORBAT</strong>
+              <small>Organization &amp; appointments</small>
+            </span>
+          </a>
+          <a href="awards.html" class="nav-dropdown-item">
+            <span class="dropdown-index">04</span>
+            <span>
+              <strong>DECORATIONS</strong>
+              <small>Tabs, badges &amp; decorations</small>
+            </span>
+          </a>
+           <a href="qualifications.html" class="nav-dropdown-item">
+            <span class="dropdown-index">05</span>
+            <span>
+              <strong>QUALIFICATIONS</strong>
+              <small>Courses, trainings &amp; evaluation boards</small>
+            </span>
+          </a>
+          <a href="armoury.html"class="nav-dropdown-item">
+            <span class="dropdown-index">06</span>
+            <span>
+              <strong>ARMOURY</strong>
+              <small>Sanctioned weapon systems &amp; mods</small>
+            </span>
+          </a>
+          <a href="uniforms.html" class="nav-dropdown-item">
+            <span class="dropdown-index">07</span>
+            <span>
+              <strong>UNIFORMS</strong>
+              <small>Faction dress &amp; uniform codes</small>
+            </span>
+          </a>
+        </div>
+      </div>
+      <a href="jobs.html">JOB CENTRE</a>
+      <a href="media.html">MEDIA</a>
+      <a href="#">RULES &amp; SOPs</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://discord.gg/cXGjn9CgYN" class="discord-btn" target="_blank" rel="noopener">JOIN DISCORD</a>
+      <a href="login.html" class="enlist-btn">
+        <span class="enlist-text">LOGIN</span>
+        <span class="enlist-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- =========================================================
+     TIME STRIP
+========================================================= -->
+
+<div class="time-strip">
+
+    <div class="wrap time-strip-inner">
+
+
+        <div class="time-block">
+
+            <span class="time-label">
+                KSOL HQ
+            </span>
+
+
+            <span
+                id="hq-time"
+                class="time-value"
+            >
+                --:--:--
+            </span>
+
+
+            <span class="time-zone">
+                IST
+            </span>
+
+        </div>
+
+
+        <div class="time-divider"></div>
+
+
+        <div class="time-block">
+
+            <span class="time-label">
+                YOUR LOCAL TIME
+            </span>
+
+
+            <span
+                id="local-time"
+                class="time-value"
+            >
+                --:--:--
+            </span>
+
+
+            <span
+                id="local-zone"
+                class="time-zone"
+            >
+                LOCAL
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     MAIN
+========================================================= -->
+
+<main class="jobs-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="jobs-hero">
+
+        <div class="wrap jobs-hero-wrap">
+
+
+            <div class="jobs-hero-copy">
+
+
+                <div class="hero-kicker">
+                    KSOL // PERSONNEL ASSIGNMENT SYSTEM
+                </div>
+
+
+                <h1>
+                    JOB CENTRE
+                </h1>
+
+
+                <p>
+                    Current open positions, appointments and
+                    internal opportunities available across
+                    the Kali Special Operations Legion.
+                </p>
+
+
+            </div>
+
+
+            <div class="jobs-reference">
+
+
+                <div class="reference-row">
+
+                    <span>
+                        REGISTER
+                    </span>
+
+                    <strong>
+                        KSOL-JOBS
+                    </strong>
+
+                </div>
+
+
+                <div class="reference-row">
+
+                    <span>
+                        REVISION
+                    </span>
+
+                    <strong>
+                        2026.01
+                    </strong>
+
+                </div>
+
+
+                <div class="reference-row">
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         SEARCH / FILTER
+    ====================================================== -->
+
+    <section class="jobs-navigation">
+
+        <div class="wrap">
+
+
+            <div class="jobs-search">
+
+                <div class="search-label">
+                    POSITION REGISTRY
+                </div>
+
+
+                <div class="search-field">
+
+                    <span class="search-symbol">
+                        /
+                    </span>
+
+
+                    <input
+                        id="jobSearch"
+                        type="search"
+                        placeholder="Search position, department, rank..."
+                        autocomplete="off"
+                    >
+
+
+                    <kbd>
+                        CTRL K
+                    </kbd>
+
+
+                </div>
+
+            </div>
+
+
+            <!-- CATEGORY -->
+
+            <div class="job-category-heading">
+
+                <div>
+
+                    <span>
+                        01—05
+                    </span>
+
+                    <strong>
+                        POSITION CATEGORIES
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div class="job-category-selector">
+
+
+                <button
+                    class="job-category-tab active"
+                    type="button"
+                    data-category="command"
+                >
+
+                    <span class="category-index">
+                        01
+                    </span>
+
+
+                    <span class="category-content">
+
+                        <strong>
+                            COMMAND
+                        </strong>
+
+                        <small>
+                            LEADERSHIP &amp; STAFF
+                        </small>
+
+                    </span>
+
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="job-category-tab"
+                    type="button"
+                    data-category="combat"
+                >
+
+                    <span class="category-index">
+                        02
+                    </span>
+
+
+                    <span class="category-content">
+
+                        <strong>
+                            COMBAT
+                        </strong>
+
+                        <small>
+                            FIELD APPOINTMENTS
+                        </small>
+
+                    </span>
+
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="job-category-tab"
+                    type="button"
+                    data-category="aviation"
+                >
+
+                    <span class="category-index">
+                        03
+                    </span>
+
+
+                    <span class="category-content">
+
+                        <strong>
+                            AVIATION
+                        </strong>
+
+                        <small>
+                            FLIGHT &amp; CREW
+                        </small>
+
+                    </span>
+
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="job-category-tab"
+                    type="button"
+                    data-category="special-operations"
+                >
+
+                    <span class="category-index">
+                        04
+                    </span>
+
+
+                    <span class="category-content">
+
+                        <strong>
+                            SPECIAL OPERATIONS
+                        </strong>
+
+                        <small>
+                            SPECIALIST POSTS
+                        </small>
+
+                    </span>
+
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="job-category-tab"
+                    type="button"
+                    data-category="support"
+                >
+
+                    <span class="category-index">
+                        05
+                    </span>
+
+
+                    <span class="category-content">
+
+                        <strong>
+                            SUPPORT
+                        </strong>
+
+                        <small>
+                            SUPPORT &amp; ADMINISTRATION
+                        </small>
+
+                    </span>
+
+
+                    <span class="category-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         OPEN POSITIONS
+    ====================================================== -->
+
+    <section class="jobs-catalogue">
+
+        <div class="wrap">
+
+
+            <div class="catalogue-heading">
+
+
+                <div>
+
+                    <div
+                        id="jobCategoryTitle"
+                        class="catalogue-kicker"
+                    >
+                        COMMAND
+                    </div>
+
+
+                    <h2 id="jobTitle">
+                        OPEN POSITIONS
+                    </h2>
+
+                </div>
+
+
+                <div class="catalogue-count">
+
+                    <span>
+                        OPEN POSTS
+                    </span>
+
+
+                    <strong id="jobCount">
+                        00
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+            <div
+                id="jobGrid"
+                class="job-grid"
+            ></div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         FOOTER NOTICE
+    ====================================================== -->
+
+    <section class="jobs-notice">
+
+        <div class="wrap">
+
+
+            <div class="notice-grid">
+
+
+                <span>
+                    KSOL / JOBS
+                </span>
+
+
+                <div>
+
+                    <strong>
+                        APPLICATION CONTROL
+                    </strong>
+
+
+                    <p>
+                        Positions listed here are manually
+                        maintained by KSOL Headquarters.
+                        Availability, eligibility and
+                        appointment authority may vary by post.
+                    </p>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<!-- =========================================================
+     JOB DETAIL MODAL
+========================================================= -->
+
+<div
+    id="jobModal"
+    class="job-modal"
+    aria-hidden="true"
+>
+
+
+    <div class="job-product">
+
+
+        <!-- TOP BAR -->
+
+        <div class="job-product-bar">
+
+            <span id="modalJobId">
+                KSOL-JOB-000
+            </span>
+
+
+            <button
+                id="jobModalClose"
+                type="button"
+                class="job-modal-close"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- =================================================
+             HEADER
+        ================================================== -->
+
+        <div class="job-product-header">
+
+
+            <div class="job-code-block">
+
+                <span>
+                    OPEN POST
+                </span>
+
+
+                <strong id="modalJobNumber">
+                    01
+                </strong>
+
+            </div>
+
+
+            <div class="job-header-content">
+
+
+                <div
+                    id="modalJobCategory"
+                    class="product-kicker"
+                >
+                    COMMAND
+                </div>
+
+
+                <h2 id="modalJobTitle">
+                    POSITION
+                </h2>
+
+
+                <p
+                    id="modalJobDescription"
+                    class="job-description"
+                ></p>
+
+
+                <div
+                    id="modalJobStatus"
+                    class="job-status"
+                >
+                    OPEN
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             POSITION SPECIFICATION
+        ================================================== -->
+
+        <div class="job-details">
+
+
+            <div class="detail-heading">
+
+                <span>
+                    POSITION SPECIFICATION
+                </span>
+
+                <small>
+                    POST DATA
+                </small>
+
+            </div>
+
+
+            <div
+                id="modalJobSpecs"
+                class="job-spec-grid"
+            ></div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             REQUIREMENTS
+        ================================================== -->
+
+        <div class="job-requirements">
+
+
+            <div class="detail-heading">
+
+                <span>
+                    REQUIREMENTS
+                </span>
+
+                <small>
+                    ELIGIBILITY
+                </small>
+
+            </div>
+
+
+            <div
+                id="modalJobRequirements"
+                class="requirements-list"
+            ></div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             RESPONSIBILITIES
+        ================================================== -->
+
+        <div class="job-responsibilities">
+
+
+            <div class="detail-heading">
+
+                <span>
+                    RESPONSIBILITIES
+                </span>
+
+                <small>
+                    APPOINTMENT SCOPE
+                </small>
+
+            </div>
+
+
+            <div
+                id="modalJobResponsibilities"
+                class="responsibility-grid"
+            ></div>
+
+
+        </div>
+
+
+        <!-- =================================================
+             APPLICATION
+        ================================================== -->
+
+        <div class="job-application">
+
+
+            <div class="detail-heading">
+
+                <span>
+                    APPLICATION
+                </span>
+
+                <small>
+                    SUBMISSION
+                </small>
+
+            </div>
+
+
+            <div
+                id="modalJobApplication"
+                class="application-grid"
+            ></div>
+
+
+        </div>
+
+
+        <!-- NOTICE -->
+
+        <div class="job-disclaimer">
+
+            <strong>
+                JOB CENTRE NOTICE
+            </strong>
+
+
+            <span>
+                All positions displayed are fictional
+                in-game KSOL appointments and posts.
+            </span>
+
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+
+    <div class="footer-top">
+
+        <div class="wrap footer-top-inner">
+
+            © 2026 KALI SPECIAL OPERATIONS LEGION
+            HEADQUARTERS — ALL RIGHTS RESERVED.
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-main">
+
+        <div class="wrap footer-grid">
+
+
+            <div class="footer-brand">
+
+
+                <div class="footer-brand-title">
+
+
+                    <img
+                        src="Untitled201_20260806131243.jpg"
+                        alt="KSOL Logo"
+                        class="footer-logo"
+                    >
+
+
+                    <div>
+
+                        <strong>
+                            KALI SPECIAL OPERATIONS LEGION
+                        </strong>
+
+
+                        <small>
+                            KSOL // HEADQUARTERS
+                        </small>
+
+                    </div>
+
+
+                </div>
+
+
+                <p>
+                    An international military realism
+                    organization focused on structured
+                    infantry operations, special operations,
+                    training, aviation and joint exercises.
+                </p>
+
+
+                <em>
+                    "MEN APART, EVERY MAN AN EMPEROR"
+                </em>
+
+
+            </div>
+
+
+            <div class="footer-column">
+
+
+                <h4>
+                    NAVIGATION
+                </h4>
+
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <a href="ranks.html">
+                    Ranks
+                </a>
+
+
+                <a href="appointments.html">
+                    ORBAT
+                </a>
+
+
+                <a href="roster.html">
+                    Roster
+                </a>
+
+
+                <a href="media.html">
+                    Media
+                </a>
+
+
+                <a href="armoury.html">
+                    Armoury
+                </a>
+
+
+                <a href="uniforms.html">
+                    Uniforms
+                </a>
+
+
+                <a href="qualifications.html">
+                    Qualifications
+                </a>
+
+
+                <a href="jobs.html">
+                    Job Centre
+                </a>
+
+
+            </div>
+
+
+            <div class="footer-column">
+
+
+                <h4>
+                    JOB CENTRE
+                </h4>
+
+
+                <span>
+                    Command
+                </span>
+
+
+                <span>
+                    Combat
+                </span>
+
+
+                <span>
+                    Aviation
+                </span>
+
+
+                <span>
+                    Special Operations
+                </span>
+
+
+                <span>
+                    Support
+                </span>
+
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <div class="wrap footer-bottom-inner">
+
+
+            <span>
+                © 2026 Kali Special Operations Legion —
+                Fictional gaming organization.
+            </span>
+
+
+            <span>
+                Not affiliated with any government
+                or military organization.
+            </span>
+
+
+        </div>
+
+    </div>
+
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="jobs.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1943 @@
+/* =========================================================
+   KSOL UNIFORMS
+   PROFESSIONAL CATALOGUE
+========================================================= */
+
+.uniforms-page {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.uniforms-hero {
+    padding: 95px 0 78px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0b0b,
+            #080808
+        );
+
+    border-bottom: 1px solid #222;
+}
+
+
+.uniforms-hero-wrap {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 260px;
+
+    gap: 80px;
+
+    align-items: end;
+}
+
+
+.hero-kicker {
+    margin-bottom: 18px;
+
+    color: #6c6c6c;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .2em;
+}
+
+
+.uniforms-hero h1 {
+    margin: 0 0 21px;
+
+    color: #ededed;
+
+    font-size:
+        clamp(60px, 9vw, 108px);
+
+    line-height: .82;
+
+    font-weight: 500;
+
+    letter-spacing: -.075em;
+}
+
+
+.uniforms-hero-copy p {
+    max-width: 730px;
+
+    margin: 0;
+
+    color: #878787;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   REFERENCE
+========================================================= */
+
+.uniform-reference {
+    border-top: 1px solid #343434;
+
+    border-bottom: 1px solid #343434;
+}
+
+
+.reference-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #1e1e1e;
+}
+
+
+.reference-row:last-child {
+    border-bottom: 0;
+}
+
+
+.reference-row span {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .13em;
+}
+
+
+.reference-row strong {
+    color: #aaa;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.uniform-navigation {
+    padding: 30px 0 0;
+
+    background: #080808;
+
+    border-bottom: 1px solid #222;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.uniform-search {
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    margin-bottom: 28px;
+}
+
+
+.search-label {
+    color: #555;
+
+    white-space: nowrap;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .14em;
+}
+
+
+.search-field {
+    display: flex;
+
+    align-items: center;
+
+    width: min(720px, 100%);
+
+    height: 44px;
+
+    border: 1px solid #2b2b2b;
+
+    background: #0c0c0c;
+}
+
+
+.search-symbol {
+    padding-left: 14px;
+
+    color: #555;
+
+    font:
+        12px
+        "Courier New",
+        monospace;
+}
+
+
+.search-field input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: #ddd;
+
+    font:
+        10px
+        "Courier New",
+        monospace;
+}
+
+
+.search-field input::placeholder {
+    color: #555;
+}
+
+
+.search-field kbd {
+    margin-right: 9px;
+
+    padding: 4px 7px;
+
+    border: 1px solid #292929;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   STANDARD ISSUE HEADER
+========================================================= */
+
+.standard-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding: 13px 16px;
+
+    border:
+        1px solid
+        #292929;
+
+    border-bottom: 0;
+
+    background: #101010;
+}
+
+
+.standard-heading > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.standard-heading span {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+.standard-heading strong {
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   ROLE SELECTOR
+========================================================= */
+
+.role-selector {
+    display: flex;
+
+    overflow-x: auto;
+
+    border:
+        1px solid
+        #292929;
+
+    background: #0a0a0a;
+}
+
+
+.uniform-role-tab {
+    flex: 0 0 auto;
+
+    padding: 14px 18px;
+
+    border: 0;
+
+    border-right: 1px solid #242424;
+
+    background: transparent;
+
+    color: #666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.uniform-role-tab:hover {
+    background: #111;
+
+    color: #aaa;
+}
+
+
+.uniform-role-tab.active {
+    background: #181818;
+
+    color: #eee;
+}
+
+
+/* =========================================================
+   CATALOGUE
+========================================================= */
+
+.uniform-catalogue {
+    padding: 67px 0 92px;
+
+    background: #080808;
+}
+
+
+.catalogue-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 19px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #272727;
+}
+
+
+.catalogue-kicker {
+    margin-bottom: 8px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .16em;
+}
+
+
+.catalogue-heading h2 {
+    margin: 0;
+
+    color: #ddd;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    letter-spacing: -.025em;
+}
+
+
+.catalogue-count {
+    text-align: right;
+}
+
+
+.catalogue-count span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .12em;
+}
+
+
+.catalogue-count strong {
+    color: #aaa;
+
+    font:
+        20px
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   UNIFORM GRID
+========================================================= */
+
+.uniform-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+/* =========================================================
+   UNIFORM CARD
+========================================================= */
+
+.uniform-card {
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 0;
+
+    overflow: hidden;
+
+    background: #0c0c0c;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease;
+}
+
+
+.uniform-card:hover {
+    background: #111;
+}
+
+
+/* =========================================================
+   CARD IMAGE
+========================================================= */
+
+.uniform-card-image {
+    width: 100%;
+
+    aspect-ratio: 4 / 5;
+
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1a1a1a,
+            #080808 72%
+        );
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.uniform-card-image img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    opacity: 1;
+
+    transition:
+        transform .35s ease,
+        opacity .25s ease;
+}
+
+
+.uniform-card:hover
+.uniform-card-image img {
+    transform: scale(1.02);
+
+    opacity: .94;
+}
+
+
+/* =========================================================
+   CARD CONTENT
+========================================================= */
+
+.uniform-card-content {
+    padding: 17px 18px 12px;
+}
+
+
+.uniform-card-id {
+    margin-bottom: 7px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .12em;
+}
+
+
+.uniform-card h3 {
+    margin: 0 0 8px;
+
+    color: #ddd;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.25;
+
+    letter-spacing: .04em;
+}
+
+
+.uniform-card-description {
+    margin: 0;
+
+    color: #666;
+
+    font-size: 10px;
+
+    line-height: 1.55;
+}
+
+
+/* =========================================================
+   CARD FOOTER
+========================================================= */
+
+.uniform-card-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-top: auto;
+
+    padding: 0 18px 16px;
+}
+
+
+.uniform-card-type {
+    color: #777;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+.uniform-card-arrow {
+    color: #666;
+
+    font-size: 16px;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.uniform-card:hover
+.uniform-card-arrow {
+    color: #ddd;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.uniform-empty {
+    grid-column: 1 / -1;
+
+    padding: 90px 20px;
+
+    background: #0c0c0c;
+
+    color: #555;
+
+    text-align: center;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .15em;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.uniforms-notice {
+    padding: 0 0 100px;
+
+    background: #080808;
+}
+
+
+.notice-grid {
+    display: grid;
+
+    grid-template-columns:
+        160px 1fr;
+
+    gap: 30px;
+
+    padding: 24px 0;
+
+    border-top: 1px solid #252525;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.notice-grid > span {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .12em;
+}
+
+
+.notice-grid strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+}
+
+
+.notice-grid p {
+    max-width: 780px;
+
+    margin: 0;
+
+    color: #626262;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.uniform-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.95);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .22s ease,
+        visibility .22s ease;
+}
+
+
+.uniform-modal.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.uniform-product {
+    width: min(1160px, 95vw);
+
+    max-height: 93vh;
+
+    overflow-y: auto;
+
+    border: 1px solid #353535;
+
+    background: #0b0b0b;
+}
+
+
+/* =========================================================
+   MODAL BAR
+========================================================= */
+
+.uniform-product-bar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 48px;
+
+    padding: 0 18px;
+
+    border-bottom: 1px solid #292929;
+
+    background: #101010;
+
+    color: #666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .13em;
+}
+
+
+.uniform-modal-close {
+    width: 31px;
+
+    height: 31px;
+
+    padding: 0;
+
+    border: 1px solid #393939;
+
+    background: #0d0d0d;
+
+    color: #aaa;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.uniform-modal-close:hover {
+    color: #fff;
+
+    border-color: #666;
+}
+
+
+/* =========================================================
+   PRODUCT MAIN
+========================================================= */
+
+.uniform-product-main {
+    display: grid;
+
+    grid-template-columns:
+        1.1fr .9fr;
+
+    min-height: 540px;
+}
+
+
+.uniform-product-image {
+    min-width: 0;
+
+    border-right: 1px solid #292929;
+
+    background: #080808;
+}
+
+
+.uniform-image-stage {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 100%;
+
+    min-height: 540px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            #1a1a1a,
+            #080808 72%
+        );
+}
+
+
+.uniform-image-stage img {
+    display: block;
+
+    width: 100%;
+
+    height: 100%;
+
+    max-height: 540px;
+
+    object-fit: contain;
+
+    object-position: center;
+
+    padding: 25px;
+}
+
+
+/* =========================================================
+   PRODUCT COPY
+========================================================= */
+
+.uniform-product-copy {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 55px;
+}
+
+
+.product-kicker {
+    margin-bottom: 13px;
+
+    color: #666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .16em;
+}
+
+
+.uniform-product-copy h2 {
+    margin: 0 0 17px;
+
+    color: #e7e7e7;
+
+    font-size:
+        clamp(30px, 4vw, 48px);
+
+    font-weight: 500;
+
+    line-height: .98;
+
+    letter-spacing: -.045em;
+}
+
+
+.uniform-description {
+    max-width: 510px;
+
+    margin: 0 0 25px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+}
+
+
+.uniform-status {
+    align-self: flex-start;
+
+    padding: 7px 9px;
+
+    border: 1px solid #353535;
+
+    color: #aaa;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.uniform-details {
+    padding: 34px;
+
+    border-top: 1px solid #292929;
+}
+
+
+.detail-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 17px;
+}
+
+
+.detail-heading span {
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+}
+
+
+.detail-heading small {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+.uniform-spec-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top: 1px solid #292929;
+
+    border-left: 1px solid #292929;
+}
+
+
+.uniform-spec {
+    min-height: 70px;
+
+    padding: 13px;
+
+    border-right: 1px solid #292929;
+
+    border-bottom: 1px solid #292929;
+
+    background: #0e0e0e;
+}
+
+
+.uniform-spec span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #555;
+
+    font:
+        7px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+.uniform-spec strong {
+    display: block;
+
+    color: #b9b9b9;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   COMPONENTS
+========================================================= */
+
+.uniform-components {
+    padding: 34px;
+
+    border-top: 1px solid #292929;
+}
+
+
+.component-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.component-card {
+    background: #0e0e0e;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.component-card:last-child {
+    border-bottom: 0;
+}
+
+
+.component-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 15px;
+
+    border-bottom: 1px solid #232323;
+}
+
+
+.component-header strong {
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .07em;
+}
+
+
+.component-header span {
+    color: #555;
+
+    font:
+        7px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .08em;
+}
+
+
+.component-body {
+    padding: 14px 15px;
+}
+
+
+.component-line {
+    display: flex;
+
+    align-items: flex-start;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 7px 0;
+
+    border-bottom: 1px solid #1b1b1b;
+}
+
+
+.component-line:last-child {
+    border-bottom: 0;
+}
+
+
+.component-label {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .07em;
+}
+
+
+.component-value {
+    max-width: 65%;
+
+    color: #aaa;
+
+    font-size: 9px;
+
+    line-height: 1.5;
+
+    text-align: right;
+}
+
+
+/* =========================================================
+   VARIANTS
+========================================================= */
+
+.uniform-variants {
+    padding: 34px;
+
+    border-top: 1px solid #292929;
+}
+
+
+.variant-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.variant-card {
+    overflow: hidden;
+
+    background: #0e0e0e;
+}
+
+
+.variant-image {
+    display: block;
+
+    width: 100%;
+
+    height: 220px;
+
+    object-fit: cover;
+
+    object-position: center;
+
+    background: #090909;
+
+    border-bottom: 1px solid #292929;
+
+    opacity: 1;
+}
+
+
+.variant-content {
+    padding: 15px;
+}
+
+
+.variant-content strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .05em;
+}
+
+
+.variant-content span {
+    display: block;
+
+    color: #666;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.uniform-disclaimer {
+    display: grid;
+
+    grid-template-columns:
+        160px 1fr;
+
+    gap: 20px;
+
+    padding: 18px 34px 30px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+.uniform-disclaimer strong {
+    color: #777;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .uniforms-hero-wrap {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .uniform-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+
+    .uniform-product-main {
+        grid-template-columns: 1fr;
+    }
+
+
+    .uniform-product-image {
+        border-right: 0;
+
+        border-bottom: 1px solid #292929;
+    }
+
+
+    .uniform-image-stage {
+        min-height: 430px;
+    }
+
+
+    .uniform-product-copy {
+        padding: 40px;
+    }
+
+}
+
+
+@media (max-width: 760px) {
+
+    .uniform-search {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .search-field {
+        width: 100%;
+    }
+
+
+    .uniform-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .uniform-spec-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .component-list {
+        grid-template-columns: 1fr;
+    }
+
+
+    .variant-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .notice-grid {
+        grid-template-columns: 1fr;
+
+        gap: 12px;
+    }
+
+
+    .uniform-details,
+    .uniform-components,
+    .uniform-variants {
+        padding: 25px 20px;
+    }
+
+
+    .uniform-disclaimer {
+        grid-template-columns: 1fr;
+
+        padding: 18px 20px 28px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .uniforms-hero {
+        padding: 60px 0 50px;
+    }
+
+
+    .uniforms-hero h1 {
+        font-size: 53px;
+    }
+
+
+    .uniform-role-tab {
+        padding: 12px 13px;
+
+        font-size: 7px;
+    }
+
+
+    .uniform-image-stage {
+        min-height: 320px;
+    }
+
+
+    .uniform-image-stage img {
+        max-height: 320px;
+
+        padding: 18px;
+    }
+
+
+    .uniform-product-copy {
+        padding: 30px 22px;
+    }
+
+
+    .uniform-spec-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .component-line {
+        flex-direction: column;
+
+        gap: 5px;
+    }
+
+
+    .component-value {
+        max-width: 100%;
+
+        text-align: left;
+    }
+
+
+    .variant-image {
+        height: 190px;
+    }
+
+}
+
+/* =========================================================
+   UNIFORM CATEGORY HEADER
+========================================================= */
+
+.uniform-category-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px 16px;
+
+    border: 1px solid #292929;
+
+    border-bottom: 0;
+
+    background: #101010;
+}
+
+
+.uniform-category-heading > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.uniform-category-heading span {
+    color: #555555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.12em;
+}
+
+
+.uniform-category-heading strong {
+    color: #aaaaaa;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   TOP-LEVEL CATEGORY SELECTOR
+========================================================= */
+
+.uniform-category-selector {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.uniform-category-tab {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        36px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 14px;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 18px;
+
+    margin: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: #0d0d0d;
+
+    color: #666666;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+/* subtle left indicator */
+
+.uniform-category-tab::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background: transparent;
+
+    transition:
+        background 0.2s ease;
+}
+
+
+.uniform-category-tab:hover {
+    background: #141414;
+
+    color: #bcbcbc;
+}
+
+
+.uniform-category-tab.active {
+    background: #191919;
+
+    color: #eeeeee;
+}
+
+
+.uniform-category-tab.active::before {
+    background: #dddddd;
+}
+
+
+/* =========================================================
+   CATEGORY INDEX
+========================================================= */
+
+.category-index {
+    color: #505050;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.08em;
+}
+
+
+.uniform-category-tab.active
+.category-index {
+    color: #999999;
+}
+
+
+/* =========================================================
+   CATEGORY CONTENT
+========================================================= */
+
+.category-content {
+    min-width: 0;
+}
+
+
+.category-content strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    font-size: 10px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: 0.1em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.category-content small {
+    display: block;
+
+    margin-top: 6px;
+
+    overflow: hidden;
+
+    color: #555555;
+
+    font:
+        7px
+        "Courier New",
+        monospace;
+
+    line-height: 1.35;
+
+    letter-spacing: 0.08em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.uniform-category-tab.active
+.category-content small {
+    color: #777777;
+}
+
+
+/* =========================================================
+   CATEGORY ARROW
+========================================================= */
+
+.category-arrow {
+    color: #555555;
+
+    font-size: 16px;
+
+    line-height: 1;
+
+    transform: translateX(0);
+
+    transition:
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.uniform-category-tab:hover
+.category-arrow {
+    color: #aaaaaa;
+
+    transform: translateX(3px);
+}
+
+
+.uniform-category-tab.active
+.category-arrow {
+    color: #dddddd;
+}
+
+
+/* =========================================================
+   STANDARD ISSUE ROLE BAR
+========================================================= */
+
+.role-selector {
+    display: flex;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    border-right: 1px solid #292929;
+
+    border-bottom: 1px solid #292929;
+
+    border-left: 1px solid #292929;
+
+    background: #0a0a0a;
+
+    scrollbar-width: thin;
+
+    scrollbar-color: #333333 transparent;
+}
+
+
+.role-selector::-webkit-scrollbar {
+    height: 4px;
+}
+
+
+.role-selector::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+
+.role-selector::-webkit-scrollbar-thumb {
+    background: #333333;
+}
+
+
+.role-selector.hidden {
+    display: none;
+}
+
+
+/* =========================================================
+   ROLE BUTTONS
+========================================================= */
+
+.uniform-role-tab {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    flex: 0 0 auto;
+
+    min-height: 42px;
+
+    padding: 0 17px;
+
+    margin: 0;
+
+    border: 0;
+
+    border-right: 1px solid #242424;
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: transparent;
+
+    color: #666666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    font-weight: 700;
+
+    letter-spacing: 0.1em;
+
+    text-align: center;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease;
+}
+
+
+.uniform-role-tab:hover {
+    background: #111111;
+
+    color: #aaaaaa;
+}
+
+
+.uniform-role-tab.active {
+    background: #181818;
+
+    color: #eeeeee;
+
+    box-shadow:
+        inset 0 -2px 0 #eeeeee;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .uniform-category-selector {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 700px) {
+
+    .uniform-category-tab {
+        grid-template-columns:
+            32px minmax(0, 1fr) auto;
+
+        min-height: 72px;
+
+        padding: 0 14px;
+
+        gap: 11px;
+    }
+
+
+    .category-content strong {
+        font-size: 9px;
+    }
+
+
+    .category-content small {
+        font-size: 6px;
+    }
+
+
+    .uniform-role-tab {
+        min-height: 40px;
+
+        padding: 0 14px;
+
+        font-size: 7px;
+    }
+
+}
+
+
+@media (max-width: 480px) {
+
+    .uniform-category-heading {
+        padding: 12px 13px;
+    }
+
+
+    .uniform-category-tab {
+        grid-template-columns:
+            28px minmax(0, 1fr) auto;
+
+        min-height: 67px;
+
+        padding: 0 12px;
+
+        gap: 10px;
+    }
+
+
+    .category-index {
+        font-size: 8px;
+    }
+
+
+    .category-content strong {
+        font-size: 8px;
+    }
+
+
+    .category-content small {
+        margin-top: 4px;
+
+        font-size: 6px;
+    }
+
+
+    .category-arrow {
+        font-size: 14px;
+    }
+
+}

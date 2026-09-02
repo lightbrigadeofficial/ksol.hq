@@ -1,0 +1,1154 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KSOL - Awards & Decorations</title>
+
+      <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="top"></div>
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="KSOL_Emblem_Transparent.png" alt="KSOL Logo" class="nav-logo">
+      <span>KSOL HQ</span>
+    </a>
+
+    <div class="links">
+                
+        <a href="index.html">
+          Home
+        </a>
+      <!-- <a href="index.html#about">FACTION STATS</a> -->
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+          HEADQUARTERS <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="ranks.html" class="nav-dropdown-item">
+            <span class="dropdown-index">01</span>
+            <span>
+              <strong>RANKS</strong>
+              <small>Rank structure &amp; requirements</small>
+            </span>
+          </a>
+          <a href="roster.html" class="nav-dropdown-item">
+            <span class="dropdown-index">02</span>
+            <span>
+              <strong>ROSTER</strong>
+              <small>Faction personnel directory</small>
+            </span>
+          </a>
+          <a href="appointments.html" class="nav-dropdown-item">
+            <span class="dropdown-index">03</span>
+            <span>
+              <strong>ORBAT</strong>
+              <small>Organization &amp; appointments</small>
+            </span>
+          </a>
+          <a href="awards.html" class="nav-dropdown-item">
+            <span class="dropdown-index">04</span>
+            <span>
+              <strong>DECORATIONS</strong>
+              <small>Tabs, badges &amp; decorations</small>
+            </span>
+          </a>
+           <a href="qualifications.html" class="nav-dropdown-item">
+            <span class="dropdown-index">05</span>
+            <span>
+              <strong>QUALIFICATIONS</strong>
+              <small>Courses, trainings &amp; evaluation boards</small>
+            </span>
+          </a>
+          <a href="armoury.html"class="nav-dropdown-item">
+            <span class="dropdown-index">06</span>
+            <span>
+              <strong>ARMOURY</strong>
+              <small>Sanctioned weapon systems &amp; mods</small>
+            </span>
+          </a>
+          <a href="uniforms.html" class="nav-dropdown-item">
+            <span class="dropdown-index">07</span>
+            <span>
+              <strong>UNIFORMS</strong>
+              <small>Faction dress &amp; uniform codes</small>
+            </span>
+          </a>
+        </div>
+      </div>
+      <a href="jobs.html">JOB CENTRE</a>
+      <a href="media.html">MEDIA</a>
+      <a href="#">RULES &amp; SOPs</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://discord.gg/cXGjn9CgYN" class="discord-btn" target="_blank" rel="noopener">JOIN DISCORD</a>
+      <a href="login.html" class="enlist-btn">
+        <span class="enlist-text">LOGIN</span>
+        <span class="enlist-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+<div class="time-strip">
+  <div class="wrap time-strip-inner">
+    <div class="time-block">
+      <span class="time-label">KSOL HQ</span>
+      <span id="hq-time" class="time-value">--:--:--</span>
+      <span class="time-zone">IST</span>
+    </div>
+    <div class="time-divider"></div>
+    <div class="time-block">
+      <span class="time-label">YOUR LOCAL TIME</span>
+      <span id="local-time" class="time-value">--:--:--</span>
+      <span id="local-zone" class="time-zone">LOCAL</span>
+    </div>
+  </div>
+</div>
+
+<main class="rank-page">
+  <section class="rank-hero">
+    <div class="wrap rank-hero-grid">
+      <div>
+        <div class="k">HEADQUARTERS // PERSONNEL</div>
+        <h1>DECORATIONS</h1>
+        <p>
+          Explore the current KSOL decorations, qualification tabs, badges and servie ribbons.
+        </p>
+      </div>
+
+      <div class="rank-note">
+        <strong>HOW TO USE THIS PAGE</strong>
+        <p>
+          Search by decoration name or abbreviation, filter by decoration group,
+          then click a decoration to open its context.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <div class="rank-controls">
+    <div class="wrap rank-controls-inner">
+      <input
+        id="rankSearch"
+        class="rank-search"
+        type="search"
+        placeholder="Search decoration, abbreviation, or decoration group..."
+        autocomplete="off"
+        aria-label="Search ranks"
+      >
+      <div class="rank-filters">
+        <button class="rank-filter active" type="button" data-filter="all">ALL</button>
+        <button class="rank-filter" type="button" data-filter="ribbons">RIBBONS</button>
+        <button class="rank-filter" type="button" data-filter="badges">BADGES</button>
+        <button class="rank-filter" type="button" data-filter="tabs">TABS</button>
+      </div>
+    </div>
+  </div>
+
+<div class="wrap rank-main">
+
+    <!-- =========================
+         RIBBONS
+    ========================== -->
+
+    <section class="rank-section" data-section="enlisted">
+        <div class="rank-section-header">
+            <div>
+                <div class="k">RIBBONS</div>
+                <h2>Service ribbons given to honor exceptional duty.</h2>
+            </div>
+            <div class="rank-count">13 RIBBONS</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- LEGION CROSS -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/Legion_Cross.webp" alt="Legion Cross">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">Legion Cross (LC)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 01</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              A KSOL decoration awarded for distinguished military service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SILVER STAR OF VALOR -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/Silver_Star_of_Valor.webp" alt="Silver Star of Valor">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">Silver Star of Valor (SSV)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 02</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              A KSOL decoration awarded for exemplary military service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- BRONE STAR OF VALOR -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/Bronze_Star_of_Valor.webp" alt="Bronze Star of Valor">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">Bronze Star of Valor (BSV)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 03</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              A KSOL decoration awarded for meritorious military service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LEGION DISTINGUISHED SERVICE CROSS -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/Legion_Distinguished_Service_Cross.webp" alt="Legion Distinguished Service Cross">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">Legion Distinguished Service Cross (LDSC)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 04</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              A KSOL decoration awarded for highly distinguished service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LEGION DISTINGUISHED SERVICE MEDAL -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/Legion_Distinguished_Service_Medal.webp" alt="Legion Distinguished Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">Legion Distinguished Service Medal (LDSM)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 05</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              A KSOL decoration awarded for distinguished service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- MERITORIOUS SERVICE MEDAL -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/Meritorious_Service_Medal.webp" alt="Meritorious Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">Meritorious Service Medal (MSM)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 06</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              A KSOL decoration awarded for meritorious service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 1500 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/1500.webp" alt="1500 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">1500 Days Long Service Medal (1500)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 07</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 1500 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 1000 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/1000.webp" alt="1000 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">1000 Days Long Service Medal (1000)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 08</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 1000 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 730 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/730.webp" alt="730 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">730 Days Long Service Medal (730)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 09</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 730 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 548 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/548.webp" alt="548 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">548 Days Long Service Medal (548)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 10</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 548 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 365 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/365.webp" alt="365 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">365 Days Long Service Medal (365)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 11</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 365 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 182 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/182.webp" alt="182 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">182 Days Long Service Medal (182)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 12</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 182 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- 100 -->
+            <article class="rank-card" data-category="ribbons">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+
+                        <div class="rank-insignia">
+                            <img src="Ribbons/100.webp" alt="100 Days Long Service Medal">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">RIBBONS</div>
+                            <div class="rank-name">100 Days Long Service Medal (100)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 13</div>
+                    </div>
+
+                    <div class="rank-preview">
+                        Click to expand decoration context.
+                    </div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for 100 days of service.
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         BADGES
+    ========================== -->
+
+    <section class="rank-section" data-section="badges">
+
+        <div class="rank-section-header">
+            <div>
+                <div class="k">BADGES</div>
+                <h2>Awarded for courses or MOS completion.</h2>
+            </div>
+            <div class="rank-count">05 BADGES</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- PARA WINGS -->
+            <article class="rank-card" data-category="badges">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Badges/para_wings-removebg-preview.png" alt="Para wings">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">BADEGS</div>
+                            <div class="rank-name">Parachute Wings (PARA WINGS)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 14</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand badge context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for successful completion of Basic Airborne Training.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- COMBAT FREE FALL BADGE -->
+            <article class="rank-card" data-category="badges">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Badges/combat_free_fall_badge-removebg-preview.png" alt="Combat free fall badge">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">BADEGS</div>
+                            <div class="rank-name">Combat Free Fall Badge (CFF)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 15</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand badge context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for successful completion of Combat Free Fall Training.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CQB 3 -->
+            <article class="rank-card" data-category="badges">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Badges/cqb_expert_badge-removebg-preview.png" alt="CQB Expert Badge">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">BADEGS</div>
+                            <div class="rank-name">CQB Expert Badge (CQB 3)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 16</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand badge context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for professional knowledge and art of CQB Training.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CQB 2 -->
+            <article class="rank-card" data-category="badges">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Badges/cqb_specialist_badge-removebg-preview.png" alt="CQB Specialist Badge">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">BADEGS</div>
+                            <div class="rank-name">CQB Specialist Badge (CQB 2)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 17</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand badge context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for exemplary knowledge and art of CQB Training.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- CQB 1 -->
+            <article class="rank-card" data-category="badges">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Badges/cqb_qualified_badge-removebg-preview.png" alt="CQB Qualified Badge">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">BADEGS</div>
+                            <div class="rank-name">CQB Qualified Badge (CQB 1)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 18</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand badge context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Awarded for successful completion of CQB Training.
+                        </div>
+                    </div>
+                </div>
+            </article>
+        </div>
+    </section>
+
+
+    <!-- =========================
+         TABS
+    ========================== -->
+
+    <section class="rank-section" data-section="tabs">
+
+        <div class="rank-section-header">
+            <div>
+                <div class="k">TABS</div>
+                <h2>Technical and professional skill tabs.</h2>
+            </div>
+            <div class="rank-count">08 TABS</div>
+        </div>
+
+        <div class="rank-grid">
+
+            <!-- COMBAT MEDIC -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/combat_medic_tab-removebg-preview.png" alt="Combat Medic Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Combat Medic Tab (MED)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 19</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a qualified combat medic.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SQUAD LEADER TAB -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/squad_ldr_tab-removebg-preview.png" alt="Squad Leader Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Squad Leader Tab (SQD_LDR)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 20</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a squad leader.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- TEAM LEADER TAB -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/team_ldr_tab-removebg-preview.png" alt="Team Leader Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Team Leader Tab (Team_ldr)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 21</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a team leader.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- SPECIAL FORCES TAB -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/special_forces_tab-removebg-preview.png" alt="Special Forces Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Special Forces Tab (SF_Tab)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 22</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a special forces operator..
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- LEADERSHIP TAB -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/leadership_tab-removebg-preview.png" alt="Leadership Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Leadership Tab (Lead_tab)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 23</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a team leader.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- INSTRUCTOR TAB -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/instructor_tab-removebg-preview.png" alt="Instructor Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Instructor (Team_ldr)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 24</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a qualified Instructor.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <!-- RECRUITER TAB -->
+            <article class="rank-card" data-category="tabs">
+                <button class="rank-card-button" type="button" aria-expanded="false">
+                    <div class="rank-card-top">
+                        <div class="rank-insignia">
+                            <img src="Tabs/recruiter_tab-removebg-preview.png" alt="Recruiter Tab">
+                        </div>
+
+                        <div class="rank-meta">
+                            <div class="rank-code">TABS</div>
+                            <div class="rank-name">Recruiter Tab (Recruiter_Tab)</div>
+                        </div>
+
+                        <div class="rank-level">Precedence 25</div>
+                    </div>
+
+                    <div class="rank-preview">Click to expand rank requirements and role context.</div>
+                </button>
+
+                <div class="rank-detail">
+                    <div class="rank-detail-row">
+                        <div class="rank-detail-label">CONTEXT</div>
+                        <div class="rank-detail-value">
+                              Denotes a team leader.
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+        </div>
+    </section>
+</div>
+
+</main>
+
+<footer class="site-footer">
+
+    <!-- TOP COPYRIGHT LINE -->
+    <div class="footer-top">
+
+        <div class="wrap footer-top-inner">© 2026 KALI SPECIAL OPERATIONS LEGION HEADQUARTERS — ALL RIGHTS RESERVED. DEVELOPED BY <a href="https://www.instagram.com/obi_onenairobi/"><b><u>VANDAM</u></b></a></div>
+
+    </div>
+
+
+    <!-- MAIN FOOTER -->
+    <div class="footer-main">
+
+        <div class="wrap footer-grid">
+
+
+            <!-- =================================================
+                 ORGANIZATION INFO
+            ================================================== -->
+
+            <div class="footer-brand">
+
+                <div class="footer-brand-title">
+
+                    <img src="Untitled201_20260806131243.jpg" alt="KSOL Logo" class="footer-logo">
+
+                    <div>
+
+                        <strong>
+                            KALI SPECIAL OPERATIONS LEGION
+                        </strong>
+
+                        <small>
+                            KSOL // HEADQUARTERS
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    An international Roblox military realism
+                    organization focused on structured infantry
+                    operations, special operations, training,
+                    aviation and joint exercises.
+                </p>
+
+
+                <em>
+                    "MEN APART, EVERY MAN AN EMPEROR"
+                </em>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <div class="footer-column">
+
+                <h4>
+                    NAVIGATION
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="ranks.html">
+                    Ranks
+                </a>
+
+                <a href="roster.html">
+                    Roster
+                </a>
+
+                <a href="appointments.css">
+                    ORBAT
+                </a>
+
+                <a href="awards.html">
+                    Decorations
+                </a>
+
+                <a href="#">
+                    Qualifications
+                </a>
+                <a href="#">
+                    Armoury
+                </a>
+                <a href="#">
+                    Uniforms
+                </a>
+                <a href="#">
+                    Job Centre
+                </a>
+                <a href="#">
+                    Media
+                </a>
+                <a href="#">
+                    Rules &amp; SOPs
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 UNIT INFORMATION
+            ================================================== -->
+
+            <div class="footer-column">
+
+                <h4>
+                    UNIT INFO
+                </h4>
+
+                <span>
+                    Game: BRM5
+                </span>
+
+                <span>
+                    Type: Military Realism (Milsim)
+                </span>
+
+                <span>
+                    Formation: Legion [Army]
+                </span>
+
+                <span>
+                    Special Operations: 2 SIS
+                </span>
+
+                <span>
+                    Region: International
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         BOTTOM LEGAL LINE
+    ========================================================== -->
+
+    <div class="footer-bottom">
+
+        <div class="wrap footer-bottom-inner">
+
+            <span>
+                © 2026 Kali Special Operations Legion —
+                Fictional gaming organization.
+            </span>
+
+            <span>
+                Not affiliated with any government or military organization.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>

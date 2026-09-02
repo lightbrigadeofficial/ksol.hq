@@ -1,0 +1,485 @@
+/* =========================================================
+   ORBAT PAGE
+========================================================= */
+
+.orbat-page {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   ORBAT HERO
+========================================================= */
+
+.orbat-hero {
+    padding: 86px 0 70px;
+    border-bottom: 1px solid var(--line);
+}
+
+.orbat-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+    margin-bottom: 38px;
+}
+
+.orbat-heading h1 {
+    margin: 12px 0 16px;
+    font-size: clamp(48px, 7vw, 82px);
+    line-height: 0.92;
+    letter-spacing: -0.055em;
+    color: var(--white);
+}
+
+.orbat-heading p {
+    max-width: 700px;
+    margin: 0;
+    color: #929292;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+.orbat-reference {
+    min-width: 150px;
+    padding: 16px 18px;
+    border: 1px solid #292929;
+    background: #101010;
+}
+
+.orbat-reference span {
+    display: block;
+    margin-bottom: 6px;
+    color: #666;
+    font-size: 9px;
+    letter-spacing: 0.16em;
+}
+
+.orbat-reference strong {
+    color: #ddd;
+    font-size: 12px;
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   ORBAT IMAGE
+========================================================= */
+
+.orbat-viewer {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #292929;
+    background: #080808;
+    cursor: zoom-in;
+}
+
+.orbat-viewer img {
+    display: block;
+    width: 100%;
+    height: auto;
+    transition: transform 0.35s ease;
+}
+
+.orbat-viewer:hover img {
+    transform: scale(1.012);
+}
+
+.orbat-overlay {
+    position: absolute;
+    right: 18px;
+    bottom: 18px;
+
+    display: flex;
+    align-items: center;
+    gap: 10px;
+
+    padding: 9px 12px;
+
+    background: rgba(8, 8, 8, 0.9);
+    border: 1px solid #333;
+
+    color: #aaa;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.12em;
+
+    pointer-events: none;
+}
+
+.orbat-expand {
+    font-size: 16px;
+    color: #ddd;
+}
+
+
+/* =========================================================
+   APPOINTMENTS
+========================================================= */
+
+.appointments-section {
+    padding: 86px 0 100px;
+}
+
+.appointments-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    gap: 40px;
+
+    margin-bottom: 48px;
+    padding-bottom: 28px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.appointments-header h2 {
+    margin: 12px 0 14px;
+
+    font-size: clamp(38px, 5vw, 60px);
+    line-height: 0.95;
+    letter-spacing: -0.045em;
+
+    color: var(--white);
+}
+
+.appointments-header p {
+    max-width: 680px;
+    margin: 0;
+
+    color: #8e8e8e;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+.appointment-count {
+    min-width: 110px;
+    text-align: right;
+}
+
+.appointment-count span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #666;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.15em;
+}
+
+.appointment-count strong {
+    color: #ddd;
+
+    font:
+        32px
+        "Courier New",
+        monospace;
+
+    letter-spacing: -0.05em;
+}
+
+
+/* =========================================================
+   APPOINTMENT GROUP
+========================================================= */
+
+.appointment-group {
+    margin-bottom: 38px;
+
+    border: 1px solid #292929;
+    background: linear-gradient(
+        180deg,
+        #111111,
+        #0b0b0b
+    );
+}
+
+.appointment-group:last-child {
+    margin-bottom: 0;
+}
+
+.appointment-group-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 18px 22px;
+
+    border-bottom: 1px solid #272727;
+}
+
+.appointment-group-title {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.appointment-code {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-width: 48px;
+    height: 28px;
+
+    border: 1px solid #383838;
+    background: #161616;
+
+    color: #aaa;
+
+    font:
+        10px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.08em;
+}
+
+.appointment-group-header h3 {
+    margin: 0;
+
+    color: #e7e7e7;
+
+    font-size: 13px;
+    letter-spacing: 0.13em;
+}
+
+.appointment-group-number {
+    color: #555;
+
+    font:
+        10px
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   APPOINTMENT ROWS
+========================================================= */
+
+.appointment-list {
+    display: grid;
+}
+
+.appointment-row {
+    display: grid;
+    grid-template-columns: minmax(230px, 0.9fr) 1.4fr 100px;
+
+    align-items: center;
+
+    min-height: 66px;
+
+    padding: 0 22px;
+
+    border-bottom: 1px solid #1d1d1d;
+}
+
+.appointment-row:last-child {
+    border-bottom: none;
+}
+
+.appointment-title {
+    color: #d9d9d9;
+
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+}
+
+.appointment-description {
+    padding: 0 20px;
+
+    color: #777;
+
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.appointment-holder {
+    justify-self: end;
+
+    padding: 6px 9px;
+
+    border: 1px solid #292929;
+
+    color: #777;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.08em;
+}
+
+.appointment-holder.filled {
+    color: #ddd;
+    border-color: #414141;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.orbat-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 35px;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+.orbat-lightbox.open {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.lightbox-content {
+    max-width: 96vw;
+    max-height: 92vh;
+
+    overflow: auto;
+
+    border: 1px solid #333;
+    background: #050505;
+}
+
+.lightbox-content img {
+    display: block;
+
+    width: auto;
+    height: auto;
+
+    max-width: 95vw;
+    max-height: 90vh;
+}
+
+.lightbox-close {
+    position: fixed;
+
+    top: 22px;
+    right: 25px;
+
+    width: 42px;
+    height: 42px;
+
+    border: 1px solid #444;
+    background: #101010;
+
+    color: #ddd;
+
+    font-size: 25px;
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+.lightbox-close:hover {
+    background: #1c1c1c;
+    border-color: #666;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 900px) {
+
+    .orbat-heading {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .orbat-reference {
+        width: 100%;
+    }
+
+    .appointments-header {
+        align-items: start;
+        flex-direction: column;
+    }
+
+    .appointment-count {
+        text-align: left;
+    }
+
+    .appointment-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+
+        padding: 18px 20px;
+    }
+
+    .appointment-description {
+        padding: 0;
+    }
+
+    .appointment-holder {
+        justify-self: start;
+    }
+}
+
+
+@media (max-width: 560px) {
+
+    .orbat-hero {
+        padding: 60px 0 50px;
+    }
+
+    .appointments-section {
+        padding: 60px 0 70px;
+    }
+
+    .orbat-overlay {
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .orbat-overlay span:first-child {
+        display: none;
+    }
+
+    .appointment-group-header {
+        padding: 15px;
+    }
+
+    .appointment-row {
+        padding: 17px 15px;
+    }
+
+    .orbat-lightbox {
+        padding: 10px;
+    }
+
+}

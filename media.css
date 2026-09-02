@@ -1,0 +1,657 @@
+/* =========================================================
+   KSOL MEDIA PAGE
+========================================================= */
+
+.media-page {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   MEDIA HERO
+========================================================= */
+
+.media-hero {
+    padding: 86px 0 65px;
+    border-bottom: 1px solid var(--line);
+}
+
+.media-hero-grid {
+    display: flex;
+    align-items: end;
+    justify-content: space-between;
+
+    gap: 40px;
+}
+
+.media-hero h1 {
+    margin: 12px 0 16px;
+
+    color: var(--white);
+
+    font-size: clamp(52px, 8vw, 86px);
+    line-height: 0.9;
+
+    letter-spacing: -0.06em;
+}
+
+.media-hero p {
+    max-width: 700px;
+
+    margin: 0;
+
+    color: #929292;
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+.media-reference {
+    min-width: 155px;
+
+    padding: 16px 18px;
+
+    border: 1px solid #292929;
+
+    background: #101010;
+}
+
+.media-reference span {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #666;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.16em;
+}
+
+.media-reference strong {
+    color: #ddd;
+
+    font-size: 12px;
+
+    letter-spacing: 0.12em;
+}
+
+
+/* =========================================================
+   MEDIA SECTION
+========================================================= */
+
+.media-section {
+    padding: 65px 0 105px;
+}
+
+
+/* =========================================================
+   TOOLBAR
+========================================================= */
+
+.media-toolbar {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid var(--line);
+}
+
+.media-toolbar-label {
+    color: #666;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.15em;
+}
+
+
+.media-filters {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 7px;
+}
+
+
+.media-filter {
+    appearance: none;
+
+    padding: 8px 12px;
+
+    border: 1px solid #292929;
+
+    background: #101010;
+
+    color: #777;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.1em;
+
+    cursor: pointer;
+
+    transition:
+        color 0.2s ease,
+        border-color 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.media-filter:hover {
+    color: #ccc;
+
+    border-color: #444;
+}
+
+
+.media-filter.active {
+    color: #eee;
+
+    background: #1a1a1a;
+
+    border-color: #555;
+}
+
+
+/* =========================================================
+   MEDIA GRID
+========================================================= */
+
+.media-gallery {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 18px;
+}
+
+
+/* =========================================================
+   MEDIA CARD
+========================================================= */
+
+.media-card {
+    min-width: 0;
+
+    overflow: hidden;
+
+    border: 1px solid #292929;
+
+    background: #0d0d0d;
+
+    transition:
+        border-color 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.media-card:hover {
+    border-color: #414141;
+
+    transform: translateY(-2px);
+}
+
+
+/* =========================================================
+   IMAGE
+========================================================= */
+
+.media-image-button {
+    position: relative;
+
+    display: block;
+
+    width: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    background: #080808;
+
+    cursor: zoom-in;
+
+    overflow: hidden;
+}
+
+
+.media-image-button img {
+    display: block;
+
+    width: 100%;
+
+    aspect-ratio: 16 / 10;
+
+    object-fit: cover;
+
+    transition:
+        transform 0.35s ease,
+        opacity 0.25s ease;
+}
+
+
+.media-card:hover
+.media-image-button img {
+    transform: scale(1.025);
+
+    opacity: 0.82;
+}
+
+
+/* =========================================================
+   IMAGE OVERLAY
+========================================================= */
+
+.media-image-overlay {
+    position: absolute;
+
+    right: 12px;
+    bottom: 12px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 7px 10px;
+
+    background: rgba(8, 8, 8, 0.9);
+
+    border: 1px solid #3a3a3a;
+
+    color: #aaa;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.1em;
+
+    opacity: 0;
+
+    transform: translateY(4px);
+
+    transition:
+        opacity 0.2s ease,
+        transform 0.2s ease;
+}
+
+
+.media-card:hover
+.media-image-overlay {
+    opacity: 1;
+
+    transform: translateY(0);
+}
+
+
+.media-image-overlay span {
+    color: #ddd;
+
+    font-size: 14px;
+}
+
+
+/* =========================================================
+   CARD INFORMATION
+========================================================= */
+
+.media-card-info {
+    padding: 18px;
+}
+
+
+.media-card-meta {
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 10px;
+
+    margin-bottom: 10px;
+
+    color: #666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.12em;
+}
+
+
+.media-card-meta span:first-child {
+    color: #888;
+}
+
+
+.media-card-info h3 {
+    margin: 0 0 8px;
+
+    color: #e3e3e3;
+
+    font-size: 13px;
+
+    letter-spacing: 0.09em;
+}
+
+
+.media-card-info p {
+    margin: 0;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+========================================================= */
+
+.media-empty {
+    grid-column: 1 / -1;
+
+    padding: 80px 20px;
+
+    border: 1px solid #292929;
+
+    text-align: center;
+
+    color: #555;
+
+    font:
+        10px
+        "Courier New",
+        monospace;
+
+    letter-spacing: 0.15em;
+}
+
+
+/* =========================================================
+   LIGHTBOX
+========================================================= */
+
+.media-lightbox {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 30px;
+
+    background: rgba(0, 0, 0, 0.94);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity 0.2s ease,
+        visibility 0.2s ease;
+}
+
+
+.media-lightbox.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.lightbox-inner {
+    width: min(1200px, 94vw);
+
+    max-height: 92vh;
+
+    overflow: auto;
+
+    border: 1px solid #333;
+
+    background: #0b0b0b;
+}
+
+
+.lightbox-image-wrap {
+    background: #050505;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.lightbox-image-wrap img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 76vh;
+
+    object-fit: contain;
+}
+
+
+.lightbox-info {
+    padding: 18px 20px;
+}
+
+
+.lightbox-title {
+    color: #e5e5e5;
+
+    font-size: 13px;
+
+    letter-spacing: 0.1em;
+}
+
+
+.lightbox-description {
+    margin: 8px 0 0;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   LIGHTBOX CLOSE
+========================================================= */
+
+.lightbox-close {
+    position: fixed;
+
+    top: 20px;
+    right: 22px;
+
+    z-index: 10000;
+
+    width: 42px;
+    height: 42px;
+
+    padding: 0;
+
+    border: 1px solid #444;
+
+    background: #101010;
+
+    color: #ddd;
+
+    font-size: 25px;
+
+    line-height: 1;
+
+    cursor: pointer;
+
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
+}
+
+
+.lightbox-close:hover {
+    background: #1b1b1b;
+
+    border-color: #666;
+}
+
+
+/* =========================================================
+   TABLET
+========================================================= */
+
+@media (max-width: 1000px) {
+
+    .media-gallery {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 700px) {
+
+    .media-hero {
+        padding: 60px 0 50px;
+    }
+
+
+    .media-hero-grid {
+        align-items: start;
+
+        flex-direction: column;
+    }
+
+
+    .media-reference {
+        width: 100%;
+    }
+
+
+    .media-section {
+        padding: 50px 0 75px;
+    }
+
+
+    .media-toolbar {
+        align-items: start;
+
+        flex-direction: column;
+    }
+
+
+    .media-filters {
+        width: 100%;
+    }
+
+
+    .media-filter {
+        flex: 1;
+    }
+
+
+    .media-gallery {
+        grid-template-columns: 1fr;
+    }
+
+
+    .media-image-overlay {
+        opacity: 1;
+
+        transform: none;
+    }
+
+
+    .media-lightbox {
+        padding: 10px;
+    }
+
+
+    .lightbox-inner {
+        width: 100%;
+    }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+@media (max-width: 480px) {
+
+    .media-hero h1 {
+        font-size: 52px;
+    }
+
+
+    .media-card-info {
+        padding: 15px;
+    }
+
+
+    .media-card-meta {
+        flex-direction: column;
+
+        gap: 4px;
+    }
+
+
+    .media-filters {
+        display: grid;
+
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .media-filter {
+        flex: none;
+    }
+
+}

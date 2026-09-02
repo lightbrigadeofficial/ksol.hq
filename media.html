@@ -1,24 +1,34 @@
 <!doctype html>
 <html lang="en">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>KSOL - Roster</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+    <title>KSOL - Media</title>
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="roster.css">
+    <link
+        rel="icon"
+        type="image/png"
+        href="KSOL_Emblem_Transparent.png"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="media.css">
+
 </head>
+
 
 <body>
 
-  <!-- TOP ACCENT LINE -->
-  <div class="top"></div>
+<div class="top"></div>
 
 
-  <!-- NAVIGATION -->
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
 <nav>
   <div class="wrap nav">
     <a class="brand" href="index.html">
@@ -105,329 +115,266 @@
 </nav>
 
 
-  <!-- LIVE TIME STRIP -->
-  <div class="time-strip">
+<!-- =========================================================
+     TIME STRIP
+========================================================= -->
+
+<div class="time-strip">
 
     <div class="wrap time-strip-inner">
 
-      <div class="time-block">
-        <span class="time-label">KSOL HQ</span>
-        <span id="hq-time" class="time-value">--:--:--</span>
-        <span class="time-zone">IST</span>
-      </div>
+        <div class="time-block">
 
-      <div class="time-divider"></div>
+            <span class="time-label">
+                KSOL HQ
+            </span>
 
-      <div class="time-block">
-        <span class="time-label">YOUR LOCAL TIME</span>
-        <span id="local-time" class="time-value">--:--:--</span>
-        <span id="local-zone" class="time-zone">LOCAL</span>
-      </div>
+            <span
+                id="hq-time"
+                class="time-value"
+            >
+                --:--:--
+            </span>
+
+            <span class="time-zone">
+                IST
+            </span>
+
+        </div>
+
+
+        <div class="time-divider"></div>
+
+
+        <div class="time-block">
+
+            <span class="time-label">
+                YOUR LOCAL TIME
+            </span>
+
+            <span
+                id="local-time"
+                class="time-value"
+            >
+                --:--:--
+            </span>
+
+            <span
+                id="local-zone"
+                class="time-zone"
+            >
+                LOCAL
+            </span>
+
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 
-  <!-- PAGE -->
-  <main class="roster-page">
+<!-- =========================================================
+     MEDIA PAGE
+========================================================= -->
+
+<main class="media-page">
 
 
-    <!-- HERO -->
-    <section class="roster-hero">
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
 
-      <div class="wrap roster-hero-grid">
+    <section class="media-hero">
 
-        <div>
+        <div class="wrap">
 
-          <div class="k">
-            HEADQUARTERS // PERSONNEL
-          </div>
+            <div class="media-hero-grid">
 
-          <h1>
-            Faction Roster
-          </h1>
 
-          <p>
-            The centralized personnel directory of the Kali Special
-            Operations Legion.
-          </p>
+                <div>
+
+                    <div class="k">
+                        HEADQUARTERS // MEDIA ARCHIVE
+                    </div>
+
+
+                    <h1>
+                        Media
+                    </h1>
+
+
+                    <p>
+                        Official KSOL imagery documenting
+                        operations, training, exercises,
+                        aviation and organizational events.
+                    </p>
+
+                </div>
+
+
+                <div class="media-reference">
+
+                    <span>
+                        ARCHIVE
+                    </span>
+
+                    <strong>
+                        MEDIA // 2026
+                    </strong>
+
+                </div>
+
+            </div>
+
 
         </div>
-
-
-        <div class="roster-hero-status">
-
-          <span class="roster-status-label">
-            ROSTER STATUS
-          </span>
-
-          <strong>
-            PERSONNEL DIRECTORY
-          </strong>
-
-          <p>
-            Search, filter and inspect personnel by rank, unit,
-            appointment and service status.
-          </p>
-
-        </div>
-
-      </div>
 
     </section>
 
 
-    <!-- CONTROLS -->
-    <section class="roster-controls-section">
+    <!-- =====================================================
+         MEDIA ARCHIVE
+    ====================================================== -->
 
-      <div class="wrap">
+    <section class="media-section">
 
-        <div class="roster-controls">
-
-          <div class="roster-search-wrap">
-
-            <label
-              for="rosterSearch"
-              class="sr-only"
-            >
-              Search roster
-            </label>
-
-            <input
-              id="rosterSearch"
-              class="roster-search"
-              type="search"
-              placeholder="Search name, callsign, rank, unit or appointment..."
-              autocomplete="off"
-            >
-
-          </div>
+        <div class="wrap">
 
 
-          <div class="roster-select-wrap">
+            <!-- FILTER BAR -->
 
-            <label
-              for="unitFilter"
-              class="sr-only"
-            >
-              Filter by unit
-            </label>
+            <div class="media-toolbar">
 
-            <select id="unitFilter" class="roster-select">
-              <option value="all">ALL UNITS</option>
-            </select>
-
-          </div>
+                <div class="media-toolbar-label">
+                    ARCHIVE FILTER
+                </div>
 
 
-          <div class="roster-select-wrap">
+                <div class="media-filters">
 
-            <label
-              for="rankFilter"
-              class="sr-only"
-            >
-              Filter by rank
-            </label>
-
-            <select id="rankFilter" class="roster-select">
-              <option value="all">ALL RANKS</option>
-            </select>
-
-          </div>
+                    <button
+                        class="media-filter active"
+                        type="button"
+                        data-filter="ALL"
+                    >
+                        ALL
+                    </button>
 
 
-          <div class="roster-select-wrap">
+                    <button
+                        class="media-filter"
+                        type="button"
+                        data-filter="OPERATIONS"
+                    >
+                        OPERATIONS
+                    </button>
 
-            <label
-              for="statusFilter"
-              class="sr-only"
-            >
-              Filter by status
-            </label>
 
-            <select id="statusFilter" class="roster-select">
-              <option value="all">ALL STATUS</option>
-              <option value="active">ACTIVE</option>
-              <option value="loa">LOA</option>
-              <option value="reserve">RESERVE</option>
-              <option value="inactive">INACTIVE</option>
-            </select>
+                    <button
+                        class="media-filter"
+                        type="button"
+                        data-filter="TRAINING"
+                    >
+                        TRAINING
+                    </button>
 
-          </div>
+
+                    <button
+                        class="media-filter"
+                        type="button"
+                        data-filter="AVIATION"
+                    >
+                        AVIATION
+                    </button>
+
+
+                    <button
+                        class="media-filter"
+                        type="button"
+                        data-filter="EVENTS"
+                    >
+                        EVENTS
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- GALLERY -->
+
+            <div
+                id="mediaGallery"
+                class="media-gallery"
+            ></div>
+
 
         </div>
-
-
-        <div class="roster-toolbar">
-
-          <div id="rosterCount">
-            0 PERSONNEL
-          </div>
-
-          <div class="roster-sort-wrap">
-
-            <span>
-              SORT
-            </span>
-
-            <select
-              id="sortSelect"
-              class="roster-sort"
-            >
-              <option value="rank">RANK</option>
-              <option value="name">NAME</option>
-              <option value="unit">UNIT</option>
-              <option value="appointment">APPOINTMENT</option>
-            </select>
-
-          </div>
-
-        </div>
-
-      </div>
 
     </section>
 
 
-    <!-- DIRECTORY -->
-    <section class="roster-directory-section">
-
-      <div class="wrap">
+</main>
 
 
-        <!-- EMPTY STATE -->
+<!-- =========================================================
+     LIGHTBOX
+========================================================= -->
 
-        <div
-          id="rosterEmpty"
-          class="roster"
-        >
+<div
+    id="mediaLightbox"
+    class="media-lightbox"
+    aria-hidden="true"
+>
 
-          <!-- <div class="roster-empty-icon">
-            ROSTER
-          </div> -->
-
-          <!-- <h2>
-            No Personnel Listed
-          </h2>
-
-          <p>
-            The public roster is currently empty. Add personnel to
-            <code>roster.js</code> to populate this directory.
-          </p> -->
-
-        </div>
+    <button
+        id="lightboxClose"
+        class="lightbox-close"
+        type="button"
+        aria-label="Close"
+    >
+        ×
+    </button>
 
 
-        <!-- TABLE -->
-
-        <div
-          id="rosterTableWrap"
-          class="roster-table-wrap"
-          hidden
-        >
-
-          <div class="roster-table-head">
-
-            <div>
-              PERSONNEL
-            </div>
-
-            <div>
-              RANK
-            </div>
-
-            <div>
-              UNIT
-            </div>
-
-            <div>
-              APPOINTMENT
-            </div>
-
-            <div>
-              STATUS
-            </div>
-
-          </div>
+    <div class="lightbox-inner">
 
 
-          <div id="rosterRows"></div>
+        <div class="lightbox-image-wrap">
+
+            <img
+                id="lightboxImage"
+                src=""
+                alt=""
+            >
 
         </div>
 
 
-        <!-- NO RESULTS -->
+        <div class="lightbox-info">
 
-        <div
-          id="rosterNoResults"
-          class="roster-no-results"
-          hidden
-        >
+            <div
+                id="lightboxTitle"
+                class="lightbox-title"
+            ></div>
 
-          <strong>
-            NO MATCHING PERSONNEL
-          </strong>
 
-          <span>
-            Adjust your search or filters.
-          </span>
+            <p
+                id="lightboxDescription"
+                class="lightbox-description"
+            ></p>
 
         </div>
 
-      </div>
+    </div>
 
-    </section>
-
-
-    <!-- PERSONNEL INFORMATION -->
-    <section class="roster-info-section">
-
-      <div class="wrap">
-
-        <div class="k">
-          PERSONNEL DIRECTORY // REFERENCE
-        </div>
-
-        <h2>
-          Personnel Records
-        </h2>
-
-        <p class="roster-section-lead">
-          Select a personnel record to view its available public
-          information. Sensitive personnel information should remain
-          outside the public roster.
-        </p>
+</div>
 
 
-        <div
-          id="personnelDetails"
-          class="personnel-details"
-        >
+<!-- =========================================================
+     FOOTER
+========================================================= -->
 
-          <div class="personnel-placeholder">
-
-            <span>
-              NO RECORD SELECTED
-            </span>
-
-            <p>
-              Select a member from the roster above.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- FOOTER -->
 <footer class="site-footer">
 
     <!-- TOP COPYRIGHT LINE -->
@@ -599,8 +546,13 @@
 </footer>
 
 
-  <script src="script.js"></script>
-  <script src="roster.js"></script>
+<!-- =========================================================
+     JAVASCRIPT
+========================================================= -->
+
+<script src="script.js"></script>
+<script src="media.js"></script>
 
 </body>
+
 </html>

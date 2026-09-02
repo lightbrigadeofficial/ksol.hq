@@ -1,0 +1,871 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KSOL - Armoury</title>
+
+    <link
+        rel="icon"
+        type="image/png"
+        href="KSOL_Emblem_Transparent.png"
+    >
+
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="armoury.css">
+
+</head>
+
+
+<body>
+
+<div class="top"></div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+  <div class="wrap nav">
+    <a class="brand" href="index.html">
+      <img src="KSOL_Emblem_Transparent.png" alt="KSOL Logo" class="nav-logo">
+      <span>KSOL HQ</span>
+    </a>
+
+    <div class="links">
+                
+        <a href="index.html">
+          Home
+        </a>
+      <!-- <a href="index.html#about">FACTION STATS</a> -->
+
+      <div class="nav-dropdown">
+        <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
+          HEADQUARTERS <span class="nav-chevron">▾</span>
+        </button>
+        <div class="nav-dropdown-menu">
+          <a href="ranks.html" class="nav-dropdown-item">
+            <span class="dropdown-index">01</span>
+            <span>
+              <strong>RANKS</strong>
+              <small>Rank structure &amp; requirements</small>
+            </span>
+          </a>
+          <a href="roster.html" class="nav-dropdown-item">
+            <span class="dropdown-index">02</span>
+            <span>
+              <strong>ROSTER</strong>
+              <small>Faction personnel directory</small>
+            </span>
+          </a>
+          <a href="appointments.html" class="nav-dropdown-item">
+            <span class="dropdown-index">03</span>
+            <span>
+              <strong>ORBAT</strong>
+              <small>Organization &amp; appointments</small>
+            </span>
+          </a>
+          <a href="awards.html" class="nav-dropdown-item">
+            <span class="dropdown-index">04</span>
+            <span>
+              <strong>DECORATIONS</strong>
+              <small>Tabs, badges &amp; decorations</small>
+            </span>
+          </a>
+           <a href="qualifications.html" class="nav-dropdown-item">
+            <span class="dropdown-index">05</span>
+            <span>
+              <strong>QUALIFICATIONS</strong>
+              <small>Courses, trainings &amp; evaluation boards</small>
+            </span>
+          </a>
+          <a href="armoury.html"class="nav-dropdown-item">
+            <span class="dropdown-index">06</span>
+            <span>
+              <strong>ARMOURY</strong>
+              <small>Sanctioned weapon systems &amp; mods</small>
+            </span>
+          </a>
+          <a href="uniforms.html" class="nav-dropdown-item">
+            <span class="dropdown-index">07</span>
+            <span>
+              <strong>UNIFORMS</strong>
+              <small>Faction dress &amp; uniform codes</small>
+            </span>
+          </a>
+        </div>
+      </div>
+      <a href="jobs.html">JOB CENTRE</a>
+      <a href="media.html">MEDIA</a>
+      <a href="#">RULES &amp; SOPs</a>
+    </div>
+
+    <div class="nav-actions">
+      <a href="https://discord.gg/cXGjn9CgYN" class="discord-btn" target="_blank" rel="noopener">JOIN DISCORD</a>
+      <a href="login.html" class="enlist-btn">
+        <span class="enlist-text">LOGIN</span>
+        <span class="enlist-arrow">→</span>
+      </a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- =========================================================
+     TIME STRIP
+========================================================= -->
+
+<div class="time-strip">
+
+    <div class="wrap time-strip-inner">
+
+        <div class="time-block">
+
+            <span class="time-label">
+                KSOL HQ
+            </span>
+
+            <span
+                id="hq-time"
+                class="time-value"
+            >
+                --:--:--
+            </span>
+
+            <span class="time-zone">
+                IST
+            </span>
+
+        </div>
+
+
+        <div class="time-divider"></div>
+
+
+        <div class="time-block">
+
+            <span class="time-label">
+                YOUR LOCAL TIME
+            </span>
+
+            <span
+                id="local-time"
+                class="time-value"
+            >
+                --:--:--
+            </span>
+
+            <span
+                id="local-zone"
+                class="time-zone"
+            >
+                LOCAL
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     ARMOURY
+========================================================= -->
+
+<main class="armoury-page">
+
+
+    <!-- =====================================================
+         HERO
+    ====================================================== -->
+
+    <section class="armoury-hero">
+
+        <div class="wrap armoury-hero-wrap">
+
+            <div class="hero-copy">
+
+                <div class="hero-kicker">
+                    KSOL // EQUIPMENT SYSTEMS
+                </div>
+
+
+                <h1>
+                    ARMOURY
+                </h1>
+
+
+                <p>
+                    Official KSOL catalogue of authorized
+                    fictional in-game equipment systems,
+                    role classifications and approved
+                    configurations.
+                </p>
+
+            </div>
+
+
+            <div class="hero-reference">
+
+                <div class="reference-row">
+
+                    <span>
+                        CATALOGUE
+                    </span>
+
+                    <strong>
+                        KSOL-ARM
+                    </strong>
+
+                </div>
+
+
+                <div class="reference-row">
+
+                    <span>
+                        REVISION
+                    </span>
+
+                    <strong>
+                        2026.08
+                    </strong>
+
+                </div>
+
+
+                <div class="reference-row">
+
+                    <span>
+                        REGISTER
+                    </span>
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CATALOGUE CONTROLS
+    ====================================================== -->
+
+    <section class="catalogue-navigation">
+
+        <div class="wrap">
+
+
+            <div class="catalogue-search">
+
+                <div class="search-label">
+                    EQUIPMENT CATALOGUE
+                </div>
+
+
+                <div class="search-field">
+
+                    <span class="search-symbol">
+                        /
+                    </span>
+
+
+                    <input
+                        id="armourySearch"
+                        type="search"
+                        placeholder="Search equipment, designation, role..."
+                        autocomplete="off"
+                    >
+
+
+                    <kbd>
+                        CTRL K
+                    </kbd>
+
+                </div>
+
+            </div>
+
+
+            <!-- FAMILY SELECTOR -->
+
+            <div class="family-selector">
+
+                <button
+                    class="family-tab active"
+                    type="button"
+                    data-category="standard"
+                >
+
+                    <span class="family-index">
+                        01
+                    </span>
+
+                    <span class="family-main">
+
+                        <strong>
+                            STANDARD ISSUE
+                        </strong>
+
+                        <small>
+                            ROLE-BASED SYSTEMS
+                        </small>
+
+                    </span>
+
+                    <span class="family-arrow">
+                        →
+                    </span>
+
+                </button>
+
+
+                <button
+                    class="family-tab"
+                    type="button"
+                    data-category="sopmod"
+                >
+
+                    <span class="family-index">
+                        02
+                    </span>
+
+                    <span class="family-main">
+
+                        <strong>
+                            SOPMOD
+                        </strong>
+
+                        <small>
+                            SPECIAL OPERATIONS SYSTEMS
+                        </small>
+
+                    </span>
+
+                    <span class="family-arrow">
+                        →
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- ROLE SELECTOR -->
+
+            <div
+                id="standardRoles"
+                class="role-selector"
+            >
+
+                <button
+                    class="role-tab active"
+                    type="button"
+                    data-role="si"
+                >
+                    STANDARD ISSUE
+                </button>
+
+
+                <button
+                    class="role-tab"
+                    type="button"
+                    data-role="autorifleman"
+                >
+                    AUTO RIFLEMAN
+                </button>
+
+
+                <button
+                    class="role-tab"
+                    type="button"
+                    data-role="teamleader"
+                >
+                    TEAM LEADER
+                </button>
+
+
+                <button
+                    class="role-tab"
+                    type="button"
+                    data-role="squadleader"
+                >
+                    SQUAD LEADER
+                </button>
+
+
+                <button
+                    class="role-tab"
+                    type="button"
+                    data-role="marksman"
+                >
+                    MARKSMAN
+                </button>
+
+
+                <button
+                    class="role-tab"
+                    type="button"
+                    data-role="sniper"
+                >
+                    SNIPER
+                </button>
+
+
+                <button
+                    class="role-tab"
+                    type="button"
+                    data-role="pilot"
+                >
+                    PILOT
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CATALOGUE
+    ====================================================== -->
+
+    <section class="catalogue-section">
+
+        <div class="wrap">
+
+
+            <div class="catalogue-heading">
+
+                <div>
+
+                    <div
+                        id="catalogueCategory"
+                        class="catalogue-kicker"
+                    >
+                        STANDARD ISSUE
+                    </div>
+
+
+                    <h2 id="catalogueTitle">
+                        STANDARD ISSUE
+                    </h2>
+
+                </div>
+
+
+                <div class="catalogue-count">
+
+                    <span>
+                        SYSTEMS
+                    </span>
+
+                    <strong id="itemCount">
+                        00
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <div
+                id="equipmentGrid"
+                class="equipment-grid"
+            ></div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CATALOGUE NOTE
+    ====================================================== -->
+
+    <section class="catalogue-footer">
+
+        <div class="wrap">
+
+            <div class="catalogue-note">
+
+                <span>
+                    KSOL / ARM
+                </span>
+
+
+                <div>
+
+                    <strong>
+                        CATALOGUE CONTROL
+                    </strong>
+
+                    <p>
+                        Equipment information is maintained
+                        manually by KSOL Headquarters and
+                        applies to the fictional in-game
+                        environment only.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<!-- =========================================================
+     PRODUCT MODAL
+========================================================= -->
+
+<div
+    id="equipmentModal"
+    class="equipment-modal"
+    aria-hidden="true"
+>
+
+    <div class="product-modal">
+
+
+        <!-- TOP BAR -->
+
+        <div class="product-modal-bar">
+
+            <span id="modalId">
+                KSOL-000
+            </span>
+
+            <button
+                id="modalClose"
+                type="button"
+                class="modal-close"
+                aria-label="Close"
+            >
+                ×
+            </button>
+
+        </div>
+
+
+        <!-- PRODUCT INTRO -->
+
+        <div class="product-intro">
+
+            <div class="product-image-column">
+
+                <div class="product-image-background">
+
+                    <img
+                        id="modalImage"
+                        class="product-main-image"
+                        src=""
+                        alt=""
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="product-intro-content">
+
+                <div
+                    id="modalCategory"
+                    class="product-kicker"
+                >
+                    STANDARD ISSUE
+                </div>
+
+
+                <h2 id="modalTitle">
+                    EQUIPMENT
+                </h2>
+
+
+                <p
+                    id="modalDescription"
+                    class="product-description"
+                ></p>
+
+
+                <div
+                    id="modalStatus"
+                    class="product-status"
+                >
+                    AUTHORIZED
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TECHNICAL SPECIFICATIONS -->
+
+        <div class="product-specifications">
+
+            <div class="detail-section-heading">
+
+                <span>
+                    TECHNICAL SPECIFICATIONS
+                </span>
+
+                <small>
+                    SYSTEM DATA
+                </small>
+
+            </div>
+
+
+            <div
+                id="modalInfo"
+                class="specification-grid"
+            ></div>
+
+        </div>
+
+
+        <!-- CONFIGURATIONS -->
+
+        <div class="product-configurations">
+
+            <div class="detail-section-heading">
+
+                <span>
+                    CONFIGURATION ARCHITECTURE
+                </span>
+
+                <small>
+                    AUTHORIZED IN-GAME VARIANTS
+                </small>
+
+            </div>
+
+
+            <div
+                id="modalConfigs"
+                class="configuration-grid"
+            ></div>
+
+        </div>
+
+
+        <!-- DISCLAIMER -->
+
+        <!-- <div class="product-disclaimer">
+
+            <strong>
+                CATALOGUE NOTICE
+            </strong>
+
+            <span>
+                All specifications and configurations
+                displayed on this page refer to fictional
+                in-game equipment within the KSOL
+                environment.
+            </span>
+
+        </div> -->
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer class="site-footer">
+
+    <!-- TOP COPYRIGHT LINE -->
+    <div class="footer-top">
+
+        <div class="wrap footer-top-inner">© 2026 KALI SPECIAL OPERATIONS LEGION HEADQUARTERS — ALL RIGHTS RESERVED. DEVELOPED BY <a href="https://www.instagram.com/obi_onenairobi/"><b><u>VANDAM</u></b></a></div>
+
+    </div>
+
+
+    <!-- MAIN FOOTER -->
+    <div class="footer-main">
+
+        <div class="wrap footer-grid">
+
+
+            <!-- =================================================
+                 ORGANIZATION INFO
+            ================================================== -->
+
+            <div class="footer-brand">
+
+                <div class="footer-brand-title">
+
+                    <img src="Untitled201_20260806131243.jpg" alt="KSOL Logo" class="footer-logo">
+
+                    <div>
+
+                        <strong>
+                            KALI SPECIAL OPERATIONS LEGION
+                        </strong>
+
+                        <small>
+                            KSOL // HEADQUARTERS
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p>
+                    An international Roblox military realism
+                    organization focused on structured infantry
+                    operations, special operations, training,
+                    aviation and joint exercises.
+                </p>
+
+
+                <em>
+                    "MEN APART, EVERY MAN AN EMPEROR"
+                </em>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 NAVIGATION
+            ================================================== -->
+
+            <div class="footer-column">
+
+                <h4>
+                    NAVIGATION
+                </h4>
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="ranks.html">
+                    Ranks
+                </a>
+
+                <a href="roster.html">
+                    Roster
+                </a>
+
+                <a href="appointments.css">
+                    ORBAT
+                </a>
+
+                <a href="awards.html">
+                    Decorations
+                </a>
+
+                <a href="#">
+                    Qualifications
+                </a>
+                <a href="#">
+                    Armoury
+                </a>
+                <a href="#">
+                    Uniforms
+                </a>
+                <a href="#">
+                    Job Centre
+                </a>
+                <a href="#">
+                    Media
+                </a>
+                <a href="#">
+                    Rules &amp; SOPs
+                </a>
+
+            </div>
+
+
+
+            <!-- =================================================
+                 UNIT INFORMATION
+            ================================================== -->
+
+            <div class="footer-column">
+
+                <h4>
+                    UNIT INFO
+                </h4>
+
+                <span>
+                    Game: BRM5
+                </span>
+
+                <span>
+                    Type: Military Realism (Milsim)
+                </span>
+
+                <span>
+                    Formation: Legion [Army]
+                </span>
+
+                <span>
+                    Special Operations: 2 SIS
+                </span>
+
+                <span>
+                    Region: International
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         BOTTOM LEGAL LINE
+    ========================================================== -->
+
+    <div class="footer-bottom">
+
+        <div class="wrap footer-bottom-inner">
+
+            <span>
+                © 2026 Kali Special Operations Legion —
+                Fictional gaming organization.
+            </span>
+
+            <span>
+                Not affiliated with any government or military organization.
+            </span>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+<script src="armoury.js"></script>
+
+</body>
+
+</html>

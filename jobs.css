@@ -1,0 +1,1564 @@
+/* =========================================================
+   KSOL JOB CENTRE
+   PERSONNEL ASSIGNMENT REGISTRY
+========================================================= */
+
+.jobs-page {
+    min-height: 100vh;
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.jobs-hero {
+    padding: 95px 0 78px;
+
+    background:
+        linear-gradient(
+            180deg,
+            #0b0b0b,
+            #080808
+        );
+
+    border-bottom: 1px solid #222;
+}
+
+
+.jobs-hero-wrap {
+    display: grid;
+
+    grid-template-columns:
+        minmax(0, 1fr) 260px;
+
+    gap: 80px;
+
+    align-items: end;
+}
+
+
+.hero-kicker {
+    margin-bottom: 18px;
+
+    color: #6c6c6c;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .2em;
+}
+
+
+.jobs-hero h1 {
+    margin: 0 0 21px;
+
+    color: #ededed;
+
+    font-size:
+        clamp(55px, 8vw, 100px);
+
+    line-height: .84;
+
+    font-weight: 500;
+
+    letter-spacing: -.07em;
+}
+
+
+.jobs-hero-copy p {
+    max-width: 730px;
+
+    margin: 0;
+
+    color: #878787;
+
+    font-size: 14px;
+
+    line-height: 1.8;
+}
+
+
+/* =========================================================
+   REFERENCE
+========================================================= */
+
+.jobs-reference {
+    border-top: 1px solid #343434;
+
+    border-bottom: 1px solid #343434;
+}
+
+
+.reference-row {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 12px 0;
+
+    border-bottom: 1px solid #1e1e1e;
+}
+
+
+.reference-row:last-child {
+    border-bottom: 0;
+}
+
+
+.reference-row span {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .13em;
+}
+
+
+.reference-row strong {
+    color: #aaa;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+.jobs-navigation {
+    padding: 30px 0 0;
+
+    background: #080808;
+
+    border-bottom: 1px solid #222;
+}
+
+
+/* =========================================================
+   SEARCH
+========================================================= */
+
+.jobs-search {
+    display: flex;
+
+    align-items: center;
+
+    gap: 27px;
+
+    margin-bottom: 27px;
+}
+
+
+.search-label {
+    color: #555;
+
+    white-space: nowrap;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .14em;
+}
+
+
+.search-field {
+    display: flex;
+
+    align-items: center;
+
+    width: min(720px, 100%);
+
+    height: 44px;
+
+    border: 1px solid #2b2b2b;
+
+    background: #0c0c0c;
+}
+
+
+.search-symbol {
+    padding-left: 14px;
+
+    color: #555;
+
+    font:
+        12px
+        "Courier New",
+        monospace;
+}
+
+
+.search-field input {
+    flex: 1;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0 12px;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: #ddd;
+
+    font:
+        10px
+        "Courier New",
+        monospace;
+}
+
+
+.search-field input::placeholder {
+    color: #555;
+}
+
+
+.search-field kbd {
+    margin-right: 9px;
+
+    padding: 4px 7px;
+
+    border: 1px solid #292929;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   CATEGORY HEADER
+========================================================= */
+
+.job-category-heading {
+    padding: 13px 16px;
+
+    border:
+        1px solid
+        #292929;
+
+    border-bottom: 0;
+
+    background: #101010;
+}
+
+
+.job-category-heading > div {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+}
+
+
+.job-category-heading span {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+.job-category-heading strong {
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .12em;
+}
+
+
+/* =========================================================
+   CATEGORY SELECTOR
+========================================================= */
+
+.job-category-selector {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, minmax(0, 1fr));
+
+    gap: 1px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.job-category-tab {
+    appearance: none;
+
+    -webkit-appearance: none;
+
+    position: relative;
+
+    display: grid;
+
+    grid-template-columns:
+        30px minmax(0, 1fr) auto;
+
+    align-items: center;
+
+    gap: 11px;
+
+    width: 100%;
+
+    min-height: 82px;
+
+    padding: 0 15px;
+
+    margin: 0;
+
+    border: 0;
+
+    border-radius: 0;
+
+    outline: none;
+
+    background: #0d0d0d;
+
+    color: #666;
+
+    font-family: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    transition:
+        background .2s ease,
+        color .2s ease;
+}
+
+
+.job-category-tab::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 2px;
+
+    background: transparent;
+}
+
+
+.job-category-tab:hover {
+    background: #141414;
+
+    color: #bbb;
+}
+
+
+.job-category-tab.active {
+    background: #191919;
+
+    color: #eee;
+}
+
+
+.job-category-tab.active::before {
+    background: #ddd;
+}
+
+
+.category-index {
+    color: #505050;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+.job-category-tab.active
+.category-index {
+    color: #999;
+}
+
+
+.category-content {
+    min-width: 0;
+}
+
+
+.category-content strong {
+    display: block;
+
+    overflow: hidden;
+
+    color: inherit;
+
+    font-size: 9px;
+
+    font-weight: 800;
+
+    line-height: 1.2;
+
+    letter-spacing: .09em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.category-content small {
+    display: block;
+
+    margin-top: 5px;
+
+    overflow: hidden;
+
+    color: #555;
+
+    font:
+        6px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .06em;
+
+    text-overflow: ellipsis;
+
+    white-space: nowrap;
+}
+
+
+.job-category-tab.active
+.category-content small {
+    color: #777;
+}
+
+
+.category-arrow {
+    color: #555;
+
+    font-size: 15px;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.job-category-tab:hover
+.category-arrow {
+    color: #aaa;
+
+    transform: translateX(2px);
+}
+
+
+.job-category-tab.active
+.category-arrow {
+    color: #ddd;
+}
+
+
+/* =========================================================
+   CATALOGUE
+========================================================= */
+
+.jobs-catalogue {
+    padding: 67px 0 92px;
+
+    background: #080808;
+}
+
+
+.catalogue-heading {
+    display: flex;
+
+    align-items: flex-end;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    padding-bottom: 19px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #272727;
+}
+
+
+.catalogue-kicker {
+    margin-bottom: 8px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .16em;
+}
+
+
+.catalogue-heading h2 {
+    margin: 0;
+
+    color: #ddd;
+
+    font-size: 27px;
+
+    font-weight: 500;
+
+    line-height: 1.1;
+
+    letter-spacing: -.025em;
+}
+
+
+.catalogue-count {
+    text-align: right;
+}
+
+
+.catalogue-count span {
+    display: block;
+
+    margin-bottom: 4px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .12em;
+}
+
+
+.catalogue-count strong {
+    color: #aaa;
+
+    font:
+        20px
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   JOB GRID
+========================================================= */
+
+.job-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, minmax(0, 1fr));
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+/* =========================================================
+   JOB CARD
+========================================================= */
+
+.job-card {
+    position: relative;
+
+    min-height: 285px;
+
+    padding: 23px;
+
+    overflow: hidden;
+
+    background: #0c0c0c;
+
+    cursor: pointer;
+
+    transition:
+        background .25s ease,
+        transform .2s ease;
+}
+
+
+.job-card:hover {
+    background: #111;
+
+    transform: translateY(-2px);
+}
+
+
+.job-card-top {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding-bottom: 13px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 1px solid #222;
+}
+
+
+.job-card-code {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .11em;
+}
+
+
+.job-card-status {
+    color: #777;
+
+    font:
+        7px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+.job-card-category {
+    margin-bottom: 9px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .14em;
+}
+
+
+.job-card h3 {
+    margin: 0 0 11px;
+
+    color: #ddd;
+
+    font-size: 17px;
+
+    font-weight: 600;
+
+    line-height: 1.2;
+
+    letter-spacing: .02em;
+}
+
+
+.job-card-description {
+    margin: 0;
+
+    color: #6c6c6c;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+.job-card-footer {
+    position: absolute;
+
+    right: 23px;
+
+    bottom: 18px;
+
+    left: 23px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+
+.job-card-slots {
+    color: #777;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .09em;
+}
+
+
+.job-card-arrow {
+    color: #666;
+
+    font-size: 16px;
+
+    transition:
+        color .2s ease,
+        transform .2s ease;
+}
+
+
+.job-card:hover
+.job-card-arrow {
+    color: #ddd;
+
+    transform: translateX(3px);
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.job-empty {
+    grid-column: 1 / -1;
+
+    padding: 90px 20px;
+
+    background: #0c0c0c;
+
+    text-align: center;
+
+    color: #555;
+
+    font:
+        9px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .15em;
+}
+
+
+/* =========================================================
+   NOTICE
+========================================================= */
+
+.jobs-notice {
+    padding: 0 0 100px;
+
+    background: #080808;
+}
+
+
+.notice-grid {
+    display: grid;
+
+    grid-template-columns:
+        160px 1fr;
+
+    gap: 30px;
+
+    padding: 24px 0;
+
+    border-top: 1px solid #252525;
+
+    border-bottom: 1px solid #252525;
+}
+
+
+.notice-grid > span {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .12em;
+}
+
+
+.notice-grid strong {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+}
+
+
+.notice-grid p {
+    max-width: 780px;
+
+    margin: 0;
+
+    color: #626262;
+
+    font-size: 10px;
+
+    line-height: 1.7;
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.job-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    background: rgba(0,0,0,.95);
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .22s ease,
+        visibility .22s ease;
+}
+
+
+.job-modal.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+
+.job-product {
+    width: min(1100px, 95vw);
+
+    max-height: 93vh;
+
+    overflow-y: auto;
+
+    border: 1px solid #353535;
+
+    background: #0b0b0b;
+}
+
+
+/* =========================================================
+   MODAL HEADER
+========================================================= */
+
+.job-product-bar {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    min-height: 48px;
+
+    padding: 0 18px;
+
+    border-bottom: 1px solid #292929;
+
+    background: #101010;
+
+    color: #666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .13em;
+}
+
+
+.job-modal-close {
+    width: 31px;
+
+    height: 31px;
+
+    padding: 0;
+
+    border: 1px solid #393939;
+
+    background: #0d0d0d;
+
+    color: #aaa;
+
+    font-size: 20px;
+
+    cursor: pointer;
+}
+
+
+.job-modal-close:hover {
+    color: #fff;
+
+    border-color: #666;
+}
+
+
+/* =========================================================
+   MODAL HEADER CONTENT
+========================================================= */
+
+.job-product-header {
+    display: grid;
+
+    grid-template-columns:
+        160px 1fr;
+
+    min-height: 300px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.job-code-block {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-right: 1px solid #292929;
+
+    background: #090909;
+}
+
+
+.job-code-block span {
+    margin-bottom: 10px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .15em;
+}
+
+
+.job-code-block strong {
+    color: #2d2d2d;
+
+    font-size: 80px;
+
+    font-weight: 600;
+
+    line-height: 1;
+
+    letter-spacing: -.08em;
+}
+
+
+.job-header-content {
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    padding: 50px;
+}
+
+
+.product-kicker {
+    margin-bottom: 12px;
+
+    color: #666;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .16em;
+}
+
+
+.job-header-content h2 {
+    margin: 0 0 17px;
+
+    color: #e7e7e7;
+
+    font-size:
+        clamp(28px, 4vw, 46px);
+
+    font-weight: 500;
+
+    line-height: 1;
+
+    letter-spacing: -.04em;
+}
+
+
+.job-description {
+    max-width: 700px;
+
+    margin: 0 0 23px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    line-height: 1.75;
+}
+
+
+.job-status {
+    align-self: flex-start;
+
+    padding: 7px 9px;
+
+    border: 1px solid #353535;
+
+    color: #aaa;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   SECTION HEADINGS
+========================================================= */
+
+.detail-heading {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    margin-bottom: 17px;
+}
+
+
+.detail-heading span {
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .1em;
+}
+
+
+.detail-heading small {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   SPECIFICATIONS
+========================================================= */
+
+.job-details {
+    padding: 34px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.job-spec-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border-top: 1px solid #292929;
+
+    border-left: 1px solid #292929;
+}
+
+
+.job-spec {
+    min-height: 72px;
+
+    padding: 13px;
+
+    border-right: 1px solid #292929;
+
+    border-bottom: 1px solid #292929;
+
+    background: #0e0e0e;
+}
+
+
+.job-spec span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #555;
+
+    font:
+        7px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+.job-spec strong {
+    display: block;
+
+    color: #b9b9b9;
+
+    font-size: 11px;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   REQUIREMENTS
+========================================================= */
+
+.job-requirements {
+    padding: 34px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.requirements-list {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.requirement {
+    display: grid;
+
+    grid-template-columns:
+        28px 1fr;
+
+    gap: 10px;
+
+    padding: 14px;
+
+    background: #0e0e0e;
+}
+
+
+.requirement-index {
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+.requirement span {
+    color: #888;
+
+    font-size: 10px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================================
+   RESPONSIBILITIES
+========================================================= */
+
+.job-responsibilities {
+    padding: 34px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.responsibility-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.responsibility-card {
+    min-height: 100px;
+
+    padding: 16px;
+
+    background: #0e0e0e;
+}
+
+
+.responsibility-number {
+    margin-bottom: 9px;
+
+    color: #555;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+}
+
+
+.responsibility-card strong {
+    display: block;
+
+    margin-bottom: 6px;
+
+    color: #aaa;
+
+    font-size: 10px;
+
+    letter-spacing: .05em;
+}
+
+
+.responsibility-card span {
+    color: #666;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+/* =========================================================
+   APPLICATION
+========================================================= */
+
+.job-application {
+    padding: 34px;
+}
+
+
+.application-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 2px;
+
+    background: #292929;
+
+    border: 1px solid #292929;
+}
+
+
+.application-card {
+    min-height: 100px;
+
+    padding: 16px;
+
+    background: #0e0e0e;
+}
+
+
+.application-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #555;
+
+    font:
+        7px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+.application-card strong {
+    display: block;
+
+    color: #aaa;
+
+    font-size: 11px;
+
+    font-weight: 500;
+
+    line-height: 1.45;
+}
+
+
+/* =========================================================
+   DISCLAIMER
+========================================================= */
+
+.job-disclaimer {
+    display: grid;
+
+    grid-template-columns:
+        160px 1fr;
+
+    gap: 20px;
+
+    padding: 18px 34px 30px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    line-height: 1.6;
+}
+
+
+.job-disclaimer strong {
+    color: #777;
+
+    font:
+        8px
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 1100px) {
+
+    .job-category-selector {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .job-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+}
+
+
+@media (max-width: 800px) {
+
+    .jobs-hero {
+        padding: 65px 0 55px;
+    }
+
+
+    .jobs-hero-wrap {
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+
+    .jobs-search {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 10px;
+    }
+
+
+    .search-field {
+        width: 100%;
+    }
+
+
+    .job-category-selector {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .job-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .job-product-header {
+        grid-template-columns: 1fr;
+    }
+
+
+    .job-code-block {
+        min-height: 130px;
+
+        border-right: 0;
+
+        border-bottom: 1px solid #292929;
+    }
+
+
+    .job-code-block strong {
+        font-size: 60px;
+    }
+
+
+    .job-header-content {
+        padding: 35px 25px;
+    }
+
+
+    .job-spec-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .requirements-list,
+    .responsibility-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .application-grid {
+        grid-template-columns:
+            repeat(2, 1fr);
+    }
+
+
+    .job-details,
+    .job-requirements,
+    .job-responsibilities,
+    .job-application {
+        padding: 25px 20px;
+    }
+
+
+    .job-disclaimer {
+        grid-template-columns: 1fr;
+
+        padding: 18px 20px 28px;
+    }
+
+}
+
+
+@media (max-width: 520px) {
+
+    .jobs-hero h1 {
+        font-size: 52px;
+    }
+
+
+    .job-category-selector {
+        grid-template-columns: 1fr;
+    }
+
+
+    .job-category-tab {
+        min-height: 70px;
+    }
+
+
+    .job-spec-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .application-grid {
+        grid-template-columns: 1fr;
+    }
+
+
+    .catalogue-heading {
+        align-items: flex-start;
+
+        flex-direction: column;
+
+        gap: 12px;
+    }
+
+
+    .catalogue-count {
+        text-align: left;
+    }
+
+}

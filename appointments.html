@@ -1,24 +1,22 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>KSOL - Roster</title>
+    <title>KSOL - ORBAT</title>
 
-  <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+    <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="roster.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="appointments.css">
 </head>
 
 <body>
 
-  <!-- TOP ACCENT LINE -->
-  <div class="top"></div>
+<div class="top"></div>
 
-
-  <!-- NAVIGATION -->
+<!-- NAVIGATION -->
 <nav>
   <div class="wrap nav">
     <a class="brand" href="index.html">
@@ -105,329 +103,169 @@
 </nav>
 
 
-  <!-- LIVE TIME STRIP -->
-  <div class="time-strip">
+<!-- TIME STRIP -->
+<div class="time-strip">
 
     <div class="wrap time-strip-inner">
 
-      <div class="time-block">
-        <span class="time-label">KSOL HQ</span>
-        <span id="hq-time" class="time-value">--:--:--</span>
-        <span class="time-zone">IST</span>
-      </div>
+        <div class="time-block">
+            <span class="time-label">KSOL HQ</span>
+            <span id="hq-time" class="time-value">--:--:--</span>
+            <span class="time-zone">IST</span>
+        </div>
 
-      <div class="time-divider"></div>
+        <div class="time-divider"></div>
 
-      <div class="time-block">
-        <span class="time-label">YOUR LOCAL TIME</span>
-        <span id="local-time" class="time-value">--:--:--</span>
-        <span id="local-zone" class="time-zone">LOCAL</span>
-      </div>
+        <div class="time-block">
+            <span class="time-label">YOUR LOCAL TIME</span>
+            <span id="local-time" class="time-value">--:--:--</span>
+            <span id="local-zone" class="time-zone">LOCAL</span>
+        </div>
 
     </div>
 
-  </div>
+</div>
 
 
-  <!-- PAGE -->
-  <main class="roster-page">
+<main class="orbat-page">
+
+    <!-- =====================================================
+         ORBAT
+    ====================================================== -->
+
+    <section class="orbat-hero">
+
+        <div class="wrap">
+
+            <div class="orbat-heading">
+
+                <div>
+                    <div class="k">
+                        HEADQUARTERS // ORGANIZATION
+                    </div>
+
+                    <h1>
+                        Order of Battle
+                    </h1>
+
+                    <p>
+                        The organizational structure and command
+                        architecture of the Kali Special Operations Legion.
+                    </p>
+                </div>
+
+                <div class="orbat-reference">
+                    <span>DOCUMENT</span>
+                    <strong>ORBAT // 2026</strong>
+                </div>
+
+            </div>
 
 
-    <!-- HERO -->
-    <section class="roster-hero">
+            <!-- CLICKABLE ORBAT -->
+            <div
+                class="orbat-viewer"
+                id="orbatViewer"
+                role="button"
+                tabindex="0"
+                aria-label="Enlarge Order of Battle"
+            >
 
-      <div class="wrap roster-hero-grid">
+                <img
+                    src="ORBAT.png"
+                    alt="Kali Special Operations Legion Order of Battle"
+                    id="orbatImage"
+                >
 
-        <div>
+                <div class="orbat-overlay">
+                    <span>CLICK TO ENLARGE</span>
+                    <span class="orbat-expand">↗</span>
+                </div>
 
-          <div class="k">
-            HEADQUARTERS // PERSONNEL
-          </div>
-
-          <h1>
-            Faction Roster
-          </h1>
-
-          <p>
-            The centralized personnel directory of the Kali Special
-            Operations Legion.
-          </p>
+            </div>
 
         </div>
-
-
-        <div class="roster-hero-status">
-
-          <span class="roster-status-label">
-            ROSTER STATUS
-          </span>
-
-          <strong>
-            PERSONNEL DIRECTORY
-          </strong>
-
-          <p>
-            Search, filter and inspect personnel by rank, unit,
-            appointment and service status.
-          </p>
-
-        </div>
-
-      </div>
 
     </section>
 
 
-    <!-- CONTROLS -->
-    <section class="roster-controls-section">
+    <!-- =====================================================
+         APPOINTMENTS
+    ====================================================== -->
 
-      <div class="wrap">
+    <section class="appointments-section">
 
-        <div class="roster-controls">
+        <div class="wrap">
 
-          <div class="roster-search-wrap">
+            <div class="appointments-header">
 
-            <label
-              for="rosterSearch"
-              class="sr-only"
-            >
-              Search roster
-            </label>
+                <div>
+                    <div class="k">
+                        HEADQUARTERS // PERSONNEL STRUCTURE
+                    </div>
 
-            <input
-              id="rosterSearch"
-              class="roster-search"
-              type="search"
-              placeholder="Search name, callsign, rank, unit or appointment..."
-              autocomplete="off"
-            >
+                    <h2>
+                        Appointments
+                    </h2>
 
-          </div>
+                    <p>
+                        Command, directorate and unit appointments
+                        within the Kali Special Operations Legion.
+                    </p>
+                </div>
 
+                <div class="appointment-count">
+                    <span>ESTABLISHMENT</span>
+                    <strong id="appointmentCount">00</strong>
+                </div>
 
-          <div class="roster-select-wrap">
-
-            <label
-              for="unitFilter"
-              class="sr-only"
-            >
-              Filter by unit
-            </label>
-
-            <select id="unitFilter" class="roster-select">
-              <option value="all">ALL UNITS</option>
-            </select>
-
-          </div>
+            </div>
 
 
-          <div class="roster-select-wrap">
-
-            <label
-              for="rankFilter"
-              class="sr-only"
-            >
-              Filter by rank
-            </label>
-
-            <select id="rankFilter" class="roster-select">
-              <option value="all">ALL RANKS</option>
-            </select>
-
-          </div>
-
-
-          <div class="roster-select-wrap">
-
-            <label
-              for="statusFilter"
-              class="sr-only"
-            >
-              Filter by status
-            </label>
-
-            <select id="statusFilter" class="roster-select">
-              <option value="all">ALL STATUS</option>
-              <option value="active">ACTIVE</option>
-              <option value="loa">LOA</option>
-              <option value="reserve">RESERVE</option>
-              <option value="inactive">INACTIVE</option>
-            </select>
-
-          </div>
+            <div
+                id="appointmentsContainer"
+                class="appointments-container"
+            ></div>
 
         </div>
-
-
-        <div class="roster-toolbar">
-
-          <div id="rosterCount">
-            0 PERSONNEL
-          </div>
-
-          <div class="roster-sort-wrap">
-
-            <span>
-              SORT
-            </span>
-
-            <select
-              id="sortSelect"
-              class="roster-sort"
-            >
-              <option value="rank">RANK</option>
-              <option value="name">NAME</option>
-              <option value="unit">UNIT</option>
-              <option value="appointment">APPOINTMENT</option>
-            </select>
-
-          </div>
-
-        </div>
-
-      </div>
 
     </section>
 
-
-    <!-- DIRECTORY -->
-    <section class="roster-directory-section">
-
-      <div class="wrap">
+</main>
 
 
-        <!-- EMPTY STATE -->
+<!-- =====================================================
+     IMAGE LIGHTBOX
+====================================================== -->
 
-        <div
-          id="rosterEmpty"
-          class="roster"
+<div
+    class="orbat-lightbox"
+    id="orbatLightbox"
+    aria-hidden="true"
+>
+
+    <button
+        class="lightbox-close"
+        id="lightboxClose"
+        type="button"
+        aria-label="Close image"
+    >
+        ×
+    </button>
+
+    <div class="lightbox-content">
+
+        <img
+            src="ORBAT.png"
+            alt="Enlarged KSOL Order of Battle"
         >
 
-          <!-- <div class="roster-empty-icon">
-            ROSTER
-          </div> -->
+    </div>
 
-          <!-- <h2>
-            No Personnel Listed
-          </h2>
-
-          <p>
-            The public roster is currently empty. Add personnel to
-            <code>roster.js</code> to populate this directory.
-          </p> -->
-
-        </div>
+</div>
 
 
-        <!-- TABLE -->
-
-        <div
-          id="rosterTableWrap"
-          class="roster-table-wrap"
-          hidden
-        >
-
-          <div class="roster-table-head">
-
-            <div>
-              PERSONNEL
-            </div>
-
-            <div>
-              RANK
-            </div>
-
-            <div>
-              UNIT
-            </div>
-
-            <div>
-              APPOINTMENT
-            </div>
-
-            <div>
-              STATUS
-            </div>
-
-          </div>
-
-
-          <div id="rosterRows"></div>
-
-        </div>
-
-
-        <!-- NO RESULTS -->
-
-        <div
-          id="rosterNoResults"
-          class="roster-no-results"
-          hidden
-        >
-
-          <strong>
-            NO MATCHING PERSONNEL
-          </strong>
-
-          <span>
-            Adjust your search or filters.
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PERSONNEL INFORMATION -->
-    <section class="roster-info-section">
-
-      <div class="wrap">
-
-        <div class="k">
-          PERSONNEL DIRECTORY // REFERENCE
-        </div>
-
-        <h2>
-          Personnel Records
-        </h2>
-
-        <p class="roster-section-lead">
-          Select a personnel record to view its available public
-          information. Sensitive personnel information should remain
-          outside the public roster.
-        </p>
-
-
-        <div
-          id="personnelDetails"
-          class="personnel-details"
-        >
-
-          <div class="personnel-placeholder">
-
-            <span>
-              NO RECORD SELECTED
-            </span>
-
-            <p>
-              Select a member from the roster above.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-  </main>
-
-
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="site-footer">
 
     <!-- TOP COPYRIGHT LINE -->
@@ -599,8 +437,8 @@
 </footer>
 
 
-  <script src="script.js"></script>
-  <script src="roster.js"></script>
+<script src="script.js"></script>
+<script src="appointments.js"></script>
 
 </body>
 </html>

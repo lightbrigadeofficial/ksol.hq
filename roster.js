@@ -27,7 +27,17 @@ document.addEventListener("DOMContentLoaded", () => {
      */
 
     const personnel = [
-        // Add real KSOL personnel here.
+        {
+        id: "001",
+        name: "Vandam Singha",
+        callsign: "VANDAM",
+        rank: "CPL",
+        unit: "1st Infantry Brigade",
+        appointment: "Team Leader",
+        status: "active",
+        joined: "2026-01-14",
+        note: "Public roster record."
+        }
     ];
 
 
