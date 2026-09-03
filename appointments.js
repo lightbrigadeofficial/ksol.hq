@@ -15,15 +15,10 @@ const appointments = [
                 holder: "VACANT"
             },
             {
-                title: "Deputy Legion Commander",
+                title: "Second-in-Command (2i/c)",
                 description: "Second-in-command and principal command support appointment.",
                 holder: "VACANT"
             },
-            {
-                title: "Chief of Staff",
-                description: "Coordinates headquarters administration and staff functions.",
-                holder: "VACANT"
-            }
         ]
     },
 

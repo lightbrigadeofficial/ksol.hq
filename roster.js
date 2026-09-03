@@ -28,14 +28,92 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const personnel = [
         {
+        id: "000",
+        name: "👑 Bravo 0-6 🕊️",
+        callsign: "Bravo 0-6",
+        rank: "PVT / KIA",
+        unit: "Army Aviation Corps",
+        appointment: "Heavenly Pilot",
+        status: "kia",
+        joined: "2026-08-02",
+        note: "Fly high."
+        },
+        
+        {
         id: "001",
-        name: "Vandam Singha",
-        callsign: "VANDAM",
-        rank: "CPL",
-        unit: "1st Infantry Brigade",
-        appointment: "Team Leader",
+        name: "Obi",
+        callsign: "Obi",
+        rank: "GEN",
+        unit: "Special Insertion Service",
+        appointment: "Commander, KSOL",
         status: "active",
-        joined: "2026-01-14",
+        joined: "2026-07-16",
+        note: "Public roster record."
+        },
+
+        {
+        id: "002",
+        name: "Wolf",
+        callsign: "Wolf",
+        rank: "LTG",
+        unit: "Special Insertion Service",
+        appointment: "2i/c, KSOL",
+        status: "active",
+        note: "Public roster record."
+        },
+
+        {
+        id: "003",
+        name: "N/A",
+        callsign: "N/A",
+        rank: "N/A",
+        unit: "N/A",
+        appointment: "Director General of Training Command",
+        status: "vacant",
+        note: "Public roster record."
+        },
+
+        {
+        id: "004",
+        name: "N/A",
+        callsign: "N/A",
+        rank: "N/A",
+        unit: "N/A",
+        appointment: "Director General of Recruitment Command",
+        status: "vacant",
+        note: "Public roster record."
+        },
+
+        {
+        id: "005",
+        name: "N/A",
+        callsign: "N/A",
+        rank: "N/A",
+        unit: "N/A",
+        appointment: "Director General of Internal Affairs",
+        status: "vacant",
+        note: "Public roster record."
+        },
+
+        {
+        id: "006",
+        name: "N/A",
+        callsign: "N/A",
+        rank: "N/A",
+        unit: "N/A",
+        appointment: "Director General of Public Relations",
+        status: "vacant",
+        note: "Public roster record."
+        },
+
+        {
+        id: "007",
+        name: "N/A",
+        callsign: "N/A",
+        rank: "N/A",
+        unit: "N/A",
+        appointment: "Director General of Internal Affairs",
+        status: "vacant",
         note: "Public roster record."
         }
     ];
@@ -73,8 +151,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const labels = {
             active: "ACTIVE",
             loa: "LOA",
-            reserve: "RESERVE",
-            inactive: "INACTIVE"
+            vacant: "VACANT",
+            inactive: "INACTIVE",
+            kia: "KIA / IN MEMORIAM"
         };
 
         return labels[status] || "UNKNOWN";
@@ -98,35 +177,36 @@ document.addEventListener("DOMContentLoaded", () => {
     function rankOrder(rank) {
 
         const order = [
-            "LGN",
-            "PVT",
-            "PFC",
-            "SPC",
-            "LCPL",
-            "CPL",
-            "SGT",
-            "SSG",
-            "SFC",
-            "MSG",
-            "SGM",
-            "CSM",
-            "SML",
-            "WO1",
-            "CW2",
-            "CW3",
-            "CW4",
-            "CW5",
-            "2LT",
-            "1LT",
-            "CPT",
-            "MAJ",
-            "LTC",
-            "COL",
-            "BG",
-            "MG",
+            "PVT / KIA",
+            "GEN",
             "LTG",
-            "GEN"
-        ];
+            "MG",
+            "BG",
+            "COL",
+            "LTC",
+            "MAJ",
+            "CPT",
+            "1LT",
+            "2LT",
+            "CW5",
+            "CW4",
+            "CW3",
+            "CW2",
+            "WO1",
+            "SML",
+            "CSM",
+            "SGM",
+            "MSG",
+            "SFC",
+            "SSG",
+            "SGT",
+            "CPL",
+            "LCPL",
+            "SPC",
+            "PFC",
+            "PVT",
+            "LGN"
+];
 
         const index = order.indexOf(rank);
 

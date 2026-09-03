@@ -398,6 +398,124 @@ const qualifications = [
 
     },
 
+    {
+        id:
+            "KSOL-QUAL-CBT-007",
+
+        category:
+            "combat",
+
+        name:
+            "CLOSE QUARTERS BATTLE COURSE",
+
+        level:
+            "SPECIALIST QUALIFICATION",
+
+        status:
+            "ACTIVE",
+
+        description:
+            "Premium curated Close Quarters combat course for KSOL combatants. For moving through levels of qualified < specialist < expert of CQB.",
+
+        specs: {
+
+            designation:
+                "KSOL-QUAL-CBT-007",
+
+            category:
+                "COMBAT",
+
+            qualificationLevel:
+                "SPECIALIST",
+
+            qualificationType:
+                "TRAINING COURSE",
+
+            issuingAuthority:
+                "MILITARY TRAINING COMMAND",
+
+            status:
+                "ACTIVE"
+
+        },
+
+        evaluation: {
+
+            method:
+                "Instructor Evaluation",
+
+            format:
+                "Practical Assessment",
+
+            authority:
+                "Military Training Command",
+
+            result:
+                "PASS / FAIL"
+
+        }
+
+    },
+
+    {
+        id:
+            "KSOL-QUAL-CBT-008",
+
+        category:
+            "combat",
+
+        name:
+            "MAP READING COURSE",
+
+        level:
+            "SPECIALIST QUALIFICATION",
+
+        status:
+            "ACTIVE",
+
+        description:
+            "Training in map interpretation, grid references, terrain recognition, navigation, and route planning using military maps.",
+
+        specs: {
+
+            designation:
+                "KSOL-QUAL-CBT-008",
+
+            category:
+                "COMBAT",
+
+            qualificationLevel:
+                "SPECIALIST",
+
+            qualificationType:
+                "TRAINING COURSE",
+
+            issuingAuthority:
+                "MILITARY TRAINING COMMAND",
+
+            status:
+                "ACTIVE"
+
+        },
+
+        evaluation: {
+
+            method:
+                "Instructor Evaluation",
+
+            format:
+                "Practical Assessment",
+
+            authority:
+                "Military Training Command",
+
+            result:
+                "PASS / FAIL"
+
+        }
+
+    },
+
 
     /* =====================================================
        LEADERSHIP
@@ -739,6 +857,124 @@ const qualifications = [
 
             qualificationType:
                 "FLIGHT CREW-GUNNER",
+
+            issuingAuthority:
+                "AERIAL TRAINING COMMAND",
+
+            status:
+                "ACTIVE"
+
+        },
+
+        evaluation: {
+
+            method:
+                "Crew Evaluation",
+
+            format:
+                "Practical Assessment",
+
+            authority:
+                "Qualified Aviation Staff",
+
+            result:
+                "QUALIFIED / NOT QUALIFIED"
+
+        }
+
+    },
+
+    {
+        id:
+            "KSOL-QUAL-AVI-003",
+
+        category:
+            "aviation",
+
+        name:
+            "BASIC AIRBORNE TRAINING",
+
+        level:
+            "PARA JUMP QUALIFICATION",
+
+        status:
+            "ACTIVE",
+
+        description:
+            "Training in parachute procedures, aircraft drills, landing techniques, and basic airborne operations.",
+
+        specs: {
+
+            designation:
+                "KSOL-QUAL-AVI-003",
+
+            category:
+                "AVIATION",
+
+            qualificationLevel:
+                "PARA JUMP",
+
+            qualificationType:
+                "TRAINING COURSE",
+
+            issuingAuthority:
+                "AERIAL TRAINING COMMAND",
+
+            status:
+                "ACTIVE"
+
+        },
+
+        evaluation: {
+
+            method:
+                "Crew Evaluation",
+
+            format:
+                "Practical Assessment",
+
+            authority:
+                "Qualified Aviation Staff",
+
+            result:
+                "QUALIFIED / NOT QUALIFIED"
+
+        }
+
+    },
+
+    {
+        id:
+            "KSOL-QUAL-AVI-004",
+
+        category:
+            "aviation",
+
+        name:
+            "COMBAT FREE FALL TRAINING",
+
+        level:
+            "SPECIALIST QUALIFICATION",
+
+        status:
+            "ACTIVE",
+
+        description:
+            "Advanced training in high-altitude free-fall operations, parachute deployment, aerial navigation, and precision landing techniques.",
+
+        specs: {
+
+            designation:
+                "KSOL-QUAL-AVI-004",
+
+            category:
+                "AVIATION",
+
+            qualificationLevel:
+                "SPECIALIST JUMP",
+
+            qualificationType:
+                "TRAINING COURSE",
 
             issuingAuthority:
                 "AERIAL TRAINING COMMAND",
