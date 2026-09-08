@@ -113,7 +113,7 @@ const qualifications = [
             "SPECIALITY QUALIFICATION",
 
         status:
-            "ACTIVE",
+            "IN-ACTIVE",
 
         description:
             "Speciality training qualification for personnel assigned to a designated military occupational speciality within KSOL.",
@@ -136,7 +136,7 @@ const qualifications = [
                 "MILITARY TRAINING COMMAND",
 
             status:
-                "ACTIVE"
+                "IN-ACTIVE"
 
         },
 
@@ -167,7 +167,7 @@ const qualifications = [
             "combat",
 
         name:
-            "MARKSMANSHIP COURSE",
+            "MARKSMANSHIP & SNIPER COURSE",
 
         level:
             "COMBAT QUALIFICATION",
@@ -176,7 +176,7 @@ const qualifications = [
             "ACTIVE",
 
         description:
-            "Qualification course establishing the required fictional in-game marksmanship standard for assigned KSOL personnel.",
+            "Qualification course establishing the required fictional in-game marksmanship & sniper standard for assigned KSOL personnel.",
 
         specs: {
 
@@ -218,70 +218,9 @@ const qualifications = [
 
     },
 
-
     {
         id:
             "KSOL-QUAL-CBT-004",
-
-        category:
-            "combat",
-
-        name:
-            "SNIPER COURSE",
-
-        level:
-            "SPECIALIST QUALIFICATION",
-
-        status:
-            "ACTIVE",
-
-        description:
-            "Specialist qualification for personnel designated for fictional in-game sniper duties within KSOL.",
-
-        specs: {
-
-            designation:
-                "KSOL-QUAL-CBT-004",
-
-            category:
-                "COMBAT",
-
-            qualificationLevel:
-                "SPECIALIST",
-
-            qualificationType:
-                "SNIPER",
-
-            issuingAuthority:
-                "OVERWATCH TRAINING COMMAND",
-
-            status:
-                "ACTIVE"
-
-        },
-
-        evaluation: {
-
-            method:
-                "Specialist Evaluation",
-
-            format:
-                "Qualification Assessment",
-
-            authority:
-                "Authorized Training Staff",
-
-            result:
-                "QUALIFIED / NOT QUALIFIED"
-
-        }
-
-    },
-
-
-    {
-        id:
-            "KSOL-QUAL-CBT-005",
 
         category:
             "combat",
@@ -338,69 +277,9 @@ const qualifications = [
 
     },
 
-
     {
         id:
-            "KSOL-QUAL-CBT-006",
-
-        category:
-            "combat",
-
-        name:
-            "COMBAT MEDIC COURSE",
-
-        level:
-            "SPECIALIST QUALIFICATION",
-
-        status:
-            "ACTIVE",
-
-        description:
-            "Qualification for fictional in-game personnel assigned combat medic responsibilities within KSOL.",
-
-        specs: {
-
-            designation:
-                "KSOL-QUAL-CBT-006",
-
-            category:
-                "COMBAT",
-
-            qualificationLevel:
-                "SPECIALIST",
-
-            qualificationType:
-                "MEDICAL",
-
-            issuingAuthority:
-                "MILITARY TRAINING COMMAND",
-
-            status:
-                "ACTIVE"
-
-        },
-
-        evaluation: {
-
-            method:
-                "Medic Evaluation",
-
-            format:
-                "Practical Assessment",
-
-            authority:
-                "Designated Medical Training Staff",
-
-            result:
-                "QUALIFIED / NOT QUALIFIED"
-
-        }
-
-    },
-
-    {
-        id:
-            "KSOL-QUAL-CBT-007",
+            "KSOL-QUAL-CBT-005",
 
         category:
             "combat",
