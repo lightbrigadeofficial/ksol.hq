@@ -99,9 +99,9 @@
           </a>
         </div>
       </div>
-      <a href="jobs.html">JOB CENTRE</a>
-      <a href="media.html">MEDIA</a>
-      <a href="#">RULES &amp; SOPs</a>
+      <!-- <a href="help.html">HELP CENTRE</a> -->
+      <a href="media.html">SHOWCASE</a>
+      <a href="documentation.html">DOCUMENTATION</a>
     </div>
 
     <div class="nav-actions">
@@ -199,7 +199,7 @@
 
 
                     <h1>
-                        Media
+                        SHOWCASE
                     </h1>
 
 
@@ -219,7 +219,7 @@
                     </span>
 
                     <strong>
-                        MEDIA // 2026
+                        SHOWCASE // 2026
                     </strong>
 
                 </div>
@@ -321,6 +321,10 @@
      LIGHTBOX
 ========================================================= -->
 
+<!-- =========================================================
+     FULLSCREEN MEDIA VIEWER
+========================================================= -->
+
 <div
     id="mediaLightbox"
     class="media-lightbox"
@@ -331,7 +335,7 @@
         id="lightboxClose"
         class="lightbox-close"
         type="button"
-        aria-label="Close"
+        aria-label="Close image viewer"
     >
         ×
     </button>
@@ -346,12 +350,19 @@
                 id="lightboxImage"
                 src=""
                 alt=""
+                draggable="false"
             >
 
         </div>
 
 
         <div class="lightbox-info">
+
+            <div
+                id="lightboxMeta"
+                class="lightbox-meta"
+            ></div>
+
 
             <div
                 id="lightboxTitle"
@@ -363,6 +374,40 @@
                 id="lightboxDescription"
                 class="lightbox-description"
             ></p>
+
+        </div>
+
+
+        <div class="lightbox-controls">
+
+            <button
+                id="zoomOut"
+                class="lightbox-control"
+                type="button"
+                aria-label="Zoom out"
+            >
+                −
+            </button>
+
+
+            <button
+                id="zoomReset"
+                class="lightbox-control"
+                type="button"
+                aria-label="Reset zoom"
+            >
+                1:1
+            </button>
+
+
+            <button
+                id="zoomIn"
+                class="lightbox-control"
+                type="button"
+                aria-label="Zoom in"
+            >
+                +
+            </button>
 
         </div>
 
@@ -462,23 +507,23 @@
                     Decorations
                 </a>
 
-                <a href="#">
+                <a href="qualifications.html">
                     Qualifications
                 </a>
-                <a href="#">
+                <a href="armoury.html">
                     Armoury
                 </a>
-                <a href="#">
+                <a href="uniforms.html">
                     Uniforms
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     Job Centre
+                </a> -->
+                <a href="media.html">
+                    Showcase
                 </a>
-                <a href="#">
-                    Media
-                </a>
-                <a href="#">
-                    Rules &amp; SOPs
+                <a href="documentation.html">
+                    Documentation
                 </a>
 
             </div>

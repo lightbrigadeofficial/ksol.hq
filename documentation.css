@@ -1,0 +1,727 @@
+/* =========================================================
+   KSOL DOCUMENTATION
+========================================================= */
+
+.documentation-hero {
+    background:
+        linear-gradient(
+            90deg,
+            #080808 0%,
+            #101010 50%,
+            #080808 100%
+        );
+
+    border-bottom: 1px solid #252525;
+
+    padding: 72px 0 68px;
+}
+
+
+.documentation-eyebrow {
+    color: #777;
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 25px;
+}
+
+
+.documentation-title-row {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    gap: 50px;
+}
+
+
+.documentation-title-row h1 {
+    font-size: clamp(38px, 6vw, 64px);
+
+    line-height: 1;
+
+    letter-spacing: -2px;
+
+    margin-bottom: 20px;
+}
+
+
+.documentation-title-row p {
+    max-width: 700px;
+
+    color: #999;
+
+    font-size: 16px;
+
+    line-height: 1.7;
+}
+
+
+.documentation-logo {
+    width: 130px;
+
+    height: 130px;
+
+    object-fit: contain;
+
+    opacity: 0.8;
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.documentation-main {
+    padding: 45px 0 100px;
+}
+
+
+/* =========================================================
+   ARCHIVE STATUS
+========================================================= */
+
+.archive-status {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    border: 1px solid #282828;
+
+    background: #101010;
+
+    margin-bottom: 35px;
+}
+
+
+.archive-status > div {
+    padding: 21px 24px;
+
+    border-right: 1px solid #282828;
+}
+
+
+.archive-status > div:last-child {
+    border-right: none;
+}
+
+
+.archive-status-label {
+    display: block;
+
+    color: #666;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 7px;
+}
+
+
+.archive-status strong {
+    font-size: 15px;
+
+    letter-spacing: 0.5px;
+}
+
+
+/* =========================================================
+   CONTROLS
+========================================================= */
+
+.document-controls {
+    border-bottom: 1px solid #292929;
+
+    padding-bottom: 30px;
+
+    margin-bottom: 38px;
+}
+
+
+.document-search {
+    position: relative;
+
+    margin-bottom: 20px;
+}
+
+
+.document-search span {
+    position: absolute;
+
+    left: 18px;
+
+    top: 50%;
+
+    transform: translateY(-50%);
+
+    color: #777;
+
+    font-size: 22px;
+}
+
+
+.document-search input {
+    width: 100%;
+
+    height: 55px;
+
+    background: #121212;
+
+    border: 1px solid #2c2c2c;
+
+    color: white;
+
+    padding: 0 18px 0 50px;
+
+    outline: none;
+
+    font-size: 14px;
+}
+
+
+.document-search input:focus {
+    border-color: #555;
+}
+
+
+.document-search input::placeholder {
+    color: #666;
+}
+
+
+/* =========================================================
+   FILTERS
+========================================================= */
+
+.document-filters,
+.category-filters {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+}
+
+
+.document-filters {
+    margin-bottom: 10px;
+}
+
+
+.filter,
+.category-filter {
+    background: transparent;
+
+    color: #777;
+
+    border: 1px solid #292929;
+
+    padding: 9px 13px;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    transition: 0.2s;
+}
+
+
+.filter:hover,
+.category-filter:hover {
+    color: white;
+
+    border-color: #555;
+}
+
+
+.filter.active,
+.category-filter.active {
+    color: #111;
+
+    background: #f1f1f1;
+
+    border-color: #f1f1f1;
+}
+
+
+/* =========================================================
+   LIBRARY HEADING
+========================================================= */
+
+.library-heading {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: flex-end;
+
+    gap: 30px;
+
+    margin-bottom: 20px;
+}
+
+
+.library-heading > div > span {
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    font-weight: 700;
+}
+
+
+.library-heading h2 {
+    font-size: 25px;
+
+    margin-top: 6px;
+
+    letter-spacing: -0.5px;
+}
+
+
+.visible-count {
+    color: #666;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DOCUMENT LIST
+========================================================= */
+
+.document-list {
+    border-top: 1px solid #292929;
+}
+
+
+/* =========================================================
+   DOCUMENT ROW
+========================================================= */
+
+.document-row {
+    display: grid;
+
+    grid-template-columns:
+        80px
+        minmax(0, 1fr)
+        145px
+        170px;
+
+    align-items: center;
+
+    gap: 25px;
+
+    padding: 23px 8px;
+
+    border-bottom: 1px solid #242424;
+
+    transition:
+        background 0.18s,
+        padding 0.18s;
+}
+
+
+.document-row:hover {
+    background: #111;
+
+    padding-left: 14px;
+
+    padding-right: 14px;
+}
+
+
+/* =========================================================
+   DOCUMENT NUMBER
+========================================================= */
+
+.document-number {
+    color: #555;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================================
+   DOCUMENT INFO
+========================================================= */
+
+.document-info {
+    min-width: 0;
+}
+
+
+.document-title {
+    color: #eee;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    line-height: 1.4;
+
+    margin-bottom: 7px;
+}
+
+
+.document-description {
+    color: #777;
+
+    font-size: 12px;
+
+    line-height: 1.5;
+}
+
+
+.document-meta {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 9px;
+}
+
+
+.document-meta span {
+    color: #666;
+
+    font-size: 9px;
+
+    letter-spacing: 0.8px;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CLASSIFICATION
+========================================================= */
+
+.document-classification {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    width: fit-content;
+
+    padding: 7px 10px;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    border: 1px solid;
+}
+
+
+.classification-dot {
+    width: 6px;
+
+    height: 6px;
+
+    border-radius: 50%;
+
+    background: currentColor;
+}
+
+
+.document-classification.declassified {
+    color: #8c8c8c;
+
+    border-color: #363636;
+}
+
+
+.document-classification.classified {
+    color: #aaa;
+
+    border-color: #414141;
+
+    background: #151515;
+}
+
+
+/* =========================================================
+   REDACTED
+========================================================= */
+
+.redacted {
+    color: #666;
+
+    letter-spacing: 3px;
+
+    font-family:
+        "Courier New",
+        monospace;
+}
+
+
+.redacted-box {
+    display: inline-block;
+
+    background: #292929;
+
+    color: #292929;
+
+    padding: 1px 8px;
+
+    user-select: none;
+}
+
+
+/* =========================================================
+   ACTIONS
+========================================================= */
+
+.document-actions {
+    display: flex;
+
+    justify-content: flex-end;
+
+    gap: 7px;
+}
+
+
+.document-action {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-width: 62px;
+
+    height: 34px;
+
+    padding: 0 11px;
+
+    border: 1px solid #333;
+
+    background: transparent;
+
+    color: #aaa;
+
+    text-decoration: none;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    transition: 0.2s;
+}
+
+
+.document-action:hover {
+    background: white;
+
+    color: black;
+
+    border-color: white;
+}
+
+
+.document-action.download {
+    color: #666;
+}
+
+
+/* =========================================================
+   CLASSIFIED ACTION
+========================================================= */
+
+.document-restricted {
+    display: flex;
+
+    justify-content: flex-end;
+
+    align-items: center;
+
+    gap: 8px;
+
+    color: #555;
+
+    font-size: 9px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.lock {
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   NO RESULTS
+========================================================= */
+
+.no-results {
+    text-align: center;
+
+    padding: 80px 20px;
+
+    border-bottom: 1px solid #292929;
+}
+
+
+.no-results-code {
+    color: #333;
+
+    font-size: 45px;
+
+    font-family:
+        "Courier New",
+        monospace;
+
+    margin-bottom: 10px;
+}
+
+
+.no-results h3 {
+    font-size: 16px;
+
+    margin-bottom: 8px;
+}
+
+
+.no-results p {
+    color: #666;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   UTILITY
+========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 850px) {
+
+    .documentation-title-row {
+        align-items: flex-start;
+    }
+
+    .documentation-logo {
+        width: 90px;
+
+        height: 90px;
+    }
+
+
+    .document-row {
+        grid-template-columns:
+            50px
+            minmax(0, 1fr);
+
+        gap: 15px;
+    }
+
+
+    .document-classification,
+    .document-actions,
+    .document-restricted {
+        grid-column: 2;
+        justify-content: flex-start;
+    }
+
+}
+
+
+@media (max-width: 600px) {
+
+    .documentation-hero {
+        padding: 55px 0;
+    }
+
+
+    .documentation-title-row {
+        display: block;
+    }
+
+
+    .documentation-logo {
+        display: none;
+    }
+
+
+    .archive-status {
+        grid-template-columns: 1fr;
+    }
+
+
+    .archive-status > div {
+        border-right: none;
+
+        border-bottom: 1px solid #282828;
+    }
+
+
+    .archive-status > div:last-child {
+        border-bottom: none;
+    }
+
+
+    .library-heading {
+        display: block;
+    }
+
+
+    .visible-count {
+        display: block;
+
+        margin-top: 10px;
+    }
+
+
+    .document-row {
+        padding: 20px 4px;
+    }
+
+}

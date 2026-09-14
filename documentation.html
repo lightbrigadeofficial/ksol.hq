@@ -1,0 +1,786 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>KSOL - Documentation</title>
+
+    <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+
+    <!-- SAME SITE CSS -->
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- DOCUMENTATION CSS -->
+    <link rel="stylesheet" href="documentation.css">
+</head>
+
+
+<body>
+
+    <!-- =========================
+         TOP ACCENT LINE
+    ========================== -->
+
+    <div class="top"></div>
+
+
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
+
+    <nav>
+
+        <div class="wrap nav">
+
+            <a class="brand" href="index.html">
+
+                <img
+                    src="KSOL_Emblem_Transparent.png"
+                    alt="KSOL Logo"
+                    class="nav-logo"
+                >
+
+                <span>KSOL HQ</span>
+
+            </a>
+
+
+            <div class="links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+
+                <div class="nav-dropdown">
+
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                    >
+                        HEADQUARTERS
+                        <span class="nav-chevron">▾</span>
+                    </button>
+
+
+                    <div class="nav-dropdown-menu">
+
+                        <a
+                            href="ranks.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                01
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    RANKS
+                                </strong>
+
+                                <small>
+                                    Rank structure &amp; requirements
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="roster.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                02
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    ROSTER
+                                </strong>
+
+                                <small>
+                                    Faction personnel directory
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="appointments.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                03
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    ORBAT
+                                </strong>
+
+                                <small>
+                                    Organization &amp; appointments
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="awards.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                04
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    DECORATIONS
+                                </strong>
+
+                                <small>
+                                    Tabs, badges &amp; decorations
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="qualifications.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                05
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    QUALIFICATIONS
+                                </strong>
+
+                                <small>
+                                    Courses, trainings &amp; evaluation boards
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="armoury.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                06
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    ARMOURY
+                                </strong>
+
+                                <small>
+                                    Sanctioned weapon systems &amp; mods
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="uniforms.html"
+                            class="nav-dropdown-item"
+                        >
+
+                            <span class="dropdown-index">
+                                07
+                            </span>
+
+                            <span>
+
+                                <strong>
+                                    UNIFORMS
+                                </strong>
+
+                                <small>
+                                    Faction dress &amp; uniform codes
+                                </small>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <a href="media.html">
+                    SHOWCASE
+                </a>
+
+
+                <a
+                    href="documentation.html"
+                    class="active"
+                >
+                    DOCUMENTATION
+                </a>
+
+            </div>
+
+
+            <div class="nav-actions">
+
+                <a
+                    href="https://discord.gg/cXGjn9CgYN"
+                    class="discord-btn"
+                    target="_blank"
+                    rel="noopener"
+                >
+                    JOIN DISCORD
+                </a>
+
+
+                <a
+                    href="login.html"
+                    class="enlist-btn"
+                >
+
+                    <span class="enlist-text">
+                        LOGIN
+                    </span>
+
+                    <span class="enlist-arrow">
+                        →
+                    </span>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+    <!-- =========================================================
+         LIVE TIME STRIP
+    ========================================================== -->
+
+    <div class="time-strip">
+
+        <div class="wrap time-strip-inner">
+
+            <div class="time-block">
+
+                <span class="time-label">
+                    KSOL HQ
+                </span>
+
+                <span
+                    id="hq-time"
+                    class="time-value"
+                >
+                    --:--:--
+                </span>
+
+                <span class="time-zone">
+                    IST
+                </span>
+
+            </div>
+
+
+            <div class="time-divider"></div>
+
+
+            <div class="time-block">
+
+                <span class="time-label">
+                    YOUR LOCAL TIME
+                </span>
+
+                <span
+                    id="local-time"
+                    class="time-value"
+                >
+                    --:--:--
+                </span>
+
+                <span
+                    id="local-zone"
+                    class="time-zone"
+                >
+                    LOCAL
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         DOCUMENTATION HERO
+    ========================================================== -->
+
+    <header class="documentation-hero">
+
+        <div class="wrap">
+
+            <div class="documentation-eyebrow">
+                KSOL // HEADQUARTERS ARCHIVE
+            </div>
+
+
+            <div class="documentation-title-row">
+
+                <div>
+
+                    <h1>
+                        DOCUMENTATION
+                    </h1>
+
+                    <p>
+                        Official publications, manuals, directives and
+                        administrative documents issued by Kali Special
+                        Operations Legion Headquarters.
+                    </p>
+
+                </div>
+
+
+                <img
+                    src="KSOL_Emblem_Transparent.png"
+                    alt="KSOL"
+                    class="documentation-logo"
+                >
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         DOCUMENT LIBRARY
+    ========================================================== -->
+
+    <main class="documentation-main">
+
+        <div class="wrap">
+
+
+            <!-- ARCHIVE STATUS -->
+
+            <div class="archive-status">
+
+                <div>
+
+                    <span class="archive-status-label">
+                        ARCHIVE STATUS
+                    </span>
+
+                    <strong>
+                        ACTIVE
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span class="archive-status-label">
+                        PUBLICATIONS
+                    </span>
+
+                    <strong id="document-count">
+                        00
+                    </strong>
+
+                </div>
+
+
+                <div>
+
+                    <span class="archive-status-label">
+                        LAST UPDATED
+                    </span>
+
+                    <strong>
+                        2026
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- =================================================
+                 CONTROLS
+            ================================================== -->
+
+            <section class="document-controls">
+
+
+                <div class="document-search">
+
+                    <span>
+                        ⌕
+                    </span>
+
+                    <input
+                        type="search"
+                        id="document-search"
+                        placeholder="Search documentation..."
+                        autocomplete="off"
+                    >
+
+                </div>
+
+
+                <div class="document-filters">
+
+                    <button
+                        class="filter active"
+                        data-classification="all"
+                    >
+                        ALL
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-classification="declassified"
+                    >
+                        DECLASSIFIED
+                    </button>
+
+                    <button
+                        class="filter"
+                        data-classification="classified"
+                    >
+                        CLASSIFIED
+                    </button>
+
+                </div>
+
+
+                <div class="category-filters">
+
+                    <button
+                        class="category-filter active"
+                        data-category="all"
+                    >
+                        ALL DOCUMENTS
+                    </button>
+
+                    <button
+                        class="category-filter"
+                        data-category="training"
+                    >
+                        TRAINING
+                    </button>
+
+                    <button
+                        class="category-filter"
+                        data-category="doctrine"
+                    >
+                        DOCTRINE
+                    </button>
+
+                    <button
+                        class="category-filter"
+                        data-category="sop"
+                    >
+                        SOP
+                    </button>
+
+                    <button
+                        class="category-filter"
+                        data-category="command"
+                    >
+                        COMMAND
+                    </button>
+
+                    <button
+                        class="category-filter"
+                        data-category="administrative"
+                    >
+                        ADMINISTRATIVE
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================================
+                 DOCUMENT LIST
+            ================================================== -->
+
+            <section class="document-library">
+
+                <div class="library-heading">
+
+                    <div>
+                        <span>
+                            PUBLICATION REGISTER
+                        </span>
+
+                        <h2>
+                            KSOL DOCUMENTS
+                        </h2>
+                    </div>
+
+                    <span
+                        id="visible-count"
+                        class="visible-count"
+                    >
+                        00 DOCUMENTS
+                    </span>
+
+                </div>
+
+
+                <div
+                    id="document-list"
+                    class="document-list"
+                ></div>
+
+
+                <div
+                    id="no-results"
+                    class="no-results hidden"
+                >
+
+                    <div class="no-results-code">
+                        404
+                    </div>
+
+                    <h3>
+                        NO DOCUMENTS FOUND
+                    </h3>
+
+                    <p>
+                        No publications match the selected filters.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
+    <footer class="site-footer">
+
+        <div class="footer-top">
+
+            <div class="wrap footer-top-inner">
+
+                © 2026 KALI SPECIAL OPERATIONS LEGION HEADQUARTERS —
+                ALL RIGHTS RESERVED.
+                DEVELOPED BY
+                <a href="https://www.instagram.com/obi_onenairobi/">
+                    <b><u>VANDAM</u></b>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-main">
+
+            <div class="wrap footer-grid">
+
+
+                <div class="footer-brand">
+
+                    <div class="footer-brand-title">
+
+                        <img
+                            src="Untitled201_20260806131243.jpg"
+                            alt="KSOL Logo"
+                            class="footer-logo"
+                        >
+
+                        <div>
+
+                            <strong>
+                                KALI SPECIAL OPERATIONS LEGION
+                            </strong>
+
+                            <small>
+                                KSOL // HEADQUARTERS
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <p>
+                        An international Roblox military realism
+                        organization focused on structured infantry
+                        operations, special operations, training,
+                        aviation and joint exercises.
+                    </p>
+
+
+                    <em>
+                        "MEN APART, EVERY MAN AN EMPEROR"
+                    </em>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        NAVIGATION
+                    </h4>
+
+                    <a href="index.html">
+                        Home
+                    </a>
+
+                    <a href="ranks.html">
+                        Ranks
+                    </a>
+
+                    <a href="roster.html">
+                        Roster
+                    </a>
+
+                    <a href="appointments.html">
+                        ORBAT
+                    </a>
+
+                    <a href="awards.html">
+                        Decorations
+                    </a>
+
+                    <a href="qualifications.html">
+                        Qualifications
+                    </a>
+
+                    <a href="armoury.html">
+                        Armoury
+                    </a>
+
+                    <a href="uniforms.html">
+                        Uniforms
+                    </a>
+
+                    <a href="media.html">
+                        Showcase
+                    </a>
+
+                    <a href="documentation.html">
+                        Documentation
+                    </a>
+
+                    <a href="help.html">
+                        Help Center
+                    </a>
+
+                </div>
+
+
+                <div class="footer-column">
+
+                    <h4>
+                        UNIT INFO
+                    </h4>
+
+                    <span>
+                        Game: BRM5
+                    </span>
+
+                    <span>
+                        Type: Military Realism (Milsim)
+                    </span>
+
+                    <span>
+                        Formation: Legion [Army]
+                    </span>
+
+                    <span>
+                        Special Operations: 2 SIS
+                    </span>
+
+                    <span>
+                        Region: International
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            <div class="wrap footer-bottom-inner">
+
+                <span>
+                    © 2026 Kali Special Operations Legion —
+                    Fictional gaming organization.
+                </span>
+
+                <span>
+                    Not affiliated with any government or military organization.
+                </span>
+
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <!-- SAME SITE JAVASCRIPT -->
+    <script src="script.js"></script>
+
+    <!-- DOCUMENTATION JAVASCRIPT -->
+    <script src="documentation.js"></script>
+
+</body>
+
+</html>

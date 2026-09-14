@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Help Center | Kali Special Operations Legion</title>
+
+    <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+    <link rel="stylesheet" href="help.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="help-nav">
+        <div class="help-nav-inner">
+
+            <a href="index.html" class="brand">
+                <img src="KSOL_Emblem_Transparent.png" alt="KSOL">
+                <span>KALI SPECIAL OPERATIONS LEGION</span>
+            </a>
+
+            <a href="index.html" class="back-home">
+                Back to KSOL
+            </a>
+
+        </div>
+    </header>
+
+
+    <!-- MAIN -->
+    <main id="help-app">
+
+        <!-- HOME VIEW -->
+        <section id="home-view" class="view">
+
+            <section class="hero">
+
+                <div class="hero-content">
+
+                    <h1>How can we help?</h1>
+
+                    <p>
+                        Find answers, information and guidance about
+                        Kali Special Operations Legion.
+                    </p>
+
+                    <div class="search-wrapper">
+
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="Search the KSOL Help Center"
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <section class="help-container">
+
+                <div id="search-results" class="search-results hidden">
+
+                    <div class="section-heading">
+                        <h2>Search results</h2>
+                        <span id="result-count"></span>
+                    </div>
+
+                    <div id="results-list"></div>
+
+                </div>
+
+
+                <div id="browse-section">
+
+                    <div class="section-heading">
+                        <h2>Browse by topic</h2>
+                    </div>
+
+                    <div id="topic-grid" class="topic-grid"></div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+
+        <!-- TOPIC VIEW -->
+        <section id="topic-view" class="view hidden">
+
+            <div class="article-container">
+
+                <div class="breadcrumbs">
+                    <a href="#/">Help Center</a>
+                    <span>›</span>
+                    <span id="topic-breadcrumb"></span>
+                </div>
+
+                <header class="topic-header">
+
+                    <h1 id="topic-title"></h1>
+
+                    <p id="topic-description"></p>
+
+                </header>
+
+                <div id="topic-articles" class="article-list"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ARTICLE VIEW -->
+        <section id="article-view" class="view hidden">
+
+            <div class="article-container">
+
+                <div class="breadcrumbs">
+
+                    <a href="#/">Help Center</a>
+
+                    <span>›</span>
+
+                    <a id="article-topic-link"></a>
+
+                    <span>›</span>
+
+                    <span id="article-breadcrumb"></span>
+
+                </div>
+
+
+                <article class="article">
+
+                    <div class="article-header">
+
+                        <h1 id="article-title"></h1>
+
+                        <div class="article-meta">
+                            KSOL Help Center
+                        </div>
+
+                    </div>
+
+
+                    <div id="article-content" class="article-content"></div>
+
+
+                    <!-- FEEDBACK -->
+                    <div class="feedback">
+
+                        <h3>Was this article helpful?</h3>
+
+                        <div class="feedback-buttons">
+
+                            <button data-feedback="yes">
+                                Yes
+                            </button>
+
+                            <button data-feedback="no">
+                                No
+                            </button>
+
+                        </div>
+
+                        <p id="feedback-message"></p>
+
+                    </div>
+
+
+                    <!-- RELATED -->
+                    <section class="related">
+
+                        <h2>Related articles</h2>
+
+                        <div id="related-articles"></div>
+
+                    </section>
+
+                </article>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer class="help-footer">
+
+        <div>
+
+            <strong>KALI SPECIAL OPERATIONS LEGION</strong>
+
+            <p>
+                KSOL Help Center
+            </p>
+
+        </div>
+
+        <span>
+            © 2026 Kali Special Operations Legion
+        </span>
+
+    </footer>
+
+
+    <script src="help.js"></script>
+
+</body>
+</html>

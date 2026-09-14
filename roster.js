@@ -1,675 +1,1576 @@
+const personnel = {
 
-document.addEventListener("DOMContentLoaded", () => {
-
-    /*
-     * ========================================================
-     * KSOL PUBLIC ROSTER DATA
-     * ========================================================
-     *
-     * Add actual personnel objects to this array.
-     *
-     * Example:
-     *
-     * {
-     *   id: "001",
-     *   name: "Member Name",
-     *   callsign: "Sapphire",
-     *   rank: "CPL",
-     *   unit: "1st Infantry Brigade",
-     *   appointment: "Team Leader",
-     *   status: "active",
-     *   joined: "2026-01-14",
-     *   note: "Public roster record."
-     * }
-     *
-     * status:
-     * active | loa | reserve | inactive
-     */
-
-    const personnel = [
-        {
-        id: "000",
-        name: "👑 Bravo 0-6 🕊️",
-        callsign: "Bravo 0-6",
-        rank: "PVT / KIA",
-        unit: "Army Aviation Corps",
-        appointment: "Heavenly Pilot",
-        status: "kia",
-        joined: "2026-08-02",
-        note: "Fly high."
-        },
-        
-        {
-        id: "001",
+    obi: {
         name: "Obi",
-        callsign: "Obi",
         rank: "GEN",
-        unit: "Special Insertion Service",
+        callsign: "COMMANDER",
+        serviceNumber: "KSOL-0001",
+        status: "active",
+        unit: "HQ",
         appointment: "Commander, KSOL",
-        status: "active",
-        joined: "2026-07-16",
-        note: "Public roster record."
-        },
+        joinDate: "2026",
+        note: "Commander, Kali Special Operations Legion."
+    },
 
-        {
-        id: "002",
+    wolf: {
         name: "Wolf",
-        callsign: "Wolf",
         rank: "LTG",
-        unit: "Special Insertion Service",
-        appointment: "2i/c, KSOL",
+        callsign: "2I/C",
+        serviceNumber: "KSOL-0002",
         status: "active",
-        note: "Public roster record."
-        },
+        unit: "HQ",
+        appointment: "2i/c, KSOL",
+        joinDate: "2026",
+        note: "Second-in-command, Kali Special Operations Legion."
+    },
 
-        {
-        id: "003",
-        name: "N/A",
-        callsign: "N/A",
-        rank: "N/A",
-        unit: "N/A",
-        appointment: "Director General of Training Command",
-        status: "vacant",
-        note: "Public roster record."
-        },
+    john: {
+        name: "John",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0101",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Adjutant, Military Training Command",
+        joinDate: "2026",
+        note: ""
+    },
 
-        {
-        id: "004",
-        name: "N/A",
-        callsign: "N/A",
-        rank: "N/A",
-        unit: "N/A",
-        appointment: "Director General of Recruitment Command",
-        status: "vacant",
-        note: "Public roster record."
-        },
+    doe: {
+        name: "Doe",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0102",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Adjutant, Aerial Training Command",
+        joinDate: "2026",
+        note: ""
+    },
 
-        {
-        id: "005",
-        name: "N/A",
-        callsign: "N/A",
-        rank: "N/A",
-        unit: "N/A",
-        appointment: "Director General of Internal Affairs",
-        status: "vacant",
-        note: "Public roster record."
-        },
+    lorem: {
+        name: "Lorem",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0103",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Adjutant, Overwatch Training Command",
+        joinDate: "2026",
+        note: ""
+    },
 
-        {
-        id: "006",
-        name: "N/A",
-        callsign: "N/A",
-        rank: "N/A",
-        unit: "N/A",
-        appointment: "Director General of Public Relations",
-        status: "vacant",
-        note: "Public roster record."
-        },
+    ipsum: {
+        name: "Ipsum",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0104",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Adjutant, Officers Training Academy",
+        joinDate: "2026",
+        note: ""
+    },
 
-        {
-        id: "007",
-        name: "N/A",
-        callsign: "N/A",
-        rank: "N/A",
-        unit: "N/A",
-        appointment: "Director General of Internal Affairs",
-        status: "vacant",
-        note: "Public roster record."
-        }
-    ];
+    ary: {
+        name: "Aryan",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0110",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Instructor",
+        joinDate: "2026",
+        note: ""
+    },
 
+    raine: {
+        name: "Raine",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0111",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Instructor",
+        joinDate: "2026",
+        note: ""
+    },
 
-    /* ========================================================
-       DOM
-    ======================================================== */
+    caleb: {
+        name: "Caleb",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0112",
+        status: "active",
+        unit: "Training Command",
+        appointment: "Instructor",
+        joinDate: "2026",
+        note: ""
+    },
 
-    const searchInput = document.getElementById("rosterSearch");
-    const unitFilter = document.getElementById("unitFilter");
-    const rankFilter = document.getElementById("rankFilter");
-    const statusFilter = document.getElementById("statusFilter");
-    const sortSelect = document.getElementById("sortSelect");
+    max: {
+        name: "Max",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0201",
+        status: "active",
+        unit: "Recruitment Command",
+        appointment: "Recruiter",
+        joinDate: "2026",
+        note: ""
+    },
 
-    const rosterCount = document.getElementById("rosterCount");
-    const rosterRows = document.getElementById("rosterRows");
-    const rosterEmpty = document.getElementById("rosterEmpty");
-    const rosterTableWrap = document.getElementById("rosterTableWrap");
-    const rosterNoResults = document.getElementById("rosterNoResults");
+    lewes: {
+        name: "Lewes",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0202",
+        status: "active",
+        unit: "Recruitment Command",
+        appointment: "Recruiter",
+        joinDate: "2026",
+        note: ""
+    },
 
-    const personnelDetails =
-        document.getElementById("personnelDetails");
+    freddie: {
+        name: "Freddie",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-0203",
+        status: "active",
+        unit: "Recruitment Command",
+        appointment: "Recruiter",
+        joinDate: "2026",
+        note: ""
+    },
 
+    vex: {
+        name: "Vex",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0301",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "CO, Parachute Regiment",
+        joinDate: "2026",
+        note: ""
+    },
 
-    let selectedId = null;
+    vexa: {
+        name: "Vexa",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0302",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "CO, 7th Para Battalion",
+        joinDate: "2026",
+        note: ""
+    },
 
+    dark: {
+        name: "Dark",
+        rank: "MAJ",
+        callsign: "—",
+        serviceNumber: "KSOL-0303",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "Company Commander, Alpha Coy",
+        joinDate: "2026",
+        note: ""
+    },
 
-    /* ========================================================
-       HELPERS
-    ======================================================== */
+    bravo: {
+        name: "Bravo",
+        rank: "1LT",
+        callsign: "—",
+        serviceNumber: "KSOL-0304",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "Platoon Commander, 1st Platoon",
+        joinDate: "2026",
+        note: ""
+    },
 
-    function prettyStatus(status) {
+    border: {
+        name: "Border",
+        rank: "SSG",
+        callsign: "—",
+        serviceNumber: "KSOL-0305",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "Squad Leader, 1st Squad",
+        joinDate: "2026",
+        note: ""
+    },
 
-        const labels = {
-            active: "ACTIVE",
-            loa: "LOA",
-            vacant: "VACANT",
-            inactive: "INACTIVE",
-            kia: "KIA / IN MEMORIAM"
-        };
+    x: {
+        name: "X",
+        rank: "SSG",
+        callsign: "—",
+        serviceNumber: "KSOL-0306",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "Squad Leader, 2nd Squad",
+        joinDate: "2026",
+        note: ""
+    },
 
-        return labels[status] || "UNKNOWN";
+    y: {
+        name: "Y",
+        rank: "SSG",
+        callsign: "—",
+        serviceNumber: "KSOL-0307",
+        status: "active",
+        unit: "7 PARA",
+        appointment: "Squad Leader, 3rd Squad",
+        joinDate: "2026",
+        note: ""
+    },
+
+    z: {
+        name: "Z",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0401",
+        status: "active",
+        unit: "SIS",
+        appointment: "CO, Special Insertion Service",
+        joinDate: "2026",
+        note: ""
+    },
+
+    a: {
+        name: "A",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0501",
+        status: "active",
+        unit: "AAC",
+        appointment: "CO, Army Aviation Corps",
+        joinDate: "2026",
+        note: ""
+    },
+
+    b: {
+        name: "B",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0601",
+        status: "active",
+        unit: "AMC",
+        appointment: "CO, Army Medical Corps",
+        joinDate: "2026",
+        note: ""
+    },
+
+    c: {
+        name: "C",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0701",
+        status: "active",
+        unit: "RECON",
+        appointment: "CO, Recon Group",
+        joinDate: "2026",
+        note: ""
+    },
+
+    e: {
+        name: "E",
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "KSOL-0801",
+        status: "active",
+        unit: "ASC",
+        appointment: "CO, Army Service Corps",
+        joinDate: "2026",
+        note: ""
     }
 
+};
 
-    function initials(name) {
 
-        if (!name) return "--";
+const units = {
 
-        return name
-            .split(" ")
-            .filter(Boolean)
-            .slice(0, 2)
-            .map(part => part.charAt(0).toUpperCase())
-            .join("");
+    para: [
+        "vex",
+        "vexa",
+        "dark",
+        "bravo",
+        "border",
+        "x",
+        "y"
+    ],
 
+    sis: [
+        "z"
+    ],
+
+    aac: [
+        "a"
+    ],
+
+    amc: [
+        "b"
+    ],
+
+    recon: [
+        "c"
+    ],
+
+    asc: [
+        "e"
+    ]
+
+};
+
+
+const roster = [
+
+    {
+        type: "category",
+        title: "HQ",
+
+        children: [
+
+            {
+                type: "appointment",
+                title: "Commander, KSOL",
+                personnel: ["obi"]
+            },
+
+            {
+                type: "appointment",
+                title: "2i/c, KSOL",
+                personnel: ["wolf"]
+            }
+
+        ]
+    },
+
+
+    {
+        type: "category",
+        title: "Directorates",
+
+        children: [
+
+            {
+                type: "directorate",
+                title: "DG Training Command",
+
+                children: [
+
+                    {
+                        type: "appointment",
+                        title: "Adjutant, Military Training Command",
+                        personnel: ["john"]
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "Adjutant, Aerial Training Command",
+                        personnel: ["doe"]
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "Adjutant, Overwatch Training Command",
+                        personnel: ["lorem"]
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "Adjutant, Officers Training Academy",
+                        personnel: ["ipsum"]
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "Instructors",
+                        personnel: [
+                            "ary",
+                            "raine",
+                            "caleb"
+                        ]
+                    }
+
+                ]
+            },
+
+
+            {
+                type: "directorate",
+                title: "DG Recruitment Command",
+
+                children: [
+
+                    {
+                        type: "appointment",
+                        title: "Recruiters",
+                        personnel: [
+                            "max",
+                            "lewes",
+                            "freddie"
+                        ]
+                    }
+
+                ]
+            },
+
+
+            {
+                type: "directorate",
+                title: "DG Military Operations",
+
+                children: [
+
+                    {
+                        type: "unit",
+                        id: "para",
+                        title: "7th Para Battalion",
+                        abbreviation: "7 PARA",
+
+                        command: {
+
+                            type: "appointment",
+                            title: "CO, Parachute Regiment",
+                            personnel: ["vex"],
+
+                            children: [
+
+                                {
+                                    type: "appointment",
+                                    title: "CO, 7th Para Battalion",
+                                    personnel: ["vexa"],
+
+                                    children: [
+
+                                        {
+                                            type: "appointment",
+                                            title: "Company Commander, Alpha Coy",
+                                            note: "Sanctioned strength: 2 platoons",
+                                            personnel: ["dark"],
+
+                                            children: [
+
+                                                {
+                                                    type: "appointment",
+                                                    title: "Platoon Commander, 1st Platoon",
+                                                    note: "Sanctioned strength: 3 Squad Leaders",
+                                                    personnel: ["bravo"],
+
+                                                    children: [
+
+                                                        {
+                                                            type: "appointment",
+                                                            title: "Squad Leader, 1st Squad",
+                                                            note: "Operational element — 9 personnel including Squad Leader",
+                                                            personnel: ["border"]
+                                                        },
+
+                                                        {
+                                                            type: "appointment",
+                                                            title: "Squad Leader, 2nd Squad",
+                                                            personnel: ["x"]
+                                                        },
+
+                                                        {
+                                                            type: "appointment",
+                                                            title: "Squad Leader, 3rd Squad",
+                                                            personnel: ["y"]
+                                                        }
+
+                                                    ]
+                                                }
+
+                                            ]
+                                        }
+
+                                    ]
+                                }
+
+                            ]
+                        }
+                    },
+
+
+                    {
+                        type: "unit",
+                        id: "sis",
+                        title: "Special Insertion Service",
+                        abbreviation: "SIS",
+
+                        command: {
+                            type: "appointment",
+                            title: "CO, Special Insertion Service",
+                            personnel: ["z"]
+                        }
+                    },
+
+
+                    {
+                        type: "unit",
+                        id: "aac",
+                        title: "Army Aviation Corps",
+                        abbreviation: "AAC",
+
+                        command: {
+                            type: "appointment",
+                            title: "CO, Army Aviation Corps",
+                            personnel: ["a"]
+                        }
+                    },
+
+
+                    {
+                        type: "unit",
+                        id: "amc",
+                        title: "Army Medical Corps",
+                        abbreviation: "AMC",
+
+                        command: {
+                            type: "appointment",
+                            title: "CO, Army Medical Corps",
+                            personnel: ["b"]
+                        }
+                    },
+
+
+                    {
+                        type: "unit",
+                        id: "recon",
+                        title: "Recon Group",
+                        abbreviation: "RECON",
+
+                        command: {
+                            type: "appointment",
+                            title: "CO, Recon Group",
+                            personnel: ["c"]
+                        }
+                    },
+
+
+                    {
+                        type: "unit",
+                        id: "asc",
+                        title: "Army Service Corps",
+                        abbreviation: "ASC",
+
+                        command: {
+                            type: "appointment",
+                            title: "CO, Army Service Corps",
+                            personnel: ["e"]
+                        }
+                    }
+
+                ]
+            },
+
+
+            {
+                type: "directorate",
+                title: "DG Internal Affairs",
+
+                children: [
+
+                    {
+                        type: "appointment",
+                        title: "Trial Jury"
+                    }
+
+                ]
+            },
+
+
+            {
+                type: "directorate",
+                title: "DG Public Relations",
+
+                children: [
+
+                    {
+                        type: "appointment",
+                        title: "RGE Team"
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "Content Team"
+                    }
+
+                ]
+            },
+
+
+            {
+                type: "directorate",
+                title: "DG Administrative Duties"
+            }
+
+        ]
     }
 
-
-    function rankOrder(rank) {
-
-        const order = [
-            "PVT / KIA",
-            "GEN",
-            "LTG",
-            "MG",
-            "BG",
-            "COL",
-            "LTC",
-            "MAJ",
-            "CPT",
-            "1LT",
-            "2LT",
-            "CW5",
-            "CW4",
-            "CW3",
-            "CW2",
-            "WO1",
-            "SML",
-            "CSM",
-            "SGM",
-            "MSG",
-            "SFC",
-            "SSG",
-            "SGT",
-            "CPL",
-            "LCPL",
-            "SPC",
-            "PFC",
-            "PVT",
-            "LGN"
 ];
 
-        const index = order.indexOf(rank);
 
-        return index === -1 ? 999 : index;
+/* =========================================================
+   STATE
+   ========================================================= */
 
+let currentSearch = "";
+let currentStatus = "all";
+
+
+/* =========================================================
+   SEARCH HELPERS
+   ========================================================= */
+
+function personText(person) {
+
+    return [
+
+        person.name,
+        person.rank,
+        person.callsign,
+        person.serviceNumber,
+        person.status,
+        person.unit,
+        person.appointment,
+        person.joinDate,
+        person.note
+
+    ]
+        .filter(Boolean)
+        .join(" ")
+        .toLowerCase();
+
+}
+
+
+function matchesPerson(id) {
+
+    const person = personnel[id];
+
+    if (!person) {
+        return false;
+    }
+
+    if (
+        currentStatus !== "all" &&
+        person.status !== currentStatus
+    ) {
+        return false;
+    }
+
+    if (!currentSearch) {
+        return true;
+    }
+
+    return personText(person)
+        .includes(currentSearch);
+
+}
+
+
+function countVisiblePeople() {
+
+    return Object.keys(personnel)
+        .filter(matchesPerson)
+        .length;
+
+}
+
+
+/* =========================================================
+   TREE SEARCH
+   ========================================================= */
+
+function nodeContainsVisiblePerson(node) {
+
+    if (!node) {
+        return false;
+    }
+
+    if (
+        node.personnel &&
+        node.personnel.some(matchesPerson)
+    ) {
+        return true;
+    }
+
+    return Boolean(
+        node.children &&
+        node.children.some(
+            nodeContainsVisiblePerson
+        )
+    );
+
+}
+
+
+function nodeMatchesSearch(node) {
+
+    if (!node) {
+        return false;
+    }
+
+    if (
+        !currentSearch &&
+        currentStatus === "all"
+    ) {
+        return true;
+    }
+
+    const titleMatches =
+        (node.title || "")
+            .toLowerCase()
+            .includes(currentSearch);
+
+    if (
+        titleMatches &&
+        currentStatus === "all"
+    ) {
+        return true;
+    }
+
+    return nodeContainsVisiblePerson(node);
+
+}
+
+
+/* =========================================================
+   PERSONNEL ENTRY
+   ========================================================= */
+
+function createPersonnelEntry(id) {
+
+    const person = personnel[id];
+
+    if (
+        !person ||
+        !matchesPerson(id)
+    ) {
+        return null;
     }
 
 
-    function uniqueSorted(values) {
+    const entry =
+        document.createElement("button");
 
-        return [...new Set(
-            values
-                .filter(Boolean)
-                .map(value => String(value).trim())
-                .filter(Boolean)
-        )].sort((a, b) =>
-            a.localeCompare(b)
-        );
+    entry.type = "button";
 
-    }
+    entry.className =
+        "personnel-entry";
 
+    entry.setAttribute(
+        "aria-label",
+        `Open personnel record for ${person.name}`
+    );
 
-    /* ========================================================
-       FILTER OPTIONS
-    ======================================================== */
 
-    function populateFilters() {
+    const index =
+        document.createElement("span");
 
-        uniqueSorted(personnel.map(p => p.unit))
-            .forEach(unit => {
+    index.className =
+        "personnel-index";
 
-                const option =
-                    document.createElement("option");
+    index.textContent =
+        "—";
 
-                option.value = unit;
-                option.textContent = unit;
 
-                unitFilter.appendChild(option);
+    const rank =
+        document.createElement("span");
 
-            });
+    rank.className =
+        "personnel-rank";
 
+    rank.textContent =
+        person.rank || "—";
 
-        uniqueSorted(personnel.map(p => p.rank))
-            .sort((a, b) =>
-                rankOrder(a) - rankOrder(b)
-            )
-            .forEach(rank => {
 
-                const option =
-                    document.createElement("option");
+    const nameBlock =
+        document.createElement("div");
 
-                option.value = rank;
-                option.textContent = rank;
+    nameBlock.className =
+        "personnel-name-block";
 
-                rankFilter.appendChild(option);
 
-            });
+    const name =
+        document.createElement("div");
 
-    }
+    name.className =
+        "personnel-name";
 
+    name.textContent =
+        person.name || "—";
 
-    /* ========================================================
-       FILTER
-    ======================================================== */
 
-    function getFilteredPersonnel() {
+    const callsign =
+        document.createElement("div");
 
-        const query =
-            searchInput.value
-                .trim()
-                .toLowerCase();
+    callsign.className =
+        "personnel-callsign";
 
-        const unit =
-            unitFilter.value;
+    callsign.textContent =
+        person.callsign || "—";
 
-        const rank =
-            rankFilter.value;
 
-        const status =
-            statusFilter.value;
+    nameBlock.append(
+        name,
+        callsign
+    );
 
 
-        return personnel.filter(person => {
+    const appointment =
+        document.createElement("div");
 
-            const searchable = [
-                person.name,
-                person.callsign,
-                person.rank,
-                person.unit,
-                person.appointment,
-                person.status
-            ]
-                .filter(Boolean)
-                .join(" ")
-                .toLowerCase();
+    appointment.className =
+        "personnel-appointment";
 
 
-            const matchesSearch =
-                !query ||
-                searchable.includes(query);
+    const appointmentText =
+        document.createElement("span");
 
+    appointmentText.textContent =
+        person.appointment || "—";
 
-            const matchesUnit =
-                unit === "all" ||
-                person.unit === unit;
 
+    appointment.appendChild(
+        appointmentText
+    );
 
-            const matchesRank =
-                rank === "all" ||
-                person.rank === rank;
 
+    const status =
+        document.createElement("span");
 
-            const matchesStatus =
-                status === "all" ||
-                person.status === status;
+    status.className =
+        `personnel-status ${
+            person.status || "inactive"
+        }`;
 
+    status.textContent =
+        (
+            person.status ||
+            "inactive"
+        ).toUpperCase();
 
-            return (
-                matchesSearch &&
-                matchesUnit &&
-                matchesRank &&
-                matchesStatus
-            );
 
-        });
+    entry.append(
+        index,
+        rank,
+        nameBlock,
+        appointment,
+        status
+    );
 
-    }
 
+    entry.addEventListener(
+        "click",
+        () => openProfile(person)
+    );
 
-    /* ========================================================
-       SORT
-    ======================================================== */
 
-    function sortPersonnel(list) {
+    return entry;
 
-        const mode =
-            sortSelect.value;
+}
 
 
-        return [...list].sort((a, b) => {
+/* =========================================================
+   PERSONNEL LIST
+   ========================================================= */
 
-            if (mode === "rank") {
+function renderPersonnelList(
+    ids,
+    container
+) {
 
-                return (
-                    rankOrder(a.rank) -
-                    rankOrder(b.rank)
-                );
+    const list =
+        document.createElement("div");
 
-            }
+    list.className =
+        "personnel-list";
 
 
-            if (mode === "name") {
+    let count = 0;
 
-                return (
-                    (a.name || "").localeCompare(
-                        b.name || ""
-                    )
-                );
 
-            }
+    ids.forEach(id => {
 
+        const entry =
+            createPersonnelEntry(id);
 
-            if (mode === "unit") {
-
-                return (
-                    (a.unit || "").localeCompare(
-                        b.unit || ""
-                    )
-                );
-
-            }
-
-
-            if (mode === "appointment") {
-
-                return (
-                    (a.appointment || "").localeCompare(
-                        b.appointment || ""
-                    )
-                );
-
-            }
-
-
-            return 0;
-
-        });
-
-    }
-
-
-    /* ========================================================
-       DETAILS
-    ======================================================== */
-
-    function showPersonnel(person) {
-
-        if (!person) {
-
-            personnelDetails.innerHTML = `
-                <div class="personnel-placeholder">
-                    <span>NO RECORD SELECTED</span>
-                    <p>Select a member from the roster above.</p>
-                </div>
-            `;
-
+        if (!entry) {
             return;
-
         }
 
+        count++;
 
-        personnelDetails.innerHTML = `
-            <article class="personnel-profile">
+        entry.querySelector(
+            ".personnel-index"
+        ).textContent =
+            String(count).padStart(2, "0");
 
-                <div class="personnel-profile-head">
-
-                    <div>
-
-                        <h3 class="personnel-profile-name">
-                            ${person.name}
-                        </h3>
-
-                        ${
-                            person.callsign
-                                ? `<div class="personnel-profile-callsign">
-                                    CALLSIGN // ${person.callsign}
-                                   </div>`
-                                : ""
-                        }
-
-                    </div>
-
-                    <span class="roster-status status-${person.status}">
-                        ${prettyStatus(person.status)}
-                    </span>
-
-                </div>
-
-
-                <div class="personnel-facts">
-
-                    <div class="personnel-fact">
-                        <span>RANK</span>
-                        <strong>${person.rank || "—"}</strong>
-                    </div>
-
-                    <div class="personnel-fact">
-                        <span>UNIT</span>
-                        <strong>${person.unit || "—"}</strong>
-                    </div>
-
-                    <div class="personnel-fact">
-                        <span>APPOINTMENT</span>
-                        <strong>${person.appointment || "—"}</strong>
-                    </div>
-
-                    <div class="personnel-fact">
-                        <span>JOINED</span>
-                        <strong>${person.joined || "—"}</strong>
-                    </div>
-
-                </div>
-
-
-                ${
-                    person.note
-                        ? `<div class="personnel-profile-note">
-                            ${person.note}
-                           </div>`
-                        : ""
-                }
-
-            </article>
-        `;
-
-    }
-
-
-    /* ========================================================
-       RENDER
-    ======================================================== */
-
-    function render() {
-
-        const filtered =
-            sortPersonnel(
-                getFilteredPersonnel()
-            );
-
-
-        rosterCount.textContent =
-            `${filtered.length} PERSONNEL`;
-
-
-        /* No personnel in database */
-
-        if (!personnel.length) {
-
-            rosterEmpty.hidden = false;
-            rosterTableWrap.hidden = true;
-            rosterNoResults.hidden = true;
-
-            showPersonnel(null);
-
-            return;
-
-        }
-
-
-        rosterEmpty.hidden = true;
-
-
-        /* Database exists but filter returns none */
-
-        if (!filtered.length) {
-
-            rosterTableWrap.hidden = true;
-            rosterNoResults.hidden = false;
-
-            return;
-
-        }
-
-
-        rosterNoResults.hidden = true;
-        rosterTableWrap.hidden = false;
-
-
-        rosterRows.innerHTML = "";
-
-
-        filtered.forEach(person => {
-
-            const row =
-                document.createElement("button");
-
-            row.type = "button";
-
-            row.className = "roster-row";
-
-            if (person.id === selectedId) {
-                row.classList.add("active");
-            }
-
-
-            row.innerHTML = `
-
-                <span class="roster-person">
-
-                    <span class="roster-avatar">
-                        ${initials(person.name)}
-                    </span>
-
-                    <span class="roster-person-info">
-
-                        <span class="roster-person-name">
-                            ${person.name || "Unknown"}
-                        </span>
-
-                        ${
-                            person.callsign
-                                ? `<span class="roster-person-meta">
-                                    // ${person.callsign}
-                                   </span>`
-                                : ""
-                        }
-
-                    </span>
-
-                </span>
-
-
-                <span
-                    class="roster-rank"
-                    data-label="RANK:"
-                >
-                    ${person.rank || "—"}
-                </span>
-
-
-                <span
-                    class="roster-unit"
-                    data-label="UNIT:"
-                >
-                    ${person.unit || "—"}
-                </span>
-
-
-                <span
-                    class="roster-appointment"
-                    data-label="APPT:"
-                >
-                    ${person.appointment || "—"}
-                </span>
-
-
-                <span>
-
-                    <span
-                        class="roster-status status-${person.status}"
-                    >
-                        ${prettyStatus(person.status)}
-                    </span>
-
-                </span>
-
-            `;
-
-
-            row.addEventListener(
-                "click",
-                () => {
-
-                    selectedId =
-                        person.id;
-
-                    showPersonnel(
-                        person
-                    );
-
-                    render();
-
-                }
-            );
-
-
-            rosterRows.appendChild(row);
-
-        });
-
-    }
-
-
-    /* ========================================================
-       EVENTS
-    ======================================================== */
-
-    [
-        searchInput,
-        unitFilter,
-        rankFilter,
-        statusFilter,
-        sortSelect
-    ].forEach(control => {
-
-        control.addEventListener(
-            "input",
-            render
-        );
-
-        control.addEventListener(
-            "change",
-            render
-        );
+        list.appendChild(entry);
 
     });
 
 
-    /* ========================================================
-       INIT
-    ======================================================== */
+    if (!count) {
+        return null;
+    }
 
-    populateFilters();
-    render();
 
-});
+    container.appendChild(list);
+
+    return list;
+
+}
+
+
+/* =========================================================
+   COMMAND TREE
+   ========================================================= */
+
+function renderCommandNode(
+    node,
+    container,
+    depth = 0
+) {
+
+    if (!node) {
+        return;
+    }
+
+
+    const wrapper =
+        document.createElement("div");
+
+    wrapper.className =
+        `roster-node roster-depth-${depth}`;
+
+
+    const header =
+        document.createElement("div");
+
+    header.className =
+        "roster-node-header";
+
+
+    const title =
+        document.createElement("span");
+
+    title.className =
+        "roster-node-title";
+
+    title.textContent =
+        node.title || "—";
+
+
+    header.appendChild(title);
+
+
+    const visiblePeople =
+        (node.personnel || [])
+            .filter(matchesPerson);
+
+
+    if (visiblePeople.length) {
+
+        const people =
+            document.createElement("span");
+
+        people.className =
+            "roster-node-personnel";
+
+        people.textContent =
+            `— ${
+                visiblePeople
+                    .map(
+                        id =>
+                            personnel[id].name
+                    )
+                    .join(", ")
+            }`;
+
+        header.appendChild(people);
+
+    }
+
+
+    wrapper.appendChild(header);
+
+
+    if (node.note) {
+
+        const note =
+            document.createElement("div");
+
+        note.className =
+            "roster-node-note";
+
+        note.textContent =
+            node.note;
+
+        wrapper.appendChild(note);
+
+    }
+
+
+    const visibleChildren =
+        (node.children || [])
+            .filter(nodeMatchesSearch);
+
+
+    if (visibleChildren.length) {
+
+        const children =
+            document.createElement("div");
+
+        children.className =
+            "roster-node-children";
+
+
+        visibleChildren.forEach(
+            child => {
+
+                renderCommandNode(
+                    child,
+                    children,
+                    depth + 1
+                );
+
+            }
+        );
+
+
+        wrapper.appendChild(children);
+
+    }
+
+
+    container.appendChild(wrapper);
+
+}
+
+
+/* =========================================================
+   UNIT
+   ========================================================= */
+
+function renderUnit(
+    unit,
+    container
+) {
+
+    const section =
+        document.createElement("section");
+
+    section.className =
+        "roster-subunit";
+
+
+    const heading =
+        document.createElement("div");
+
+    heading.className =
+        "subunit-heading";
+
+
+    const title =
+        document.createElement("span");
+
+    title.className =
+        "subunit-title";
+
+    title.textContent =
+        `${unit.abbreviation} / ${unit.title}`;
+
+
+    heading.appendChild(title);
+
+    section.appendChild(heading);
+
+
+    if (
+        unit.command &&
+        nodeMatchesSearch(unit.command)
+    ) {
+
+        const command =
+            document.createElement("div");
+
+        command.className =
+            "unit-command-tree";
+
+
+        renderCommandNode(
+            unit.command,
+            command
+        );
+
+
+        section.appendChild(command);
+
+    }
+
+
+    renderPersonnelList(
+        units[unit.id] || [],
+        section
+    );
+
+
+    if (
+        section.querySelector(
+            ".personnel-list"
+        ) ||
+        section.querySelector(
+            ".roster-node"
+        )
+    ) {
+
+        container.appendChild(section);
+
+    }
+
+}
+
+
+/* =========================================================
+   GENERIC ROSTER NODE
+   ========================================================= */
+
+function renderNode(
+    node,
+    container,
+    depth = 0
+) {
+
+    if (!nodeMatchesSearch(node)) {
+        return;
+    }
+
+
+    if (node.type === "unit") {
+
+        renderUnit(
+            node,
+            container
+        );
+
+        return;
+
+    }
+
+
+    const wrapper =
+        document.createElement("section");
+
+    wrapper.className =
+        [
+            "roster-node",
+            `roster-depth-${depth}`,
+            `roster-type-${node.type}`
+        ].join(" ");
+
+
+    const header =
+        document.createElement("div");
+
+    header.className =
+        "roster-node-header";
+
+
+    const title =
+        document.createElement("span");
+
+    title.className =
+        "roster-node-title";
+
+    title.textContent =
+        node.title || "—";
+
+
+    header.appendChild(title);
+
+
+    const visiblePeople =
+        (node.personnel || [])
+            .filter(matchesPerson);
+
+
+    if (visiblePeople.length) {
+
+        const people =
+            document.createElement("span");
+
+        people.className =
+            "roster-node-personnel";
+
+        people.textContent =
+            `— ${
+                visiblePeople
+                    .map(
+                        id =>
+                            personnel[id].name
+                    )
+                    .join(", ")
+            }`;
+
+        header.appendChild(people);
+
+    }
+
+
+    wrapper.appendChild(header);
+
+
+    const visibleChildren =
+        (node.children || [])
+            .filter(nodeMatchesSearch);
+
+
+    if (visibleChildren.length) {
+
+        const children =
+            document.createElement("div");
+
+        children.className =
+            "roster-node-children";
+
+
+        visibleChildren.forEach(
+            child => {
+
+                renderNode(
+                    child,
+                    children,
+                    depth + 1
+                );
+
+            }
+        );
+
+
+        wrapper.appendChild(children);
+
+    }
+
+
+    container.appendChild(wrapper);
+
+}
+
+
+/* =========================================================
+   MAIN RENDER
+   ========================================================= */
+
+function renderRoster() {
+
+    const container =
+        document.getElementById(
+            "roster-list"
+        );
+
+    const empty =
+        document.getElementById(
+            "roster-empty"
+        );
+
+
+    if (!container) {
+        return;
+    }
+
+
+    container.replaceChildren();
+
+
+    roster.forEach(
+        node => {
+
+            renderNode(
+                node,
+                container
+            );
+
+        }
+    );
+
+
+    const count =
+        countVisiblePeople();
+
+
+    const searchCount =
+        document.getElementById(
+            "search-count"
+        );
+
+
+    if (searchCount) {
+
+        searchCount.textContent =
+            `${count} PERSONNEL`;
+
+    }
+
+
+    if (empty) {
+
+        empty.classList.toggle(
+            "hidden",
+            count !== 0
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+function setupSearch() {
+
+    const search =
+        document.getElementById(
+            "roster-search"
+        );
+
+
+    if (!search) {
+        return;
+    }
+
+
+    search.addEventListener(
+        "input",
+        event => {
+
+            currentSearch =
+                event.target.value
+                    .trim()
+                    .toLowerCase();
+
+            renderRoster();
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   FILTERS
+   ========================================================= */
+
+function setupFilters() {
+
+    const filters =
+        document.querySelectorAll(
+            ".roster-filter"
+        );
+
+
+    filters.forEach(
+        filter => {
+
+            filter.addEventListener(
+                "click",
+                () => {
+
+                    currentStatus =
+                        filter.dataset.status ||
+                        "all";
+
+
+                    filters.forEach(
+                        other => {
+
+                            other.classList.toggle(
+                                "active",
+                                other === filter
+                            );
+
+                        }
+                    );
+
+
+                    renderRoster();
+
+                }
+            );
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+function openProfile(person) {
+
+    const modal =
+        document.getElementById(
+            "personnel-modal"
+        );
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    const fields = {
+
+        "profile-rank":
+            person.rank,
+
+        "profile-name":
+            person.name,
+
+        "profile-callsign":
+            person.callsign,
+
+        "profile-service-number":
+            person.serviceNumber,
+
+        "profile-status":
+            (
+                person.status ||
+                "active"
+            ).toUpperCase(),
+
+        "profile-unit":
+            person.unit,
+
+        "profile-appointment":
+            person.appointment,
+
+        "profile-join-date":
+            person.joinDate,
+
+        "profile-note":
+            person.note
+
+    };
+
+
+    Object.entries(fields)
+        .forEach(
+            ([id, value]) => {
+
+                const element =
+                    document.getElementById(id);
+
+                if (element) {
+
+                    element.textContent =
+                        value || "—";
+
+                }
+
+            }
+        );
+
+
+    modal.classList.add("open");
+
+
+    document.getElementById(
+        "profile-close"
+    )?.focus();
+
+}
+
+
+/* =========================================================
+   CLOSE PROFILE
+   ========================================================= */
+
+function closeProfile() {
+
+    const modal =
+        document.getElementById(
+            "personnel-modal"
+        );
+
+
+    if (!modal) {
+        return;
+    }
+
+
+    modal.classList.remove(
+        "open"
+    );
+
+}
+
+
+/* =========================================================
+   MODAL EVENTS
+   ========================================================= */
+
+function setupModal() {
+
+    document.getElementById(
+        "profile-close"
+    )?.addEventListener(
+        "click",
+        closeProfile
+    );
+
+
+    document.getElementById(
+        "profile-backdrop"
+    )?.addEventListener(
+        "click",
+        closeProfile
+    );
+
+
+    document.addEventListener(
+        "keydown",
+        event => {
+
+            if (
+                event.key === "Escape"
+            ) {
+
+                closeProfile();
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   INITIALISE
+   ========================================================= */
+
+document.addEventListener(
+    "DOMContentLoaded",
+    () => {
+
+        setupSearch();
+
+        setupFilters();
+
+        setupModal();
+
+        renderRoster();
+
+    }
+);

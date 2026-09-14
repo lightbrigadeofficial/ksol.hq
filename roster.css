@@ -1,543 +1,1307 @@
+/* =========================================================
+   KSOL PERSONNEL REGISTER
+   ROSTER-SPECIFIC STYLES
+   ========================================================= */
+
+.roster-container {
+    width: min(1160px, calc(100% - 36px));
+    margin-inline: auto;
+}
+
 
 /* =========================================================
-   KSOL ROSTER PAGE
-   Uses the existing KSOL global variables and base styling.
-========================================================= */
+   GLOBAL SECTION CONFLICT FIX
+   ========================================================= */
 
-.roster-page {
-    min-height: 100vh;
+/*
+   styles.css contains a global:
+
+       section {
+           padding: 78px 0;
+       }
+
+   The roster dynamically creates sections for nodes and units.
+   Reset them here so the global section styling cannot distort
+   the command tree.
+*/
+
+.roster-body section.roster-node,
+.roster-body section.roster-subunit {
+    padding: 0;
+    border: 0;
+    margin: 0;
 }
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
 
 .roster-hero {
-    padding: 76px 0 54px;
-    border-bottom: 1px solid var(--line);
-}
+    padding: 86px 0 42px;
+    border-bottom: 1px solid #252525;
 
-.roster-hero-grid {
-    display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
-    gap: 28px;
-    align-items: end;
-}
-
-.roster-hero h1 {
-    margin: 13px 0 14px;
-    font-size: clamp(48px, 7vw, 82px);
-    line-height: 0.92;
-    letter-spacing: -0.055em;
-    color: var(--white);
-}
-
-.roster-hero p {
-    margin: 0;
-    max-width: 720px;
-    color: #9d9d9d;
-    line-height: 1.7;
-    font-size: 15px;
-}
-
-.roster-hero-status {
-    padding: 20px;
-    border: 1px solid #2a2a2a;
-    background: #0d0d0d;
-}
-
-.roster-status-label {
-    display: block;
-    margin-bottom: 7px;
-    color: #666;
-    font: 9px "Courier New", monospace;
-    letter-spacing: 0.14em;
-}
-
-.roster-hero-status strong {
-    display: block;
-    color: #e2e2e2;
-    font-size: 13px;
-    letter-spacing: 0.08em;
-}
-
-.roster-hero-status p {
-    margin-top: 9px;
-    color: #787878;
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   FILTERS
-========================================================= */
-
-.roster-controls-section {
-    padding: 26px 0 16px;
-    border-bottom: 1px solid var(--line);
-    background: #090909;
-}
-
-.roster-controls {
-    display: grid;
-    grid-template-columns: 1.6fr 0.8fr 0.8fr 0.8fr;
-    gap: 10px;
-}
-
-.roster-search,
-.roster-select,
-.roster-sort {
-    width: 100%;
-    height: 42px;
-    border: 1px solid #303030;
-    border-radius: 0;
-    outline: none;
-    background: #0d0d0d;
-    color: #dcdcdc;
-    font: 11px "Courier New", monospace;
-    letter-spacing: 0.03em;
-    padding: 0 12px;
-}
-
-.roster-search::placeholder {
-    color: #5f5f5f;
-}
-
-.roster-search:focus,
-.roster-select:focus,
-.roster-sort:focus {
-    border-color: #666;
-}
-
-.roster-toolbar {
-    margin-top: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #1f1f1f;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 20px;
-    color: #6e6e6e;
-    font: 9px "Courier New", monospace;
-    letter-spacing: 0.12em;
-}
-
-.roster-sort-wrap {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-}
-
-.roster-sort {
-    width: auto;
-    min-width: 130px;
-    height: 32px;
-}
-
-
-/* =========================================================
-   DIRECTORY
-========================================================= */
-
-.roster-directory-section {
-    padding: 34px 0 62px;
-}
-
-.roster-empty {
-    min-height: 310px;
-    padding: 60px 25px;
-    border: 1px dashed #353535;
-    background:
-        linear-gradient(
-            135deg,
-            rgba(255,255,255,0.025),
-            rgba(255,255,255,0.005)
-        );
-    text-align: center;
-    display: grid;
-    place-items: center;
-}
-
-.roster-empty-icon {
-    width: 72px;
-    height: 72px;
-    display: grid;
-    place-items: center;
-    border: 1px solid #454545;
-    color: #777;
-    font: 9px "Courier New", monospace;
-    letter-spacing: 0.08em;
-}
-
-.roster-empty h2 {
-    margin: 18px 0 7px;
-    font-size: 26px;
-}
-
-.roster-empty p {
-    margin: 0;
-    max-width: 540px;
-    color: #757575;
-    line-height: 1.7;
-    font-size: 11px;
-}
-
-.roster-empty code {
-    color: #aaa;
-}
-
-.roster-table-wrap {
-    border-top: 1px solid #2d2d2d;
-    border-bottom: 1px solid #2d2d2d;
-}
-
-.roster-table-head,
-.roster-row {
-    display: grid;
-    grid-template-columns: 1.4fr 0.75fr 1fr 1fr 0.6fr;
-    gap: 15px;
-    align-items: center;
-}
-
-.roster-table-head {
-    min-height: 42px;
-    padding: 0 15px;
-    color: #666;
-    font: 9px "Courier New", monospace;
-    letter-spacing: 0.11em;
-    border-bottom: 1px solid #292929;
-    background: #0b0b0b;
-}
-
-.roster-row {
-    width: 100%;
-    padding: 16px 15px;
-    border: 0;
-    border-bottom: 1px solid #1e1e1e;
-    background: #0d0d0d;
-    color: #ddd;
-    text-align: left;
-    cursor: pointer;
-    transition:
-        background 0.16s ease,
-        padding 0.16s ease,
-        border-color 0.16s ease;
-}
-
-.roster-row:last-child {
-    border-bottom: 0;
-}
-
-.roster-row:hover,
-.roster-row.active {
-    padding-left: 20px;
-    background: #131313;
-    border-color: #3b3b3b;
-}
-
-.roster-person {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    min-width: 0;
-}
-
-.roster-avatar {
-    width: 38px;
-    height: 38px;
-    display: grid;
-    place-items: center;
-    flex: 0 0 38px;
-    border: 1px solid #333;
-    background: #090909;
-    color: #777;
-    font: 10px "Courier New", monospace;
-}
-
-.roster-person-info {
-    min-width: 0;
-}
-
-.roster-person-name {
-    display: block;
-    color: #e5e5e5;
-    font-size: 12px;
-    font-weight: 800;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-.roster-person-meta {
-    margin-top: 3px;
-    color: #666;
-    font: 9px "Courier New", monospace;
-}
-
-.roster-rank,
-.roster-unit,
-.roster-appointment {
-    color: #b9b9b9;
-    font-size: 10px;
-    line-height: 1.45;
-}
-
-.roster-status {
-    display: inline-flex;
-    justify-content: center;
-    width: fit-content;
-    padding: 5px 7px;
-    border: 1px solid #333;
-    color: #999;
-    font: 8px "Courier New", monospace;
-    letter-spacing: 0.1em;
-}
-
-.roster-status.status-active {
-    border-color: rgba(63,143,79,0.45);
-    color: #8abd94;
-}
-
-.roster-status.status-loa {
-    color: #b7a26e;
-    border-color: rgba(183,162,110,0.35);
-}
-
-.roster-status.status-reserve {
-    color: #8ea0b3;
-    border-color: rgba(142,160,179,0.35);
-}
-
-.roster-no-results {
-    padding: 48px 20px;
-    border: 1px solid #262626;
-    background: #0c0c0c;
-    text-align: center;
-}
-
-.roster-no-results strong,
-.roster-no-results span {
-    display: block;
-}
-
-.roster-no-results strong {
-    color: #cfcfcf;
-    font: 10px "Courier New", monospace;
-    letter-spacing: 0.12em;
-}
-
-.roster-no-results span {
-    margin-top: 8px;
-    color: #656565;
-    font-size: 11px;
-}
-
-
-/* =========================================================
-   PERSONNEL DETAILS
-========================================================= */
-
-.roster-info-section {
-    padding: 72px 0 92px;
-    border-top: 1px solid var(--line);
-}
-
-.roster-section-lead {
-    max-width: 740px;
-    color: #8d8d8d;
-    line-height: 1.7;
-    font-size: 12px;
-}
-
-.personnel-details {
-    margin-top: 25px;
-    min-height: 190px;
-}
-
-.personnel-placeholder {
-    padding: 45px 20px;
-    border: 1px dashed #313131;
-    text-align: center;
-}
-
-.personnel-placeholder span {
-    color: #666;
-    font: 9px "Courier New", monospace;
-    letter-spacing: 0.12em;
-}
-
-.personnel-placeholder p {
-    margin: 8px 0 0;
-    color: #777;
-    font-size: 11px;
-}
-
-.personnel-profile {
-    padding: 25px;
-    border: 1px solid #2d2d2d;
     background:
         linear-gradient(
             180deg,
-            #151515,
-            #0c0c0c
-        );
+            rgba(255,255,255,.015),
+            transparent 55%
+        ),
+        #070707;
 }
 
-.personnel-profile-head {
+.roster-eyebrow {
+    margin-bottom: 18px;
+
+    color: #5d5d5d;
+
+    font:
+        800 9px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .18em;
+
+    text-transform: uppercase;
+}
+
+.roster-hero-row {
     display: flex;
+
+    align-items: flex-end;
     justify-content: space-between;
-    align-items: flex-start;
-    gap: 20px;
+
+    gap: 48px;
 }
 
-.personnel-profile-name {
+.roster-hero h1 {
     margin: 0;
-    color: #efefef;
-    font-size: 25px;
+
+    color: #eee;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    font-size:
+        clamp(
+            54px,
+            8vw,
+            92px
+        );
+
+    line-height: .84;
+
+    letter-spacing: -.065em;
+
+    font-weight: 700;
 }
 
-.personnel-profile-callsign {
-    margin-top: 4px;
-    color: #777;
-    font: 10px "Courier New", monospace;
+.roster-hero p {
+    max-width: 570px;
+
+    margin: 26px 0 0;
+
+    color: #6c6c6c;
+
+    font-size: 12px;
+
+    line-height: 1.8;
 }
 
-.personnel-facts {
-    margin-top: 24px;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
+
+/* =========================================================
+   REGISTER STAMP
+   ========================================================= */
+
+.register-stamp {
+    width: 190px;
+
+    flex: 0 0 190px;
+
+    padding: 17px;
+
+    border: 1px solid #292929;
+
+    background: #0c0c0c;
+}
+
+.register-stamp span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #444;
+
+    font:
+        8px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .16em;
+}
+
+.register-stamp strong {
+    display: block;
+
+    margin-bottom: 17px;
+
+    color: #aaa;
+
+    font:
+        700 11px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+.register-stamp strong:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.roster-search {
+    display: flex;
+
+    align-items: center;
+
+    gap: 13px;
+
+    height: 52px;
+
+    margin-top: 42px;
+
+    padding: 0 14px;
+
+    border: 1px solid #292929;
+
+    background: #0c0c0c;
+
+    transition:
+        border-color .15s ease,
+        background .15s ease;
+}
+
+.roster-search:focus-within {
+    border-color: #444;
+
+    background: #0e0e0e;
+}
+
+.roster-search-symbol {
+    color: #666;
+
+    font:
+        17px/1
+        "Courier New",
+        monospace;
+}
+
+.roster-search input {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 100%;
+
+    padding: 0;
+
+    border: 0;
+
+    outline: 0;
+
+    background: transparent;
+
+    color: #ddd;
+
+    font:
+        10px/1
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+}
+
+.roster-search input::placeholder {
+    color: #454545;
+}
+
+.roster-search-count {
+    flex: 0 0 auto;
+
+    color: #666;
+
+    font:
+        8px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+
+    white-space: nowrap;
+}
+
+
+/* =========================================================
+   FILTER
+   ========================================================= */
+
+.roster-filter-row {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    padding: 14px 0;
+
+    border-bottom: 1px solid #202020;
+}
+
+.roster-filter-row > span {
+    color: #444;
+
+    font:
+        8px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .15em;
+
+    white-space: nowrap;
+}
+
+.roster-filters {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    justify-content: flex-end;
+
+    gap: 4px;
+}
+
+.roster-filter {
+    appearance: none;
+
+    padding: 6px 10px;
+
+    border: 1px solid #242424;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: #555;
+
+    font:
+        8px/1
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+
+    cursor: pointer;
+
+    transition:
+        color .15s ease,
+        border-color .15s ease,
+        background .15s ease;
+}
+
+.roster-filter:hover {
+    border-color: #444;
+
+    color: #aaa;
+}
+
+.roster-filter.active {
+    border-color: #4b4b4b;
+
+    background: #171717;
+
+    color: #ddd;
+}
+
+
+/* =========================================================
+   ROSTER BODY
+   ========================================================= */
+
+.roster-body {
+    padding: 42px 0 110px;
+}
+
+
+/* =========================================================
+   CATEGORY
+   ========================================================= */
+
+.roster-type-category {
+    margin: 0 0 58px;
+}
+
+.roster-type-category
+> .roster-node-header {
+    display: flex;
+
+    align-items: baseline;
+    justify-content: space-between;
+
+    gap: 18px;
+
+    padding-bottom: 11px;
+
+    border-bottom: 1px solid #303030;
+}
+
+.roster-type-category
+> .roster-node-header
+.roster-node-title {
+    color: #d2d2d2;
+
+    font:
+        600 13px/1.4
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    letter-spacing: .1em;
+}
+
+.roster-type-category
+> .roster-node-children {
+    margin-top: 18px;
+}
+
+
+/* =========================================================
+   DIRECTORATE
+   ========================================================= */
+
+.roster-type-directorate {
+    position: relative;
+
+    margin-top: 31px;
+
+    padding-left: 22px !important;
+}
+
+.roster-type-directorate::before {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+
+    top: 4px;
+    bottom: 4px;
+
+    width: 1px;
+
+    background: #252525;
+}
+
+.roster-type-directorate
+> .roster-node-header {
+    display: flex;
+
+    align-items: center;
+
     gap: 10px;
 }
 
-.personnel-fact {
-    padding: 13px;
-    border: 1px solid #262626;
-    background: #0b0b0b;
+.roster-type-directorate
+> .roster-node-header::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    flex: 0 0 5px;
+
+    background: #666;
 }
 
-.personnel-fact span {
+.roster-type-directorate
+> .roster-node-header
+.roster-node-title {
+    color: #888;
+
+    font:
+        10px/1.5
+        "Courier New",
+        monospace;
+
+    letter-spacing: .13em;
+}
+
+
+/* =========================================================
+   GENERIC NODE
+   ========================================================= */
+
+.roster-node {
+    position: relative;
+
+    min-width: 0;
+}
+
+
+/* =========================================================
+   APPOINTMENT
+   ========================================================= */
+
+.roster-type-appointment {
+    margin-top: 13px !important;
+
+    padding-left: 25px !important;
+}
+
+.roster-type-appointment::before {
+    content: "";
+
+    position: absolute;
+
+    left: 4px;
+
+    top: 12px;
+
+    width: 12px;
+    height: 1px;
+
+    background: #292929;
+}
+
+.roster-type-appointment
+> .roster-node-header {
+    display: flex;
+
+    align-items: baseline;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    min-height: 27px;
+}
+
+
+/* =========================================================
+   NODE TEXT
+   ========================================================= */
+
+.roster-node-title {
+    color: #aaa;
+
+    font:
+        9px/1.6
+        "Courier New",
+        monospace;
+
+    letter-spacing: .05em;
+}
+
+.roster-node-personnel {
+    color: #ddd;
+
+    font:
+        9px/1.6
+        "Courier New",
+        monospace;
+
+    letter-spacing: .04em;
+}
+
+.roster-node-note {
+    margin:
+        1px
+        0
+        7px
+        25px;
+
+    color: #444;
+
+    font:
+        7px/1.6
+        "Courier New",
+        monospace;
+
+    letter-spacing: .07em;
+
+    text-transform: uppercase;
+}
+
+
+/* =========================================================
+   CHILDREN
+   ========================================================= */
+
+.roster-node-children {
+    margin:
+        4px
+        0
+        0
+        12px;
+
+    padding:
+        0
+        0
+        0
+        18px;
+
+    border-left: 1px solid #1d1d1d;
+}
+
+
+/* =========================================================
+   UNITS
+   ========================================================= */
+
+.roster-subunit {
+    overflow: hidden;
+
+    margin: 38px 0 0 !important;
+
+    border: 1px solid #222 !important;
+
+    background: #0a0a0a;
+}
+
+.subunit-heading {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    min-height: 49px;
+
+    padding: 15px 20px;
+
+    border-bottom: 1px solid #202020;
+
+    background: #0c0c0c;
+}
+
+.subunit-heading::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    flex: 0 0 5px;
+
+    background: #666;
+}
+
+.subunit-title {
+    color: #bbb;
+
+    font:
+        600 9px/1.5
+        "Courier New",
+        monospace;
+
+    letter-spacing: .12em;
+}
+
+.unit-command-tree {
+    padding: 13px 20px 18px;
+}
+
+
+/* =========================================================
+   PERSONNEL LIST
+   ========================================================= */
+
+.personnel-list {
+    border-top: 1px solid #191919;
+}
+
+.personnel-entry {
+    width: 100%;
+
+    display: grid;
+
+    grid-template-columns:
+        45px
+        60px
+        minmax(170px, 1fr)
+        minmax(210px, 1.1fr)
+        100px;
+
+    align-items: center;
+
+    min-height: 59px;
+
+    padding: 0 20px;
+
+    border: 0;
+
+    border-bottom: 1px solid #191919;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: inherit;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    appearance: none;
+
+    transition:
+        background .15s ease,
+        padding-left .15s ease;
+}
+
+.personnel-entry:last-child {
+    border-bottom: 0;
+}
+
+.personnel-entry:hover,
+.personnel-entry:focus-visible {
+    padding-left: 27px;
+
+    background: #101010;
+}
+
+.personnel-entry:focus-visible {
+    outline: 1px solid #4a4a4a;
+
+    outline-offset: -1px;
+}
+
+
+/* =========================================================
+   INDEX
+   ========================================================= */
+
+.personnel-index {
+    color: #3b3b3b;
+
+    font:
+        8px/1
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   RANK
+   ========================================================= */
+
+.personnel-rank {
+    color: #999;
+
+    font:
+        700 9px/1
+        "Courier New",
+        monospace;
+}
+
+
+/* =========================================================
+   NAME
+   ========================================================= */
+
+.personnel-name-block {
+    min-width: 0;
+}
+
+.personnel-name {
+    overflow: hidden;
+
+    color: #ddd;
+
+    font-size: 11px;
+
+    font-weight: 600;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+.personnel-callsign {
+    margin-top: 4px;
+
+    overflow: hidden;
+
+    color: #505050;
+
+    font:
+        7px/1.2
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
+}
+
+
+/* =========================================================
+   APPOINTMENT
+   ========================================================= */
+
+.personnel-appointment {
+    min-width: 0;
+
+    padding-right: 20px;
+
+    color: #666;
+
+    font:
+        8px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .05em;
+}
+
+.personnel-appointment span {
     display: block;
-    margin-bottom: 6px;
-    color: #626262;
-    font: 8px "Courier New", monospace;
-    letter-spacing: 0.1em;
+
+    overflow: hidden;
+
+    white-space: nowrap;
+
+    text-overflow: ellipsis;
 }
 
-.personnel-fact strong {
-    color: #c8c8c8;
+
+/* =========================================================
+   STATUS
+   ========================================================= */
+
+.personnel-status {
+    justify-self: start;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 7px;
+
+    padding: 5px 8px;
+
+    border: 1px solid #292929;
+
+    color: #555;
+
+    font:
+        7px/1
+        "Courier New",
+        monospace;
+
+    letter-spacing: .1em;
+
+    white-space: nowrap;
+}
+
+.personnel-status::before {
+    content: "";
+
+    width: 5px;
+    height: 5px;
+
+    flex: 0 0 5px;
+
+    border-radius: 50%;
+
+    background: #444;
+}
+
+.personnel-status.active {
+    color: #aaa;
+}
+
+.personnel-status.active::before {
+    background: #aaa;
+}
+
+.personnel-status.loa,
+.personnel-status.reserve {
+    color: #777;
+}
+
+.personnel-status.inactive {
+    color: #444;
+}
+
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.hidden {
+    display: none !important;
+}
+
+.roster-empty {
+    padding: 90px 20px;
+
+    border: 1px solid #222;
+
+    text-align: center;
+}
+
+.roster-empty > div {
+    margin-bottom: 12px;
+
+    color: #333;
+
+    font:
+        30px/1
+        "Courier New",
+        monospace;
+}
+
+.roster-empty strong {
+    color: #777;
+
+    font:
+        9px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .16em;
+}
+
+.roster-empty p {
+    margin: 10px 0 0;
+
+    color: #444;
+
     font-size: 11px;
 }
 
-.personnel-profile-note {
-    margin-top: 15px;
-    padding-top: 15px;
-    border-top: 1px solid #242424;
-    color: #777;
-    font-size: 10px;
-    line-height: 1.6;
+
+/* =========================================================
+   PROFILE MODAL
+   ========================================================= */
+
+.personnel-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 99999;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 25px;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    pointer-events: none;
+
+    transition:
+        opacity .2s ease,
+        visibility .2s ease;
 }
 
-.sr-only {
+.personnel-modal.open {
+    opacity: 1;
+
+    visibility: visible;
+
+    pointer-events: auto;
+}
+
+.personnel-modal-backdrop {
     position: absolute;
-    width: 1px;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.91);
+
+    backdrop-filter: blur(9px);
+}
+
+.personnel-profile {
+    position: relative;
+
+    z-index: 2;
+
+    width: min(680px, 100%);
+
+    max-height:
+        min(
+            760px,
+            calc(100vh - 50px)
+        );
+
+    overflow: auto;
+
+    padding: 32px;
+
+    border: 1px solid #353535;
+
+    background: #0b0b0b;
+
+    box-shadow:
+        0 30px 100px
+        rgba(0,0,0,.75);
+}
+
+.profile-close {
+    position: absolute;
+
+    top: 12px;
+    right: 12px;
+
+    width: 36px;
+    height: 36px;
+
+    border: 1px solid #292929;
+
+    border-radius: 0;
+
+    background: transparent;
+
+    color: #666;
+
+    font:
+        22px/1
+        Arial,
+        sans-serif;
+
+    cursor: pointer;
+}
+
+.profile-close:hover,
+.profile-close:focus-visible {
+    border-color: #555;
+
+    color: #eee;
+
+    outline: none;
+}
+
+.profile-eyebrow {
+    color: #555;
+
+    font:
+        8px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .17em;
+}
+
+.profile-header {
+    display: flex;
+
+    align-items: center;
+
+    gap: 22px;
+
+    margin-top: 30px;
+}
+
+.profile-rank {
+    color: #777;
+
+    font:
+        700 16px/1
+        "Courier New",
+        monospace;
+}
+
+.profile-name {
+    color: #eee;
+
+    font-size: 28px;
+
+    font-weight: 600;
+}
+
+.profile-callsign {
+    margin-top: 5px;
+
+    color: #666;
+
+    font:
+        9px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .15em;
+}
+
+.profile-line {
     height: 1px;
-    padding: 0;
-    margin: -1px;
+
+    margin: 30px 0;
+
+    background: #252525;
+}
+
+
+/* =========================================================
+   PROFILE GRID
+   ========================================================= */
+
+.profile-grid {
+    display: grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap: 10px;
+}
+
+.profile-field {
+    min-width: 0;
+
+    padding: 14px;
+
+    border: 1px solid #1e1e1e;
+
+    background: #080808;
+}
+
+.profile-field span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: #444;
+
+    font:
+        7px/1.4
+        "Courier New",
+        monospace;
+
+    letter-spacing: .15em;
+}
+
+.profile-field strong {
+    display: block;
+
+    overflow-wrap: anywhere;
+
+    color: #aaa;
+
+    font:
+        9px/1.6
+        "Courier New",
+        monospace;
+
+    letter-spacing: .05em;
+}
+
+.profile-wide {
+    grid-column: 1 / -1;
+}
+
+body:has(.personnel-modal.open) {
     overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
 }
 
 
 /* =========================================================
    RESPONSIVE
-========================================================= */
+   ========================================================= */
 
-@media (max-width: 950px) {
+@media (max-width: 900px) {
 
-    .roster-hero-grid {
-        grid-template-columns: 1fr;
+    .roster-container {
+        width:
+            min(
+                calc(100% - 35px),
+                760px
+            );
     }
 
-    .roster-controls {
-        grid-template-columns: 1fr 1fr;
+    .roster-hero {
+        padding-top: 64px;
     }
 
-    .roster-search-wrap {
-        grid-column: 1 / -1;
+    .roster-hero-row {
+        align-items: stretch;
+
+        flex-direction: column;
+
+        gap: 30px;
     }
 
-    .personnel-facts {
-        grid-template-columns: 1fr 1fr;
+    .register-stamp {
+        width: 100%;
+
+        flex-basis: auto;
     }
 
-    .roster-table-head,
-    .roster-row {
-        grid-template-columns: 1.5fr 0.8fr 1fr 0.8fr;
+    .roster-filter-row {
+        align-items: flex-start;
+
+        flex-direction: column;
     }
 
-    .roster-table-head > :last-child,
-    .roster-row > :last-child {
+    .roster-filters {
+        justify-content: flex-start;
+    }
+
+    .personnel-entry {
+        grid-template-columns:
+            34px
+            52px
+            minmax(0, 1fr)
+            88px;
+
+        padding: 0 14px;
+    }
+
+    .personnel-appointment {
         display: none;
+    }
+
+    .personnel-status {
+        justify-self: end;
+    }
+
+    .unit-command-tree {
+        padding-inline: 14px;
+    }
+
+    .subunit-heading {
+        padding-inline: 14px;
+    }
+
+    .roster-type-directorate {
+        padding-left: 18px !important;
     }
 }
 
 
-@media (max-width: 650px) {
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 560px) {
+
+    .roster-container {
+        width: calc(100% - 28px);
+    }
 
     .roster-hero {
-        padding: 58px 0 45px;
+        padding:
+            54px
+            0
+            34px;
     }
 
-    .roster-controls {
-        grid-template-columns: 1fr;
+    .roster-hero h1 {
+        font-size: 48px;
     }
 
-    .roster-search-wrap {
-        grid-column: auto;
+    .roster-hero p {
+        font-size: 10px;
     }
 
-    .roster-toolbar {
-        align-items: flex-start;
-        flex-direction: column;
+    .roster-search {
+        height: 48px;
+
+        margin-top: 28px;
     }
 
-    .roster-table-wrap {
-        border: 0;
+    .roster-search input {
+        font-size: 8px;
     }
 
-    .roster-table-head {
-        display: none;
+    .roster-search-count {
+        font-size: 7px;
     }
 
-    .roster-row {
-        grid-template-columns: 1fr;
-        gap: 9px;
-        padding: 17px;
-        border: 1px solid #262626;
-        margin-bottom: 8px;
+    .roster-node-title,
+    .roster-node-personnel {
+        font-size: 8px;
     }
 
-    .roster-row:hover,
-    .roster-row.active {
-        padding-left: 17px;
+    .subunit-title {
+        font-size: 8px;
     }
 
-    .roster-row > :last-child {
+    .personnel-entry {
+        grid-template-columns:
+            25px
+            43px
+            minmax(0, 1fr)
+            65px;
+
+        min-height: 52px;
+
+        padding: 0 10px;
+    }
+
+    .personnel-entry:hover,
+    .personnel-entry:focus-visible {
+        padding-left: 13px;
+    }
+
+    .personnel-name {
+        font-size: 10px;
+    }
+
+    .personnel-callsign {
+        font-size: 6px;
+    }
+
+    .personnel-rank {
+        font-size: 8px;
+    }
+
+    .personnel-status {
+        gap: 5px;
+
+        padding:
+            4px
+            5px;
+
+        font-size: 6px;
+    }
+
+    .personnel-profile {
+        padding: 23px;
+    }
+
+    .profile-header {
         display: block;
     }
 
-    .roster-rank::before,
-    .roster-unit::before,
-    .roster-appointment::before {
-        content: attr(data-label) "  ";
-        color: #575757;
-        font: 8px "Courier New", monospace;
-        letter-spacing: 0.08em;
+    .profile-rank {
+        margin-bottom: 8px;
     }
 
-    .personnel-profile-head {
-        flex-direction: column;
+    .profile-name {
+        font-size: 22px;
     }
 
-    .personnel-facts {
+    .profile-grid {
         grid-template-columns: 1fr;
+    }
+
+    .profile-wide {
+        grid-column: auto;
     }
 }

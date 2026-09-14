@@ -1,433 +1,487 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#070707">
 
-  <title>KSOL - Roster</title>
+    <title>Personnel Roster | KSOL HQ</title>
 
-  <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
+    <link rel="icon" type="image/png" href="KSOL_Emblem_Transparent.png">
 
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="roster.css">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="roster.css">
 </head>
 
 <body>
 
-  <!-- TOP ACCENT LINE -->
-  <div class="top"></div>
+    <div class="top"></div>
 
+    <!-- =========================================================
+         NAVIGATION
+    ========================================================== -->
 
-  <!-- NAVIGATION -->
-<nav>
-  <div class="wrap nav">
-    <a class="brand" href="index.html">
-      <img src="KSOL_Emblem_Transparent.png" alt="KSOL Logo" class="nav-logo">
-      <span>KSOL HQ</span>
-    </a>
+    <nav>
+        <div class="wrap nav">
 
-    <div class="links">
-                
-        <a href="index.html">
-          Home
-        </a>
-      <!-- <a href="index.html#about">FACTION STATS</a> -->
+            <a class="brand" href="index.html">
+                <img
+                    src="KSOL_Emblem_Transparent.png"
+                    alt="KSOL Logo"
+                    class="nav-logo"
+                >
+                <span>KSOL HQ</span>
+            </a>
 
-      <div class="nav-dropdown">
-        <button class="nav-dropdown-toggle" type="button" aria-expanded="false">
-          HEADQUARTERS <span class="nav-chevron">▾</span>
-        </button>
-        <div class="nav-dropdown-menu">
-          <a href="ranks.html" class="nav-dropdown-item">
-            <span class="dropdown-index">01</span>
-            <span>
-              <strong>RANKS</strong>
-              <small>Rank structure &amp; requirements</small>
-            </span>
-          </a>
-          <a href="roster.html" class="nav-dropdown-item">
-            <span class="dropdown-index">02</span>
-            <span>
-              <strong>ROSTER</strong>
-              <small>Faction personnel directory</small>
-            </span>
-          </a>
-          <a href="appointments.html" class="nav-dropdown-item">
-            <span class="dropdown-index">03</span>
-            <span>
-              <strong>ORBAT</strong>
-              <small>Organization &amp; appointments</small>
-            </span>
-          </a>
-          <a href="awards.html" class="nav-dropdown-item">
-            <span class="dropdown-index">04</span>
-            <span>
-              <strong>DECORATIONS</strong>
-              <small>Tabs, badges &amp; decorations</small>
-            </span>
-          </a>
-           <a href="qualifications.html" class="nav-dropdown-item">
-            <span class="dropdown-index">05</span>
-            <span>
-              <strong>QUALIFICATIONS</strong>
-              <small>Courses, trainings &amp; evaluation boards</small>
-            </span>
-          </a>
-          <a href="armoury.html"class="nav-dropdown-item">
-            <span class="dropdown-index">06</span>
-            <span>
-              <strong>ARMOURY</strong>
-              <small>Sanctioned weapon systems &amp; mods</small>
-            </span>
-          </a>
-          <a href="uniforms.html" class="nav-dropdown-item">
-            <span class="dropdown-index">07</span>
-            <span>
-              <strong>UNIFORMS</strong>
-              <small>Faction dress &amp; uniform codes</small>
-            </span>
-          </a>
-        </div>
-      </div>
-      <a href="jobs.html">JOB CENTRE</a>
-      <a href="media.html">MEDIA</a>
-      <a href="#">RULES &amp; SOPs</a>
-    </div>
+            <div class="links">
 
-    <div class="nav-actions">
-      <a href="https://discord.gg/cXGjn9CgYN" class="discord-btn" target="_blank" rel="noopener">JOIN DISCORD</a>
-      <a href="login.html" class="enlist-btn">
-        <span class="enlist-text">LOGIN</span>
-        <span class="enlist-arrow">→</span>
-      </a>
-    </div>
-  </div>
-</nav>
+                <a href="index.html">HOME</a>
 
+                <div class="nav-dropdown">
 
-  <!-- LIVE TIME STRIP -->
-  <div class="time-strip">
+                    <button
+                        class="nav-dropdown-toggle"
+                        type="button"
+                        aria-expanded="false"
+                        aria-haspopup="true"
+                    >
+                        HEADQUARTERS
+                        <span class="nav-chevron">▾</span>
+                    </button>
 
-    <div class="wrap time-strip-inner">
+                    <div class="nav-dropdown-menu">
 
-      <div class="time-block">
-        <span class="time-label">KSOL HQ</span>
-        <span id="hq-time" class="time-value">--:--:--</span>
-        <span class="time-zone">IST</span>
-      </div>
+                        <a href="ranks.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">01</span>
+                            <span>
+                                <strong>RANKS</strong>
+                                <small>Rank structure &amp; requirements</small>
+                            </span>
+                        </a>
 
-      <div class="time-divider"></div>
+                        <a href="roster.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">02</span>
+                            <span>
+                                <strong>ROSTER</strong>
+                                <small>Faction personnel directory</small>
+                            </span>
+                        </a>
 
-      <div class="time-block">
-        <span class="time-label">YOUR LOCAL TIME</span>
-        <span id="local-time" class="time-value">--:--:--</span>
-        <span id="local-zone" class="time-zone">LOCAL</span>
-      </div>
+                        <a href="appointments.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">03</span>
+                            <span>
+                                <strong>ORBAT</strong>
+                                <small>Organization &amp; appointments</small>
+                            </span>
+                        </a>
 
-    </div>
+                        <a href="awards.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">04</span>
+                            <span>
+                                <strong>DECORATIONS</strong>
+                                <small>Tabs, badges &amp; decorations</small>
+                            </span>
+                        </a>
 
-  </div>
+                        <a href="qualifications.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">05</span>
+                            <span>
+                                <strong>QUALIFICATIONS</strong>
+                                <small>Courses, trainings &amp; evaluation boards</small>
+                            </span>
+                        </a>
 
+                        <a href="armoury.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">06</span>
+                            <span>
+                                <strong>ARMOURY</strong>
+                                <small>Sanctioned weapon systems &amp; mods</small>
+                            </span>
+                        </a>
 
-  <!-- PAGE -->
-  <main class="roster-page">
+                        <a href="uniforms.html" class="nav-dropdown-item">
+                            <span class="dropdown-index">07</span>
+                            <span>
+                                <strong>UNIFORMS</strong>
+                                <small>Faction dress &amp; uniform codes</small>
+                            </span>
+                        </a>
 
+                    </div>
+                </div>
 
-    <!-- HERO -->
-    <section class="roster-hero">
+                <a href="media.html">SHOWCASE</a>
+                <a href="documentation.html">DOCUMENTATION</a>
 
-      <div class="wrap roster-hero-grid">
+            </div>
 
-        <div>
+            <div class="nav-actions">
 
-          <div class="k">
-            HEADQUARTERS // PERSONNEL
-          </div>
+                <a
+                    href="https://discord.gg/cXGjn9CgYN"
+                    class="discord-btn"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                >
+                    JOIN DISCORD
+                </a>
 
-          <h1>
-            Faction Roster
-          </h1>
+                <a href="login.html" class="enlist-btn">
+                    <span class="enlist-text">LOGIN</span>
+                    <span class="enlist-arrow">→</span>
+                </a>
 
-          <p>
-            The centralized personnel directory of the Kali Special
-            Operations Legion.
-          </p>
+            </div>
 
         </div>
+    </nav>
 
 
-        <div class="roster-hero-status">
+    <!-- =========================================================
+         LIVE TIME STRIP
+    ========================================================== -->
 
-          <span class="roster-status-label">
-            ROSTER STATUS
-          </span>
+    <div class="time-strip">
 
-          <strong>
-            PERSONNEL DIRECTORY
-          </strong>
+        <div class="wrap time-strip-inner">
 
-          <p>
-            Search, filter and inspect personnel by rank, unit,
-            appointment and service status.
-          </p>
+            <div class="time-block">
+
+                <span class="time-label">
+                    KSOL HQ
+                </span>
+
+                <span
+                    id="hq-time"
+                    class="time-value"
+                >
+                    --:--:--
+                </span>
+
+                <span class="time-zone">
+                    IST
+                </span>
+
+            </div>
+
+            <div class="time-divider"></div>
+
+            <div class="time-block">
+
+                <span class="time-label">
+                    YOUR LOCAL TIME
+                </span>
+
+                <span
+                    id="local-time"
+                    class="time-value"
+                >
+                    --:--:--
+                </span>
+
+                <span
+                    id="local-zone"
+                    class="time-zone"
+                >
+                    LOCAL
+                </span>
+
+            </div>
 
         </div>
 
-      </div>
-
-    </section>
+    </div>
 
 
-    <!-- CONTROLS -->
-    <section class="roster-controls-section">
+    <!-- =========================================================
+         HERO
+    ========================================================== -->
 
-      <div class="wrap">
+    <header class="roster-hero">
 
-        <div class="roster-controls">
+        <div class="roster-container">
 
-          <div class="roster-search-wrap">
+            <div class="roster-eyebrow">
+                KALI SPECIAL OPERATIONS LEGION / PERSONNEL
+            </div>
 
-            <label
-              for="rosterSearch"
-              class="sr-only"
-            >
-              Search roster
-            </label>
+            <div class="roster-hero-row">
+
+                <div>
+
+                    <h1>
+                        ROSTER
+                    </h1>
+
+                    <p>
+                        Current personnel and command appointments
+                        of the Kali Special Operations Legion.
+                    </p>
+
+                </div>
+
+                <div class="register-stamp">
+
+                    <span>
+                        REGISTER
+                    </span>
+
+                    <strong>
+                        KSOL / PERS
+                    </strong>
+
+                    <span>
+                        STATUS
+                    </span>
+
+                    <strong>
+                        CURRENT
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================================
+         SEARCH / FILTERS
+    ========================================================== -->
+
+    <section class="roster-container roster-controls">
+
+        <div class="roster-search">
+
+            <span class="roster-search-symbol">
+                /
+            </span>
 
             <input
-              id="rosterSearch"
-              class="roster-search"
-              type="search"
-              placeholder="Search name, callsign, rank, unit or appointment..."
-              autocomplete="off"
+                type="search"
+                id="roster-search"
+                placeholder="SEARCH PERSONNEL, APPOINTMENT OR UNIT"
+                autocomplete="off"
+                spellcheck="false"
+                aria-label="Search personnel"
             >
 
-          </div>
-
-
-          <div class="roster-select-wrap">
-
-            <label
-              for="unitFilter"
-              class="sr-only"
+            <span
+                id="search-count"
+                class="roster-search-count"
             >
-              Filter by unit
-            </label>
-
-            <select id="unitFilter" class="roster-select">
-              <option value="all">ALL UNITS</option>
-            </select>
-
-          </div>
-
-
-          <div class="roster-select-wrap">
-
-            <label
-              for="rankFilter"
-              class="sr-only"
-            >
-              Filter by rank
-            </label>
-
-            <select id="rankFilter" class="roster-select">
-              <option value="all">ALL RANKS</option>
-            </select>
-
-          </div>
-
-
-          <div class="roster-select-wrap">
-
-            <label
-              for="statusFilter"
-              class="sr-only"
-            >
-              Filter by status
-            </label>
-
-            <select id="statusFilter" class="roster-select">
-              <option value="all">ALL STATUS</option>
-              <option value="active">ACTIVE</option>
-              <option value="loa">LOA</option>
-              <option value="reserve">RESERVE</option>
-              <option value="inactive">INACTIVE</option>
-            </select>
-
-          </div>
-
-        </div>
-
-
-        <div class="roster-toolbar">
-
-          <div id="rosterCount">
-            0 PERSONNEL
-          </div>
-
-          <div class="roster-sort-wrap">
-
-            <span>
-              SORT
+                ALL
             </span>
 
-            <select
-              id="sortSelect"
-              class="roster-sort"
-            >
-              <option value="rank">RANK</option>
-              <option value="name">NAME</option>
-              <option value="unit">UNIT</option>
-              <option value="appointment">APPOINTMENT</option>
-            </select>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- DIRECTORY -->
-    <section class="roster-directory-section">
-
-      <div class="wrap">
-
-
-        <!-- EMPTY STATE -->
-
-        <div
-          id="rosterEmpty"
-          class="roster"
-        >
-
-          <!-- <div class="roster-empty-icon">
-            ROSTER
-          </div> -->
-
-          <!-- <h2>
-            No Personnel Listed
-          </h2>
-
-          <p>
-            The public roster is currently empty. Add personnel to
-            <code>roster.js</code> to populate this directory.
-          </p> -->
-
         </div>
 
 
-        <!-- TABLE -->
-
-        <div
-          id="rosterTableWrap"
-          class="roster-table-wrap"
-          hidden
-        >
-
-          <div class="roster-table-head">
-
-            <div>
-              PERSONNEL
-            </div>
-
-            <div>
-              RANK
-            </div>
-
-            <div>
-              UNIT
-            </div>
-
-            <div>
-              APPOINTMENT
-            </div>
-
-            <div>
-              STATUS
-            </div>
-
-          </div>
-
-
-          <div id="rosterRows"></div>
-
-        </div>
-
-
-        <!-- NO RESULTS -->
-
-        <div
-          id="rosterNoResults"
-          class="roster-no-results"
-          hidden
-        >
-
-          <strong>
-            NO MATCHING PERSONNEL
-          </strong>
-
-          <span>
-            Adjust your search or filters.
-          </span>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- PERSONNEL INFORMATION -->
-    <section class="roster-info-section">
-
-      <div class="wrap">
-
-        <div class="k">
-          PERSONNEL DIRECTORY // REFERENCE
-        </div>
-
-        <h2>
-          Personnel Records
-        </h2>
-
-        <p class="roster-section-lead">
-          Select a personnel record to view its available public
-          information. Sensitive personnel information should remain
-          outside the public roster.
-        </p>
-
-
-        <div
-          id="personnelDetails"
-          class="personnel-details"
-        >
-
-          <div class="personnel-placeholder">
+        <div class="roster-filter-row">
 
             <span>
-              NO RECORD SELECTED
+                PERSONNEL STATUS
             </span>
 
-            <p>
-              Select a member from the roster above.
-            </p>
+            <div
+                class="roster-filters"
+                role="group"
+                aria-label="Personnel status"
+            >
 
-          </div>
+                <button
+                    class="roster-filter active"
+                    data-status="all"
+                    type="button"
+                >
+                    ALL
+                </button>
+
+                <button
+                    class="roster-filter"
+                    data-status="active"
+                    type="button"
+                >
+                    ACTIVE
+                </button>
+
+                <button
+                    class="roster-filter"
+                    data-status="loa"
+                    type="button"
+                >
+                    LOA
+                </button>
+
+                <button
+                    class="roster-filter"
+                    data-status="reserve"
+                    type="button"
+                >
+                    RESERVE
+                </button>
+
+                <button
+                    class="roster-filter"
+                    data-status="inactive"
+                    type="button"
+                >
+                    INACTIVE
+                </button>
+
+            </div>
 
         </div>
-
-      </div>
 
     </section>
 
 
-  </main>
+    <!-- =========================================================
+         ROSTER BODY
+    ========================================================== -->
+
+    <main class="roster-body">
+
+        <div class="roster-container">
+
+            <div id="roster-list"></div>
+
+            <div
+                id="roster-empty"
+                class="roster-empty hidden"
+            >
+
+                <div>
+                    /
+                </div>
+
+                <strong>
+                    NO PERSONNEL FOUND
+                </strong>
+
+                <p>
+                    No personnel match the current search or filter.
+                </p>
+
+            </div>
+
+        </div>
+
+    </main>
 
 
-  <!-- FOOTER -->
+    <!-- =========================================================
+         PROFILE MODAL
+    ========================================================== -->
+
+    <div
+        id="personnel-modal"
+        class="personnel-modal"
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="profile-name"
+    >
+
+        <div
+            id="profile-backdrop"
+            class="personnel-modal-backdrop"
+        ></div>
+
+
+        <div class="personnel-profile">
+
+            <button
+                id="profile-close"
+                class="profile-close"
+                type="button"
+                aria-label="Close personnel record"
+            >
+                ×
+            </button>
+
+
+            <div class="profile-eyebrow">
+                KSOL PERSONNEL RECORD
+            </div>
+
+
+            <div class="profile-header">
+
+                <div
+                    id="profile-rank"
+                    class="profile-rank"
+                >
+                    --
+                </div>
+
+                <div>
+
+                    <div
+                        id="profile-name"
+                        class="profile-name"
+                    >
+                        --
+                    </div>
+
+                    <div
+                        id="profile-callsign"
+                        class="profile-callsign"
+                    >
+                        --
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="profile-line"></div>
+
+
+            <div class="profile-grid">
+
+                <div class="profile-field">
+                    <span>SERVICE NUMBER</span>
+                    <strong id="profile-service-number">--</strong>
+                </div>
+
+                <div class="profile-field">
+                    <span>STATUS</span>
+                    <strong id="profile-status">--</strong>
+                </div>
+
+                <div class="profile-field">
+                    <span>UNIT</span>
+                    <strong id="profile-unit">--</strong>
+                </div>
+
+                <div class="profile-field">
+                    <span>APPOINTMENT</span>
+                    <strong id="profile-appointment">--</strong>
+                </div>
+
+                <div class="profile-field">
+                    <span>JOINED</span>
+                    <strong id="profile-join-date">--</strong>
+                </div>
+
+                <div class="profile-field profile-wide">
+                    <span>PERSONNEL NOTE</span>
+                    <strong id="profile-note">--</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================================================
+         FOOTER
+    ========================================================== -->
+
 <footer class="site-footer">
 
     <!-- TOP COPYRIGHT LINE -->
@@ -515,23 +569,23 @@
                     Decorations
                 </a>
 
-                <a href="#">
+                <a href="qualifications.html">
                     Qualifications
                 </a>
-                <a href="#">
+                <a href="armoury.html">
                     Armoury
                 </a>
-                <a href="#">
+                <a href="uniforms.html">
                     Uniforms
                 </a>
-                <a href="#">
+                <!-- <a href="#">
                     Job Centre
+                </a> -->
+                <a href="media.html">
+                    Showcase
                 </a>
-                <a href="#">
-                    Media
-                </a>
-                <a href="#">
-                    Rules &amp; SOPs
+                <a href="documentation.html">
+                    Documentation
                 </a>
 
             </div>
@@ -599,8 +653,8 @@
 </footer>
 
 
-  <script src="script.js"></script>
-  <script src="roster.js"></script>
+    <script src="script.js"></script>
+    <script src="roster.js"></script>
 
 </body>
 </html>
