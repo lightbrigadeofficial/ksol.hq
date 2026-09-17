@@ -494,7 +494,7 @@ const personnel = {
     aac02: { name: '"Bravo 0-6"', rank: "LGN", callsign: "Bravo 0-6", serviceNumber: "KS-2626", status: "active", unit: "AAC", appointment: "-", joinDate: "02 Aug 2026", note: "" },
     aac03: { name: 'WO1. "Rotor"', rank: "WO1", callsign: "—", serviceNumber: "KSOL-0504", status: "active", unit: "AAC", appointment: "Aircrew", joinDate: "2026", note: "" },
 
-    amc01: { name: '"Warthog"', rank: "LGN", callsign: "Warthog", serviceNumber: "KS-2608", status: "active", unit: "AMC", appointment: "Medic", joinDate: "09 Aug 2026", note: "" },
+    amc01: { name: '"Warthog"', rank: "PFC", callsign: "Warthog", serviceNumber: "KS-2608", status: "active", unit: "AMC", appointment: "Medic", joinDate: "09 Aug 2026", note: "" },
     amc02: { name: '"Felon"', rank: "LGN", callsign: "Felon", serviceNumber: "KS-2624", status: "active", unit: "AMC", appointment: "Medic", joinDate: "22 Aug 2026", note: "" },
     amc03: { name: '"###"', rank: "SGT", callsign: "—", serviceNumber: "KSOL-0604", status: "active", unit: "AMC", appointment: "Medic", joinDate: "2026", note: "" },
 
