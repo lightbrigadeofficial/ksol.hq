@@ -1,10 +1,63 @@
+/* =========================================================
+   KSOL PERSONNEL REGISTER
+   ========================================================= */
+
+
+/*
+    =========================================================
+    PERSONNEL DATABASE
+    =========================================================
+
+    Every actual person is stored here.
+
+    The organizational hierarchy is defined separately below.
+
+    IMPORTANT:
+
+    A PERSON has:
+        - name
+        - rank
+        - status
+        - unit
+        - appointment
+
+    A UNIT has:
+        - command appointment
+        - child units
+        - directly assigned personnel
+
+
+    Example:
+
+        Vex
+        unit: "7 PARA"
+        appointment: "CO, Parachute Regiment"
+
+    This means Vex belongs to 7 PARA while holding the
+    regimental CO appointment.
+
+    The hierarchy therefore becomes:
+
+        Parachute Regiment
+        ├── CO, Parachute Regiment — Vex
+        │
+        └── 7 Para Bn
+            ├── CO, 7 Para Bn — Diabeto
+            └── Alpha Coy
+*/
+
+
 const personnel = {
 
+    /* =====================================================
+       HEADQUARTERS
+    ===================================================== */
+
     obi: {
-        name: "Obi",
+        name: 'GEN. "Obi"',
         rank: "GEN",
         callsign: "COMMANDER",
-        serviceNumber: "KSOL-0001",
+        serviceNumber: "KSOL-2601",
         status: "active",
         unit: "HQ",
         appointment: "Commander, KSOL",
@@ -13,10 +66,10 @@ const personnel = {
     },
 
     wolf: {
-        name: "Wolf",
+        name: 'LTG. "Wolf"',
         rank: "LTG",
         callsign: "2I/C",
-        serviceNumber: "KSOL-0002",
+        serviceNumber: "KSOL-2611",
         status: "active",
         unit: "HQ",
         appointment: "2i/c, KSOL",
@@ -24,8 +77,90 @@ const personnel = {
         note: "Second-in-command, Kali Special Operations Legion."
     },
 
+
+    /* =====================================================
+       DIRECTOR GENERAL APPOINTMENTS
+    ===================================================== */
+
+    dgTraining: {
+        name: "N/A",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "-",
+        status: "vacant",
+        unit: "Training Command",
+        appointment: "Director General, Training Command",
+        joinDate: "-",
+        note: "Current Director General of Training Command."
+    },
+
+    dgRecruitment: {
+        name: "N/A",
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "-",
+        status: "vacant",
+        unit: "Recruitment Command",
+        appointment: "Director General, Recruitment Command",
+        joinDate: "-",
+        note: "Current Director General of Recruitment Command."
+    },
+
+    dgOperations: {
+        name: 'COL. "Councillor Jasko"',
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "-",
+        status: "active",
+        unit: "Military Operations",
+        appointment: "Director General, Military Operations",
+        joinDate: "2026",
+        note: "Current Director General of Military Operations."
+    },
+
+    dgInternal: {
+        name: 'COL. "Border"',
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "-",
+        status: "active",
+        unit: "Internal Affairs",
+        appointment: "Director General, Internal Affairs",
+        joinDate: "2026",
+        note: "Current Director General of Internal Affairs."
+    },
+
+    dgPublicRelations: {
+        name: 'COL. "Fuego"',
+        rank: "—",
+        callsign: "—",
+        serviceNumber: "KSOL-DG05",
+        status: "active",
+        unit: "Public Relations",
+        appointment: "Director General, Public Relations",
+        joinDate: "2026",
+        note: "Current Director General of Public Relations."
+    },
+
+    dgAdministrative: {
+        name: 'COL. "Golden"',
+        rank: "COL",
+        callsign: "—",
+        serviceNumber: "-",
+        status: "active",
+        unit: "Administrative Duties",
+        appointment: "Director General, Administrative Duties",
+        joinDate: "2026",
+        note: "Current Director General of Administrative Duties."
+    },
+
+
+    /* =====================================================
+       TRAINING COMMAND
+    ===================================================== */
+
     john: {
-        name: "John",
+        name: "N/A",
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0101",
@@ -37,10 +172,10 @@ const personnel = {
     },
 
     doe: {
-        name: "Doe",
+        name: "N/A",
         rank: "—",
         callsign: "—",
-        serviceNumber: "KSOL-0102",
+        serviceNumber: "-",
         status: "active",
         unit: "Training Command",
         appointment: "Adjutant, Aerial Training Command",
@@ -49,7 +184,7 @@ const personnel = {
     },
 
     lorem: {
-        name: "Lorem",
+        name: "N/A",
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0103",
@@ -61,7 +196,7 @@ const personnel = {
     },
 
     ipsum: {
-        name: "Ipsum",
+        name: "N/A",
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0104",
@@ -73,7 +208,7 @@ const personnel = {
     },
 
     ary: {
-        name: "Aryan",
+        name: 'COL. "Border"',
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0110",
@@ -85,7 +220,7 @@ const personnel = {
     },
 
     raine: {
-        name: "Raine",
+        name: 'COL. "Fuego"',
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0111",
@@ -97,7 +232,7 @@ const personnel = {
     },
 
     caleb: {
-        name: "Caleb",
+        name: "",
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0112",
@@ -108,11 +243,16 @@ const personnel = {
         note: ""
     },
 
+
+    /* =====================================================
+       RECRUITMENT COMMAND
+    ===================================================== */
+
     max: {
-        name: "Max",
+        name: 'COL. "Maverick"',
         rank: "—",
         callsign: "—",
-        serviceNumber: "KSOL-0201",
+        serviceNumber: "-",
         status: "active",
         unit: "Recruitment Command",
         appointment: "Recruiter",
@@ -121,7 +261,7 @@ const personnel = {
     },
 
     lewes: {
-        name: "Lewes",
+        name: 'CPT. "Dark"',
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0202",
@@ -133,7 +273,7 @@ const personnel = {
     },
 
     freddie: {
-        name: "Freddie",
+        name: "",
         rank: "—",
         callsign: "—",
         serviceNumber: "KSOL-0203",
@@ -144,92 +284,117 @@ const personnel = {
         note: ""
     },
 
+
+    /* =====================================================
+       PARACHUTE REGIMENT
+    ===================================================== */
+
     vex: {
-        name: "Vex",
+        name: 'COL. "Vex"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0301",
         status: "active",
+
+        /*
+            Vex belongs to 7 PARA.
+
+            However, his appointment is:
+
+                CO, Parachute Regiment
+        */
+
         unit: "7 PARA",
         appointment: "CO, Parachute Regiment",
+
         joinDate: "2026",
-        note: ""
+        note: "Regimental Commanding Officer; assigned to 7 PARA."
     },
 
+
+    /* =====================================================
+       7 PARA BATTALION
+    ===================================================== */
+
     vexa: {
-        name: "Vexa",
+        name: 'LTC. "Diabeto"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0302",
         status: "active",
         unit: "7 PARA",
-        appointment: "CO, 7th Para Battalion",
+        appointment: "CO, 7 Para Bn",
         joinDate: "2026",
         note: ""
     },
 
     dark: {
-        name: "Dark",
+        name: 'CPT. "Dark"',
         rank: "MAJ",
         callsign: "—",
         serviceNumber: "KSOL-0303",
         status: "active",
         unit: "7 PARA",
-        appointment: "Company Commander, Alpha Coy",
+        appointment: "Alpha Coy Cdr",
         joinDate: "2026",
         note: ""
     },
 
     bravo: {
-        name: "Bravo",
-        rank: "1LT",
+        name: '2LT. "Max"',
+        rank: "2LT",
         callsign: "—",
         serviceNumber: "KSOL-0304",
         status: "active",
         unit: "7 PARA",
-        appointment: "Platoon Commander, 1st Platoon",
+        appointment: "1st Platoon Cdr",
         joinDate: "2026",
         note: ""
     },
 
     border: {
-        name: "Border",
+        name: 'SSG. "Slowed"',
         rank: "SSG",
         callsign: "—",
         serviceNumber: "KSOL-0305",
         status: "active",
         unit: "7 PARA",
-        appointment: "Squad Leader, 1st Squad",
+        appointment: "1st Squad Leader",
         joinDate: "2026",
-        note: ""
+        note: "Operational element — 9 personnel including Squad Leader."
     },
 
     x: {
-        name: "X",
+        name: 'SGT. "Mos"',
         rank: "SSG",
         callsign: "—",
         serviceNumber: "KSOL-0306",
         status: "active",
         unit: "7 PARA",
-        appointment: "Squad Leader, 2nd Squad",
+        appointment: "2nd Squad Leader",
         joinDate: "2026",
         note: ""
     },
 
     y: {
-        name: "Y",
+        name: "N/A",
         rank: "SSG",
         callsign: "—",
         serviceNumber: "KSOL-0307",
         status: "active",
         unit: "7 PARA",
-        appointment: "Squad Leader, 3rd Squad",
+        appointment: "3rd Squad Leader",
         joinDate: "2026",
         note: ""
     },
 
+
+    /* =====================================================
+       OTHER UNITS
+    ===================================================== */
+
     z: {
-        name: "Z",
+        name: 'GEN. "Obi"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0401",
@@ -241,7 +406,7 @@ const personnel = {
     },
 
     a: {
-        name: "A",
+        name: 'COL. "Enoch"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0501",
@@ -253,9 +418,9 @@ const personnel = {
     },
 
     b: {
-        name: "B",
+        name: 'COL. "Rook"',
         rank: "COL",
-        callsign: "—",
+        callsign: "Rook",
         serviceNumber: "KSOL-0601",
         status: "active",
         unit: "AMC",
@@ -265,7 +430,7 @@ const personnel = {
     },
 
     c: {
-        name: "C",
+        name: 'COL. "NaCl"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0701",
@@ -277,7 +442,7 @@ const personnel = {
     },
 
     e: {
-        name: "E",
+        name: 'COL. "Maverick"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0801",
@@ -287,46 +452,126 @@ const personnel = {
         joinDate: "2026",
         note: ""
     }
+,
+
+
+    /* =====================================================
+       ADDITIONAL PERSONNEL — ADDED ROSTER RECORDS
+    ===================================================== */
+
+    // paraReg01: { name: 'MAJ. "Hawk"', rank: "MAJ", callsign: "—", serviceNumber: "KSOL-0310", status: "active", unit: "Parachute Regiment", appointment: "Regimental Staff", joinDate: "2026", note: "" },
+    // paraReg02: { name: 'CPT. "Raven"', rank: "CPT", callsign: "—", serviceNumber: "KSOL-0311", status: "active", unit: "Parachute Regiment", appointment: "Regimental Staff", joinDate: "2026", note: "" },
+    // paraReg03: { name: 'WO1. "Atlas"', rank: "WO1", callsign: "—", serviceNumber: "KSOL-0312", status: "active", unit: "Parachute Regiment", appointment: "Regimental Staff", joinDate: "2026", note: "" },
+
+    // para7_01: { name: 'MAJ. "Stone"', rank: "MAJ", callsign: "—", serviceNumber: "KSOL-0313", status: "active", unit: "7 PARA", appointment: "Battalion Staff", joinDate: "2026", note: "" },
+    // para7_02: { name: 'SSG. "Rook"', rank: "SSG", callsign: "—", serviceNumber: "KSOL-0314", status: "active", unit: "7 PARA", appointment: "Battalion Staff", joinDate: "2026", note: "" },
+    // para7_03: { name: 'SGT. "Nomad"', rank: "SGT", callsign: "—", serviceNumber: "KSOL-0315", status: "active", unit: "7 PARA", appointment: "Battalion Staff", joinDate: "2026", note: "" },
+
+    // alpha01: { name: 'CPL. "Viper"', rank: "CPL", callsign: "—", serviceNumber: "KSOL-0316", status: "active", unit: "7 PARA", appointment: "Alpha Coy", joinDate: "2026", note: "" },
+    // alpha02: { name: 'LCPL. "Raptor"', rank: "LCPL", callsign: "—", serviceNumber: "KSOL-0317", status: "active", unit: "7 PARA", appointment: "Alpha Coy", joinDate: "2026", note: "" },
+    // alpha03: { name: 'PTE. "Ghost"', rank: "PTE", callsign: "—", serviceNumber: "KSOL-0318", status: "active", unit: "7 PARA", appointment: "Alpha Coy", joinDate: "2026", note: "" },
+
+    platoon1_01: { name: '"Border"', rank: "COL", callsign: "Border", serviceNumber: "KS-2602", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "09 Aug 2026", note: "" },
+    platoon1_02: { name: '"Golden"', rank: "COL", callsign: "Golden", serviceNumber: "KS-2617", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "26 Jul 2026", note: "" },
+    platoon1_03: { name: '"Coolguy"', rank: "LGN", callsign: "Coolguy", serviceNumber: "KS-2627", status: "inactive", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "21 Jul 2026", note: "" },
+    platoon1_04: { name: '"Cats"', rank: "LGN", callsign: "Cats", serviceNumber: "KS-2628", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "10 Aug 2026", note: "" },
+    platoon1_05: { name: '"Templar"', rank: "LGN", callsign: "Templar", serviceNumber: "KS-2632", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "13 Aug 2026", note: "" },
+    platoon1_06: { name: '"Rysea"', rank: "LGN", callsign: "Rysea", serviceNumber: "KS-2634", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "02 Sep 2026", note: "" },
+    platoon1_07: { name: '"Sansi"', rank: "LGN", callsign: "Sansi", serviceNumber: "KS-2620", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "31 Aug 2026", note: "" },
+    platoon1_08: { name: '"Hotdog"', rank: "LGN", callsign: "Hotdog", serviceNumber: "KS-2633", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "09 Aug 2026", note: "" },
+    platoon1_09: { name: '"Fallen"', rank: "LGN", callsign: "Fallen", serviceNumber: "KS-2610", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "10 Aug 2026", note: "" },
+
+
+    // bravo01: { name: 'CPT. "Archer"', rank: "CPT", callsign: "—", serviceNumber: "KSOL-0322", status: "active", unit: "7 PARA", appointment: "Bravo Coy", joinDate: "2026", note: "" },
+    // bravo02: { name: 'SGT. "Kodiak"', rank: "SGT", callsign: "—", serviceNumber: "KSOL-0323", status: "active", unit: "7 PARA", appointment: "Bravo Coy", joinDate: "2026", note: "" },
+    // bravo03: { name: 'PTE. "Ranger"', rank: "PTE", callsign: "—", serviceNumber: "KSOL-0324", status: "active", unit: "7 PARA", appointment: "Bravo Coy", joinDate: "2026", note: "" },
+
+    sis01: { name: '"Wolf"', rank: "LTG", callsign: "Wolf", serviceNumber: "KS-2611", status: "loa", unit: "SIS", appointment: "Operator", joinDate: "29 Jul 2026", note: "" },
+    sis02: { name: 'SSG. "Cipher"', rank: "SSG", callsign: "—", serviceNumber: "KSOL-0403", status: "active", unit: "SIS", appointment: "Operator", joinDate: "2026", note: "" },
+    sis03: { name: 'CPL. "Shade"', rank: "CPL", callsign: "—", serviceNumber: "KSOL-0404", status: "active", unit: "SIS", appointment: "Operator", joinDate: "2026", note: "" },
+
+    aac01: { name: '"Hitman"', rank: "LGN", callsign: "Hitman", serviceNumber: "KS-2607", status: "active", unit: "AAC", appointment: "Pilot", joinDate: "16 Aug2026", note: "" },
+    aac02: { name: '"Bravo 0-6"', rank: "LGN", callsign: "Bravo 0-6", serviceNumber: "KS-2626", status: "active", unit: "AAC", appointment: "-", joinDate: "02 Aug 2026", note: "" },
+    aac03: { name: 'WO1. "Rotor"', rank: "WO1", callsign: "—", serviceNumber: "KSOL-0504", status: "active", unit: "AAC", appointment: "Aircrew", joinDate: "2026", note: "" },
+
+    amc01: { name: '"Warthog"', rank: "LGN", callsign: "Warthog", serviceNumber: "KS-2608", status: "active", unit: "AMC", appointment: "Medic", joinDate: "09 Aug 2026", note: "" },
+    amc02: { name: '"Felon"', rank: "LGN", callsign: "Felon", serviceNumber: "KS-2624", status: "active", unit: "AMC", appointment: "Medic", joinDate: "22 Aug 2026", note: "" },
+    amc03: { name: '"###"', rank: "SGT", callsign: "—", serviceNumber: "KSOL-0604", status: "active", unit: "AMC", appointment: "Medic", joinDate: "2026", note: "" },
+
+    recon01: { name: '"Leviathan"', rank: "LGN", callsign: "Leviathan", serviceNumber: "KS-2619", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "04 Aug 2026", note: "" },
+    recon02: { name: '"Silentdeath"', rank: "LGN", callsign: "Silentdeath", serviceNumber: "KS-2621", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "10 Sep 2026", note: "" },
+    recon03: { name: '"Councillor Jasko"', rank: "COL", callsign: "Councillor Jasko", serviceNumber: "KS-2618", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "08 Aug 2026", note: "" },
+    recon04: { name: '"Albert"', rank: "LGN", callsign: "Albert", serviceNumber: "KS-2622", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "02 Sep 2026", note: "" },
+    recon05: { name: '"Newmate"', rank: "LGN", callsign: "Newmate", serviceNumber: "KS-2623", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "05 Sep 2026", note: "" },
+    recon06: { name: '"VelvetVampire"', rank: "LGN", callsign: "VelvetVampire", serviceNumber: "KS-2631", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "14 Sep 2026", note: "" },
+
+    asc01: { name: '"Fuego"', rank: "COL", callsign: "Fuego", serviceNumber: "KS-2625", status: "active", unit: "ASC", appointment: "-", joinDate: "03 Aug 2026", note: "" },
+    asc02: { name: '"Dachi"', rank: "LGN", callsign: "Dachi", serviceNumber: "KS-2629", status: "active", unit: "ASC", appointment: "-", joinDate: "02 Sep 2026", note: "" },
+    asc03: { name: '"Xx"', rank: "LGN", callsign: "Xx", serviceNumber: "KS-2630", status: "active", unit: "ASC", appointment: "-", joinDate: "09 Aug 2026", note: "" },
+
+    trail01: {name: 'GEN. "Obi"', rank: "GEN", callsign: "Obi", serviceNumber: "KS-2601", status: "active", unit: "SIS", appointment: "Commander, KSOL", joinDate: "N/A"},
+    trail02: {name: 'COL. "Border"', rank: "COL", callsign: "Obi", serviceNumber: "KS-2602", status: "active", unit: "7th PARA BN", appointment: "DG Internal Affairs", joinDate: "N/A"},
+    trail03: {name: 'CPT. "Dark"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
+
+    rge01: {name: 'COL. "NaCl"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
+
+    content01: {name: 'COL. "Fuego"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
 
 };
 
 
-const units = {
+/* =========================================================
+   ORGANIZATIONAL STRUCTURE
+   =========================================================
 
-    para: [
-        "vex",
-        "vexa",
-        "dark",
-        "bravo",
-        "border",
-        "x",
-        "y"
-    ],
+   TYPES:
 
-    sis: [
-        "z"
-    ],
+       category
+       directorate
+       unit
+       appointment
 
-    aac: [
-        "a"
-    ],
 
-    amc: [
-        "b"
-    ],
+   UNIT STRUCTURE:
 
-    recon: [
-        "c"
-    ],
+       unit
+       ├── command
+       ├── children
+       └── personnel
 
-    asc: [
-        "e"
-    ]
 
-};
+   This makes the roster future-proof.
+
+   Example:
+
+       Parachute Regiment
+       ├── CO, Parachute Regiment
+       │
+       ├── 7 Para Bn
+       │   ├── CO, 7 Para Bn
+       │   ├── Alpha Coy
+       │   │   ├── Alpha Coy Cdr
+       │   │   ├── 1st Platoon
+       │   │   │   ├── 1st Platoon Cdr
+       │   │   │   ├── 1st Squad Leader
+       │   │   │   ├── 2nd Squad Leader
+       │   │   │   └── 3rd Squad Leader
+       │   │   └── 2nd Platoon
+       │   │       ├── 1st Squad Leader
+       │   │       ├── 2nd Squad Leader
+       │   │       └── 3rd Squad Leader
+       │   └── Bravo Coy
+       │
+       └── 12 Para Bn
+           ...
+*/
 
 
 const roster = [
+
+    /* =====================================================
+       HQ
+    ===================================================== */
 
     {
         type: "category",
@@ -350,17 +595,31 @@ const roster = [
     },
 
 
+    /* =====================================================
+       DIRECTORATES
+    ===================================================== */
+
     {
         type: "category",
         title: "Directorates",
 
         children: [
 
+            /* =============================================
+               TRAINING COMMAND
+            ============================================= */
+
             {
                 type: "directorate",
-                title: "DG Training Command",
+                title: "Training Command",
 
                 children: [
+
+                    {
+                        type: "appointment",
+                        title: "Director General, Training Command",
+                        personnel: ["dgTraining"]
+                    },
 
                     {
                         type: "appointment",
@@ -400,11 +659,21 @@ const roster = [
             },
 
 
+            /* =============================================
+               RECRUITMENT COMMAND
+            ============================================= */
+
             {
                 type: "directorate",
-                title: "DG Recruitment Command",
+                title: "Recruitment Command",
 
                 children: [
+
+                    {
+                        type: "appointment",
+                        title: "Director General, Recruitment Command",
+                        personnel: ["dgRecruitment"]
+                    },
 
                     {
                         type: "appointment",
@@ -420,193 +689,561 @@ const roster = [
             },
 
 
+            /* =============================================
+               MILITARY OPERATIONS
+            ============================================= */
+
             {
                 type: "directorate",
-                title: "DG Military Operations",
+                title: "Military Operations",
 
                 children: [
 
                     {
+                        type: "appointment",
+                        title: "Director General, Military Operations",
+                        personnel: ["dgOperations"]
+                    },
+
+
+                    /* =====================================
+                       PARACHUTE REGIMENT
+                    ===================================== */
+
+                    {
                         type: "unit",
+
                         id: "para",
-                        title: "7th Para Battalion",
-                        abbreviation: "7 PARA",
+
+                        title: "Parachute Regiment",
+
+                        abbreviation: "PARA REGT",
+
+
+                        /*
+                            REGIMENTAL COMMAND
+
+                            This is an appointment.
+
+                            It is NOT the parent of 7 Para Bn.
+                        */
 
                         command: {
 
                             type: "appointment",
-                            title: "CO, Parachute Regiment",
-                            personnel: ["vex"],
 
-                            children: [
+                            title: "CO, Parachute Regiment",
+
+                            personnel: [
+                                "vex"
+                            ]
+
+                        },
+
+
+                        /*
+                            REGIMENTAL SUBORDINATE UNITS
+
+                            Battalions go here.
+
+                            7 PARA is currently the only battalion.
+
+                            12 PARA is deliberately NOT included yet.
+                        */
+
+                        children: [
+
+                            /* =================================
+                               7 PARA BATTALION
+                            ================================= */
+
+                            {
+                                type: "unit",
+
+                                id: "para7",
+
+                                title: "7 Para Bn",
+
+                                abbreviation: "7 PARA",
+
+
+                                /* -----------------------------
+                                   BATTALION COMMAND
+                                ----------------------------- */
+
+                                command: {
+
+                                    type: "appointment",
+
+                                    title: "CO, 7 Para Bn",
+
+                                    personnel: [
+                                        "vexa"
+                                    ]
+
+                                },
+
+
+                                /* -----------------------------
+                                   COMPANIES
+                                ----------------------------- */
+
+                                children: [
+
+                                    /* =============================
+                                       ALPHA COMPANY
+                                    ============================= */
+
+                                    {
+                                        type: "unit",
+
+                                        id: "alpha",
+
+                                        title: "Alpha Coy",
+
+                                        abbreviation: "ALPHA",
+
+
+                                        command: {
+
+                                            type: "appointment",
+
+                                            title: "Alpha Coy Cdr",
+
+                                            personnel: [
+                                                "dark"
+                                            ]
+
+                                        },
+
+
+                                        children: [
+
+                                            /* =========================
+                                               1ST PLATOON
+                                            ========================= */
+
+                                            {
+                                                type: "unit",
+
+                                                id: "platoon1",
+
+                                                title: "1st Platoon",
+
+                                                abbreviation: "1 PL",
+
+
+                                                command: {
+
+                                                    type: "appointment",
+
+                                                    title: "1st Platoon Cdr",
+
+                                                    personnel: [
+                                                        "bravo"
+                                                    ]
+
+                                                },
+
+
+                                                children: [
+
+                                                    {
+                                                        type: "appointment",
+
+                                                        title: "1st Squad Leader",
+
+                                                        personnel: [
+                                                            "border"
+                                                        ]
+
+                                                    },
+
+                                                    {
+                                                        type: "appointment",
+
+                                                        title: "2nd Squad Leader",
+
+                                                        personnel: [
+                                                            "x"
+                                                        ]
+
+                                                    },
+
+                                                    {
+                                                        type: "appointment",
+
+                                                        title: "3rd Squad Leader",
+
+                                                        personnel: [
+                                                            "y"
+                                                        ]
+
+                                                    }
+
+                                                ],
+
+
+                                                /*
+                                                    PERSONNEL DIRECTLY
+                                                    ASSIGNED TO 1ST PLATOON.
+
+                                                    These are NOT holding
+                                                    one of the appointments
+                                                    above.
+
+                                                    Add them here later:
+
+                                                        personnel: [
+                                                            "person1",
+                                                            "person2"
+                                                        ]
+                                                */
+
+                                                personnel: ["platoon1_01", "platoon1_02", "platoon1_03", "platoon1_04", "platoon1_05", "platoon1_06" ,"platoon1_07", "platoon1_08", "platoon1_09"]
+
+                                            },
+
+
+                                                                                        /* 2ND PLATOON — HIDDEN FOR NOW */
+
+
+
+                                        ],
+
+
+                                        /*
+                                            Personnel directly assigned
+                                            to Alpha Company.
+                                        */
+
+                                        personnel: ["alpha01", "alpha02", "alpha03"]
+
+                                    },
+
+
+                                    /* =============================
+                                       BRAVO COMPANY
+                                    ============================= */
+
+                                    {
+                                        type: "unit",
+
+                                        id: "bravo",
+
+                                        title: "Bravo Coy",
+
+                                        abbreviation: "BRAVO",
+
+                                        command: null,
+
+                                        children: [],
+
+                                        personnel: ["bravo01", "bravo02", "bravo03"]
+
+                                    }
+
+                                ],
+
+
+                                /*
+                                    Personnel directly assigned to
+                                    7 Para Bn but not placed in a
+                                    subordinate company.
+                                */
+
+                                personnel: ["para7_01", "para7_02", "para7_03"]
+
+                            }
+
+                            /*
+                                =================================================
+                                FUTURE 12 PARA BN
+                                =================================================
+
+                                When you want to add 12 Para Bn, put it HERE,
+                                beside para7.
+
+                                Example:
 
                                 {
-                                    type: "appointment",
-                                    title: "CO, 7th Para Battalion",
-                                    personnel: ["vexa"],
+                                    type: "unit",
+
+                                    id: "para12",
+
+                                    title: "12 Para Bn",
+
+                                    abbreviation: "12 PARA",
+
+                                    command: {
+                                        type: "appointment",
+                                        title: "CO, 12 Para Bn",
+                                        personnel: []
+                                    },
 
                                     children: [
+                                        ...
+                                    ],
 
-                                        {
-                                            type: "appointment",
-                                            title: "Company Commander, Alpha Coy",
-                                            note: "Sanctioned strength: 2 platoons",
-                                            personnel: ["dark"],
-
-                                            children: [
-
-                                                {
-                                                    type: "appointment",
-                                                    title: "Platoon Commander, 1st Platoon",
-                                                    note: "Sanctioned strength: 3 Squad Leaders",
-                                                    personnel: ["bravo"],
-
-                                                    children: [
-
-                                                        {
-                                                            type: "appointment",
-                                                            title: "Squad Leader, 1st Squad",
-                                                            note: "Operational element — 9 personnel including Squad Leader",
-                                                            personnel: ["border"]
-                                                        },
-
-                                                        {
-                                                            type: "appointment",
-                                                            title: "Squad Leader, 2nd Squad",
-                                                            personnel: ["x"]
-                                                        },
-
-                                                        {
-                                                            type: "appointment",
-                                                            title: "Squad Leader, 3rd Squad",
-                                                            personnel: ["y"]
-                                                        }
-
-                                                    ]
-                                                }
-
-                                            ]
-                                        }
-
-                                    ]
+                                    personnel: []
                                 }
 
-                            ]
-                        }
+                                This means:
+
+                                Parachute Regiment
+                                ├── CO, Parachute Regiment
+                                ├── 7 Para Bn
+                                └── 12 Para Bn
+
+                                NOT:
+
+                                Parachute Regiment
+                                └── CO, Parachute Regiment
+                                    └── 12 Para Bn
+                            */
+                        ],
+
+
+                        /*
+                            Personnel directly assigned to the
+                            Parachute Regiment itself.
+
+                            Currently none.
+                        */
+
+                        personnel: ["paraReg01", "paraReg02", "paraReg03"]
+
                     },
 
 
+                    /* =====================================
+                       SPECIAL INSERTION SERVICE
+                    ===================================== */
+
                     {
                         type: "unit",
+
                         id: "sis",
+
                         title: "Special Insertion Service",
+
                         abbreviation: "SIS",
 
                         command: {
+
                             type: "appointment",
+
                             title: "CO, Special Insertion Service",
+
                             personnel: ["z"]
-                        }
+
+                        },
+
+                        children: [],
+
+                        personnel: ["sis01"]
+
                     },
 
 
+                    /* =====================================
+                       ARMY AVIATION CORPS
+                    ===================================== */
+
                     {
                         type: "unit",
+
                         id: "aac",
+
                         title: "Army Aviation Corps",
+
                         abbreviation: "AAC",
 
                         command: {
+
                             type: "appointment",
+
                             title: "CO, Army Aviation Corps",
+
                             personnel: ["a"]
-                        }
+
+                        },
+
+                        children: [],
+
+                        personnel: ["aac01", "aac02"]
+
                     },
 
 
+                    /* =====================================
+                       ARMY MEDICAL CORPS
+                    ===================================== */
+
                     {
                         type: "unit",
+
                         id: "amc",
+
                         title: "Army Medical Corps",
+
                         abbreviation: "AMC",
 
                         command: {
+
                             type: "appointment",
+
                             title: "CO, Army Medical Corps",
+
                             personnel: ["b"]
-                        }
+
+                        },
+
+                        children: [],
+
+                        personnel: ["amc01", "amc02"]
+
                     },
 
 
+                    /* =====================================
+                       RECON
+                    ===================================== */
+
                     {
                         type: "unit",
+
                         id: "recon",
+
                         title: "Recon Group",
+
                         abbreviation: "RECON",
 
                         command: {
+
                             type: "appointment",
+
                             title: "CO, Recon Group",
+
                             personnel: ["c"]
-                        }
+
+                        },
+
+                        children: [],
+
+                        personnel: ["recon01", "recon02", "recon03", "recon04", "recon05", "recon06"]
+
                     },
 
+
+                    /* =====================================
+                       ARMY SERVICE CORPS
+                    ===================================== */
 
                     {
                         type: "unit",
+
                         id: "asc",
+
                         title: "Army Service Corps",
+
                         abbreviation: "ASC",
 
                         command: {
+
                             type: "appointment",
+
                             title: "CO, Army Service Corps",
+
                             personnel: ["e"]
-                        }
+
+                        },
+
+                        children: [],
+
+                        personnel: ["asc01", "asc02", "asc03"]
+
                     }
 
                 ]
             },
 
 
+            /* =============================================
+               INTERNAL AFFAIRS
+            ============================================= */
+
             {
                 type: "directorate",
-                title: "DG Internal Affairs",
+                title: "Internal Affairs",
 
                 children: [
 
                     {
                         type: "appointment",
-                        title: "Trial Jury"
-                    }
-
-                ]
-            },
-
-
-            {
-                type: "directorate",
-                title: "DG Public Relations",
-
-                children: [
-
-                    {
-                        type: "appointment",
-                        title: "RGE Team"
+                        title: "Director General, Internal Affairs",
+                        personnel: ["dgInternal"]
                     },
 
                     {
                         type: "appointment",
-                        title: "Content Team"
+                        title: "Trial Jury",
+                        personnel: ["trail01", "trail02", "trail03"]
                     }
 
                 ]
             },
 
 
+            /* =============================================
+               PUBLIC RELATIONS
+            ============================================= */
+
             {
                 type: "directorate",
-                title: "DG Administrative Duties"
+                title: "Public Relations",
+
+                children: [
+
+                    {
+                        type: "appointment",
+                        title: "Director General, Public Relations",
+                        personnel: ["dgPublicRelations"]
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "RGE Team",
+                        personnel: ["rge01"]
+                    },
+
+                    {
+                        type: "appointment",
+                        title: "Content Team",
+                        personnel: ["content01"]
+                    }
+
+                ]
+            },
+
+
+            /* =============================================
+               ADMINISTRATIVE DUTIES
+            ============================================= */
+
+            {
+                type: "directorate",
+                title: "Administrative Duties",
+
+                children: [
+
+                    {
+                        type: "appointment",
+                        title: "Director General, Administrative Duties",
+                        personnel: ["dgAdministrative"]
+                    }
+
+                ]
             }
 
         ]
@@ -617,20 +1254,19 @@ const roster = [
 
 /* =========================================================
    STATE
-   ========================================================= */
+========================================================= */
 
 let currentSearch = "";
 let currentStatus = "all";
 
 
 /* =========================================================
-   SEARCH HELPERS
-   ========================================================= */
+   PERSON SEARCH
+========================================================= */
 
 function personText(person) {
 
     return [
-
         person.name,
         person.rank,
         person.callsign,
@@ -640,7 +1276,6 @@ function personText(person) {
         person.appointment,
         person.joinDate,
         person.note
-
     ]
         .filter(Boolean)
         .join(" ")
@@ -657,6 +1292,11 @@ function matchesPerson(id) {
         return false;
     }
 
+
+    /*
+        Status filter.
+    */
+
     if (
         currentStatus !== "all" &&
         person.status !== currentStatus
@@ -664,28 +1304,22 @@ function matchesPerson(id) {
         return false;
     }
 
-    if (!currentSearch) {
-        return true;
-    }
 
-    return personText(person)
-        .includes(currentSearch);
+    /*
+        Search filter.
+    */
 
-}
-
-
-function countVisiblePeople() {
-
-    return Object.keys(personnel)
-        .filter(matchesPerson)
-        .length;
+    return (
+        !currentSearch ||
+        personText(person).includes(currentSearch)
+    );
 
 }
 
 
 /* =========================================================
    TREE SEARCH
-   ========================================================= */
+========================================================= */
 
 function nodeContainsVisiblePerson(node) {
 
@@ -693,28 +1327,47 @@ function nodeContainsVisiblePerson(node) {
         return false;
     }
 
+
     if (
-        node.personnel &&
-        node.personnel.some(matchesPerson)
+        (node.personnel || [])
+            .some(matchesPerson)
     ) {
         return true;
     }
 
-    return Boolean(
-        node.children &&
-        node.children.some(
-            nodeContainsVisiblePerson
-        )
-    );
+
+    if (
+        node.command &&
+        (node.command.personnel || [])
+            .some(matchesPerson)
+    ) {
+        return true;
+    }
+
+
+    return (
+        node.children || []
+    ).some(nodeContainsVisiblePerson);
 
 }
 
+
+/*
+    A node remains visible if:
+
+        - no filter is active
+        - its own title matches
+        - its own personnel matches
+        - its command personnel matches
+        - one of its children matches
+*/
 
 function nodeMatchesSearch(node) {
 
     if (!node) {
         return false;
     }
+
 
     if (
         !currentSearch &&
@@ -723,17 +1376,19 @@ function nodeMatchesSearch(node) {
         return true;
     }
 
-    const titleMatches =
+
+    const title =
         (node.title || "")
-            .toLowerCase()
-            .includes(currentSearch);
+            .toLowerCase();
+
 
     if (
-        titleMatches &&
-        currentStatus === "all"
+        currentSearch &&
+        title.includes(currentSearch)
     ) {
         return true;
     }
+
 
     return nodeContainsVisiblePerson(node);
 
@@ -742,7 +1397,7 @@ function nodeMatchesSearch(node) {
 
 /* =========================================================
    PERSONNEL ENTRY
-   ========================================================= */
+========================================================= */
 
 function createPersonnelEntry(id) {
 
@@ -764,11 +1419,18 @@ function createPersonnelEntry(id) {
     entry.className =
         "personnel-entry";
 
+
     entry.setAttribute(
         "aria-label",
-        `Open personnel record for ${person.name}`
+        `Open personnel record for ${
+            person.name || "personnel"
+        }`
     );
 
+
+    /* ---------------------------------------------
+       INDEX
+    --------------------------------------------- */
 
     const index =
         document.createElement("span");
@@ -780,6 +1442,10 @@ function createPersonnelEntry(id) {
         "—";
 
 
+    /* ---------------------------------------------
+       RANK
+    --------------------------------------------- */
+
     const rank =
         document.createElement("span");
 
@@ -789,6 +1455,10 @@ function createPersonnelEntry(id) {
     rank.textContent =
         person.rank || "—";
 
+
+    /* ---------------------------------------------
+       NAME
+    --------------------------------------------- */
 
     const nameBlock =
         document.createElement("div");
@@ -823,6 +1493,10 @@ function createPersonnelEntry(id) {
     );
 
 
+    /* ---------------------------------------------
+       APPOINTMENT
+    --------------------------------------------- */
+
     const appointment =
         document.createElement("div");
 
@@ -842,6 +1516,10 @@ function createPersonnelEntry(id) {
     );
 
 
+    /* ---------------------------------------------
+       STATUS
+    --------------------------------------------- */
+
     const status =
         document.createElement("span");
 
@@ -856,6 +1534,10 @@ function createPersonnelEntry(id) {
             "inactive"
         ).toUpperCase();
 
+
+    /* ---------------------------------------------
+       COMPLETE ROW
+    --------------------------------------------- */
 
     entry.append(
         index,
@@ -879,12 +1561,20 @@ function createPersonnelEntry(id) {
 
 /* =========================================================
    PERSONNEL LIST
-   ========================================================= */
+========================================================= */
 
 function renderPersonnelList(
     ids,
     container
 ) {
+
+    if (
+        !ids ||
+        !ids.length
+    ) {
+        return null;
+    }
+
 
     const list =
         document.createElement("div");
@@ -896,25 +1586,33 @@ function renderPersonnelList(
     let count = 0;
 
 
-    ids.forEach(id => {
+    ids.forEach(
+        id => {
 
-        const entry =
-            createPersonnelEntry(id);
+            const entry =
+                createPersonnelEntry(id);
 
-        if (!entry) {
-            return;
+
+            if (!entry) {
+                return;
+            }
+
+
+            count++;
+
+
+            entry.querySelector(
+                ".personnel-index"
+            ).textContent =
+                String(count).padStart(2, "0");
+
+
+            list.appendChild(
+                entry
+            );
+
         }
-
-        count++;
-
-        entry.querySelector(
-            ".personnel-index"
-        ).textContent =
-            String(count).padStart(2, "0");
-
-        list.appendChild(entry);
-
-    });
+    );
 
 
     if (!count) {
@@ -922,7 +1620,10 @@ function renderPersonnelList(
     }
 
 
-    container.appendChild(list);
+    container.appendChild(
+        list
+    );
+
 
     return list;
 
@@ -930,8 +1631,8 @@ function renderPersonnelList(
 
 
 /* =========================================================
-   COMMAND TREE
-   ========================================================= */
+   COMMAND NODE
+========================================================= */
 
 function renderCommandNode(
     node,
@@ -939,7 +1640,10 @@ function renderCommandNode(
     depth = 0
 ) {
 
-    if (!node) {
+    if (
+        !node ||
+        !nodeMatchesSearch(node)
+    ) {
         return;
     }
 
@@ -947,9 +1651,18 @@ function renderCommandNode(
     const wrapper =
         document.createElement("div");
 
-    wrapper.className =
-        `roster-node roster-depth-${depth}`;
 
+    wrapper.className =
+        [
+            "roster-node",
+            `roster-depth-${depth}`,
+            `roster-type-${node.type}`
+        ].join(" ");
+
+
+    /* ---------------------------------------------
+       HEADER
+    --------------------------------------------- */
 
     const header =
         document.createElement("div");
@@ -964,19 +1677,55 @@ function renderCommandNode(
     title.className =
         "roster-node-title";
 
-    title.textContent =
-        node.title || "—";
+
+    /*
+        DG appointments are intentionally bold.
+    */
+
+    if (
+        node.title &&
+        node.title.startsWith(
+            "Director General"
+        )
+    ) {
+
+        const strong =
+            document.createElement("strong");
+
+        strong.className =
+            "roster-node-title";
+
+        strong.textContent =
+            node.title;
+
+        header.appendChild(
+            strong
+        );
+
+    } else {
+
+        title.textContent =
+            node.title || "—";
+
+        header.appendChild(
+            title
+        );
+
+    }
 
 
-    header.appendChild(title);
-
+    /* ---------------------------------------------
+       PERSONNEL
+    --------------------------------------------- */
 
     const visiblePeople =
         (node.personnel || [])
             .filter(matchesPerson);
 
 
-    if (visiblePeople.length) {
+    if (
+        visiblePeople.length
+    ) {
 
         const people =
             document.createElement("span");
@@ -984,23 +1733,34 @@ function renderCommandNode(
         people.className =
             "roster-node-personnel";
 
+
         people.textContent =
             `— ${
                 visiblePeople
                     .map(
                         id =>
-                            personnel[id].name
+                            personnel[id]?.name ||
+                            "—"
                     )
                     .join(", ")
             }`;
 
-        header.appendChild(people);
+
+        header.appendChild(
+            people
+        );
 
     }
 
 
-    wrapper.appendChild(header);
+    wrapper.appendChild(
+        header
+    );
 
+
+    /* ---------------------------------------------
+       NOTE
+    --------------------------------------------- */
 
     if (node.note) {
 
@@ -1013,31 +1773,39 @@ function renderCommandNode(
         note.textContent =
             node.note;
 
-        wrapper.appendChild(note);
+        wrapper.appendChild(
+            note
+        );
 
     }
 
 
-    const visibleChildren =
+    /* ---------------------------------------------
+       CHILDREN
+    --------------------------------------------- */
+
+    const children =
         (node.children || [])
             .filter(nodeMatchesSearch);
 
 
-    if (visibleChildren.length) {
+    if (
+        children.length
+    ) {
 
-        const children =
+        const childContainer =
             document.createElement("div");
 
-        children.className =
+        childContainer.className =
             "roster-node-children";
 
 
-        visibleChildren.forEach(
+        children.forEach(
             child => {
 
-                renderCommandNode(
+                renderNode(
                     child,
-                    children,
+                    childContainer,
                     depth + 1
                 );
 
@@ -1045,31 +1813,290 @@ function renderCommandNode(
         );
 
 
-        wrapper.appendChild(children);
+        wrapper.appendChild(
+            childContainer
+        );
 
     }
 
 
-    container.appendChild(wrapper);
+    container.appendChild(
+        wrapper
+    );
 
 }
 
 
 /* =========================================================
-   UNIT
-   ========================================================= */
+   GENERIC NODE
+========================================================= */
+
+function renderNode(
+    node,
+    container,
+    depth = 0
+) {
+
+    if (
+        !nodeMatchesSearch(node)
+    ) {
+        return;
+    }
+
+
+    /*
+        UNIT
+    */
+
+    if (
+        node.type === "unit"
+    ) {
+
+        renderUnit(
+            node,
+            container,
+            depth
+        );
+
+        return;
+    }
+
+
+    /*
+        CATEGORY / DIRECTORATE /
+        APPOINTMENT
+    */
+
+    const wrapper =
+        document.createElement("div");
+
+
+    wrapper.className =
+        [
+            "roster-node",
+            `roster-depth-${depth}`,
+            `roster-type-${node.type}`
+        ].join(" ");
+
+
+    /* ---------------------------------------------
+       HEADER
+    --------------------------------------------- */
+
+    const header =
+        document.createElement("div");
+
+    header.className =
+        "roster-node-header";
+
+
+    const title =
+        document.createElement("span");
+
+    title.className =
+        "roster-node-title";
+
+
+    /*
+        DG appointments are bold.
+    */
+
+    if (
+        node.title &&
+        node.title.startsWith(
+            "Director General"
+        )
+    ) {
+
+        const strong =
+            document.createElement("strong");
+
+        strong.className =
+            "roster-node-title";
+
+        strong.textContent =
+            node.title;
+
+        header.appendChild(
+            strong
+        );
+
+    } else {
+
+        title.textContent =
+            node.title || "—";
+
+        header.appendChild(
+            title
+        );
+
+    }
+
+
+    /* ---------------------------------------------
+       PERSONNEL
+    --------------------------------------------- */
+
+    const visiblePeople =
+        (node.personnel || [])
+            .filter(matchesPerson);
+
+
+    if (
+        visiblePeople.length
+    ) {
+
+        const people =
+            document.createElement("span");
+
+        people.className =
+            "roster-node-personnel";
+
+
+        people.textContent =
+            `— ${
+                visiblePeople
+                    .map(
+                        id =>
+                            personnel[id]?.name ||
+                            "—"
+                    )
+                    .join(", ")
+            }`;
+
+
+        header.appendChild(
+            people
+        );
+
+    }
+
+
+    wrapper.appendChild(
+        header
+    );
+
+
+    /* ---------------------------------------------
+       NOTE
+    --------------------------------------------- */
+
+    if (node.note) {
+
+        const note =
+            document.createElement("div");
+
+        note.className =
+            "roster-node-note";
+
+        note.textContent =
+            node.note;
+
+        wrapper.appendChild(
+            note
+        );
+
+    }
+
+
+    /* ---------------------------------------------
+       CHILDREN
+    --------------------------------------------- */
+
+    const children =
+        (node.children || [])
+            .filter(nodeMatchesSearch);
+
+
+    if (
+        children.length
+    ) {
+
+        const childContainer =
+            document.createElement("div");
+
+        childContainer.className =
+            "roster-node-children";
+
+
+        children.forEach(
+            child => {
+
+                renderNode(
+                    child,
+                    childContainer,
+                    depth + 1
+                );
+
+            }
+        );
+
+
+        wrapper.appendChild(
+            childContainer
+        );
+
+    }
+
+
+    container.appendChild(
+        wrapper
+    );
+
+}
+
+
+/* =========================================================
+   UNIT TITLE MATCH
+========================================================= */
+
+function nodeTitleMatches(node) {
+
+    if (
+        !node ||
+        !currentSearch
+    ) {
+        return false;
+    }
+
+
+    return (
+        node.title || ""
+    )
+        .toLowerCase()
+        .includes(
+            currentSearch
+        );
+
+}
+
+
+/* =========================================================
+   UNIT RENDERER
+========================================================= */
 
 function renderUnit(
     unit,
-    container
+    container,
+    depth = 0
 ) {
+
+    if (!unit) {
+        return;
+    }
+
 
     const section =
         document.createElement("section");
 
+
     section.className =
         "roster-subunit";
 
+
+    /* ---------------------------------------------
+       UNIT HEADING
+    --------------------------------------------- */
 
     const heading =
         document.createElement("div");
@@ -1084,189 +2111,122 @@ function renderUnit(
     title.className =
         "subunit-title";
 
+
     title.textContent =
-        `${unit.abbreviation} / ${unit.title}`;
+        unit.abbreviation
+            ? `${unit.abbreviation} / ${unit.title}`
+            : unit.title;
 
 
-    heading.appendChild(title);
+    heading.appendChild(
+        title
+    );
 
-    section.appendChild(heading);
 
+    section.appendChild(
+        heading
+    );
+
+
+    /* ---------------------------------------------
+       UNIT CONTENT
+    --------------------------------------------- */
+
+    const commandTree =
+        document.createElement("div");
+
+    commandTree.className =
+        "unit-command-tree";
+
+
+    /* ---------------------------------------------
+       UNIT COMMAND APPOINTMENT
+    --------------------------------------------- */
 
     if (
         unit.command &&
         nodeMatchesSearch(unit.command)
     ) {
 
-        const command =
-            document.createElement("div");
-
-        command.className =
-            "unit-command-tree";
-
-
         renderCommandNode(
             unit.command,
-            command
+            commandTree,
+            depth
         );
-
-
-        section.appendChild(command);
 
     }
 
 
-    renderPersonnelList(
-        units[unit.id] || [],
-        section
+    /* ---------------------------------------------
+       CHILD UNITS
+    --------------------------------------------- */
+
+    const visibleChildren =
+        (unit.children || [])
+            .filter(nodeMatchesSearch);
+
+
+    visibleChildren.forEach(
+        child => {
+
+            renderNode(
+                child,
+                commandTree,
+                depth + 1
+            );
+
+        }
     );
 
 
     if (
+        commandTree.children.length
+    ) {
+
+        section.appendChild(
+            commandTree
+        );
+
+    }
+
+
+    /* ---------------------------------------------
+       DIRECT UNIT PERSONNEL
+    --------------------------------------------- */
+
+    renderPersonnelList(
+        unit.personnel || [],
+        section
+    );
+
+
+    /*
+        Keep the unit visible if its title itself
+        matches the search.
+    */
+
+    if (
+        section.querySelector(
+            ".roster-node"
+        ) ||
         section.querySelector(
             ".personnel-list"
         ) ||
-        section.querySelector(
-            ".roster-node"
-        )
+        nodeTitleMatches(unit)
     ) {
 
-        container.appendChild(section);
-
-    }
-
-}
-
-
-/* =========================================================
-   GENERIC ROSTER NODE
-   ========================================================= */
-
-function renderNode(
-    node,
-    container,
-    depth = 0
-) {
-
-    if (!nodeMatchesSearch(node)) {
-        return;
-    }
-
-
-    if (node.type === "unit") {
-
-        renderUnit(
-            node,
-            container
+        container.appendChild(
+            section
         );
 
-        return;
-
     }
-
-
-    const wrapper =
-        document.createElement("section");
-
-    wrapper.className =
-        [
-            "roster-node",
-            `roster-depth-${depth}`,
-            `roster-type-${node.type}`
-        ].join(" ");
-
-
-    const header =
-        document.createElement("div");
-
-    header.className =
-        "roster-node-header";
-
-
-    const title =
-        document.createElement("span");
-
-    title.className =
-        "roster-node-title";
-
-    title.textContent =
-        node.title || "—";
-
-
-    header.appendChild(title);
-
-
-    const visiblePeople =
-        (node.personnel || [])
-            .filter(matchesPerson);
-
-
-    if (visiblePeople.length) {
-
-        const people =
-            document.createElement("span");
-
-        people.className =
-            "roster-node-personnel";
-
-        people.textContent =
-            `— ${
-                visiblePeople
-                    .map(
-                        id =>
-                            personnel[id].name
-                    )
-                    .join(", ")
-            }`;
-
-        header.appendChild(people);
-
-    }
-
-
-    wrapper.appendChild(header);
-
-
-    const visibleChildren =
-        (node.children || [])
-            .filter(nodeMatchesSearch);
-
-
-    if (visibleChildren.length) {
-
-        const children =
-            document.createElement("div");
-
-        children.className =
-            "roster-node-children";
-
-
-        visibleChildren.forEach(
-            child => {
-
-                renderNode(
-                    child,
-                    children,
-                    depth + 1
-                );
-
-            }
-        );
-
-
-        wrapper.appendChild(children);
-
-    }
-
-
-    container.appendChild(wrapper);
 
 }
 
 
 /* =========================================================
    MAIN RENDER
-   ========================================================= */
+========================================================= */
 
 function renderRoster() {
 
@@ -1275,9 +2235,16 @@ function renderRoster() {
             "roster-list"
         );
 
+
     const empty =
         document.getElementById(
             "roster-empty"
+        );
+
+
+    const countLabel =
+        document.getElementById(
+            "search-count"
         );
 
 
@@ -1286,34 +2253,43 @@ function renderRoster() {
     }
 
 
+    /*
+        Clear previous render.
+    */
+
     container.replaceChildren();
 
+
+    /*
+        Render entire hierarchy.
+    */
 
     roster.forEach(
         node => {
 
             renderNode(
                 node,
-                container
+                container,
+                0
             );
 
         }
     );
 
 
+    /*
+        Count visible personnel.
+    */
+
     const count =
-        countVisiblePeople();
+        Object.keys(personnel)
+            .filter(matchesPerson)
+            .length;
 
 
-    const searchCount =
-        document.getElementById(
-            "search-count"
-        );
+    if (countLabel) {
 
-
-    if (searchCount) {
-
-        searchCount.textContent =
+        countLabel.textContent =
             `${count} PERSONNEL`;
 
     }
@@ -1332,8 +2308,8 @@ function renderRoster() {
 
 
 /* =========================================================
-   SEARCH
-   ========================================================= */
+   SEARCH SETUP
+========================================================= */
 
 function setupSearch() {
 
@@ -1357,6 +2333,7 @@ function setupSearch() {
                     .trim()
                     .toLowerCase();
 
+
             renderRoster();
 
         }
@@ -1366,8 +2343,8 @@ function setupSearch() {
 
 
 /* =========================================================
-   FILTERS
-   ========================================================= */
+   FILTER SETUP
+========================================================= */
 
 function setupFilters() {
 
@@ -1413,8 +2390,8 @@ function setupFilters() {
 
 
 /* =========================================================
-   PROFILE
-   ========================================================= */
+   PROFILE MODAL
+========================================================= */
 
 function openProfile(person) {
 
@@ -1469,7 +2446,10 @@ function openProfile(person) {
             ([id, value]) => {
 
                 const element =
-                    document.getElementById(id);
+                    document.getElementById(
+                        id
+                    );
+
 
                 if (element) {
 
@@ -1482,7 +2462,9 @@ function openProfile(person) {
         );
 
 
-    modal.classList.add("open");
+    modal.classList.add(
+        "open"
+    );
 
 
     document.getElementById(
@@ -1494,22 +2476,13 @@ function openProfile(person) {
 
 /* =========================================================
    CLOSE PROFILE
-   ========================================================= */
+========================================================= */
 
 function closeProfile() {
 
-    const modal =
-        document.getElementById(
-            "personnel-modal"
-        );
-
-
-    if (!modal) {
-        return;
-    }
-
-
-    modal.classList.remove(
+    document.getElementById(
+        "personnel-modal"
+    )?.classList.remove(
         "open"
     );
 
@@ -1517,8 +2490,8 @@ function closeProfile() {
 
 
 /* =========================================================
-   MODAL EVENTS
-   ========================================================= */
+   MODAL SETUP
+========================================================= */
 
 function setupModal() {
 
@@ -1557,8 +2530,8 @@ function setupModal() {
 
 
 /* =========================================================
-   INITIALISE
-   ========================================================= */
+   INITIALIZE
+========================================================= */
 
 document.addEventListener(
     "DOMContentLoaded",
