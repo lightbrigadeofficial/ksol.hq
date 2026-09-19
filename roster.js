@@ -273,9 +273,9 @@ const personnel = {
     },
 
     freddie: {
-        name: "",
-        rank: "—",
-        callsign: "—",
+        name: "Fuego",
+        rank: "COL",
+        callsign: "Fuego",
         serviceNumber: "KSOL-0203",
         status: "active",
         unit: "Recruitment Command",
@@ -514,6 +514,8 @@ const personnel = {
     trail03: {name: 'CPT. "Dark"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
 
     rge01: {name: 'COL. "NaCl"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
+    rge02: {name: 'COL. "Enoch"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
+    rge01: {name: 'LGN. "Spade"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
 
     content01: {name: 'COL. "Fuego"', rank: "CPT", callsign: "Dark", serviceNumber: "KS-2605", status: "active", unit: "7th PARA BN", appointment: "Alpha Company Commander", joinDate: "N/A"},
 
@@ -1214,7 +1216,7 @@ const roster = [
                     {
                         type: "appointment",
                         title: "RGE Team",
-                        personnel: ["rge01"]
+                        personnel: ["rge01", "rge02", "rge03"]
                     },
 
                     {
