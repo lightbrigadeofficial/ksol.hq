@@ -32,35 +32,44 @@ const mediaItems = [
     },
 
     {
-        src: "Media/training-01.jpg",
-        title: "COMBAT TRAINING",
-        description: "Personnel during a scheduled training exercise.",
+        src: "Media/8.png",
+        title: "BASIC AIRBORNE TRAINING",
+        description: "Personnel during a Basic Airborne training exercise.",
         category: "TRAINING",
+        date: "25 SEP 2026"
+    },
+
+    {
+        src: "Media/7.png",
+        title: "EVENTS",
+        description: "Combatant \"NaCl\" aka Sodium chilling.",
+        category: "MISC",
+        date: "18 AUG 2026"
+    },
+
+    {
+        src: "Media/3.jpeg",
+        title: "BRIEFING",
+        description: "Briefing an assault element during an FTX.",
+        category: "TRAINING",
+        date: "18 AUG 2026"
+    },
+
+    {
+        src: "Media/4.png",
+        title: "OPERATION \"SANKALP\": FORT RONOGRAD",
+        description: "KSOL personnel during Op Sankalp after liberating Fort Ronograd.",
+        category: "EVENTS",
         date: "15 AUG 2026"
     },
 
-    {
-        src: "Media/training-02.jpg",
-        title: "CQB TRAINING",
-        description: "Personnel conducting close quarters training.",
-        category: "TRAINING",
-        date: "12 AUG 2026"
-    },
 
     {
-        src: "Media/aviation-01.jpg",
-        title: "AVIATION OPERATIONS",
-        description: "KSOL aviation element conducting an exercise.",
-        category: "AVIATION",
-        date: "10 AUG 2026"
-    },
-
-    {
-        src: "Media/event-01.jpg",
-        title: "LEGION EVENT",
-        description: "KSOL personnel during an organizational event.",
+        src: "Media/6.png",
+        title: "OPERATION \"SANKALP\": FORT RONOGRAD",
+        description: "KSOL personnel during Op Sankalp after liberating Fort Ronograd.",
         category: "EVENTS",
-        date: "01 AUG 2026"
+        date: "15 AUG 2026"
     }
 
 ];
