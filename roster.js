@@ -66,7 +66,7 @@ const personnel = {
     },
 
     wolf: {
-        name: 'LTG. "Wolf"',
+        name: 'LTG. "Fuego"',
         rank: "LTG",
         callsign: "2I/C",
         serviceNumber: "KSOL-2611",
@@ -273,7 +273,7 @@ const personnel = {
     },
 
     freddie: {
-        name: "Fuego",
+        name: "LTG. \"Fuego\"",
         rank: "COL",
         callsign: "Fuego",
         serviceNumber: "KSOL-0203",
@@ -365,7 +365,7 @@ const personnel = {
     },
 
     x: {
-        name: 'SGT. "Mos"',
+        name: 'SGT. "Jordan',
         rank: "SSG",
         callsign: "—",
         serviceNumber: "KSOL-0306",
@@ -394,7 +394,7 @@ const personnel = {
     ===================================================== */
 
     z: {
-        name: 'GEN. "Obi"',
+        name: 'COL. "Shelby"',
         rank: "COL",
         callsign: "—",
         serviceNumber: "KSOL-0401",
@@ -480,6 +480,7 @@ const personnel = {
     platoon1_07: { name: '"Sansi"', rank: "LGN", callsign: "Sansi", serviceNumber: "KS-2620", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "31 Aug 2026", note: "" },
     platoon1_08: { name: '"Hotdog"', rank: "LGN", callsign: "Hotdog", serviceNumber: "KS-2633", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "09 Aug 2026", note: "" },
     platoon1_09: { name: '"Fallen"', rank: "LGN", callsign: "Fallen", serviceNumber: "KS-2610", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "10 Aug 2026", note: "" },
+    platoon1_10: { name: '"Diamond"', rank: "LGN", callsign: "Diamond", serviceNumber: "KS-2637", status: "active", unit: "7th PARA BN", appointment: "1st Platoon", joinDate: "19 Sep 2026", note: "" },
 
 
     // bravo01: { name: 'CPT. "Archer"', rank: "CPT", callsign: "—", serviceNumber: "KSOL-0322", status: "active", unit: "7 PARA", appointment: "Bravo Coy", joinDate: "2026", note: "" },
@@ -487,16 +488,16 @@ const personnel = {
     // bravo03: { name: 'PTE. "Ranger"', rank: "PTE", callsign: "—", serviceNumber: "KSOL-0324", status: "active", unit: "7 PARA", appointment: "Bravo Coy", joinDate: "2026", note: "" },
 
     sis01: { name: '"Wolf"', rank: "LTG", callsign: "Wolf", serviceNumber: "KS-2611", status: "loa", unit: "SIS", appointment: "Operator", joinDate: "29 Jul 2026", note: "" },
-    sis02: { name: 'SSG. "Cipher"', rank: "SSG", callsign: "—", serviceNumber: "KSOL-0403", status: "active", unit: "SIS", appointment: "Operator", joinDate: "2026", note: "" },
-    sis03: { name: 'CPL. "Shade"', rank: "CPL", callsign: "—", serviceNumber: "KSOL-0404", status: "active", unit: "SIS", appointment: "Operator", joinDate: "2026", note: "" },
+    sis02: { name: '"Obi"', rank: "GEN", callsign: "Obi", serviceNumber: "KSOL-2601", status: "active", unit: "SIS", appointment: "Commander, KSOL", joinDate: "16 Jul 2026", note: "" },
+    sis03: { name: '"Lucifer"', rank: "LGN", callsign: "Lucifer", serviceNumber: "KSOL-2638", status: "active", unit: "SIS", appointment: "Operator", joinDate: "20 Sep 2026", note: "" },
 
     aac01: { name: '"Hitman"', rank: "LGN", callsign: "Hitman", serviceNumber: "KS-2607", status: "active", unit: "AAC", appointment: "Pilot", joinDate: "16 Aug2026", note: "" },
     aac02: { name: '"Bravo 0-6"', rank: "LGN", callsign: "Bravo 0-6", serviceNumber: "KS-2626", status: "active", unit: "AAC", appointment: "-", joinDate: "02 Aug 2026", note: "" },
-    aac03: { name: 'WO1. "Rotor"', rank: "WO1", callsign: "—", serviceNumber: "KSOL-0504", status: "active", unit: "AAC", appointment: "Aircrew", joinDate: "2026", note: "" },
+    aac03: { name: '"Spade"', rank: "LGN", callsign: "Spade", serviceNumber: "KSOL-2635", status: "active", unit: "AAC", appointment: "Aircrew", joinDate: "18 Sep 2026", note: "" },
 
     amc01: { name: '"Warthog"', rank: "PFC", callsign: "Warthog", serviceNumber: "KS-2608", status: "active", unit: "AMC", appointment: "Medic", joinDate: "09 Aug 2026", note: "" },
     amc02: { name: '"Felon"', rank: "LGN", callsign: "Felon", serviceNumber: "KS-2624", status: "active", unit: "AMC", appointment: "Medic", joinDate: "22 Aug 2026", note: "" },
-    amc03: { name: '"###"', rank: "SGT", callsign: "—", serviceNumber: "KSOL-0604", status: "active", unit: "AMC", appointment: "Medic", joinDate: "2026", note: "" },
+    amc03: { name: '"Aika"', rank: "LGN", callsign: "Aika", serviceNumber: "KSOL-2639", status: "active", unit: "AMC", appointment: "Medic", joinDate: "21 Sep 2026", note: "" },
 
     recon01: { name: '"Leviathan"', rank: "LGN", callsign: "Leviathan", serviceNumber: "KS-2619", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "04 Aug 2026", note: "" },
     recon02: { name: '"Silentdeath"', rank: "LGN", callsign: "Silentdeath", serviceNumber: "KS-2621", status: "active", unit: "RECON", appointment: "Marksman", joinDate: "10 Sep 2026", note: "" },
@@ -902,7 +903,7 @@ const roster = [
                                                         ]
                                                 */
 
-                                                personnel: ["platoon1_01", "platoon1_02", "platoon1_03", "platoon1_04", "platoon1_05", "platoon1_06" ,"platoon1_07", "platoon1_08", "platoon1_09"]
+                                                personnel: ["platoon1_01", "platoon1_02", "platoon1_03", "platoon1_04", "platoon1_05", "platoon1_06" ,"platoon1_07", "platoon1_08", "platoon1_09", "platoon1_10"]
 
                                             },
 
@@ -1043,7 +1044,7 @@ const roster = [
 
                         children: [],
 
-                        personnel: ["sis01"]
+                        personnel: ["sis01", "sis02", "sis03", "sis04"]
 
                     },
 
@@ -1073,7 +1074,7 @@ const roster = [
 
                         children: [],
 
-                        personnel: ["aac01", "aac02"]
+                        personnel: ["aac01", "aac02", "aac03"]
 
                     },
 
@@ -1103,7 +1104,7 @@ const roster = [
 
                         children: [],
 
-                        personnel: ["amc01", "amc02"]
+                        personnel: ["amc01", "amc02", "amc03"]
 
                     },
 
