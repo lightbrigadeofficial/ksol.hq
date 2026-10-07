@@ -65,7 +65,7 @@ const uniforms = [
             "STANDARD ISSUE",
 
         image:
-            "INF1.png",
+            "IM90.png",
 
         description:
             "Authorized fictional in-game uniform configuration for personnel assigned to the 7 PARA/AMC/ASC/RECON/MED.",
@@ -107,7 +107,7 @@ const uniforms = [
                             "Primary",
 
                         value:
-                            "INTEL Rail 3.0 Ballistic"
+                            "MICH 2002"
                     },
 
                     {
@@ -115,7 +115,7 @@ const uniforms = [
                             "Camo",
 
                         value:
-                            "Ranger Green"
+                            "Olive drab green"
                     },
 
                     {
@@ -236,7 +236,7 @@ const uniforms = [
                             "Camo",
 
                         value:
-                            "Tan"
+                            "Foliage Green/ ANY green"
                     }
 
                 ]
@@ -255,7 +255,7 @@ const uniforms = [
                             "System",
 
                         value:
-                            "Spectre U"
+                            "ACU (Army Combat Uniform)"
                     },
 
                     {
@@ -263,7 +263,7 @@ const uniforms = [
                             "Camo",
 
                         value:
-                            "Camouflage Central Europe"
+                            "US4CES Transitional"
                     }
 
                 ]
@@ -282,7 +282,7 @@ const uniforms = [
                             "System",
 
                         value:
-                            "Spectre U"
+                            "ACU (Army Combat Uniform)"
                     },
 
                     {
@@ -290,7 +290,7 @@ const uniforms = [
                             "Camo",
 
                         value:
-                            "Camouflage Central Europe"
+                            "US4CES Transitional"
                     }
 
                 ]
@@ -317,7 +317,7 @@ const uniforms = [
                             "Camo",
 
                         value:
-                            "C-AVOD AU for Attack 2 / Ranger or Olive Green for other uses"
+                            "Ranger green/ANY green"
                     }
 
                 ]
@@ -422,7 +422,7 @@ const uniforms = [
                             "Camo",
 
                         value:
-                            "Ranger Green"
+                            "Black"
                     }
 
                 ]
@@ -1045,7 +1045,7 @@ const uniforms = [
                         "System",
 
                     value:
-                        "Spectre U"
+                        "ACU (Army Combat Uniform)"
                 },
 
                 {
@@ -1053,7 +1053,7 @@ const uniforms = [
                         "Camo",
 
                     value:
-                        "Camouflage Central Europe"
+                        "US4CES Transitional"
                 }
 
             ]
@@ -1072,7 +1072,7 @@ const uniforms = [
                         "System",
 
                     value:
-                        "Spectre U"
+                        "ACU (Army Combat Uniform)"
                 },
 
                 {
@@ -1080,7 +1080,7 @@ const uniforms = [
                         "Camo",
 
                     value:
-                        "Camouflage Central Europe"
+                        "US4CES Transitional"
                 }
 
             ]
@@ -1107,7 +1107,7 @@ const uniforms = [
                         "Camo",
 
                     value:
-                        "C-AVOD AU for Attack 2 / Ranger or Olive Green for other uses"
+                        "Ranger green/ANY green"
                 }
 
             ]
@@ -1212,7 +1212,7 @@ const uniforms = [
                         "Camo",
 
                     value:
-                        "Ranger Green"
+                        "Black"
                 }
 
             ]

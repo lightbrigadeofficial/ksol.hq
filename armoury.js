@@ -135,16 +135,15 @@ const equipment = [
 
         role: "si",
 
-        name: "Beretta M9 (M9)",
+        name: "SIG SAUER M17 (M17)",
 
         type: "STANDARD ISSUE",
 
         image:
-            "M9.png",
+            "M17.png",
 
         description:
-            "The Beretta M9 is a 9mm semi-automatic service pistol, widely known for its reliability and distinctive open-slide design. It served as the standard U.S. military sidearm from 1985 for several decades.",
-
+            "The SIG Sauer M17 is a 9mm semi-automatic service pistol based on the SIG Sauer P320 platform, adopted by the U.S. military as its standard full-size Modular Handgun System sidearm.",
         info: {
 
             designation:
@@ -318,15 +317,15 @@ const equipment = [
 
         role: "autorifleman",
 
-        name: "Beretta M9 (M9)",
+        name: "SIG SAUER M17 (M17)",
 
         type: "AUTOMATIC",
 
         image:
-            "M9.png",
+            "M17.png",
 
         description:
-            "The Beretta M9 is a 9mm semi-automatic service pistol, widely known for its reliability and distinctive open-slide design. It served as the standard U.S. military sidearm from 1985 for several decades.",
+            "The SIG Sauer M17 is a 9mm semi-automatic service pistol based on the SIG Sauer P320 platform, adopted by the U.S. military as its standard full-size Modular Handgun System sidearm.",
 
         info: {
 
@@ -992,15 +991,15 @@ const equipment = [
 
         role: "marksman",
 
-        name: "Beretta M9 (M9)",
+        name: "SIG SAUER M17 (M17)",
 
         type: "STANDARD ISSUE",
 
         image:
-            "M9.png",
+            "M17.png",
 
         description:
-            "The Beretta M9 is a 9mm semi-automatic service pistol, widely known for its reliability and distinctive open-slide design. It served as the standard U.S. military sidearm from 1985 for several decades.",
+            "The SIG Sauer M17 is a 9mm semi-automatic service pistol based on the SIG Sauer P320 platform, adopted by the U.S. military as its standard full-size Modular Handgun System sidearm.",
 
         info: {
 
@@ -1238,15 +1237,15 @@ const equipment = [
 
         role: "sniper",
 
-        name: "Beretta M9 (M9)",
+        name: "SIG SAUER M17 (M17)",
 
         type: "STANDARD ISSUE",
 
         image:
-            "M9.png",
+            "M17.png",
 
         description:
-            "The Beretta M9 is a 9mm semi-automatic service pistol, widely known for its reliability and distinctive open-slide design. It served as the standard U.S. military sidearm from 1985 for several decades.",
+            "The SIG Sauer M17 is a 9mm semi-automatic service pistol based on the SIG Sauer P320 platform, adopted by the U.S. military as its standard full-size Modular Handgun System sidearm.",
 
         info: {
 
